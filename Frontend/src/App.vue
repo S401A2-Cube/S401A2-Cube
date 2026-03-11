@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import ComponentExample from './components/ComponentExample.vue';
+
+</script>
 
 <template>
   <h1>You did it!</h1>
