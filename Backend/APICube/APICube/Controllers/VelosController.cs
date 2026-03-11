@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using APICube.Models.EntityFramework;
 using APICube.Models.Repository;
+using APICube.Models.DTOs;
 
 namespace APICube.Controllers
 {
@@ -25,21 +23,21 @@ namespace APICube.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-
-        public async Task<ActionResult<IEnumerable<Velo>>> GetAll()
+        public async Task<ActionResult<IEnumerable<VeloDetailDTO>>> GetAll()
         {
-            return await _repository.GetAllAsync();
+            //return await _repository.GetAllAsync();
+            return await _repository.GetAllDTOAsync();
         }
 
-        // GET: api/Velos/5
+        // GET: api/Velos/GetById/1/2/3/4
         [HttpGet]
-        [Route("[action]/{id}")]
+        [Route("[action]/{idmateriau}/{idcouleur}/{idtaille}/{idarticle}")]
         [ActionName("GetById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Velo>> GetById(int id)
+        public async Task<ActionResult<Velo>> GetById(int idmateriau, int idcouleur, int idtaille, int idarticle)
         {
-            var velo = await _repository.GetByIdAsync(id);
+            var velo = await _repository.GetByIdAsync(idmateriau, idcouleur, idtaille, idarticle);
 
             if (velo == null)
             {
@@ -49,15 +47,14 @@ namespace APICube.Controllers
             return velo;
         }
 
-        // PUT: api/Velos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        // PUT: api/Velos/1/2/3/4
+        [HttpPut("{idmateriau}/{idcouleur}/{idtaille}/{idarticle}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PutVelo(int id, Velo velo)
+        public async Task<IActionResult> PutVelo(int idmateriau, int idcouleur, int idtaille, int idarticle, Velo velo)
         {
-            if (id != velo.Idarticle)
+            if (idmateriau != velo.Idmateriau || idcouleur != velo.Idcouleur || idtaille != velo.Idtaille || idarticle != velo.Idarticle)
             {
                 return BadRequest();
             }
@@ -67,21 +64,18 @@ namespace APICube.Controllers
                 return BadRequest(ModelState);
             }
 
-            var veloToUpdate = await _repository.GetByIdAsync(id);
+            var veloToUpdate = await _repository.GetByIdAsync(idmateriau, idcouleur, idtaille, idarticle);
             if (veloToUpdate == null)
             {
                 return NotFound();
             }
-            else
-            {
-                await _repository.UpdateAsync(veloToUpdate.Value, velo);
-            }
+
+            await _repository.UpdateAsync(veloToUpdate.Value, velo);
 
             return NoContent();
         }
 
         // POST: api/Velos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -94,16 +88,22 @@ namespace APICube.Controllers
 
             await _repository.AddAsync(velo);
 
-            return CreatedAtAction("GetUtilisateur", new { id = velo.Idarticle }, velo);
+            return CreatedAtAction("GetById", new
+            {
+                idmateriau = velo.Idmateriau,
+                idcouleur = velo.Idcouleur,
+                idtaille = velo.Idtaille,
+                idarticle = velo.Idarticle
+            }, velo);
         }
 
-        // DELETE: api/Velos/5
-        [HttpDelete("{id}")]
+        // DELETE: api/Velos/1/2/3/4
+        [HttpDelete("{idmateriau}/{idcouleur}/{idtaille}/{idarticle}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteVelo(int id)
+        public async Task<IActionResult> DeleteVelo(int idmateriau, int idcouleur, int idtaille, int idarticle)
         {
-            var velo = await _repository.GetByIdAsync(id);
+            var velo = await _repository.GetByIdAsync(idmateriau, idcouleur, idtaille, idarticle);
             if (velo == null)
             {
                 return NotFound();
