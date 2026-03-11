@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Models\EntityFramework\" />
-    <Folder Include="Models\DataManager\" />
   </ItemGroup>
 
 </Project>
