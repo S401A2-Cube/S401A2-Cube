@@ -85,6 +85,7 @@ Chaque fois que vous récupérez (pull) du nouveau code, vous pourriez avoir bes
 ### Conventions de nommage et accolades
 Nous adoptons ces principes pour garder le code entièrement uniforme et prévisible pour toute l'équipe. 
 
+* **Nom des méthodes/variables :** Toutes les méthodes et variables doivent être en anglais.
 * **Accolades style Allman :** Chaque accolade ouvrante `{` et fermante `}` doit se trouver sur sa propre ligne dédiée. Cela crée un bloc de code visuellement distinct et aligne les accolades verticalement. 
 * **camelCase :** La première lettre du premier mot est en minuscule, et la première lettre de chaque mot suivant est en majuscule (par exemple, `maVariableLocale`). Nous l'utilisons pour les variables locales, les paramètres de fonction et les champs privés.
 * **PascalCase :** La première lettre de chaque mot est en majuscule, y compris le tout premier mot (par exemple, `MaClassePublique`). Nous l'utilisons pour les classes, les méthodes et les propriétés publiques.
