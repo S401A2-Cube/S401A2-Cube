@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APICube.Models.EntityFramework;
+using APICube.Models.Repository;
 
 namespace APICube.Controllers
 {
@@ -13,25 +14,32 @@ namespace APICube.Controllers
     [ApiController]
     public class VelosController : ControllerBase
     {
-        private readonly S401Context _context;
+        private readonly IDataRepositoryVelo _repository;
 
-        public VelosController(S401Context context)
+        public VelosController(IDataRepositoryVelo veloManager)
         {
-            _context = context;
+            _repository = veloManager;
         }
 
         // GET: api/Velos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Velo>>> GetVelos()
+        [ActionName("GetAll")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+
+        public async Task<ActionResult<IEnumerable<Velo>>> GetAll()
         {
-            return await _context.Velos.ToListAsync();
+            return await _repository.GetAllAsync();
         }
 
         // GET: api/Velos/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Velo>> GetVelo(int id)
+        [HttpGet]
+        [Route("[action]/{id}")]
+        [ActionName("GetById")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Velo>> GetById(int id)
         {
-            var velo = await _context.Velos.FindAsync(id);
+            var velo = await _repository.GetByIdAsync(id);
 
             if (velo == null)
             {
@@ -44,29 +52,29 @@ namespace APICube.Controllers
         // PUT: api/Velos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutVelo(int id, Velo velo)
         {
-            if (id != velo.Idmateriau)
+            if (id != velo.Idarticle)
             {
                 return BadRequest();
             }
 
-            _context.Entry(velo).State = EntityState.Modified;
-
-            try
+            if (!ModelState.IsValid)
             {
-                await _context.SaveChangesAsync();
+                return BadRequest(ModelState);
             }
-            catch (DbUpdateConcurrencyException)
+
+            var veloToUpdate = await _repository.GetByIdAsync(id);
+            if (veloToUpdate == null)
             {
-                if (!VeloExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
+            }
+            else
+            {
+                await _repository.UpdateAsync(veloToUpdate.Value, velo);
             }
 
             return NoContent();
@@ -75,47 +83,85 @@ namespace APICube.Controllers
         // POST: api/Velos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Velo>> PostVelo(Velo velo)
         {
-            _context.Velos.Add(velo);
-            try
+            if (!ModelState.IsValid)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (VeloExists(velo.Idmateriau))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                return BadRequest(ModelState);
             }
 
-            return CreatedAtAction("GetVelo", new { id = velo.Idmateriau }, velo);
+            await _repository.AddAsync(velo);
+
+            return CreatedAtAction("GetUtilisateur", new { id = velo.Idarticle }, velo);
         }
 
         // DELETE: api/Velos/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteVelo(int id)
         {
-            var velo = await _context.Velos.FindAsync(id);
+            var velo = await _repository.GetByIdAsync(id);
             if (velo == null)
             {
                 return NotFound();
             }
 
-            _context.Velos.Remove(velo);
-            await _context.SaveChangesAsync();
+            await _repository.DeleteAsync(velo.Value);
 
             return NoContent();
         }
 
-        private bool VeloExists(int id)
+        [HttpGet]
+        [Route("[action]/{id}")]
+        [ActionName("GetByMateriauID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<IEnumerable<Velo>>> GetByMateriauID(int id)
         {
-            return _context.Velos.Any(e => e.Idmateriau == id);
+            return await _repository.GetByMateriauID(id);
+        }
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        [ActionName("GetByCouleurID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<IEnumerable<Velo>>> GetByCouleurID(int id)
+        {
+            return await _repository.GetByCouleurID(id);
+        }
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        [ActionName("GetByTailleID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<IEnumerable<Velo>>> GetByTailleID(int id)
+        {
+            return await _repository.GetByTailleID(id);
+        }
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        [ActionName("GetByModeleID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<IEnumerable<Velo>>> GetByModeleID(int id)
+        {
+            return await _repository.GetByModeleID(id);
+        }
+
+        [HttpGet]
+        [Route("[action]/{id}")]
+        [ActionName("GetByMillesimeID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<IEnumerable<Velo>>> GetByMillesimeID(int id)
+        {
+            return await _repository.GetByMillesimeID(id);
         }
     }
 }
