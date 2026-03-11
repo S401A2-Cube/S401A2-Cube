@@ -8,7 +8,6 @@ namespace APICube.Models.Repository
         Task<ActionResult<IEnumerable<Velo>>> GetByMateriauID(int id);
         Task<ActionResult<IEnumerable<Velo>>> GetByCouleurID(int id);
         Task<ActionResult<IEnumerable<Velo>>> GetByTailleID(int id);
-        Task<ActionResult<IEnumerable<Velo>>> GetByArticleID(int id);
         Task<ActionResult<IEnumerable<Velo>>> GetByModeleID(int id);
         Task<ActionResult<IEnumerable<Velo>>> GetByMillesimeID(int id);
     }

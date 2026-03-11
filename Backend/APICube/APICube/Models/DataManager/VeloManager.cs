@@ -8,35 +8,33 @@ namespace APICube.Models.DataManager
 {
     public class VeloManager : IDataRepositoryVelo
     {
-        readonly S401Context? context;
-
-        public VeloManager() { }
+        private readonly S401Context? _context;
 
         public VeloManager(S401Context context)
         {
-            this.context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public async Task<ActionResult<Velo>> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Velos.FirstOrDefaultAsync(u => u.Idarticle == id);
         }
 
         public async Task AddAsync(Velo entity)
         {
-            await context.Velos.AddAsync(entity);
-            await context.SaveChangesAsync();
+            await _context.Velos.AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(Velo entity)
         {
-            context.Velos.Remove(entity);
-            await context.SaveChangesAsync();
+            _context.Velos.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Velo entityToUpdate, Velo entity)
         {
-            context.Entry(entityToUpdate).State = EntityState.Modified;
+            _context.Entry(entityToUpdate).State = EntityState.Modified;
             entityToUpdate.Idmateriau = entity.Idmateriau;
             entityToUpdate.Idcouleur  = entity.Idcouleur;
             entityToUpdate.Idtaille  = entity.Idtaille;
@@ -69,42 +67,37 @@ namespace APICube.Models.DataManager
             entityToUpdate.Peutavoir5s = entity.Peutavoir5s;
             entityToUpdate.Veloelectriques = entity.Veloelectriques;
 
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Velo>>> GetAllAsync()
         {
-            return await context.Velos.ToListAsync();
-        }
-
-        public async Task<ActionResult<IEnumerable<Velo>>> GetByArticleID(int id)
-        {
-            return await context.Velos.Where(v => v.Idarticle == id).ToListAsync();
+            return await _context.Velos.ToListAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Velo>>> GetByCouleurID(int id)
         {
-            return await context.Velos.Where(v => v.Idcouleur == id).ToListAsync();
+            return await _context.Velos.Where(v => v.Idcouleur == id).ToListAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Velo>>> GetByMateriauID(int id)
         {
-            return await context.Velos.Where(v => v.Idmateriau== id).ToListAsync();
+            return await _context.Velos.Where(v => v.Idmateriau == id).ToListAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Velo>>> GetByMillesimeID(int id)
         {
-            return await context.Velos.Where(v => v.Idmillesime == id).ToListAsync();
+            return await _context.Velos.Where(v => v.Idmillesime == id).ToListAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Velo>>> GetByModeleID(int id)
         {
-            return await context.Velos.Where(v => v.Idmodele == id).ToListAsync();
+            return await _context.Velos.Where(v => v.Idmodele == id).ToListAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Velo>>> GetByTailleID(int id)
         {
-            return await context.Velos.Where(v => v.Idtaille== id).ToListAsync();
+            return await _context.Velos.Where(v => v.Idtaille == id).ToListAsync();
         }
     }
 }
