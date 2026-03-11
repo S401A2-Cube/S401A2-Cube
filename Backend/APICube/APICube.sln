@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICube", "APICube\APICube.csproj", "{2C6CB886-C0E5-4090-8C4B-68630FFDB794}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICubeTests", "APICubeTests\APICubeTests.csproj", "{C253B363-5FE3-47FD-9C0B-9BFD69A1BFCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2C6CB886-C0E5-4090-8C4B-68630FFDB794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C6CB886-C0E5-4090-8C4B-68630FFDB794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C6CB886-C0E5-4090-8C4B-68630FFDB794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C253B363-5FE3-47FD-9C0B-9BFD69A1BFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C253B363-5FE3-47FD-9C0B-9BFD69A1BFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C253B363-5FE3-47FD-9C0B-9BFD69A1BFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C253B363-5FE3-47FD-9C0B-9BFD69A1BFCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
