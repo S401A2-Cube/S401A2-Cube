@@ -221,5 +221,22 @@ namespace APICube.Models.DataManager
 
             return await _context.Velos.Where(v => v.Idtaille == id).ToListAsync();
         }
+
+        public async Task<ActionResult<Velo>> GetByIdAsync(int idmateriau)
+        {
+            if (_context == null)
+            {
+                return new NotFoundResult();
+            }
+
+            var velo = await _context.Velos.FirstOrDefaultAsync(u => u.Idmateriau == idmateriau);
+
+            if (velo == null)
+            {
+                return new NotFoundResult();
+            }
+
+            return velo;
+        }
     }
 }
