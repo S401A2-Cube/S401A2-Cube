@@ -14,7 +14,9 @@ namespace APICube.Models.DataManager
 
         public CommandeManager  (S401Context context)
         {
+
             this.context = context;
+
         }
 
 

@@ -62,15 +62,16 @@ namespace APICube.Controllers
             var CommandeToUpdate = await _repository.GetByIdAsync(id);
             if (CommandeToUpdate == null)
 
-            {
-                return NotFound();
-            }
-            else
-            {
+                {
+                    return NotFound();
+                }
+                else
+                {
 
 
                 await _repository.UpdateAsync(CommandeToUpdate.Value, commande);
-            }
+                }
+            
 
             return NoContent();
         }
@@ -87,11 +88,12 @@ namespace APICube.Controllers
             await _repository.AddAsync(commande);
             return CreatedAtAction("GetCommande", new { id = commande.Idcommande }, commande);
 
+            return CreatedAtAction("GetCommande", new { id = commande.Idcommande }, commande);
         }
 
 
-            // DELETE: api/Commandes/5
-            [HttpDelete("{id}")]
+        // DELETE: api/Commandes/5
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCommande(int id)
         {
             var commande = await _repository.GetByIdAsync(id);
