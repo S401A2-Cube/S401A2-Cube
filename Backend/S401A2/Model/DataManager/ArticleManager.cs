@@ -42,7 +42,14 @@ namespace S401A2.Model.DataManager
                             CategorieId = a.CategorieArticle.CategorieId,
                             Nom = a.CategorieArticle.Nom,
                             Articles = null
-                        }
+                        },
+
+                        MotsCles = a.MotsCles == null ? null : a.MotsCles.Select(mc => new MotCle
+                        {
+                            MotCleId = mc.MotCleId,
+                            Nom = mc.Nom,
+                            Articles = null
+                        }).ToList()
                     })
                     .ToListAsync();
 
@@ -77,7 +84,14 @@ namespace S401A2.Model.DataManager
                         CategorieId = a.CategorieArticle.CategorieId,
                         Nom = a.CategorieArticle.Nom,
                         Articles = null
-                    }
+                    },
+
+                    MotsCles = a.MotsCles == null ? null : a.MotsCles.Select(mc => new MotCle
+                    {
+                        MotCleId = mc.MotCleId,
+                        Nom = mc.Nom,
+                        Articles = null
+                    }).ToList()
                 })
                 .FirstOrDefaultAsync();
 

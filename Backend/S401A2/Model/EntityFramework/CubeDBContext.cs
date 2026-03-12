@@ -14,6 +14,7 @@ namespace S401A2.Model.EntityFramework
 
         public virtual DbSet<Article> Articles { get; set; } = null!;
         public virtual DbSet<Categorie> Categories { get; set; } = null!;
+        public virtual DbSet<MotCle> MotCles { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,6 +47,11 @@ namespace S401A2.Model.EntityFramework
             //    .IsUnique();
             //});
 
+            modelBuilder.Entity<Article>()
+                .HasMany(a => a.MotsCles)
+                .WithMany(m => m.Articles)
+                .UsingEntity(j => j.ToTable("t_j_article_motcle_amc"));
+            
             OnModelCreatingPartial(modelBuilder);
         }
 

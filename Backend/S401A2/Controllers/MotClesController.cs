@@ -12,51 +12,52 @@ namespace S401A2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class MotClesController : ControllerBase
     {
-        private readonly IDataRepository<Categorie> _repository;
+        private readonly CubeDBContext _context;
+        private readonly IDataRepository<MotCle> _repository;
 
-        public CategoriesController(IDataRepository<Categorie> dataRepository)
+        public MotClesController(IDataRepository<MotCle> dataRepository)
         {
             _repository = dataRepository ?? throw new ArgumentNullException(nameof(dataRepository));
         }
 
-        // GET: api/Categories
+        // GET: api/MotCles
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Categorie>>> GetCategories()
+        public async Task<ActionResult<IEnumerable<MotCle>>> GetMotCles()
         {
             return await _repository.GetAllAsync();
         }
 
-        // GET: api/Categories/5
+        // GET: api/MotCles/5
         [HttpGet]
         [Route("[action]/{id}")]
         [ActionName("GetById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Categorie>> GetCategorie(int id)
+        public async Task<ActionResult<MotCle>> GetMotCle(int id)
         {
-            var categorie = await _repository.GetByIdAsync(id);
+            var MotCle = await _repository.GetByIdAsync(id);
 
-            if (categorie == null)
+            if (MotCle == null)
             {
                 return NotFound();
             }
 
-            return categorie;
+            return MotCle;
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/MotCles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PutCategorie(int id, Categorie Categorie)
+        public async Task<IActionResult> PutMotCle(int id, MotCle motCle)
         {
-            if (id != Categorie.CategorieId)
+            if (id != motCle.MotCleId)
             {
                 return BadRequest();
             }
@@ -66,47 +67,47 @@ namespace S401A2.Controllers
                 return BadRequest(ModelState);
             }
 
-            var categorieToUpdate = await _repository.GetByIdAsync(id);
-            if (categorieToUpdate == null || categorieToUpdate.Value == null)
+            var MotCleToUpdate = await _repository.GetByIdAsync(id);
+            if (MotCleToUpdate == null || MotCleToUpdate.Value == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(categorieToUpdate.Value, Categorie);
+            await _repository.UpdateAsync(MotCleToUpdate.Value, motCle);
 
             return NoContent();
         }
 
-        // POST: api/Categories
+        // POST: api/MotCles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Categorie>> PostCategorie(Categorie categorie)
+        public async Task<ActionResult<MotCle>> PostMotCle(MotCle motCle)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            await _repository.AddAsync(categorie);
+            await _repository.AddAsync(motCle);
 
-            return CreatedAtAction("GetCategorie", new { id = categorie.CategorieId }, categorie);
+            return CreatedAtAction("GetMotCle", new { id = motCle.MotCleId }, motCle);
         }
 
-        // DELETE: api/Categories/5
+        // DELETE: api/MotCles/5
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteCategorie(int id)
+        public async Task<IActionResult> DeleteMotCle(int id)
         {
-            var categorie = await _repository.GetByIdAsync(id);
-            if (categorie == null)
+            var motCle = await _repository.GetByIdAsync(id);
+            if (motCle == null)
             {
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(categorie.Value);
+            await _repository.DeleteAsync(motCle.Value);
 
             return NoContent();
         }
