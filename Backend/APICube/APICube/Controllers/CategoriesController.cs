@@ -14,18 +14,18 @@ namespace APICube.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly IDataRepository<Categorie> dataRepository;
+        private readonly IDataRepository<Categorie> _dataRepository;
 
         public CategoriesController(IDataRepository<Categorie> dataRepo)
         {
-            dataRepository = dataRepo;
+            _dataRepository = dataRepo;
         }
 
         // GET: api/Categories
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Categorie>>> GetCategories()
         {
-            return await dataRepository.GetAllAsync();
+            return await _dataRepository.GetAllAsync();
         }
 
         // GET: api/Categories/5
@@ -35,7 +35,7 @@ namespace APICube.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Categorie>> GetCategorie(int id)
         {
-            var categorie = await dataRepository.GetByIdAsync(id);
+            var categorie = await _dataRepository.GetByIdAsync(id);
 
             if (categorie == null)
             {
@@ -57,7 +57,7 @@ namespace APICube.Controllers
                 return BadRequest();
             }
 
-            var categorieToUpdate = await dataRepository.GetByIdAsync(id);
+            var categorieToUpdate = await _dataRepository.GetByIdAsync(id);
             if (categorieToUpdate == null)
             {
                 return NotFound();
@@ -65,7 +65,7 @@ namespace APICube.Controllers
 
             else
             {
-                await dataRepository.UpdateAsync(categorieToUpdate.Value, categorie);
+                await _dataRepository.UpdateAsync(categorieToUpdate.Value, categorie);
                 return NoContent();
             }
         }
@@ -81,7 +81,7 @@ namespace APICube.Controllers
             {
                 return BadRequest(ModelState);
             }
-            await dataRepository.AddAsync(categorie);
+            await _dataRepository.AddAsync(categorie);
             return CreatedAtAction("GetClientById", new { id = categorie.Idcategorie }, categorie);
         }
 
@@ -91,13 +91,13 @@ namespace APICube.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteCategorie(int id)
         {
-            var categorie = await dataRepository.GetByIdAsync(id);
+            var categorie = await _dataRepository.GetByIdAsync(id);
             if (categorie == null)
             {
                 return NotFound();
             }
 
-            await dataRepository.DeleteAsync(categorie.Value);
+            await _dataRepository.DeleteAsync(categorie.Value);
             return NoContent();
         }
     }
