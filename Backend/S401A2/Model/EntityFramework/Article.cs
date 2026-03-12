@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace S401A2.Model.EntityFramework
@@ -47,6 +48,14 @@ namespace S401A2.Model.EntityFramework
 
         [Column("art_dispo_en_ligne")]
         public bool DispoEnLigne { get; set; }
+
+        [Column("cat_id")]
+        public int CategorieId { get; set; }
+
+        [ForeignKey(nameof(CategorieId))]
+        [InverseProperty(nameof(Categorie.Articles))]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] // omit when null
+        public virtual Categorie CategorieArticle { get; set; } = null!;
 
         // TODO: Navigation towards other entities when they will be 
 

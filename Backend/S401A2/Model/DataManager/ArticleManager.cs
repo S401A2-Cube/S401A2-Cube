@@ -22,7 +22,31 @@ namespace S401A2.Model.DataManager
                 return new NotFoundResult();
             }
 
-            return await _context.Articles.ToListAsync();
+            var articles = await _context.Articles
+                    .AsNoTracking()
+                    .Select(a => new Article
+                    {
+                        ArticleId = a.ArticleId,
+                        Reference = a.Reference,
+                        Nom = a.Nom,
+                        Description = a.Description,
+                        Prix = a.Prix,
+                        Poids = a.Poids,
+                        QteStock = a.QteStock,
+                        Annee = a.Annee,
+                        DispoEnLigne = a.DispoEnLigne,
+                        CategorieId = a.CategorieId,
+
+                        CategorieArticle = a.CategorieArticle == null ? null : new Categorie
+                        {
+                            CategorieId = a.CategorieArticle.CategorieId,
+                            Nom = a.CategorieArticle.Nom,
+                            Articles = null
+                        }
+                    })
+                    .ToListAsync();
+
+            return articles;
         }
 
         public async Task<ActionResult<Article>> GetByIdAsync(int id)
@@ -32,14 +56,37 @@ namespace S401A2.Model.DataManager
                 return new NotFoundResult();
             }
 
-            var velo = await _context.Articles.FirstOrDefaultAsync(u => u.ArticleId == id);
+            var article = await _context.Articles
+                .AsNoTracking()
+                .Where(a => a.ArticleId == id)
+                .Select(a => new Article
+                {
+                    ArticleId = a.ArticleId,
+                    Reference = a.Reference,
+                    Nom = a.Nom,
+                    Description = a.Description,
+                    Prix = a.Prix,
+                    Poids = a.Poids,
+                    QteStock = a.QteStock,
+                    Annee = a.Annee,
+                    DispoEnLigne = a.DispoEnLigne,
+                    CategorieId = a.CategorieId,
 
-            if (velo == null)
+                    CategorieArticle = a.CategorieArticle == null ? null : new Categorie
+                    {
+                        CategorieId = a.CategorieArticle.CategorieId,
+                        Nom = a.CategorieArticle.Nom,
+                        Articles = null
+                    }
+                })
+                .FirstOrDefaultAsync();
+
+            if (article == null)
             {
                 return new NotFoundResult();
             }
 
-            return velo;
+            return article;
         }
 
         public async Task AddAsync(Article entity)
