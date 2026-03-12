@@ -13,6 +13,7 @@ namespace S401A2.Model.EntityFramework
         }
 
         public virtual DbSet<Article> Articles { get; set; } = null!;
+        public virtual DbSet<Categorie> Categories { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

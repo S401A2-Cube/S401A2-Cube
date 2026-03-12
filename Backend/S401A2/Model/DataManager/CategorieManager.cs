@@ -5,34 +5,34 @@ using S401A2.Models.Repository;
 
 namespace S401A2.Model.DataManager
 {
-    public class ArticleManager : IDataRepository<Article>
+    public class CategorieManager : IDataRepository<Categorie>
     {
         private readonly CubeDBContext? _context;
-        public ArticleManager() { }
+        public CategorieManager() { }
 
-        public ArticleManager(CubeDBContext context)
+        public CategorieManager(CubeDBContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<Article>>> GetAllAsync()
+        public async Task<ActionResult<IEnumerable<Categorie>>> GetAllAsync()
         {
             if (_context == null)
             {
                 return new NotFoundResult();
             }
 
-            return await _context.Articles.Include(a => a.CategorieArticle).ToListAsync();
+            return await _context.Categories.ToListAsync();
         }
 
-        public async Task<ActionResult<Article>> GetByIdAsync(int id)
+        public async Task<ActionResult<Categorie>> GetByIdAsync(int id)
         {
             if (_context == null)
             {
                 return new NotFoundResult();
             }
 
-            var velo = await _context.Articles.Include(a => a.CategorieArticle).FirstOrDefaultAsync(u => u.ArticleId == id);
+            var velo = await _context.Categories.FirstOrDefaultAsync(u => u.CategorieId == id);
 
             if (velo == null)
             {
@@ -42,11 +42,11 @@ namespace S401A2.Model.DataManager
             return velo;
         }
 
-        public async Task AddAsync(Article entity)
+        public async Task AddAsync(Categorie entity)
         {
             if (_context != null)
             {
-                await _context.Articles.AddAsync(entity);
+                await _context.Categories.AddAsync(entity);
                 await _context.SaveChangesAsync();
             }
             else
@@ -55,11 +55,11 @@ namespace S401A2.Model.DataManager
             }
         }
 
-        public async Task DeleteAsync(Article entity)
+        public async Task DeleteAsync(Categorie entity)
         {
             if (_context != null)
             {
-                _context.Articles.Remove(entity);
+                _context.Categories.Remove(entity);
                 await _context.SaveChangesAsync();
             }
             else
@@ -68,20 +68,13 @@ namespace S401A2.Model.DataManager
             }
         }
 
-        public Task UpdateAsync(Article entityToUpdate, Article entity)
+        public Task UpdateAsync(Categorie entityToUpdate, Categorie entity)
         {
             if (_context != null)
             {
                 entityToUpdate.Nom = entity.Nom;
-                entityToUpdate.Description = entity.Description;
-                entityToUpdate.Prix = entity.Prix;
-                entityToUpdate.Poids = entity.Poids;
-                entityToUpdate.QteStock = entity.QteStock;
-                entityToUpdate.Annee = entity.Annee;
-                entityToUpdate.DispoEnLigne = entity.DispoEnLigne;
-                // TODO: dont forget to update upcoming classes (categorie, model3d, ...)
 
-                _context.Articles.Update(entityToUpdate);
+                _context.Categories.Update(entityToUpdate);
                 return _context.SaveChangesAsync();
             }
             else
