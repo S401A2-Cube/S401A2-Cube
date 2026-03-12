@@ -16,7 +16,7 @@ builder.Services.AddDbContext<S401Context>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("LocalConnectionString")));
 
 builder.Services.AddScoped<IDataRepositoryVelo, VeloManager>();
-
+builder.Services.AddScoped<IDataRepositoryCommande, CommandeManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
