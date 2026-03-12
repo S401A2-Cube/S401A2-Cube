@@ -2,7 +2,7 @@
 using APICube.Models.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using static APICube.Models.Repository.IDataRepository;
+
 
 namespace APICube.Models.DataManager
 {
