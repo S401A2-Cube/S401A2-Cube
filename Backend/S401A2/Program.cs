@@ -28,6 +28,7 @@ namespace S401A2
 
             builder.Services.AddScoped<IDataRepository<Article>, ArticleManager>();
             builder.Services.AddScoped<IDataRepository<Categorie>, CategorieManager>();
+            builder.Services.AddScoped<IDataRepository<MotCle>, MotCleManager>();
 
             var app = builder.Build();
 

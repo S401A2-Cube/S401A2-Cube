@@ -22,6 +22,21 @@ namespace S401A2.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ArticleMotCle", b =>
+                {
+                    b.Property<int>("ArticlesArticleId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MotsClesMotCleId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ArticlesArticleId", "MotsClesMotCleId");
+
+                    b.HasIndex("MotsClesMotCleId");
+
+                    b.ToTable("t_j_article_motcle_amc", "public");
+                });
+
             modelBuilder.Entity("S401A2.Model.EntityFramework.Article", b =>
                 {
                     b.Property<int>("ArticleId")
@@ -100,6 +115,41 @@ namespace S401A2.Migrations
                     b.HasKey("CategorieId");
 
                     b.ToTable("t_e_categorie_cat", "public");
+                });
+
+            modelBuilder.Entity("S401A2.Model.EntityFramework.MotCle", b =>
+                {
+                    b.Property<int>("MotCleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("mcl_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MotCleId"));
+
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("mcl_nom");
+
+                    b.HasKey("MotCleId");
+
+                    b.ToTable("t_e_motcle_mcl", "public");
+                });
+
+            modelBuilder.Entity("ArticleMotCle", b =>
+                {
+                    b.HasOne("S401A2.Model.EntityFramework.Article", null)
+                        .WithMany()
+                        .HasForeignKey("ArticlesArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("S401A2.Model.EntityFramework.MotCle", null)
+                        .WithMany()
+                        .HasForeignKey("MotsClesMotCleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("S401A2.Model.EntityFramework.Article", b =>
