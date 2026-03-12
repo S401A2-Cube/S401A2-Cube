@@ -1,4 +1,4 @@
-﻿using APICube.Models.DTOs;
+using APICube.Models.DTOs;
 using APICube.Models.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,3 +15,4 @@ namespace APICube.Models.Repository
         Task<ActionResult<IEnumerable<Velo>>> GetByMillesimeID(int id);
     }
 }
+
