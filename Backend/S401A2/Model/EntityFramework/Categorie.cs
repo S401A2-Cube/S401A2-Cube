@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace S401A2.Model.EntityFramework
@@ -20,6 +21,7 @@ namespace S401A2.Model.EntityFramework
         public string Nom { get; set; } = null!;
 
         [InverseProperty(nameof(Article.CategorieArticle))]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] // omit when null
         public virtual ICollection<Article> Articles { get; set; } = new List<Article>();
     }
 }
