@@ -1,0 +1,73 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
+
+namespace S401A2.Model.EntityFramework
+{
+    [Table("t_e_article_art")]
+    [PrimaryKey(nameof(ArticleId))]
+    public partial class Article
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("art_id")]
+        public int ArticleId { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        [Column("art_reference")]
+        public string Reference { get; set; } = null!;
+
+        [Required]
+        [StringLength(100)]
+        [Column("art_nom")]
+        public string Nom { get; set; } = null!;
+
+        [Required]
+        [StringLength(2000)]
+        [Column("art_description")]
+        public string Description { get; set; } = null!;
+
+        [Column("art_prix")]
+        [Precision(5, 2)]
+        public decimal Prix { get; set; }
+
+        [Column("art_poids")]
+        [Precision(5, 2)]
+        public decimal Poids { get; set; }
+
+        [Column("art_qte_stock")]
+        [Range(0, 1000)]
+        public int QteStock { get; set; }
+
+        [Column("art_annee")]
+        [Range(1900, 3000)]
+        public int Annee { get; set; }
+
+        [Column("art_dispo_en_ligne")]
+        public bool DispoEnLigne { get; set; }
+
+        // TODO: Navigation towards other entities when they will be 
+
+        /*
+         * 
+         * (int) id article
+         * (string) reference
+         * (string) nom article
+         * (string) description
+         * (double) prix
+         * (double) poids
+         * (int) qte stock
+         * (int) annee
+         * (bool) dispo en ligne
+         * 
+         * (fk HAS ONE)  une categorie
+         * (fk HAS ONE)  model 3d 
+         * (fk HAS MANY) liste de mots cles
+         * (fk HAS MANY) liste articles similaires
+         * (fk HAS MANY) liste de photos
+         * 
+         */
+    }
+}
