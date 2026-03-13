@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace S401A2.Tests
+namespace S401A2.Controllers.Tests
 {
     [TestClass]
     public class ArticlesControllerTests
@@ -31,8 +31,8 @@ namespace S401A2.Tests
             // Arrange
             var mockArticles = new List<Article>
             {
-                new Article { ArticleId = 1, Nom = "Rubik's Cube 3x3", Reference = "R3X3" },
-                new Article { ArticleId = 2, Nom = "Rubik's Cube 4x4", Reference = "R4X4" }
+                new Article { ArticleId = 1, Nom = "TWO15", Reference = "TWO15RACE" },
+                new Article { ArticleId = 2, Nom = "TWO15", Reference = "TWO15PRO" }
             };
 
             _mockRepository.Setup(repo => repo.GetAllAsync())
@@ -45,7 +45,7 @@ namespace S401A2.Tests
             Assert.IsNotNull(actionResult);
             var resultList = actionResult.ToList();
             Assert.AreEqual(2, resultList.Count);
-            Assert.AreEqual("Rubik's Cube 3x3", resultList[0].Nom);
+            Assert.AreEqual("TWO15", resultList[0].Nom);
         }
 
         // GET: api/Articles/5
@@ -53,7 +53,7 @@ namespace S401A2.Tests
         public async Task GetArticle_ExistingId_ReturnsArticle()
         {
             // Arrange
-            var mockArticle = new Article { ArticleId = 1, Nom = "Rubik's Cube", Reference = "R3X3" };
+            var mockArticle = new Article { ArticleId = 1, Nom = "TWO15", Reference = "TWO15RACE" };
             _mockRepository.Setup(repo => repo.GetByIdAsync(1))
                            .ReturnsAsync(mockArticle);
 
@@ -84,7 +84,7 @@ namespace S401A2.Tests
         public async Task PostArticle_ValidModel_ReturnsCreatedAtAction()
         {
             // Arrange
-            var newArticle = new Article { ArticleId = 10, Nom = "Megaminx", Reference = "MEGA" };
+            var newArticle = new Article { ArticleId = 10, Nom = "TWO18", Reference = "TWO16PRO" };
 
             // We simulate that AddAsync executes successfully (it returns Task, so we just setup a completed task)
             _mockRepository.Setup(repo => repo.AddAsync(newArticle))
@@ -104,7 +104,7 @@ namespace S401A2.Tests
         public async Task PostArticle_InvalidModel_ReturnsBadRequest()
         {
             // Arrange
-            var newArticle = new Article { Nom = "Incomplete Cube" };
+            var newArticle = new Article { Nom = "Incomplete bike" };
             _controller.ModelState.AddModelError("Reference", "Reference is required");
 
             // Act
@@ -119,7 +119,7 @@ namespace S401A2.Tests
         public async Task PutArticle_IdMismatch_ReturnsBadRequest()
         {
             // Arrange
-            var articleModifie = new Article { ArticleId = 2, Nom = "Pyraminx" };
+            var articleModifie = new Article { ArticleId = 2, Nom = "TWO15" };
 
             // Act
             // Passing ID 1 in the URL, but the object has ID 2
@@ -133,7 +133,7 @@ namespace S401A2.Tests
         public async Task PutArticle_UnknownId_ReturnsNotFound()
         {
             // Arrange
-            var articleModifie = new Article { ArticleId = 1, Nom = "Pyraminx" };
+            var articleModifie = new Article { ArticleId = 1, Nom = "TWO15" };
             _mockRepository.Setup(repo => repo.GetByIdAsync(1))
                            .ReturnsAsync((Article)null);
 
