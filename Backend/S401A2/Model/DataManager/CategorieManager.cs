@@ -15,11 +15,11 @@ namespace S401A2.Model.DataManager
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<Categorie>>> GetAllAsync()
+        public async Task<IEnumerable<Categorie?>> GetAllAsync()
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var categories = await _context.Categories
@@ -50,11 +50,11 @@ namespace S401A2.Model.DataManager
 
         }
 
-        public async Task<ActionResult<Categorie>> GetByIdAsync(int id)
+        public async Task<Categorie> GetByIdAsync(int id)
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var categorie = await _context.Categories
@@ -84,7 +84,7 @@ namespace S401A2.Model.DataManager
 
             if (categorie == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             return categorie;
