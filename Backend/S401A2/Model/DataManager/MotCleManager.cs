@@ -15,11 +15,11 @@ namespace S401A2.Model.DataManager
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<MotCle>>> GetAllAsync()
+        public async Task<IEnumerable<MotCle?>> GetAllAsync()
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var motCles = await _context.MotCles
@@ -54,11 +54,11 @@ namespace S401A2.Model.DataManager
             return motCles;
         }
 
-        public async Task<ActionResult<MotCle>> GetByIdAsync(int id)
+        public async Task<MotCle?> GetByIdAsync(int id)
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var motCle = await _context.MotCles
@@ -94,7 +94,7 @@ namespace S401A2.Model.DataManager
 
             if (motCle == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             return motCle;

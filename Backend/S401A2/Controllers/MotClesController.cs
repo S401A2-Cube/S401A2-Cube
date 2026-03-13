@@ -26,7 +26,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<MotCle>>> GetMotCles()
+        public async Task<IEnumerable<MotCle?>> GetMotCles()
         {
             return await _repository.GetAllAsync();
         }
@@ -68,12 +68,12 @@ namespace S401A2.Controllers
             }
 
             var MotCleToUpdate = await _repository.GetByIdAsync(id);
-            if (MotCleToUpdate == null || MotCleToUpdate.Value == null)
+            if (MotCleToUpdate == null || MotCleToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(MotCleToUpdate.Value, motCle);
+            await _repository.UpdateAsync(MotCleToUpdate, motCle);
 
             return NoContent();
         }
@@ -107,7 +107,7 @@ namespace S401A2.Controllers
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(motCle.Value);
+            await _repository.DeleteAsync(motCle);
 
             return NoContent();
         }
