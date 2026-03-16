@@ -2,10 +2,16 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
+using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
 namespace S401A2.Model.EntityFramework
 {
+    [Index(nameof(ArticleId))]
+    [Index(nameof(Reference))]
+    [Index(nameof(Prix))]
+    [Index(nameof(DispoEnLigne))]
+    [Index(nameof(CategorieId))]
     [Table("t_e_article_art")]
     [PrimaryKey(nameof(ArticleId))]
     public partial class Article
@@ -59,6 +65,9 @@ namespace S401A2.Model.EntityFramework
 
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public virtual ICollection<MotCle>? MotsCles { get; set; } = new List<MotCle>();
+
+        [InverseProperty(nameof(LignePanier.ArticleLignePanier))]
+        public virtual ICollection<LignePanier> ArticleLignePanier { get; set; } = new List<LignePanier>();
 
 
         // TODO: Navigation towards other entities when they will be 
