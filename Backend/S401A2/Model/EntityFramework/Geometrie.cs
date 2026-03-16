@@ -16,12 +16,13 @@ namespace S401A2.Model.EntityFramework
         public int IdGeometrie { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(100, ErrorMessage = "Le nom de la pièce ne peut pas dépasser 100 caractères")]
         [Column("geo_nom_piece")]
         public string NomPiece { get; set; } = null!;
 
         [Column("geo_taille_piece")]
-        public double TaillePiece { get; set; }
+        [Range(0.1, 100.0, ErrorMessage = "La taille de la pièce doit être comprise entre 0.1 et 100.0")]
+        public decimal TaillePiece { get; set; }
 
         [InverseProperty(nameof(Velo.Geometries))]
         public virtual ICollection<Velo> Velos { get; set; } = new List<Velo>();

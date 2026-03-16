@@ -33,6 +33,8 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<Velo>, VeloManager>();
             builder.Services.AddScoped<IDataRepository<Modele>, ModeleManager>();
             builder.Services.AddScoped<IDataRepository<Taille>, TailleManager>();
+            builder.Services.AddScoped<IDataRepository<Cadre>, CadreManager>();
+            builder.Services.AddScoped<IDataRepository<Geometrie>, GeometrieManager>();
 
             var app = builder.Build();
 
