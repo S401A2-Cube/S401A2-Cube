@@ -1,13 +1,36 @@
 <script setup>
+import { computed } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
+import NavBar from './components/navbar.vue';
+
+const route = useRoute()
 
 </script>
 
 <template>
-  <h1>Cube</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <header>
+    <NavBar />
+  </header>
+
+  <section>
+    <RouterView />
+  </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+</style>
