@@ -16,7 +16,7 @@ namespace S401A2.Model.EntityFramework
         public int IdTaille { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [RegularExpression(@"^(XS|S|M|L|XL|XXL)$")]
         [Column("tli_libelle")]
         public string LibelleTaille { get; set; } = null!;
 

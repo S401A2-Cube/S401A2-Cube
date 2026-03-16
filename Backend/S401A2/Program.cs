@@ -32,6 +32,7 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<MotCle>, MotCleManager>();
             builder.Services.AddScoped<IDataRepository<Velo>, VeloManager>();
             builder.Services.AddScoped<IDataRepository<Modele>, ModeleManager>();
+            builder.Services.AddScoped<IDataRepository<Taille>, TailleManager>();
 
             var app = builder.Build();
 
