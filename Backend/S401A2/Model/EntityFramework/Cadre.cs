@@ -16,11 +16,11 @@ namespace S401A2.Model.EntityFramework
         public int IdMateriau { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [RegularExpression(@"^(Aluminium|Carbone|Acier|Titane)$", ErrorMessage = "Le matériau doit être Aluminium, Carbone, Acier ou Titane")]
         [Column("cad_nom_mat")]
         public string NomMat { get; set; } = null!;
 
-        [StringLength(50)]
+        [RegularExpression(@"^(Wave|Diamant|Trapèze|VTT)$", ErrorMessage = "Le cadre doit être diamant, wave trapèze ou vtt")]
         [Column("cad_forme")]
         public string FormeCadre { get; set; }
 
