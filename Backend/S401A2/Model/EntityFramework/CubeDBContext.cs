@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
 namespace S401A2.Model.EntityFramework
@@ -15,6 +16,8 @@ namespace S401A2.Model.EntityFramework
         public virtual DbSet<Article> Articles { get; set; } = null!;
         public virtual DbSet<Categorie> Categories { get; set; } = null!;
         public virtual DbSet<MotCle> MotCles { get; set; } = null!;
+
+        public virtual DbSet<Commande> Commandes { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

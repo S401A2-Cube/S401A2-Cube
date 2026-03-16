@@ -40,7 +40,7 @@ namespace S401A2.Model.EntityFramework
         [Column("adr_pays")]
         public string Pays { get; set; } = null!;
 
-        [InverseProperty(nameof(Client.CiviliteClient))]
+        [InverseProperty(nameof(Client.AdresseClient))]
         public virtual ICollection<Client> AdresseClient { get; set; } = new List<Client>();
 
         [InverseProperty(nameof(Commande.AdresseCommandeLivr))]
