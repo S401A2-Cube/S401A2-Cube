@@ -69,6 +69,10 @@ namespace S401A2.Model.EntityFramework
         [InverseProperty(nameof(LignePanier.ArticleLignePanier))]
         public virtual ICollection<LignePanier> ArticleLignePanier { get; set; } = new List<LignePanier>();
 
+        [InverseProperty(nameof(Commande.ArticleCommande))]
+        public virtual Commande ArticleCommande { get; set; } = null!;
+
+
 
         // TODO: Navigation towards other entities when they will be 
 

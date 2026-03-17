@@ -43,6 +43,9 @@ public partial class Commande
     [ForeignKey(nameof(ClientId))]
     [InverseProperty(nameof(Client.ClientCommande))]
     public virtual Client ClientCommande { get; set; } = null!;
+
+    [InverseProperty(nameof(Article.ArticleCommande))]
+    public virtual ICollection<Article> ArticleCommande { get; set; } = new List<Article>();
 }
 /*     (pk) commandeId int
  *     modelivraison string
