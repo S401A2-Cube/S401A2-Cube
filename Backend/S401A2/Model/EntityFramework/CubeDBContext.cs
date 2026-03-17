@@ -14,9 +14,7 @@ namespace S401A2.Model.EntityFramework
         {
         }
 
-        public virtual DbSet<Adresse> 
-        
-        { get; set; } = null!;
+        public virtual DbSet<Adresse> { get; set; } = null!;
         public virtual DbSet<Article> Articles { get; set; } = null!;
         public virtual DbSet<Cadre> Cadres { get; set; } = null!;
         public virtual DbSet<Categorie> Categories { get; set; } = null!;
