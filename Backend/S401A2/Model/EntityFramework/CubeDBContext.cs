@@ -16,6 +16,7 @@ namespace S401A2.Model.EntityFramework
         public virtual DbSet<Article> Articles { get; set; } = null!;
         public virtual DbSet<Categorie> Categories { get; set; } = null!;
         public virtual DbSet<MotCle> MotCles { get; set; } = null!;
+        public virtual DbSet<Client> Clients { get; set; } = null!;
 
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
 

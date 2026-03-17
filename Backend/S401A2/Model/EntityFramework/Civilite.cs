@@ -5,9 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
 namespace APICube.Models.EntityFramework;
-[Index(nameof(Id))]
-[Table("t_e_civilite_civ")]
 [Index(nameof(Id), Name = "civilite_pk", IsUnique = true)]
+[Table("t_e_civilite_civ")]
 public partial class Civilite
 {
     [Key]
