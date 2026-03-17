@@ -35,6 +35,8 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<Taille>, TailleManager>();
             builder.Services.AddScoped<IDataRepository<Cadre>, CadreManager>();
             builder.Services.AddScoped<IDataRepository<Geometrie>, GeometrieManager>();
+            builder.Services.AddScoped<IDataRepository<Commande>, CommandeManager>();
+            builder.Services.AddScoped<IDataRepository<Client>, ClientManager>();
 
             var app = builder.Build();
 
