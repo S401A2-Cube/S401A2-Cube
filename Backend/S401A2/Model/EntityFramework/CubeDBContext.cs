@@ -20,6 +20,13 @@ namespace S401A2.Model.EntityFramework
 
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
 
+        public virtual DbSet<Velo> Velos { get; set; } = null!;
+        public virtual DbSet<Modele> Modeles { get; set; } = null!;
+        public virtual DbSet<Taille> Tailles { get; set; } = null!;
+
+        public virtual DbSet<Cadre> Cadres { get; set; } = null!;
+        public virtual DbSet<Geometrie> Geometries { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
