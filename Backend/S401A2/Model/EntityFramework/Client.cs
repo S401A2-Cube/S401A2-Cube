@@ -45,7 +45,7 @@ public partial class Client
 
     [Required]
     [Column("client_datenaissance")]
-    public DateOnly? DateNaissance { get; set; }
+    public DateTime? DateNaissance { get; set; }
 
     [Required]
     [Range(0, 5)]
