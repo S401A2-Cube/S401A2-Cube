@@ -15,9 +15,9 @@ namespace S401A2.Model.DataManager
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<Modele>>> GetAllAsync()
+        public async Task<IEnumerable<Modele>> GetAllAsync()
         {
-            if (_context == null) return new NotFoundResult();
+            if (_context == null) return null;
 
             return await _context.Modeles
                 .AsNoTracking()
@@ -30,9 +30,9 @@ namespace S401A2.Model.DataManager
                 .ToListAsync();
         }
 
-        public async Task<ActionResult<Modele>> GetByIdAsync(int id)
+        public async Task<Modele> GetByIdAsync(int id)
         {
-            if (_context == null) return new NotFoundResult();
+            if (_context == null) return null;
 
             var modele = await _context.Modeles
                 .AsNoTracking()
@@ -45,7 +45,7 @@ namespace S401A2.Model.DataManager
                 })
                 .FirstOrDefaultAsync();
 
-            if (modele == null) return new NotFoundResult();
+            if (modele == null) return null;
 
             return modele;
         }

@@ -26,7 +26,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Velo>>> GetVelos()
+        public async Task<IEnumerable<Velo>> GetVelos()
         {
             return await _repository.GetAllAsync();
         }
@@ -68,12 +68,12 @@ namespace S401A2.Controllers
             }
 
             var veloToUpdate = await _repository.GetByIdAsync(id);
-            if (veloToUpdate == null || veloToUpdate.Value == null)
+            if (veloToUpdate == null || veloToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(veloToUpdate.Value, velo);
+            await _repository.UpdateAsync(veloToUpdate, velo);
 
             return NoContent();
         }
@@ -107,7 +107,7 @@ namespace S401A2.Controllers
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(velo.Value);
+            await _repository.DeleteAsync(velo);
 
             return NoContent();
         }

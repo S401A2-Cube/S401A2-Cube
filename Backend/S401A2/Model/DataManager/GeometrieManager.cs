@@ -15,9 +15,9 @@ namespace S401A2.Model.DataManager
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<Geometrie>>> GetAllAsync()
+        public async Task<IEnumerable<Geometrie>> GetAllAsync()
         {
-            if (_context == null) return new NotFoundResult();
+            if (_context == null) return null;
 
             return await _context.Geometries
                 .AsNoTracking()
@@ -31,9 +31,9 @@ namespace S401A2.Model.DataManager
                 .ToListAsync();
         }
 
-        public async Task<ActionResult<Geometrie>> GetByIdAsync(int id)
+        public async Task<Geometrie> GetByIdAsync(int id)
         {
-            if (_context == null) return new NotFoundResult();
+            if (_context == null) return null;
 
             var geometrie = await _context.Geometries
                 .AsNoTracking()
@@ -47,7 +47,7 @@ namespace S401A2.Model.DataManager
                 })
                 .FirstOrDefaultAsync();
 
-            if (geometrie == null) return new NotFoundResult();
+            if (geometrie == null) return null;
 
             return geometrie;
         }

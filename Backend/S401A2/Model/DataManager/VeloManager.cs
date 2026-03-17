@@ -16,11 +16,11 @@ namespace S401A2.Model.DataManager
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<Velo>>> GetAllAsync()
+        public async Task<IEnumerable<Velo>> GetAllAsync()
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var Velos = await _context.Velos
@@ -75,11 +75,11 @@ namespace S401A2.Model.DataManager
             return Velos;
         }
 
-        public async Task<ActionResult<Velo>> GetByIdAsync(int id)
+        public async Task<Velo> GetByIdAsync(int id)
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var Velo = await _context.Velos
@@ -134,7 +134,7 @@ namespace S401A2.Model.DataManager
 
             if (Velo == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             return Velo;
