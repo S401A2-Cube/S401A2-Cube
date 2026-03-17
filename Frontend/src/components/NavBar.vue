@@ -118,6 +118,9 @@ var selected = ref(null);
                     :name="item.name" 
                     :categories="item.cats"
                 />
+                <router-link to="/Article">
+                    <img src="../img/loupe.png" width="40" height="40" alt="loupe" @click="console.log('test')">
+                </router-link>
             </div>
             <!-- Gap -->
             <div class="navbar_right">
