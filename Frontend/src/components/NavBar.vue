@@ -154,13 +154,13 @@ var selected = ref(null);
     position: absolute;
     left: 0;
     width: 100vw;
-    bottom: calc(20vh + 80px);
+    bottom: calc(30vh + 30px);
+    cursor: pointer;
 }
 
 .navbar_close_btn > * {
     padding: 0;
     margin: 0;
-    cursor: pointer;
 }
 
 img {

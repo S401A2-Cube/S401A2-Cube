@@ -7,7 +7,7 @@
     <main>
         <div id="home_center">
             <p class="title">EXPLORE THE UNKNOWN</p>
-            <p>GRAVEL OR E-GRAVEL. GO FARTHER.</p>
+            <p class="subtitle">GRAVEL OR E-GRAVEL. GO FARTHER.</p>
             <div class="hsplit">
                 <a class="link">DISCOVER THE NUROAD SERIES</a>
                 <a class="link">DISCOVER THE NUROAD HYBRID SERIES</a>
@@ -50,7 +50,6 @@
         </div>
     </main>
 </template>
-
 <style scoped>
     main {
         width: 100vw;
@@ -60,27 +59,45 @@
         align-items: center;
         overflow: hidden;
     }
+    
     .link {
         border-bottom: 1px solid black;
         cursor: pointer;
-    }
-    .subtitle {
-        font-size: 1.2rem;
+        text-decoration: none;
         font-weight: bold;
+        text-transform: uppercase;
+        width: auto;
     }
+    
+    .subtitle {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1.1;
+        text-align: center;
+    }
+    
     .title {
-        font-size: 2.5em;
-        font-weight: bolder;
+        font-weight: 900;
+        font-size: clamp(3.5rem, 8vw, 8rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
     }
+    
     .center {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        gap: 1rem;
     }
     
     #home_center {
         width: 70vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     #discover_section {

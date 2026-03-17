@@ -43,11 +43,12 @@ var selectedCategory = ref(null);
 }
 
 .submenu {
+    box-shadow: 0px 20px 20px 0px #00000022;
     position: absolute;
     top: 80px;
     left: 0;
     width: 100vw;
-    height: calc(80vh - 80px);
+    height: calc(70vh - 80px);
     background-color: white;
 
     display: flex;
