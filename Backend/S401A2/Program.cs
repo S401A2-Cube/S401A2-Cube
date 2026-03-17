@@ -1,3 +1,4 @@
+using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using S401A2.Model.DataManager;
 using S401A2.Model.EntityFramework;
@@ -29,6 +30,13 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<Article>, ArticleManager>();
             builder.Services.AddScoped<IDataRepository<Categorie>, CategorieManager>();
             builder.Services.AddScoped<IDataRepository<MotCle>, MotCleManager>();
+            builder.Services.AddScoped<IDataRepository<Velo>, VeloManager>();
+            builder.Services.AddScoped<IDataRepository<Modele>, ModeleManager>();
+            builder.Services.AddScoped<IDataRepository<Taille>, TailleManager>();
+            builder.Services.AddScoped<IDataRepository<Cadre>, CadreManager>();
+            builder.Services.AddScoped<IDataRepository<Geometrie>, GeometrieManager>();
+            builder.Services.AddScoped<IDataRepository<Commande>, CommandeManager>();
+            builder.Services.AddScoped<IDataRepository<Client>, ClientManager>();
 
             var app = builder.Build();
 

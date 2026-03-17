@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,13 +14,24 @@ namespace S401A2.Model.EntityFramework
         {
         }
 
+        public virtual DbSet<Adresse> 
+        
+        { get; set; } = null!;
         public virtual DbSet<Article> Articles { get; set; } = null!;
+        public virtual DbSet<Cadre> Cadres { get; set; } = null!;
         public virtual DbSet<Categorie> Categories { get; set; } = null!;
-        public virtual DbSet<MotCle> MotCles { get; set; } = null!;
+        public virtual DbSet<Civilite> Civilites { get; set; } = null!;
         public virtual DbSet<Client> Clients { get; set; } = null!;
         public virtual DbSet<Adresse> Adresses { get; set; } = null!;
 
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
+        public virtual DbSet<Couleur> Couleurs { get; set; } = null!;
+        public virtual DbSet<Geometrie> Geometries { get; set; } = null!;
+        public virtual DbSet<LignePanier> LignePaniers { get; set; } = null!;
+        public virtual DbSet<Modele> Modeles { get; set; } = null!;
+        public virtual DbSet<MotCle> MotCles { get; set; } = null!;
+        public virtual DbSet<Taille> Tailles { get; set; } = null!;
+        public virtual DbSet<Velo> Velos { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
