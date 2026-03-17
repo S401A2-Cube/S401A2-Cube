@@ -18,6 +18,8 @@ namespace S401A2.Model.EntityFramework
         public virtual DbSet<MotCle> MotCles { get; set; } = null!;
         public virtual DbSet<Client> Clients { get; set; } = null!;
 
+        public virtual DbSet<Commande> Commandes { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

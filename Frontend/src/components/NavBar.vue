@@ -1,0 +1,169 @@
+
+<script setup>
+import { ref } from 'vue'
+
+import NavSubMenu from './NavSubMenu.vue';
+
+const BikesCategories = {
+    "Mountainbike":  ["Vue d'ensemble", "Hardtail", "Fullsuspension"],
+    "Road": ["Vue d'ensemble", "Road race", "Cyclocross", "Triathlon & time trial"],
+    "Gravel": ["Vue d'ensemble", "Nuroad", "Cross race", "Nulane"],
+    "Trekking": ["Vue d'ensemble", "Tour", "City", "Variantes de cadres"]
+};
+
+const EBikesCategories = {
+    "Mountainbike":  ["Vue d'ensemble", "Hardtail", "Fullsuspension"],
+    "Trekking": ["Vue d'ensemble", "Tour", "City", "S-Pedelec", "Compact & folding", "Variantes de cadres"],
+    "Gravel": ["Vue d'ensemble", "Nuroad hybrid", "Nulane hybrid"],
+    "Transport": ["Vue d'ensemble", "Trike hybrid", "Cargo Hybrid", "Guide"],
+    "Technology": ["Bosch"]
+};
+
+const EnfantsCategories = {
+
+    "EN FONCTION DE LA TAILLE DU CORPS": [
+        "À PARTIR DE 85CM",
+        "À PARTIR DE 97CM",
+        "À PARTIR DE 107CM",
+        "À PARTIR DE 111CM",
+        "À PARTIR DE 118CM",
+        "À PARTIR DE 124CM",
+        "À PARTIR DE 130CM"
+    ],
+    "SELON L’ÂGE": [
+        "1.5-3 YEARS",
+        "3 à 4 ANS",
+        "3 à 5 ANS",
+        "5 à 7 ANS",
+        "7 à 9 ANS",
+        "9 à 11 ANS",
+        "À PARTIR DE 10 ANS"
+    ],
+    "SELON LA TAILLE DE LA DRAISIENNE": [
+        "12\'\'",
+        "14\'\'",
+        "16\'\'",
+        "18\'\'",
+        "20\'\'",
+        "24\'\'",
+        "26\'\'",
+        "27.5\'\'",
+        "29\'\'"
+    ],
+
+    "SELON LA SÉRIE": [
+        "NUMOVE",
+        "ARUBA",
+        "ACID",
+        "REACTION",
+        "ELITE",
+        "PHENIX",
+        "STEREO",
+        "NUROAD",
+        "FLYING CIRCUS"
+    ],
+    "E-BIKES": [
+        "VUE D'ENSEMBLE",
+        "ACID 240 HYBRID ROOKIE"
+    ],
+    "GUIDE": [
+
+    ],
+    "GEAR": [
+        "CASQUES",
+        "HABILLEMENT",
+        "CASQUETTES & BASIQUES",
+        "GANTS",
+        "CHAUSSURES",
+        "SACS À DOS",
+    ],
+    "EQUIPMENT": [
+        "GARDE-BOUE",
+        "PORTE-BAGAGES",
+        "BÉQUILLES",
+        "SELLES",
+        "POIGNÉES",
+        "PÉDALES",
+        "POTENCES",
+        "CINTRES",
+        "PÉDALIERS",
+        "PNEUS",
+    ]
+}
+
+const menuItems = [
+  { name: 'Bike', cats: BikesCategories },
+  { name: 'E-Bike', cats: EBikesCategories },
+  { name: 'Enfants', cats: EnfantsCategories },
+//   { name: 'Gear', cats: EBikesCategories },
+//   { name: 'Equipement', cats: BikesCategories },
+//   { name: 'Cube World', cats: EBikesCategories }
+];
+
+var selected = ref(null);
+
+</script>
+
+<template>
+    <div id="navbar">
+        <div>
+            <div class="navbar_left">
+
+                <img src="/logo.svg" width="100" height="80" alt="Logo" />
+                <NavSubMenu
+                    v-for="item in menuItems" 
+                    :key="item.name"
+                    @click="selected = item.name" 
+                    :opened="selected === item.name" 
+                    :name="item.name" 
+                    :categories="item.cats"
+                />
+            </div>
+            <!-- Gap -->
+            <div class="navbar_right">
+                <!-- Revendeur -->
+                <!-- Search -->
+            </div>
+        </div>
+
+        <div @click="selected=null" v-if="selected!=null" class="navbar_close_btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <p>Fermer</p>
+        </div>
+    </div>
+
+</template>
+
+<style scoped>
+#navbar {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    gap: 1rem;
+    height: 80px;
+    align-items: center;
+}
+
+.navbar_left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navbar_close_btn {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    bottom: calc(20vh + 80px);
+}
+
+.navbar_close_btn > * {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+img {
+    background-position: center;
+}
+</style>
