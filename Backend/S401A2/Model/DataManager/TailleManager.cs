@@ -16,11 +16,11 @@ namespace S401A2.Model.DataManager
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<ActionResult<IEnumerable<Taille>>> GetAllAsync()
+        public async Task<IEnumerable<Taille>> GetAllAsync()
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var Tailles = await _context.Tailles
@@ -37,11 +37,11 @@ namespace S401A2.Model.DataManager
             return Tailles;
         }
 
-        public async Task<ActionResult<Taille>> GetByIdAsync(int id)
+        public async Task<Taille> GetByIdAsync(int id)
         {
             if (_context == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             var Taille = await _context.Tailles
@@ -58,7 +58,7 @@ namespace S401A2.Model.DataManager
 
             if (Taille == null)
             {
-                return new NotFoundResult();
+                return null;
             }
 
             return Taille;
