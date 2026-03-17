@@ -14,12 +14,13 @@ namespace S401A2.Model.EntityFramework
         {
         }
 
-        public virtual DbSet<Adresse> Adresses { get; set; } = null!;
         public virtual DbSet<Article> Articles { get; set; } = null!;
         public virtual DbSet<Cadre> Cadres { get; set; } = null!;
         public virtual DbSet<Categorie> Categories { get; set; } = null!;
         public virtual DbSet<Civilite> Civilites { get; set; } = null!;
         public virtual DbSet<Client> Clients { get; set; } = null!;
+        public virtual DbSet<Adresse> Adresses { get; set; } = null!;
+
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
         public virtual DbSet<Couleur> Couleurs { get; set; } = null!;
         public virtual DbSet<Geometrie> Geometries { get; set; } = null!;
