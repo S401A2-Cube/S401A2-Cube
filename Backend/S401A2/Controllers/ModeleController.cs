@@ -25,7 +25,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Modele>>> GetModeles()
+        public async Task<IEnumerable<Modele>> GetModeles()
         {
             return await _repository.GetAllAsync();
         }
@@ -67,12 +67,12 @@ namespace S401A2.Controllers
             }
 
             var modeleToUpdate = await _repository.GetByIdAsync(id);
-            if (modeleToUpdate == null || modeleToUpdate.Value == null)
+            if (modeleToUpdate == null || modeleToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(modeleToUpdate.Value, modele);
+            await _repository.UpdateAsync(modeleToUpdate, modele);
 
             return NoContent();
         }
@@ -106,7 +106,7 @@ namespace S401A2.Controllers
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(modele.Value);
+            await _repository.DeleteAsync(modele);
 
             return NoContent();
         }

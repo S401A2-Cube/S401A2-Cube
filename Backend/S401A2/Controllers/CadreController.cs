@@ -1,12 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using S401A2.Model.EntityFramework;
 using S401A2.Models.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace S401A2.Controllers
 {
@@ -25,7 +19,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Cadre>>> GetCadres()
+        public async Task<IEnumerable<Cadre>> GetCadres()
         {
             return await _repository.GetAllAsync();
         }
@@ -67,12 +61,12 @@ namespace S401A2.Controllers
             }
 
             var cadreToUpdate = await _repository.GetByIdAsync(id);
-            if (cadreToUpdate == null || cadreToUpdate.Value == null)
+            if (cadreToUpdate == null || cadreToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(cadreToUpdate.Value, cadre);
+            await _repository.UpdateAsync(cadreToUpdate, cadre);
 
             return NoContent();
         }
@@ -106,7 +100,7 @@ namespace S401A2.Controllers
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(cadre.Value);
+            await _repository.DeleteAsync(cadre);
 
             return NoContent();
         }

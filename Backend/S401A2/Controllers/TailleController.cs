@@ -25,7 +25,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Taille>>> GetTailles()
+        public async Task<IEnumerable<Taille>> GetTailles()
         {
             return await _repository.GetAllAsync();
         }
@@ -67,12 +67,12 @@ namespace S401A2.Controllers
             }
 
             var TailleToUpdate = await _repository.GetByIdAsync(id);
-            if (TailleToUpdate == null || TailleToUpdate.Value == null)
+            if (TailleToUpdate == null || TailleToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(TailleToUpdate.Value, Taille);
+            await _repository.UpdateAsync(TailleToUpdate, Taille);
 
             return NoContent();
         }
@@ -106,7 +106,7 @@ namespace S401A2.Controllers
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(Taille.Value);
+            await _repository.DeleteAsync(Taille);
 
             return NoContent();
         }

@@ -25,7 +25,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Cadre>>> GetGeometries()
+        public async Task<IEnumerable<Cadre>> GetGeometries()
         {
             return await _repository.GetAllAsync();
         }
@@ -67,12 +67,12 @@ namespace S401A2.Controllers
             }
 
             var cadreToUpdate = await _repository.GetByIdAsync(id);
-            if (cadreToUpdate == null || cadreToUpdate.Value == null)
+            if (cadreToUpdate == null || cadreToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(cadreToUpdate.Value, cadre);
+            await _repository.UpdateAsync(cadreToUpdate, cadre);
 
             return NoContent();
         }
@@ -106,7 +106,7 @@ namespace S401A2.Controllers
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(cadre.Value);
+            await _repository.DeleteAsync(cadre);
 
             return NoContent();
         }
