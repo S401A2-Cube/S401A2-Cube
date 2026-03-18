@@ -14,9 +14,9 @@ namespace S401A2.Controllers
     [ApiController]
     public class GeometriesController : ControllerBase
     {
-        private readonly IDataRepository<Cadre> _repository;
+        private readonly IDataRepository<Geometrie> _repository;
 
-        public GeometriesController(IDataRepository<Cadre> dataRepository)
+        public GeometriesController(IDataRepository<Geometrie> dataRepository)
         {
             _repository = dataRepository ?? throw new ArgumentNullException(nameof(dataRepository));
         }
@@ -25,7 +25,7 @@ namespace S401A2.Controllers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IEnumerable<Cadre>> GetGeometries()
+        public async Task<IEnumerable<Geometrie>> GetGeometries()
         {
             return await _repository.GetAllAsync();
         }
@@ -36,16 +36,16 @@ namespace S401A2.Controllers
         [ActionName("GetById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Cadre>> GetCadre(int id)
+        public async Task<ActionResult<Geometrie>> GetGeometrie(int id)
         {
-            var cadre = await _repository.GetByIdAsync(id);
+            var geometrie = await _repository.GetByIdAsync(id);
 
-            if (cadre == null)
+            if (geometrie == null)
             {
                 return NotFound();
             }
 
-            return cadre;
+            return geometrie;
         }
 
         // PUT: api/Geometries/5
@@ -54,9 +54,9 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PutCadre(int id, Cadre cadre)
+        public async Task<IActionResult> PutGeometrie(int id, Geometrie geometrie)
         {
-            if (id != cadre.IdMateriau)
+            if (id != geometrie.IdGeometrie)
             {
                 return BadRequest();
             }
@@ -66,13 +66,13 @@ namespace S401A2.Controllers
                 return BadRequest(ModelState);
             }
 
-            var cadreToUpdate = await _repository.GetByIdAsync(id);
-            if (cadreToUpdate == null || cadreToUpdate == null)
+            var geometrieToUpdate = await _repository.GetByIdAsync(id);
+            if (geometrieToUpdate == null || geometrieToUpdate == null)
             {
                 return NotFound();
             }
 
-            await _repository.UpdateAsync(cadreToUpdate, cadre);
+            await _repository.UpdateAsync(geometrieToUpdate, geometrie);
 
             return NoContent();
         }
@@ -82,31 +82,31 @@ namespace S401A2.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Cadre>> PostCadre(Cadre cadre)
+        public async Task<ActionResult<Geometrie>> PostGeometrie(Geometrie geometrie)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            await _repository.AddAsync(cadre);
+            await _repository.AddAsync(geometrie);
 
-            return CreatedAtAction("GetCadre", new { id = cadre.IdMateriau }, cadre);
+            return CreatedAtAction("GetGeometrie", new { id = geometrie.IdGeometrie }, geometrie);
         }
 
         // DELETE: api/Geometries/5
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteCadre(int id)
+        public async Task<IActionResult> DeleteGeometrie(int id)
         {
-            var cadre = await _repository.GetByIdAsync(id);
-            if (cadre == null)
+            var geometrie = await _repository.GetByIdAsync(id);
+            if (geometrie == null)
             {
                 return NotFound();
             }
 
-            await _repository.DeleteAsync(cadre);
+            await _repository.DeleteAsync(geometrie);
 
             return NoContent();
         }
