@@ -20,15 +20,10 @@ jobs:
           username: ${{ secrets.ALWAYSDATA_SSH_USER }}
           password: ${{ secrets.ALWAYSDATA_SSH_PASSWORD }}
           script: |
-            source ~/.bashrc
-            export DOTNET_ROOT=$HOME/.dotnet
-            export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
-            
+            export DOTNET_ROOT=/usr/alwaysdata/dotnet/8.0.23
+            export PATH="$DOTNET_ROOT:$HOME/.dotnet/tools:$PATH"
             cd $HOME/www/
-            
             git fetch origin main
             git reset --hard origin/main
-            
             cd Backend/
-            
             dotnet ef database update
