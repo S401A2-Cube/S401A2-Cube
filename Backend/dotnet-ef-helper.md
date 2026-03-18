@@ -8,3 +8,7 @@ update database:
 
 generate script (optional):
 `dotnet-ef migrations script --project S401A2`
+
+
+install:
+`dotnet tool install --global dotnet-ef --version 8.0.11`

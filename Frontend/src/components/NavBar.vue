@@ -3,6 +3,7 @@
 import { ref } from 'vue'
 
 import NavSubMenu from './NavSubMenu.vue';
+import '../assets/css/global.css';
 
 const BikesCategories = {
     "Mountainbike":  ["Vue d'ensemble", "Hardtail", "Fullsuspension"],
@@ -135,6 +136,12 @@ var selected = ref(null);
 </template>
 
 <style scoped>
+
+.nomDeMaClass {
+    background-color: red !important;
+}
+
+
 #navbar {
     width: 100vw;
     overflow: hidden;
@@ -142,25 +149,32 @@ var selected = ref(null);
     gap: 1rem;
     height: 80px;
     align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding-left: 2rem;
+    border-bottom: 1px solid lightgray;
 }
 
 .navbar_left {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .navbar_close_btn {
-    position: absolute;
+    position: fixed;
     left: 0;
     width: 100vw;
-    bottom: calc(20vh + 80px);
+    bottom: calc(30vh + 30px);
+    cursor: pointer;
 }
 
 .navbar_close_btn > * {
     padding: 0;
     margin: 0;
-    cursor: pointer;
 }
 
 img {

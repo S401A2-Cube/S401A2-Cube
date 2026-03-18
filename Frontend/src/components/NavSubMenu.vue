@@ -1,6 +1,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import '../assets/css/global.css';
 
 const props = defineProps({
   name: {
@@ -24,7 +25,7 @@ var selectedCategory = ref(null);
 
         <div v-if="opened" class="submenu">
             <div class="submenu_title">
-                <p v-for="(v, k) in categories" :key="k" @mouseenter="selectedCategory = v" class="submenu_title_text">{{ k }}</p>
+                <p v-for="(v, k) in categories" :key="k" @mouseenter="selectedCategory = v" class="submenu_title_text" :class="{submenu_title_text_selected: selectedCategory === v}">{{ k }}</p>
             </div>
             <div class="submenu_subcategories">
                 <p class="subcategories" v-for="c in selectedCategory">{{ c }}</p>
@@ -43,11 +44,12 @@ var selectedCategory = ref(null);
 }
 
 .submenu {
-    position: absolute;
+    box-shadow: 0px 20px 20px 0px #00000022;
+    position: fixed;
     top: 80px;
     left: 0;
     width: 100vw;
-    height: calc(80vh - 80px);
+    height: calc(70vh - 80px);
     background-color: white;
 
     display: flex;
