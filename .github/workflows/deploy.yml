@@ -24,6 +24,8 @@ jobs:
       - name: Generate SQL
         run: |
           cd Backend/S401A2
+          dotnet restore
+          dotnet build
           dotnet ef migrations script --idempotent --output ../../migration.sql
 
       - name: Copy SQL to Alwaysdata
