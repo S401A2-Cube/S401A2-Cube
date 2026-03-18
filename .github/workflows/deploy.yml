@@ -26,4 +26,5 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             cd Backend/S401A2
+            dotnet restore
             dotnet ef database update
