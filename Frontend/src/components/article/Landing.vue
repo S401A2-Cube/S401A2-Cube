@@ -1,4 +1,6 @@
 <script setup>
+import Model from './Model.vue';
+
 defineProps({
   article: { type: Object, required: true },
   velo: { type: Object, required: true }
@@ -33,9 +35,9 @@ defineProps({
         </div>
       </div>  
     </div>
-    
+        
     <div class="canvas-container" :data-360-src="velo.lienVue360">
-      <canvas></canvas>
+      <Model modelUrl="/models/bike-1.glb"></Model>
     </div>
   </section>
 </template>
