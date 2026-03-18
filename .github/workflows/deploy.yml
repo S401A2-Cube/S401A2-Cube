@@ -20,10 +20,19 @@ jobs:
           username: ${{ secrets.ALWAYSDATA_SSH_USER }}
           password: ${{ secrets.ALWAYSDATA_SSH_PASSWORD }}
           script: |
-            export PATH="$PATH:$HOME/.dotnet/tools"
+            - name: Execute Migration via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ALWAYSDATA_SSH_HOST }}
+          username: ${{ secrets.ALWAYSDATA_SSH_USER }}
+          password: ${{ secrets.ALWAYSDATA_SSH_PASSWORD }}
+          script: |
+            source ~/.bashrc
+            export DOTNET_ROOT=$HOME/.dotnet
+            export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
             
             cd $HOME/www/
-
+            
             git fetch origin main
             git reset --hard origin/main
             
