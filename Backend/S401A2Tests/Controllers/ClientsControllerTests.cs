@@ -26,9 +26,9 @@ namespace S401A2.Controllers.Tests
             _controller = new ClientsController(_mockRepository.Object);
         }
 
-        // GET: api/Articles
+        // GET: api/Clients
         [TestMethod]
-        public async Task GetArticles_ReturnsOkWithAllArticles()
+        public async Task GetClients_ReturnsOkWithAllArticles()
         {
             // Arrange
             var mockClient = new List<Client>
@@ -46,27 +46,20 @@ namespace S401A2.Controllers.Tests
             // Assert
             Assert.IsNotNull(actionResult);
 
-            // 1. On extrait le résultat HTTP (la réponse "Ok")
             var okResult = actionResult.Result as OkObjectResult;
             Assert.IsNotNull(okResult, "Le contrôleur devrait retourner un OkObjectResult");
 
-            // 2. On extrait la valeur contenue dans le "Ok" et on la cast en IEnumerable
             var clientsCollection = okResult.Value as IEnumerable<Client>;
             Assert.IsNotNull(clientsCollection, "La valeur retournée ne devrait pas être nulle");
 
-            // 3. Maintenant, on peut faire le ToList() !
             var resultList = clientsCollection.ToList();
-
             Assert.AreEqual(2, resultList.Count);
-
-            // ⚠️ ATTENTION : J'ai corrigé cette ligne. 
-            // Dans ton mock, le nom du premier client est "Personeni", pas "TWO15".
             Assert.AreEqual("Personeni", resultList[0].Nom);
         }
 
-        // GET: api/Articles/5
+        // GET: api/Clients/5
         [TestMethod]
-        public async Task GetArticle_ExistingId_ReturnsArticle()
+        public async Task GetClient_ExistingId_ReturnsArticle()
         {
             // Arrange
             var mockClient = new Client { Id = 1, Nom = "Personeni", Prenom = "Nathan", Email = "nathan.personeni@etu.univ-smb.fr", Mdp = "123456789", DateNaissance = (new DateTime(2006, 02, 20)), Role = 1 };
@@ -82,7 +75,7 @@ namespace S401A2.Controllers.Tests
         }
 
         [TestMethod]
-        public async Task GetArticle_UnknownId_ReturnsNotFound()
+        public async Task GetClient_UnknownId_ReturnsNotFound()
         {
             // Arrange
             _mockRepository.Setup(repo => repo.GetByIdAsync(99))
@@ -95,9 +88,9 @@ namespace S401A2.Controllers.Tests
             Assert.IsInstanceOfType(actionResult.Result, typeof(NotFoundResult), "Should return NotFound for unknown ID");
         }
 
-        // POST: api/Articles
+        // POST: api/Clients
         [TestMethod]
-        public async Task PostArticle_ValidModel_ReturnsCreatedAtAction()
+        public async Task PostClient_ValidModel_ReturnsCreatedAtAction()
         {
             // Arrange
             var newClient = new Client { Id = 1, Nom = "Personeni", Prenom = "Nathan", Email = "nathan.personeni@etu.univ-smb.fr", Mdp = "123456789", DateNaissance = (new DateTime(2006, 02, 20)), Role = 1 };
@@ -117,7 +110,7 @@ namespace S401A2.Controllers.Tests
         }
 
         [TestMethod]
-        public async Task PostArticle_InvalidModel_ReturnsBadRequest()
+        public async Task PostClient_InvalidModel_ReturnsBadRequest()
         {
             // Arrange
             var newClient = new Client { Nom = "Incomplete name" };
@@ -130,9 +123,9 @@ namespace S401A2.Controllers.Tests
             Assert.IsInstanceOfType(actionResult.Result, typeof(BadRequestObjectResult));
         }
 
-        // PUT: api/Articles/5
+        // PUT: api/Clients/5
         [TestMethod]
-        public async Task PutArticle_IdMismatch_ReturnsBadRequest()
+        public async Task PutClient_IdMismatch_ReturnsBadRequest()
         {
             // Arrange
             var clientModifie = new Client { Id = 2, Nom = "Personeni", Prenom = "Nathan", Email = "nathan.personeni@etu.univ-smb.fr", Mdp = "123456789", DateNaissance = (new DateTime(2006, 02, 20)), Role = 1 };
@@ -146,7 +139,7 @@ namespace S401A2.Controllers.Tests
         }
 
         [TestMethod]
-        public async Task PutArticle_UnknownId_ReturnsNotFound()
+        public async Task PutClient_UnknownId_ReturnsNotFound()
         {
             // Arrange
             var clientModifie = new Client { Id = 1, Nom = "Personeni", Prenom = "Nathan", Email = "nathan.personeni@etu.univ-smb.fr", Mdp = "123456789", DateNaissance = (new DateTime(2006, 02, 20)), Role = 1 };
@@ -161,7 +154,7 @@ namespace S401A2.Controllers.Tests
         }
 
         [TestMethod]
-        public async Task PutArticle_ValidUpdate_ReturnsNoContent()
+        public async Task PutClient_ValidUpdate_ReturnsNoContent()
         {
             // Arrange
             var existingClient = new Client { Id = 1, Nom = "Personeni", Prenom = "Nathan", Email = "nathan.personeni@etu.univ-smb.fr", Mdp = "123456789", DateNaissance = (new DateTime(2006, 02, 20)), Role = 1 };
@@ -180,9 +173,9 @@ namespace S401A2.Controllers.Tests
             Assert.IsInstanceOfType(actionResult, typeof(NoContentResult));
         }
 
-        // DELETE: api/Articles/5
+        // DELETE: api/Clients/5
         [TestMethod]
-        public async Task DeleteArticle_UnknownId_ReturnsNotFound()
+        public async Task DeleteClient_UnknownId_ReturnsNotFound()
         {
             // Arrange
             _mockRepository.Setup(repo => repo.GetByIdAsync(99))
@@ -196,7 +189,7 @@ namespace S401A2.Controllers.Tests
         }
 
         [TestMethod]
-        public async Task DeleteArticle_ValidId_ReturnsNoContent()
+        public async Task DeleteClient_ValidId_ReturnsNoContent()
         {
             // Arrange
             var existingClient = new Client { Id = 1, Nom = "Personeni", Prenom = "Nathan", Email = "nathan.personeni@etu.univ-smb.fr", Mdp = "123456789", DateNaissance = (new DateTime(2006, 02, 20)), Role = 1 };
