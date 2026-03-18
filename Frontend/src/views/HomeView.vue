@@ -8,9 +8,9 @@
         <div id="home_center">
             <p class="title">EXPLORE THE UNKNOWN</p>
             <p class="subtitle">GRAVEL OR E-GRAVEL. GO FARTHER.</p>
-            <div class="hsplit">
-                <a class="link">DISCOVER THE NUROAD SERIES</a>
-                <a class="link">DISCOVER THE NUROAD HYBRID SERIES</a>
+            <div class="hsplit center">
+                <a class="link fitcontent">DISCOVER THE NUROAD SERIES</a>
+                <a class="link fitcontent">DISCOVER THE NUROAD HYBRID SERIES</a>
             </div>
         </div>
     </main>
@@ -51,24 +51,6 @@
     </main>
 </template>
 <style scoped>
-    main {
-        width: 100vw;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-    
-    .link {
-        border-bottom: 1px solid black;
-        cursor: pointer;
-        text-decoration: none;
-        font-weight: bold;
-        text-transform: uppercase;
-        width: auto;
-    }
-    
     .subtitle {
         font-size: clamp(1.5rem, 3vw, 2.5rem);
         font-weight: 800;
@@ -105,36 +87,5 @@
         display: flex;
         flex-direction: column;
         gap: 4rem;
-    }
-    
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .hsplit {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
-        gap: 1rem;
-    }
-    
-    .hsplit > * {
-        width: 50%;
-    }
-    
-    .vsplit {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        gap: 1rem;
-    }
-
-    .vsplit > * {
-        height: 50%;
     }
 </style>

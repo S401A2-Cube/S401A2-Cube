@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import NavBar from './components/navbar.vue';
+import './assets/css/global.css';
 
 const route = useRoute()
 
@@ -18,13 +19,6 @@ const route = useRoute()
 </template>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
-  text-align: center;
-}
 
 nav {
   display: flex;
@@ -32,5 +26,13 @@ nav {
   flex-direction: row;
   gap: 1rem;
 }
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 
 </style>
