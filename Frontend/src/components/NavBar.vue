@@ -125,6 +125,9 @@ var selected = ref(null);
             <div class="navbar_right">
                 <!-- Revendeur -->
                 <!-- Search -->
+                <RouterLink to="/compte">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </RouterLink>
             </div>
         </div>
 
@@ -157,6 +160,14 @@ var selected = ref(null);
     padding-left: 2rem;
     border-bottom: 1px solid lightgray;
     z-index: 100;
+}
+
+#navbar > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding-right: 3rem;
 }
 
 .navbar_left {
