@@ -23,6 +23,28 @@ main {
     text-transform: uppercase;
 }
 
+.dynamic-link {
+    .link {
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: linear-gradient(currentColor 0 0) 
+          bottom left/
+          var(--underline-width, 0%) 0.1em
+          no-repeat;
+        color: #000;
+        display: inline-block;
+        padding: 0 .5em 0.2em;
+        text-decoration: none;
+        transition: background-size 0.5s;
+    }
+    
+    .link:hover {
+    --underline-width: 100%;
+    }
+}
+
 .hsplit {
     display: flex;
     flex-direction: row;

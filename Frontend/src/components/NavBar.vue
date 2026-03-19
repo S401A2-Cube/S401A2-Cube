@@ -21,7 +21,6 @@ const EBikesCategories = {
 };
 
 const EnfantsCategories = {
-
     "EN FONCTION DE LA TAILLE DU CORPS": [
         "À PARTIR DE 85CM",
         "À PARTIR DE 97CM",
@@ -110,7 +109,9 @@ var selected = ref(null);
         <div>
             <div class="navbar_left">
 
-                <img src="/logo.svg" width="100" height="80" alt="Logo" />
+                <a href="/">
+                    <img src="/logo.svg" width="100" height="80" alt="Logo" />
+                </a>
                 <NavSubMenu
                     v-for="item in menuItems" 
                     :key="item.name"
@@ -141,7 +142,6 @@ var selected = ref(null);
     background-color: red !important;
 }
 
-
 #navbar {
     width: 100vw;
     overflow: hidden;
@@ -156,6 +156,7 @@ var selected = ref(null);
     background-color: white;
     padding-left: 2rem;
     border-bottom: 1px solid lightgray;
+    z-index: 100;
 }
 
 .navbar_left {
@@ -179,5 +180,13 @@ var selected = ref(null);
 
 img {
     background-position: center;
+}
+
+.navbar_left:hover {
+    color: gray;
+}
+
+.navmenu_button:hover {
+    color: #000;
 }
 </style>
