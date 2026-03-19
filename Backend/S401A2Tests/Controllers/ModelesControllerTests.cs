@@ -105,7 +105,7 @@ namespace S401A2.Controllers.Tests
         {
             // Arrange
             var newModele = new Modele { IdModele = 1, NomModele = "Z45" };
-            _controller.ModelState.AddModelError("Reference", "Reference is required");
+            _controller.ModelState.AddModelError("NomModele", "NomModele is required");
 
             // Act
             var actionResult = await _controller.PostModele(newModele);

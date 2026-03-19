@@ -105,7 +105,7 @@ namespace S401A2.Controllers.Tests
         {
             // Arrange
             var newCadre = new Cadre { NomMat = "Incomplete cadre" };
-            _controller.ModelState.AddModelError("Reference", "Reference is required");
+            _controller.ModelState.AddModelError("NomMat", "NomMat is required");
 
             // Act
             var actionResult = await _controller.PostCadre(newCadre);
