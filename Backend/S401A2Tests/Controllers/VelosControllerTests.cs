@@ -106,7 +106,7 @@ namespace S401A2.Controllers.Tests
         {
             // Arrange
             var newVelo = new Velo { IdVelo = 1, IdArticle = 1, LienVue360 = "" };
-            _controller.ModelState.AddModelError("Reference", "Reference is required");
+            _controller.ModelState.AddModelError("LienVue360", "LienVue360 is required");
 
             // Act
             var actionResult = await _controller.PostVelo(newVelo);

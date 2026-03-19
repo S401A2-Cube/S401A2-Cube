@@ -114,7 +114,7 @@ namespace S401A2.Controllers.Tests
         {
             // Arrange
             var newClient = new Client { Nom = "Incomplete name" };
-            _controller.ModelState.AddModelError("Reference", "Reference is required");
+            _controller.ModelState.AddModelError("Nom", "Nom is required");
 
             // Act
             var actionResult = await _controller.PostClient(newClient);
