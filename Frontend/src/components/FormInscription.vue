@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue';
+import Input from './Input.vue';
+import RedButton from './RedButton.vue';
 
 const client = ref({
     civilite: 'Mr',
@@ -19,43 +21,29 @@ const client = ref({
         <h2>Créez votre compte</h2>
         <div id="se-connecter">
             <p>Vous avez déjà un compte ?</p>
-            <p>Connectez-vous !</p>
+            <RouterLink class="router-link" to="/compte">Connectez-vous !</RouterLink>
         </div>
 
         <form>
             <h2>Mes informations personnelles</h2>
             <div id="civil">
-                <input type="radio" id="mr" name="civilite" value="Mr" v-model="client.civilite">
-                <label for="mr">M</label>
-                <input type="radio" id="mme" name="civilite" value="Mme" v-model="client.civilite">
-                <label for="mme">Mme</label>
+                <div>
+                    <input type="radio" id="mr" name="civilite" value="Mr" v-model="client.civilite">
+                    <label for="mr">M</label>
+                </div>
+                <div>
+                    <input type="radio" id="mme" name="civilite" value="Mme" v-model="client.civilite">
+                    <label for="mme">Mme</label>
+                </div>
             </div>
-            <div class="input-container">
-                <input class="input-effect" type="text" placeholder=" " required v-model="client.prenom">
-                <label>Prénom *</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="input-container">
-                <input class="input-effect" type="text" placeholder=" " required v-model="client.nom">
-                <label>Nom *</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="input-container">
-                <input class="input-effect" type="text" placeholder=" " required v-model="client.email">
-                <label>Email *</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="input-container">
-                <input class="input-effect" type="text" placeholder=" " required v-model="client.naissance">
-                <label>Date de naissance</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="input-container">
-                <input class="input-effect" type="password" placeholder=" " required v-model="client.password">
-                <label>Mot de passe *</label>
-                <span class="focus-border"></span>
-            </div>
-            <button type="submit" class="submit-btn">S'incscrire</button>
+
+            <Input label="Prénom *" v-model="client.prenom" required/>
+            <Input label="Nom *" v-model="client.nom" required/>
+            <Input label="Email *" v-model="client.email" required/>
+            <Input type="date" label="Date de naissance" v-model="client.naissance"/>
+            <Input type="password" label="Mot de passe" v-model="client.password" required/>
+
+            <RedButton type="submit">S'inscrire</RedButton>
         </form>
     </div>
 </template>
@@ -80,7 +68,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-#se-connecter p{
+#se-connecter > *{
     align-self: flex-start;
     line-height: normal;
 }
@@ -92,6 +80,22 @@ form {
     padding: 1.5rem;
     align-items: center;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#civil {
+    display: flex;
+    gap: 5rem
+}
+
+.router-link {
+    text-decoration: underline;
+    transition: all 0.4s;
+    color: #2fb5d2;
+}
+
+.router-link:hover {
+    color: #298499;
+    text-decoration: none;
 }
 
 </style>

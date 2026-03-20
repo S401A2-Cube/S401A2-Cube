@@ -21,7 +21,6 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: var(--bg-color);
 }
 
 .link {
@@ -86,83 +85,3 @@ main {
     font-weight: bold;
 }
 
-input:focus {
-    outline: none;
-}
-
-.input-container {
-    margin: 20px 0; 
-    position: relative;
-    text-align: left;
-    width: 400px;
-}
-
-input[type="text"],
-input[type="password"]  {
-    width: 100%; 
-    text-align: left;
-    line-height: 24px;
-}
-
-.input-effect {
-    border: none; 
-    padding: 5px 0; 
-    border-bottom: none; 
-    background-color: transparent;
-    width: 100%;
-}
-
-.input-effect ~ .focus-border {
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 1px; 
-    background-color: var(--very-light-grey); 
-    transition: 0.4s;
-    z-index: 1;
-}
-
-.input-effect:focus ~ .focus-border,
-.input-effect:not(:placeholder-shown) ~ .focus-border {
-    height: 1px;
-    background-color: var(--blue-cube);
-}
-
-.input-effect ~ label {
-    position: absolute; 
-    left: 0; 
-    top: 9px; 
-    color: var(--light-grey); 
-    transition: 0.3s; 
-    font-size: 16px;
-    pointer-events: none;
-}
-
-.input-effect:focus ~ label, 
-.input-effect:not(:placeholder-shown) ~ label {
-    top: -16px; 
-    font-size: 14px; 
-    color: #2fb5d2; 
-}
-
-.submit-btn,
-input[type="submit"] {
-    background-color: var(--red-cube);
-    color: #fff;
-    padding: 0.85rem 1.5rem;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s;
-    width: 200px;
-    text-align: center;
-    clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-.submit-btn:hover,
-input[type="submit"]:hover {
-    clip-path: polygon(0% 0%, calc(100% - 10px) 0%, 100% 100%, 0% 100%);
-}
-
-.btn-disabled {
-    background-color: #ff7c78;
-}
