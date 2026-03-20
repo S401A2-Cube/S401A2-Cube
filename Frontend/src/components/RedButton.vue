@@ -17,7 +17,7 @@ const props = defineProps({
 
 <style scoped>
 button {
-    background-color: #eb332c;
+    background-color: #EB2C75;
     color: #fff;
     padding: 0.85rem 1.5rem;
     border: none;
@@ -29,6 +29,7 @@ button {
 }
 button:hover {
     clip-path: polygon(0% 0%, calc(100% - 10px) 0%, 100% 100%, 0% 100%);
+    /* clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%); */
 }
 
 /* .btn-disabled {
