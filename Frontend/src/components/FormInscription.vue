@@ -18,10 +18,10 @@ const client = ref({
 
 <template>
     <div id="inscription">
-        <h2>Créez votre compte</h2>
+        <h2>Connexion / Inscription</h2>
         <div id="se-connecter">
             <p>Vous avez déjà un compte ?</p>
-            <RouterLink class="router-link" to="/compte">Connectez-vous !</RouterLink>
+            <RouterLink class="router-link" to="/connexion">Connectez-vous !</RouterLink>
         </div>
 
         <form>
@@ -97,5 +97,4 @@ form {
     color: #298499;
     text-decoration: none;
 }
-
 </style>
