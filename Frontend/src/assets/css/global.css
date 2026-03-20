@@ -1,3 +1,11 @@
+:root {
+    --red-cube: #eb332c;
+    --blue-cube: #2fb5d2;
+    --bg-color: #efefef;
+    --very-light-grey: #ccc;
+    --light-grey: #aaa;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -76,3 +84,4 @@ main {
 .bold {
     font-weight: bold;
 }
+
