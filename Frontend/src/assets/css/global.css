@@ -41,7 +41,7 @@ main {
     }
     
     .link:hover {
-    --underline-width: 100%;
+        --underline-width: 100%;
     }
 }
 

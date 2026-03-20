@@ -55,7 +55,7 @@ const selectedCategoryKey = ref(null);
     top: 80px;
     left: 0;
     width: 100vw;
-    height: calc(70vh - 80px);
+    height: calc(85vh - 80px);
     background-color: white;
 
     display: flex;

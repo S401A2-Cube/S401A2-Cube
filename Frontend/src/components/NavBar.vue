@@ -180,7 +180,7 @@ var selected = ref(null);
     position: fixed;
     left: 0;
     width: 100vw;
-    bottom: calc(30vh + 30px);
+    bottom: calc(15vh + 30px);
     cursor: pointer;
 }
 
