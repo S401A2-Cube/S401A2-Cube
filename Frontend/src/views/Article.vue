@@ -1,298 +1,377 @@
 <script setup>
-
-
-import { ref, computed, onMounted } from 'vue'
-
-
+import { ref, computed, onMounted } from "vue";
 
 const fakeTailles = [
-  { idTaille: 1, libelleTaille: "XS",  velos: null },
-  { idTaille: 2, libelleTaille: "S",   velos: null },
-  { idTaille: 3, libelleTaille: "M",   velos: null },
-  { idTaille: 4, libelleTaille: "L",   velos: null },
-  { idTaille: 5, libelleTaille: "XL",  velos: null },
+  { idTaille: 1, libelleTaille: "XS", velos: null },
+  { idTaille: 2, libelleTaille: "S", velos: null },
+  { idTaille: 3, libelleTaille: "M", velos: null },
+  { idTaille: 4, libelleTaille: "L", velos: null },
+  { idTaille: 5, libelleTaille: "XL", velos: null },
   { idTaille: 6, libelleTaille: "XXL", velos: null },
-]
+];
 
 const fakeCadres = [
-  { idMateriau: 1, nomMat: "Aluminium", formeCadre: "VTT",     velos: null },
+  { idMateriau: 1, nomMat: "Aluminium", formeCadre: "VTT", velos: null },
   { idMateriau: 2, nomMat: "Aluminium", formeCadre: "Diamant", velos: null },
   { idMateriau: 3, nomMat: "Aluminium", formeCadre: "Trapèze", velos: null },
-  { idMateriau: 4, nomMat: "Aluminium", formeCadre: "Wave",    velos: null },
-  { idMateriau: 5, nomMat: "Carbone",   formeCadre: "Diamant", velos: null },
-]
+  { idMateriau: 4, nomMat: "Aluminium", formeCadre: "Wave", velos: null },
+  { idMateriau: 5, nomMat: "Carbone", formeCadre: "Diamant", velos: null },
+];
 
 const fakeVelos = [
   {
-    idVelo: 1, idArticle: 101, lienVue360: null, idModele: 1,
+    idVelo: 1,
+    idArticle: 101,
+    lienVue360: null,
+    idModele: 1,
     modeleVelo: {
       idModele: 1,
       nomModele: "Aim Race",
       categorieVelo: "Mountainbike",
       prix: 799,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Aim-Race_grey_n_red.png"
+      lienImage:
+        "https://www.cubebikes.fr/nature/50435-192984-nature.html#/5718-taille-62_cm_187_200",
     },
-    couleurs:   [{ idCouleur: 1, libelleCouleur: "Gris / Rouge",    codeCouleur: "#808080" }],
-    tailles:    [
-      { idTaille: 1, libelleTaille: "XS" }, { idTaille: 2, libelleTaille: "S" },
-      { idTaille: 3, libelleTaille: "M"  }, { idTaille: 4, libelleTaille: "L" },
-      { idTaille: 5, libelleTaille: "XL" }, { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [{ idCouleur: 1, libelleCouleur: "Gris / Rouge", codeCouleur: "#808080" }],
+    tailles: [
+      { idTaille: 1, libelleTaille: "XS" },
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
     ],
-    cadres:     [{ idMateriau: 1, nomMat: "Aluminium", formeCadre: "VTT" }],
-    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
+    cadres: [{ idMateriau: 1, nomMat: "Aluminium", formeCadre: "VTT" }],
+    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }],
   },
   {
-    idVelo: 2, idArticle: 102, lienVue360: null, idModele: 2,
+    idVelo: 2,
+    idArticle: 102,
+    lienVue360: null,
+    idModele: 2,
     modeleVelo: {
       idModele: 2,
       nomModele: "Aim SL",
       categorieVelo: "Mountainbike",
       prix: 999,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Aim-SL_red_n_red.png"
+      lienImage:
+        "https://www.cubebikes.fr/nature/50435-192984-nature.html#/5718-taille-62_cm_187_200",
     },
-    couleurs:   [{ idCouleur: 2, libelleCouleur: "Rouge / Rouge",   codeCouleur: "#e63000" }],
-    tailles:    [
-      { idTaille: 1, libelleTaille: "XS" }, { idTaille: 2, libelleTaille: "S" },
-      { idTaille: 3, libelleTaille: "M"  }, { idTaille: 4, libelleTaille: "L" },
-      { idTaille: 5, libelleTaille: "XL" }, { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [{ idCouleur: 2, libelleCouleur: "Rouge / Rouge", codeCouleur: "#e63000" }],
+    tailles: [
+      { idTaille: 1, libelleTaille: "XS" },
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
     ],
-    cadres:     [{ idMateriau: 1, nomMat: "Aluminium", formeCadre: "VTT" }],
-    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
+    cadres: [{ idMateriau: 1, nomMat: "Aluminium", formeCadre: "VTT" }],
+    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }],
   },
   {
-    idVelo: 3, idArticle: 103, lienVue360: null, idModele: 3,
+    idVelo: 3,
+    idArticle: 103,
+    lienVue360: null,
+    idModele: 3,
     modeleVelo: {
       idModele: 3,
       nomModele: "Attain GTC Pro",
       categorieVelo: "Road",
       prix: 1299,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Attain-GTC-Pro_carbon_n_white.png"
+      lienImage:
+        "https://images.cube.eu/2024/bikes/2024_CUBE_Attain-GTC-Pro_carbon_n_white.png",
     },
-    couleurs:   [{ idCouleur: 3, libelleCouleur: "Carbone / Blanc", codeCouleur: "#222222" }],
-    tailles:    [
-      { idTaille: 1, libelleTaille: "XS" }, { idTaille: 2, libelleTaille: "S" },
-      { idTaille: 3, libelleTaille: "M"  }, { idTaille: 4, libelleTaille: "L" },
-      { idTaille: 5, libelleTaille: "XL" }, { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [
+      { idCouleur: 3, libelleCouleur: "Carbone / Blanc", codeCouleur: "#222222" },
     ],
-    cadres:     [{ idMateriau: 5, nomMat: "Carbone", formeCadre: "Diamant" }],
-    geometries: [{ idGeometrie: 2, libelleGeometrie: "Compétition" }]
+    tailles: [
+      { idTaille: 1, libelleTaille: "XS" },
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
+    ],
+    cadres: [{ idMateriau: 5, nomMat: "Carbone", formeCadre: "Diamant" }],
+    geometries: [{ idGeometrie: 2, libelleGeometrie: "Compétition" }],
   },
   {
-    idVelo: 4, idArticle: 104, lienVue360: null, idModele: 4,
+    idVelo: 4,
+    idArticle: 104,
+    lienVue360: null,
+    idModele: 4,
     modeleVelo: {
       idModele: 4,
       nomModele: "Agree C:62",
       categorieVelo: "Road",
       prix: 2499,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Agree-C62-Race_carbon_n_white.png"
+      lienImage:
+        "https://images.cube.eu/2024/bikes/2024_CUBE_Agree-C62-Race_carbon_n_white.png",
     },
-    couleurs:   [{ idCouleur: 3, libelleCouleur: "Carbone / Blanc", codeCouleur: "#222222" }],
-    tailles:    [
-      { idTaille: 1, libelleTaille: "XS" }, { idTaille: 2, libelleTaille: "S" },
-      { idTaille: 3, libelleTaille: "M"  }, { idTaille: 4, libelleTaille: "L" },
-      { idTaille: 5, libelleTaille: "XL" }, { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [
+      { idCouleur: 3, libelleCouleur: "Carbone / Blanc", codeCouleur: "#222222" },
     ],
-    cadres:     [{ idMateriau: 5, nomMat: "Carbone", formeCadre: "Diamant" }],
-    geometries: [{ idGeometrie: 2, libelleGeometrie: "Compétition" }]
+    tailles: [
+      { idTaille: 1, libelleTaille: "XS" },
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
+    ],
+    cadres: [{ idMateriau: 5, nomMat: "Carbone", formeCadre: "Diamant" }],
+    geometries: [{ idGeometrie: 2, libelleGeometrie: "Compétition" }],
   },
   {
-    idVelo: 5, idArticle: 105, lienVue360: null, idModele: 5,
+    idVelo: 5,
+    idArticle: 105,
+    lienVue360: null,
+    idModele: 5,
     modeleVelo: {
       idModele: 5,
       nomModele: "Nuroad Race",
       categorieVelo: "Gravel",
       prix: 1099,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Nuroad-Race_grey_n_metal.png"
+      lienImage:
+        "https://images.cube.eu/2024/bikes/2024_CUBE_Nuroad-Race_grey_n_metal.png",
     },
-    couleurs:   [{ idCouleur: 4, libelleCouleur: "Gris / Métal",    codeCouleur: "#9e9e9e" }],
-    tailles:    [
-      { idTaille: 2, libelleTaille: "S"  }, { idTaille: 3, libelleTaille: "M" },
-      { idTaille: 4, libelleTaille: "L"  }, { idTaille: 5, libelleTaille: "XL" },
-      { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [{ idCouleur: 4, libelleCouleur: "Gris / Métal", codeCouleur: "#9e9e9e" }],
+    tailles: [
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
     ],
-    cadres:     [{ idMateriau: 2, nomMat: "Aluminium", formeCadre: "Diamant" }],
-    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
+    cadres: [{ idMateriau: 2, nomMat: "Aluminium", formeCadre: "Diamant" }],
+    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }],
   },
   {
-    idVelo: 6, idArticle: 106, lienVue360: null, idModele: 6,
+    idVelo: 6,
+    idArticle: 106,
+    lienVue360: null,
+    idModele: 6,
     modeleVelo: {
       idModele: 6,
       nomModele: "Cross Race",
       categorieVelo: "Gravel",
       prix: 899,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Cross-Race_grey_n_red.png"
+      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Cross-Race_grey_n_red.png",
     },
-    couleurs:   [{ idCouleur: 1, libelleCouleur: "Gris / Rouge",    codeCouleur: "#808080" }],
-    tailles:    [
-      { idTaille: 2, libelleTaille: "S"  }, { idTaille: 3, libelleTaille: "M" },
-      { idTaille: 4, libelleTaille: "L"  }, { idTaille: 5, libelleTaille: "XL" },
-      { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [{ idCouleur: 1, libelleCouleur: "Gris / Rouge", codeCouleur: "#808080" }],
+    tailles: [
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
     ],
-    cadres:     [{ idMateriau: 2, nomMat: "Aluminium", formeCadre: "Diamant" }],
-    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
+    cadres: [{ idMateriau: 2, nomMat: "Aluminium", formeCadre: "Diamant" }],
+    geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }],
   },
   {
-    idVelo: 7, idArticle: 107, lienVue360: null, idModele: 7,
+    idVelo: 7,
+    idArticle: 107,
+    lienVue360: null,
+    idModele: 7,
     modeleVelo: {
       idModele: 7,
       nomModele: "Tour EXC",
       categorieVelo: "Trekking",
       prix: 649,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Tour-EXC_flashgrey_n_black.png"
+      lienImage:
+        "https://images.cube.eu/2024/bikes/2024_CUBE_Tour-EXC_flashgrey_n_black.png",
     },
-    couleurs:   [{ idCouleur: 5, libelleCouleur: "Gris Flash / Noir", codeCouleur: "#555555" }],
-    tailles:    [
-      { idTaille: 1, libelleTaille: "XS" }, { idTaille: 2, libelleTaille: "S" },
-      { idTaille: 3, libelleTaille: "M"  }, { idTaille: 4, libelleTaille: "L" },
-      { idTaille: 5, libelleTaille: "XL" }, { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [
+      { idCouleur: 5, libelleCouleur: "Gris Flash / Noir", codeCouleur: "#555555" },
     ],
-    cadres:     [{ idMateriau: 3, nomMat: "Aluminium", formeCadre: "Trapèze" }],
-    geometries: [{ idGeometrie: 3, libelleGeometrie: "Confort" }]
+    tailles: [
+      { idTaille: 1, libelleTaille: "XS" },
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
+    ],
+    cadres: [{ idMateriau: 3, nomMat: "Aluminium", formeCadre: "Trapèze" }],
+    geometries: [{ idGeometrie: 3, libelleGeometrie: "Confort" }],
   },
   {
-    idVelo: 8, idArticle: 108, lienVue360: null, idModele: 8,
+    idVelo: 8,
+    idArticle: 108,
+    lienVue360: null,
+    idModele: 8,
     modeleVelo: {
       idModele: 8,
       nomModele: "Travel SLX",
       categorieVelo: "Trekking",
       prix: 1199,
-      lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Travel-SLX_grey_n_black.png"
+      lienImage:
+        "https://images.cube.eu/2024/bikes/2024_CUBE_Travel-SLX_grey_n_black.png",
     },
-    couleurs:   [{ idCouleur: 6, libelleCouleur: "Gris / Noir",     codeCouleur: "#444444" }],
-    tailles:    [
-      { idTaille: 1, libelleTaille: "XS" }, { idTaille: 2, libelleTaille: "S" },
-      { idTaille: 3, libelleTaille: "M"  }, { idTaille: 4, libelleTaille: "L" },
-      { idTaille: 5, libelleTaille: "XL" }, { idTaille: 6, libelleTaille: "XXL" }
+    couleurs: [{ idCouleur: 6, libelleCouleur: "Gris / Noir", codeCouleur: "#444444" }],
+    tailles: [
+      { idTaille: 1, libelleTaille: "XS" },
+      { idTaille: 2, libelleTaille: "S" },
+      { idTaille: 3, libelleTaille: "M" },
+      { idTaille: 4, libelleTaille: "L" },
+      { idTaille: 5, libelleTaille: "XL" },
+      { idTaille: 6, libelleTaille: "XXL" },
     ],
-    cadres:     [{ idMateriau: 4, nomMat: "Aluminium", formeCadre: "Wave" }],
-    geometries: [{ idGeometrie: 3, libelleGeometrie: "Confort" }]
+    cadres: [{ idMateriau: 4, nomMat: "Aluminium", formeCadre: "Wave" }],
+    geometries: [{ idGeometrie: 3, libelleGeometrie: "Confort" }],
   },
-]
+];
 
-
-
-
-const bikes   = ref([])   
-const tailles = ref([])   
-const cadres  = ref([])   
-
-
-
+const bikes = ref([]);
+const tailles = ref([]);
+const cadres = ref([]);
 
 onMounted(() => {
-  bikes.value   = fakeVelos    
-  tailles.value = fakeTailles 
-  cadres.value  = fakeCadres   
+  bikes.value = fakeVelos;
+  tailles.value = fakeTailles;
+  cadres.value = fakeCadres;
+});
 
-
-})
-
-
-
-
-const taillesSelectionnees = ref([])
-
+const taillesSelectionnees = ref([]);
 
 const selectTaille = (taille) => {
-
-
   if (!taillesSelectionnees.value.includes(taille)) {
-    taillesSelectionnees.value.push(taille)   
-
+    taillesSelectionnees.value.push(taille);
   } else {
-    
-    taillesSelectionnees.value.splice(
-      taillesSelectionnees.value.indexOf(taille),
-      1
-    )
+    taillesSelectionnees.value.splice(taillesSelectionnees.value.indexOf(taille), 1);
   }
-}
+};
 
+const MatsSelectionnees = ref([]);
 
+const selectMat = (mat) => {
+  if (!MatsSelectionnees.value.includes(mat)) {
+    MatsSelectionnees.value.push(mat);
+  } else {
+    MatsSelectionnees.value.splice(MatsSelectionnees.value.indexOf(mat), 1);
+  }
+};
 
+const FormesSelectionnees = ref([]);
 
+const selectForme = (forme) => {
+  if (!FormesSelectionnees.value.includes(forme)) {
+    FormesSelectionnees.value.push(forme);
+  } else {
+    FormesSelectionnees.value.splice(FormesSelectionnees.value.indexOf(forme), 1);
+  }
+};
 
-const bikesFiltres = computed(() => {
+const bikesFiltres = computed(() =>
+  bikes.value.filter(
+    (velo) =>
+      (taillesSelectionnees.value.length == 0 ||
+        taillesSelectionnees.value
+          .map((t) => t.idTaille)
+          .some((id) => velo.tailles.map((t) => t.idTaille).includes(id))) &&
+      (MatsSelectionnees.value.length == 0 ||
+        MatsSelectionnees.value
+          .map((m) => m.nomMat)
+          .some((nom) => velo.cadres.map((c) => c.nomMat).includes(nom))) &&
+      (FormesSelectionnees.value.length == 0 ||
+        FormesSelectionnees.value
+          .map((f) => f.formeCadre)
+          .some((nom) => velo.cadres.map((f) => f.formeCadre).includes(nom)))
+  )
+);
 
-  return bikes.value.filter(velo => {
+const MatsDejaVu = computed(() => {
+  const NomDejaVue = [];
 
-   
-    if (taillesSelectionnees.value.length == 0) {
-      return true  
+  return cadres.value.filter((cadres) => {
+    if (NomDejaVue.includes(cadres.nomMat)) {
+      return false;
+    } else {
+      NomDejaVue.push(cadres.nomMat);
+
+      return true;
     }
+  });
+});
 
-  
-    return taillesSelectionnees.value.every(tailleChoisie =>
-      velo.tailles.some(t => t.idTaille === tailleChoisie.idTaille)
-     
-    )
-  })
-})
+const filtres = ["Tailles", "Matériaux Cadre", "Forme Cadre", "Millésime", "Couleurs"];
 
-
-
-
-
-const filtres = ['Tailles', 'Variante Cadre', 'Millésime', 'Couleurs']
-
-const selectedIndex = ref(null)
+const selectedIndex = ref(null);
 
 const toggleRotation = (index) => {
-
-  selectedIndex.value = selectedIndex.value === index ? null : index
-
-}
+  selectedIndex.value = selectedIndex.value === index ? null : index;
+};
 </script>
 
-
-
 <template>
-
-
   <div id="Side_Filtre">
-
     <div v-for="(titre, index) in filtres" :key="titre">
-
       <div class="side_filtre" @click="toggleRotation(index)">
         <h2>{{ titre }}</h2>
 
-      
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" class="chevron"
-          :class="{ rotated: selectedIndex === index }">
-          <path d="m18 15-6-6-6 6"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="chevron"
+          :class="{ rotated: selectedIndex === index }"
+        >
+          <path d="m18 15-6-6-6 6" />
         </svg>
       </div>
 
-   
       <div v-if="titre === 'Tailles' && selectedIndex === index" class="filtre-panel">
-
         <span
           v-for="taille in tailles"
           :key="taille.idTaille"
           class="taille-btn"
           :class="{ selected: taillesSelectionnees.includes(taille) }"
           @click.stop="selectTaille(taille)"
-          
         >
-    
           {{ taille.libelleTaille }}
         </span>
-
       </div>
 
+      <div
+        v-if="titre === 'Matériaux Cadre' && selectedIndex === index"
+        class="filtre-panel"
+      >
+        <span
+          v-for="mat in MatsDejaVu"
+          :key="mat.idMateriau"
+          class="mat-btn"
+          :class="{ selected: MatsSelectionnees.includes(mat) }"
+          @click.stop="selectMat(mat)"
+        >
+          {{ mat.nomMat }}
+        </span>
+      </div>
 
-      
-
+      <div v-if="titre === 'Forme Cadre' && selectedIndex === index" class="filtre-panel">
+        <span
+          v-for="forme in cadres"
+          :key="cadres.idMateriau"
+          class="mat-btn"
+          :class="{ selected: FormesSelectionnees.includes(forme) }"
+          @click.stop="selectForme(forme)"
+        >
+          {{ forme.formeCadre }}
+        </span>
+      </div>
     </div>
   </div>
-
 
   <div id="articleContainer">
     <h1>Découvrez notre sélection</h1>
     <div class="grid">
-
       <div v-for="velo in bikesFiltres" :key="velo.idVelo" class="article">
         <div class="article-img">
           <img :src="velo.modeleVelo.lienImage" :alt="velo.modeleVelo.nomModele" />
@@ -303,15 +382,11 @@ const toggleRotation = (index) => {
           <p class="prix">{{ velo.modeleVelo.prix }} €</p>
         </div>
       </div>
-
     </div>
   </div>
 </template>
 
-
-
 <style scoped>
-
 #Side_Filtre {
   outline: 0.5px solid black;
   position: absolute;
@@ -393,7 +468,7 @@ const toggleRotation = (index) => {
 }
 
 .article:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transform: translateY(-4px);
 }
 
@@ -438,5 +513,27 @@ const toggleRotation = (index) => {
   font-size: 16px;
   font-weight: 600;
   color: #333;
+}
+
+.mat-btn {
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s;
+}
+
+.mat-btn:hover {
+  border-color: #e63000;
+  color: #e63000;
+}
+
+.mat-btn.selected {
+  background: #e63000;
+  border-color: #e63000;
+  color: #fff;
 }
 </style>
