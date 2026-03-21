@@ -20,6 +20,10 @@ const inputClasses = computed(() => {
         'has-content': props.type === 'date' && model.value
     };
 });
+
+const labelIndication = computed(() => {
+    return props.required ? `${props.label} *` : `${props.label} (optionnel)`
+});
 </script>
 
 <template>
@@ -31,7 +35,7 @@ const inputClasses = computed(() => {
             placeholder=" "
             :required="required">
         <label>
-            {{ label }}
+            {{ labelIndication }}
         </label>
         <span class="focus-border"></span>
     </div>

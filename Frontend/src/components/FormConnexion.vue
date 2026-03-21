@@ -15,7 +15,7 @@ const client = ref({
     <div id="connexion">
         <h2>Connexion / Inscription</h2>
         <form>
-            <Input label="Email *" v-model="client.email" required/>
+            <Input label="Email" v-model="client.email" required/>
             <Input type="password" label="Mot de passe" v-model="client.password" required/>
             <RedButton type="submit">Se connecter</RedButton>
             <RouterLink class="router-link" to="/inscription">Pas de compte ? Créez-en un</RouterLink>

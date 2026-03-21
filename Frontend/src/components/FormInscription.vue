@@ -37,9 +37,9 @@ const client = ref({
                 </div>
             </div>
 
-            <Input label="Prénom *" v-model="client.prenom" required/>
-            <Input label="Nom *" v-model="client.nom" required/>
-            <Input label="Email *" v-model="client.email" required/>
+            <Input label="Prénom" v-model="client.prenom" required/>
+            <Input label="Nom" v-model="client.nom" required/>
+            <Input label="Email" v-model="client.email" required/>
             <Input type="date" label="Date de naissance" v-model="client.naissance"/>
             <Input type="password" label="Mot de passe" v-model="client.password" required/>
 
@@ -85,6 +85,11 @@ form {
 #civil {
     display: flex;
     gap: 5rem
+}
+
+#civil div {
+    display: flex;
+    gap: 10px;
 }
 
 .router-link {
