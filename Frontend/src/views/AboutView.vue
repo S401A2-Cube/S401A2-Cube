@@ -8,13 +8,15 @@ import Article from '@/components/Article.vue';
 <template>
     <main>
         <Article 
+            :id=1
             article-name="Attain Race"
             :available-online="true"
             :price=1299
             image-u-r-l="https://www.cubebikes.fr/38929-pdt_1920/attain.jpg"    
-        />
-
+            />
+            
         <Article 
+            :id=2
             article-name="Attain SLX"
             :available-online="false"
             :price=1499

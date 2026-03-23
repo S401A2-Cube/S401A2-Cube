@@ -155,8 +155,9 @@ var selected = ref(null);
     gap: 1rem;
     height: 80px;
     align-items: center;
-
+    
     position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     background-color: white;

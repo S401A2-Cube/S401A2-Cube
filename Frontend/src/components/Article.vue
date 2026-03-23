@@ -1,6 +1,13 @@
 <script setup>
+import router from '@/router';
+
+
 
 defineProps({
+  id: {
+    type:Number,
+    required:true
+  },
   articleName: {
     type: String,
     required: true
@@ -19,10 +26,12 @@ defineProps({
   },
 });
 
+
+
 </script>
 
 <template>
-    <div class="item-container">
+    <div class="item-container" @click="router.push({path: 'detail/article/'+id});">
         <img class="item-image" :src=imageURL>
         <div class="item-content">
           <p class="item-name">{{articleName}}</p>

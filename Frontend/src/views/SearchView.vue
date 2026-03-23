@@ -1,6 +1,7 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
-
+import { ref, reactive, computed, onMounted } from "vue";
+import FiltrePane from "@/components/FiltrePane.vue";
+import Article from '@/components/Article.vue';
 
 const fakeCouleurs = [
   { idCouleur: 1, nomCouleur: "Gris / Rouge",     effetPeinture: "Mat",      velos: null },
@@ -151,375 +152,138 @@ const fakeVelos = [
 ]
 
 const bikes = ref([]);
-const tailles = ref([]);
-const cadres = ref([]);
-const couleurs = ref([]);
-const millesimes = ref([]);
-
-
 
 onMounted(() => {
   bikes.value = fakeVelos;
-  tailles.value = fakeTailles;
-  cadres.value = fakeCadres;
-  couleurs.value = fakeCouleurs;
-  millesimes.value = fakeMillesimes;
-
 });
 
-const taillesSelectionnees = ref([]);
-
-const selectTaille = (taille) => {
-  if (!taillesSelectionnees.value.includes(taille)) {
-    taillesSelectionnees.value.push(taille);
-  } else {
-    taillesSelectionnees.value.splice(taillesSelectionnees.value.indexOf(taille), 1);
-  }
+const getUnique = (arr, key) => {
+  const map = new Map();
+  arr.forEach(item => {
+    if (!map.has(item[key])) map.set(item[key], item);
+  });
+  return Array.from(map.values());
 };
 
-const MatsSelectionnees = ref([]);
+const selectedFilters = reactive({
+  tailles: [],
+  cadres: [],
+  formes: [],
+  couleurs: [],
+  millesimes: []
+});
 
-const selectMat = (mat) => {
-  if (!MatsSelectionnees.value.includes(mat)) {
-    MatsSelectionnees.value.push(mat);
-  } else {
-    MatsSelectionnees.value.splice(MatsSelectionnees.value.indexOf(mat), 1);
+const filtersConfig = computed(() => [
+  {
+    id: 'tailles',
+    name: 'Tailles',
+    values: fakeTailles,
+    getLabel: (v) => v.libelleTaille,
+    matchOption: (bike, option) => bike.tailles.some(t => t.idTaille === option.idTaille)
+  },
+  {
+    id: 'cadres',
+    name: 'Matériaux Cadre',
+    values: getUnique(fakeCadres, 'nomMat'),
+    getLabel: (v) => v.nomMat,
+    matchOption: (bike, option) => bike.cadres.some(c => c.nomMat === option.nomMat)
+  },
+  {
+    id: 'formes',
+    name: 'Forme Cadre',
+    values: getUnique(fakeCadres, 'formeCadre'),
+    getLabel: (v) => v.formeCadre,
+    matchOption: (bike, option) => bike.cadres.some(c => c.formeCadre === option.formeCadre)
+  },
+  {
+    id: 'couleurs',
+    name: 'Couleurs',
+    values: fakeCouleurs,
+    getLabel: (v) => v.nomCouleur,
+    matchOption: (bike, option) => bike.couleurs.some(c => c.idCouleur === option.idCouleur)
+  },
+  {
+    id: 'millesimes',
+    name: 'Millésime',
+    values: fakeMillesimes,
+    getLabel: (v) => v.annee,
+    matchOption: (bike, option) => bike.millesimes.some(m => m.idMillesime === option.idMillesime)
   }
-};
+]);
 
-const FormesSelectionnees = ref([]);
-
-const selectForme = (forme) => {
-  if (!FormesSelectionnees.value.includes(forme)) {
-    FormesSelectionnees.value.push(forme);
-  } else {
-    FormesSelectionnees.value.splice(FormesSelectionnees.value.indexOf(forme), 1);
-  }
-};
-
-const couleursSelectionnees   = ref([])
-const millesimesSelectionnes  = ref([])
-
-const selectCouleur = (couleur) => {
-  if (!couleursSelectionnees.value.includes(couleur))
-    couleursSelectionnees.value.push(couleur)
-  else
-    couleursSelectionnees.value.splice(couleursSelectionnees.value.indexOf(couleur), 1)
-}
-
-const selectMillesime = (mil) => {
-  if (!millesimesSelectionnes.value.includes(mil))
-    millesimesSelectionnes.value.push(mil)
-  else
-    millesimesSelectionnes.value.splice(millesimesSelectionnes.value.indexOf(mil), 1)
-}
-
-const bikesFiltres = computed(() =>
-  bikes.value.filter(
-    (velo) =>
-      (taillesSelectionnees.value.length == 0 ||
-        taillesSelectionnees.value
-          .map((t) => t.idTaille)
-          .some((id) => velo.tailles.map((t) => t.idTaille).includes(id))) &&
-      (MatsSelectionnees.value.length == 0 ||
-        MatsSelectionnees.value
-          .map((m) => m.nomMat)
-          .some((nom) => velo.cadres.map((c) => c.nomMat).includes(nom))) &&
-      (FormesSelectionnees.value.length == 0 ||
-        FormesSelectionnees.value
-          .map((f) => f.formeCadre)
-          .some((nom) => velo.cadres.map((f) => f.formeCadre).includes(nom))) &&
-      (
-        couleursSelectionnees.value.length == 0 ||
-        couleursSelectionnees.value
-        .map(c => c.idCouleur)
-        .some(id => velo.couleurs.map(c => c.idCouleur).includes(id))) &&  
-        (
-      millesimesSelectionnes.value.length == 0
-      ||
-      millesimesSelectionnes.value
-        .map(m => m.idMillesime)
-        .some(id => velo.millesimes.map(m => m.idMillesime).includes(id)))
-
-  )
-);
-
-const MatsDejaVu = computed(() => {
-const NomDejaVue = [];
-
-  return cadres.value.filter((cadres) => {
-    if (NomDejaVue.includes(cadres.nomMat)) {
-      return false;
-    } else {
-      NomDejaVue.push(cadres.nomMat);
-
-      return true;
-    }
+const bikesFiltres = computed(() => {
+  return bikes.value.filter((bike) => {
+    return filtersConfig.value.every((filter) => {
+      const selections = selectedFilters[filter.id];
+      if (!selections || selections.length === 0) return true; 
+      
+      return selections.some((option) => filter.matchOption(bike, option));
+    });
   });
 });
-
-const filtres = ["Tailles", "Matériaux Cadre", "Forme Cadre", "Millésime", "Couleurs"];
-
-const selectedIndex = ref(null);
-
-const toggleRotation = (index) => {
-  selectedIndex.value = selectedIndex.value === index ? null : index;
-};
 </script>
 
 <template>
-  <div id="Side_Filtre">
-    <div v-for="(titre, index) in filtres" :key="titre">
-      <div class="side_filtre" @click="toggleRotation(index)">
-        <h2>{{ titre }}</h2>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="chevron"
-          :class="{ rotated: selectedIndex === index }"
-        >
-          <path d="m18 15-6-6-6 6" />
-        </svg>
-      </div>
-
-      <div v-if="titre === 'Tailles' && selectedIndex === index" class="filtre-panel">
-        <span
-          v-for="taille in tailles"
-          :key="taille.idTaille"
-          class="taille-btn"
-          :class="{ selected: taillesSelectionnees.includes(taille) }"
-          @click.stop="selectTaille(taille)"
-        >
-          {{ taille.libelleTaille }}
-        </span>
-      </div>
-
-      <div
-        v-if="titre === 'Matériaux Cadre' && selectedIndex === index"
-        class="filtre-panel"
-      >
-        <span
-          v-for="mat in MatsDejaVu"
-          :key="mat.idMateriau"
-          class="mat-btn"
-          :class="{ selected: MatsSelectionnees.includes(mat) }"
-          @click.stop="selectMat(mat)"
-        >
-          {{ mat.nomMat }}
-        </span>
-      </div>
-
-      <div v-if="titre === 'Forme Cadre' && selectedIndex === index" class="filtre-panel">
-        <span
-          v-for="forme in cadres"
-          :key="cadres.idMateriau"
-          class="mat-btn"
-          :class="{ selected: FormesSelectionnees.includes(forme) }"
-          @click.stop="selectForme(forme)"
-        >
-          {{ forme.formeCadre }}
-        </span>
-      </div>
-
-    <div v-if="titre === 'Couleurs' && selectedIndex === index" class="filtre-panel">
-      <span
-        v-for="couleur in couleurs"
-        :key="couleur.idCouleur"
-        class="taille-btn"
-        :class="{ selected: couleursSelectionnees.includes(couleur) }"
-        @click.stop="selectCouleur(couleur)"
-      >
-        {{ couleur.nomCouleur }}
-      </span>
-    </div>
-
-    <div v-if="titre === 'Millésime' && selectedIndex === index" class="filtre-panel">
-      <span
-        v-for="mil in millesimes"
-        :key="mil.idMillesime"
-        class="taille-btn"
-        :class="{ selected: millesimesSelectionnes.includes(mil) }"
-        @click.stop="selectMillesime(mil)"
-      >
-        {{ mil.annee }}
-      </span>
-    </div>
-    </div>
-  </div>
-
-  <div id="articleContainer">
-    <h1>Découvrez notre sélection</h1>
-    <div class="grid">
-      <div v-for="velo in bikesFiltres" :key="velo.idVelo" class="article">
-        <div class="article-img">
-          <img :src="velo.modeleVelo.lienImage" :alt="velo.modeleVelo.nomModele" />
+    <h1 class="title">Découvrez notre sélection</h1>
+    <main>
+        <div id="side-filter">
+            <FiltrePane
+                v-for="filter in filtersConfig"
+                :key="filter.id"
+                :name="filter.name"
+                :values="filter.values"
+                :bikes="bikes"
+                :get-label="filter.getLabel"
+                :match-option="filter.matchOption"
+                v-model="selectedFilters[filter.id]"
+            />
         </div>
-        <div class="article-body">
-          <h1>{{ velo.modeleVelo.categorieVelo }}</h1>
-          <h2>{{ velo.modeleVelo.nomModele }}</h2>
-          <p class="prix">{{ velo.modeleVelo.prix }} €</p>
+
+        <div id="articleContainer">
+            <div class="grid">
+                <Article 
+                    v-for="velo in bikesFiltres" :key="velo.idVelo" class="article"
+                    :id=velo.idVelo
+                    :article-name=velo.modeleVelo.nomModele
+                    :available-online="true"
+                    :price=velo.modeleVelo.prix
+                    :image-u-r-l=velo.modeleVelo.lienImage
+                />
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </main>
 </template>
 
 <style scoped>
-#Side_Filtre {
-  outline: 0.5px solid black;
-  position: absolute;
-  left: 50px;
-}
-
-.side_filtre {
+main
+{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 5px 0;
+  justify-content: center;
+  align-items: start;
+  flex-direction: row;
+  gap: 1rem;
 }
 
-#Side_Filtre h2 {
-  font-weight: bold;
+.title
+{
+	font-size: 2.5rem;
+	font-style: italic;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 6.25rem auto 4.375rem;
 }
 
-.chevron {
-  transition: transform 0.5s ease;
-}
-.rotated {
-  transform: rotate(180deg);
+#side-filter
+{
+  width: 20vw;
 }
 
-.filtre-panel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px 0 14px;
+.grid
+{
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.taille-btn {
-  border: 1.5px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.15s;
-}
-
-.taille-btn:hover {
-  border-color: #e63000;
-  color: #e63000;
-}
-
-.taille-btn.selected {
-  background: #e63000;
-  border-color: #e63000;
-  color: #fff;
-}
-
-#articleContainer {
-  margin-left: 250px;
-  padding: 32px;
-}
-
-#articleContainer h1 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 32px;
-  color: #111;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.article {
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
-  cursor: pointer;
-}
-
-.article:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px);
-}
-
-.article-img {
-  height: 200px;
-  background: #f0f0f0;
-  overflow: hidden;
-}
-
-.article-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.article:hover .article-img img {
-  transform: scale(1.05);
-}
-
-.article-body {
-  padding: 16px 20px 20px;
-}
-
-.article-body h1 {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #e63000;
-  margin-bottom: 6px;
-}
-
-.article-body h2 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 10px;
-}
-
-.prix {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-.mat-btn {
-  border: 1.5px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.15s;
-}
-
-.mat-btn:hover {
-  border-color: #e63000;
-  color: #e63000;
-}
-
-.mat-btn.selected {
-  background: #e63000;
-  border-color: #e63000;
-  color: #fff;
-}
 </style>
