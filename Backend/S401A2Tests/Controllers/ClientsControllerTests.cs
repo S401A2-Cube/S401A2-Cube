@@ -28,7 +28,7 @@ namespace S401A2.Controllers.Tests
 
         // GET: api/Clients
         [TestMethod]
-        public async Task GetClients_ReturnsOkWithAllArticles()
+        public async Task GetClients_ReturnsOkWithAllClients()
         {
             // Arrange
             var mockClient = new List<Client>
