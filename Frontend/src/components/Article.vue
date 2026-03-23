@@ -60,7 +60,6 @@ defineProps({
 <style scoped>
 .item-container
 {
-    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;

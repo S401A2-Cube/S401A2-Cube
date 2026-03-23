@@ -81,14 +81,6 @@
         margin-bottom: 0.5rem;
     }
     
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
     #home_center {
         width: 70vw;
         display: flex;

@@ -224,6 +224,7 @@ const bikesFiltres = computed(() => {
 </script>
 
 <template>
+  <div class="center">
     <h1 class="title">Découvrez notre sélection</h1>
     <main>
         <div id="side-filter">
@@ -240,35 +241,34 @@ const bikesFiltres = computed(() => {
             />
         </div>
 
-        <div id="articleContainer">
-            <div class="grid">
-                <Article 
-                    v-for="velo in bikesFiltres" :key="velo.idVelo" class="article"
-                    :id=velo.idVelo
-                    :article-name=velo.modeleVelo.nomModele
-                    :available-online="true"
-                    :price=velo.modeleVelo.prix
-                    :image-u-r-l=velo.modeleVelo.lienImage
-                />
-            </div>
+        <div class="grid">
+            <Article 
+                v-for="velo in bikesFiltres" :key="velo.idVelo" class="article"
+                :id=velo.idVelo
+                :article-name=velo.modeleVelo.nomModele
+                :available-online="true"
+                :price=velo.modeleVelo.prix
+                :image-u-r-l=velo.modeleVelo.lienImage
+            />
         </div>
     </main>
+  </div>
 </template>
 
 <style scoped>
 main
 {
+  width: 80%;
   display: flex;
-  justify-content: center;
-  align-items: start;
   flex-direction: row;
+  justify-self: center;
+  align-items: start;
   gap: 1rem;
 }
 
 .filter:not(:last-child) {
-    border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
 }
-
 
 .title
 {
@@ -292,10 +292,15 @@ main
 
 .grid
 {
-    width: 70vw;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.article
+{
+  width: calc(33% - .5rem);
 }
 
 </style>
