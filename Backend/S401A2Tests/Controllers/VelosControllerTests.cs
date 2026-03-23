@@ -27,7 +27,7 @@ namespace S401A2.Controllers.Tests
 
         // GET: api/Velos
         [TestMethod]
-        public async Task GetVelos_ReturnsOkWithAllArticles()
+        public async Task GetVelos_ReturnsOkWithAllVelos()
         {
             // Arrange
             var mockVelos = new List<Velo>

@@ -26,7 +26,7 @@ namespace S401A2.Controllers.Tests
 
         // GET: api/Geometries
         [TestMethod]
-        public async Task GetGeometries_ReturnsOkWithAllArticles()
+        public async Task GetGeometries_ReturnsOkWithAllGeometries()
         {
             // Arrange
             var mockGeometries = new List<Geometrie>

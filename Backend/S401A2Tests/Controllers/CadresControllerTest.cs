@@ -26,7 +26,7 @@ namespace S401A2.Controllers.Tests
 
         // GET: api/Cadres
         [TestMethod]
-        public async Task GetCadres_ReturnsOkWithAllArticles()
+        public async Task GetCadres_ReturnsOkWithAllCadres()
         {
             // Arrange
             var mockCadres = new List<Cadre>

@@ -70,7 +70,7 @@ namespace S401A2.Model.EntityFramework
         public virtual ICollection<LignePanier> ArticleLignePanier { get; set; } = new List<LignePanier>();
 
         [InverseProperty(nameof(Commande.ArticleCommande))]
-        public virtual Commande ArticleCommande { get; set; } = null!;
+        public virtual Commande? ArticleCommande { get; set; } = null;
 
 
 

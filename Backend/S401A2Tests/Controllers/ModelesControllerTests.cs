@@ -26,7 +26,7 @@ namespace S401A2.Controllers.Tests
 
         // GET: api/Modeles
         [TestMethod]
-        public async Task GetModeles_ReturnsOkWithAllArticles()
+        public async Task GetModeles_ReturnsOkWithAllModeles()
         {
             // Arrange
             var mockModeles = new List<Modele>

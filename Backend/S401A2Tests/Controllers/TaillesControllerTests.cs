@@ -26,7 +26,7 @@ namespace S401A2.Controllers.Tests
 
         // GET: api/Tailles
         [TestMethod]
-        public async Task GetTailles_ReturnsOkWithAllArticles()
+        public async Task GetTailles_ReturnsOkWithAllTailles()
         {
             // Arrange
             var mockTailles = new List<Taille>
