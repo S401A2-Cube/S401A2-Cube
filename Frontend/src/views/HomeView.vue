@@ -5,6 +5,9 @@
 
 <template>
     <main>
+        <video class="video" autoplay="" playsinline="" muted="" loop="" controlslist="noplaybackrate nodownload" disablepictureinpicture=""> 
+            <source src="@/assets/video/20260113_Nuroad_Klassik_Hybrid_loop_noaudio_16x9.mp4" type="video/mp4"> 
+        </video>
         <div id="home_center">
             <p class="title">EXPLORE THE UNKNOWN</p>
             <p class="subtitle">GRAVEL OR E-GRAVEL. GO FARTHER.</p>
@@ -51,6 +54,17 @@
     </main>
 </template>
 <style scoped>
+    video {
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .subtitle {
         font-size: clamp(1.5rem, 3vw, 2.5rem);
         font-weight: 800;
@@ -80,6 +94,11 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        color: white;
+    }
+
+    #home_center .link {
+        border-bottom: 1px solid white;
     }
 
     #discover_section {

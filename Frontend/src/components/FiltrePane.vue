@@ -54,7 +54,7 @@ const getCount = (option) => {
         fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round"
         class="chevron"
-        :class="{ rotated: isOpen }"
+        :class="{ rotated: !isOpen }"
       >
         <path d="m18 15-6-6-6 6" />
       </svg>
@@ -76,12 +76,22 @@ const getCount = (option) => {
 
 <style scoped>
 .side_filtre {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 5px 0;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: 700;
+	justify-content: space-between;
+	text-transform: uppercase;
+	width: 100%;
+    cursor: pointer;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
+
 h2 {
   font-weight: bold;
   margin: 0;

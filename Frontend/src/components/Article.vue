@@ -69,6 +69,12 @@ defineProps({
     gap: 1rem;
     border: 1px solid lightgray;
     cursor: pointer;
+	  transition: box-shadow .3s,-webkit-box-shadow .3s;
+}
+
+.item-container:hover {
+	-webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.141);
+	box-shadow: 0 4px 17px 0 rgba(0,0,0,.141);
 }
 
 .item-container p 

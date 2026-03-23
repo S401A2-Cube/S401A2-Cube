@@ -228,6 +228,7 @@ const bikesFiltres = computed(() => {
     <main>
         <div id="side-filter">
             <FiltrePane
+                class="filter"
                 v-for="filter in filtersConfig"
                 :key="filter.id"
                 :name="filter.name"
@@ -264,6 +265,11 @@ main
   gap: 1rem;
 }
 
+.filter:not(:last-child) {
+    border-bottom: 1px solid #d4d4d4;
+}
+
+
 .title
 {
 	font-size: 2.5rem;
@@ -276,6 +282,12 @@ main
 #side-filter
 {
   width: 20vw;
+  border: 1px solid #d7d7d7;
+  -webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.14);
+  box-shadow: 0 4px 17px 0 rgba(0,0,0,.14);
+  margin-bottom: 60px;
+  margin-right: 30px;
+  padding: 30px;
 }
 
 .grid
