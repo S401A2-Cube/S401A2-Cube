@@ -60,23 +60,7 @@ namespace S401A2.Model.DataManager
                     Mdp = c.Mdp,
                     DateNaissance = c.DateNaissance,
                     Role = c.Role,
-
-                    ClientCommande = c.ClientCommande == null ? null : c.ClientCommande.Select(mc => new Commande
-                    {
-                        Id = mc.Id,
-                        Livraison = mc.Livraison,
-                        AdresseIdFact = mc.AdresseIdFact,
-                        AdresseIdLivr = mc.AdresseIdLivr,
-                        ClientId = mc.ClientId,
-                    }).ToList(),
-                    ClientLignePanier = c.ClientLignePanier == null ? null : c.ClientLignePanier.Select(mc => new LignePanier
-                    {
-                        Id = mc.Id,
-                        ArticleId = mc.ArticleId,
-                        CommandeId = mc.CommandeId,
-                        QtePanier = mc.QtePanier,
-                        ClientId = mc.ClientId,
-                    }).ToList(),
+                    AdresseId = c.AdresseId,
 
                 }).ToListAsync();
             return clients;
@@ -103,22 +87,55 @@ namespace S401A2.Model.DataManager
                     DateNaissance = c.DateNaissance,
                     Role = c.Role,
 
+                    AdresseClient = c.AdresseClient == null ? null : new Adresse
+                    {
+                        Id = c.AdresseClient.Id,
+                        Rue = c.AdresseClient.Rue,
+                        Ville = c.AdresseClient.Ville,
+                        Pays = c.AdresseClient.Pays,
+                    },
+
+                    CiviliteClient = c.CiviliteClient == null ? null : new Civilite
+                    {
+                        Id = c.CiviliteClient.Id,
+                        Nom = c.CiviliteClient.Nom,
+                    },
+
                     ClientCommande = c.ClientCommande == null ? null : c.ClientCommande.Select(mc => new Commande
                     {
                         Id = mc.Id,
-                        Livraison = mc.Livraison,
-                        AdresseIdFact = mc.AdresseIdFact,
-                        AdresseIdLivr = mc.AdresseIdLivr,
-                        ClientId = mc.ClientId,
-                    }).ToList(),
-                    ClientLignePanier = c.ClientLignePanier == null ? null : c.ClientLignePanier.Select(mc => new LignePanier
-                    {
-                        Id = mc.Id,
-                        ArticleId = mc.ArticleId,
-                        CommandeId = mc.CommandeId,
-                        QtePanier = mc.QtePanier,
-                        ClientId = mc.ClientId,
-                    }).ToList(),
+                        AdresseCommandeLivr = mc.AdresseIdLivr == null ? null : new Adresse
+                        {
+                            Id = mc.AdresseCommandeLivr.Id,
+                            Rue = mc.AdresseCommandeLivr.Rue,
+                            Ville = mc.AdresseCommandeLivr.Ville,
+                            CodePostale = mc.AdresseCommandeLivr.CodePostale,
+                            Pays = mc.AdresseCommandeLivr.Pays,
+                        },
+                        AdresseCommandeFact = mc.AdresseIdFact == null ? null : new Adresse
+                        {
+                            Id = mc.AdresseCommandeFact.Id,
+                            Rue = mc.AdresseCommandeFact.Rue,
+                            Ville = mc.AdresseCommandeFact.Ville,
+                            CodePostale = mc.AdresseCommandeFact.CodePostale,
+                            Pays = mc.AdresseCommandeFact.Pays,
+                        },
+                        ArticleCommande = (ICollection<Article>)(mc.ArticleCommande == null ? null : mc.ArticleCommande.Select(ma => new Article
+                       {
+                            ArticleId = ma.ArticleId,
+                            Reference = ma.Reference,
+                            Nom = ma.Reference,
+                            Description = ma.Description,
+                            Prix = ma.Prix,
+                            Poids = ma.Poids,
+                            QteStock = ma.QteStock,
+                            Annee = ma.Annee,
+                            DispoEnLigne = ma.DispoEnLigne,
+                            CategorieId = ma.CategorieId
+                       }
+                       ))
+                    }).ToList()
+
 
                 }).FirstOrDefaultAsync();
 

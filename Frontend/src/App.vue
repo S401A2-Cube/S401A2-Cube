@@ -1,7 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
-import NavBar from './components/navbar.vue';
+import NavBar from './components/NavBar.vue';
+import Footer from './components/Footer.vue';
+import './assets/css/global.css';
 
 const route = useRoute()
 
@@ -15,22 +17,24 @@ const route = useRoute()
   <section>
     <RouterView />
   </section>
+
+  <Footer />
 </template>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
-  text-align: center;
-}
 
 nav {
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 1rem;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 </style>

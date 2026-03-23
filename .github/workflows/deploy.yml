@@ -1,0 +1,51 @@
+name: Deploy and Migrate C# Database
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Install EF Tool
+        run: dotnet tool install --global dotnet-ef
+
+      - name: Generate SQL
+        run: |
+          cd Backend/S401A2
+          dotnet restore
+          dotnet build
+          dotnet ef migrations script --idempotent --output ../../migration.sql
+
+      - name: Copy SQL to Alwaysdata
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.ALWAYSDATA_SSH_HOST }}
+          username: ${{ secrets.ALWAYSDATA_SSH_USER }}
+          password: ${{ secrets.ALWAYSDATA_SSH_PASSWORD }}
+          source: "migration.sql"
+          target: "www/"
+
+      - name: Update Code and DB
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ALWAYSDATA_SSH_HOST }}
+          username: ${{ secrets.ALWAYSDATA_SSH_USER }}
+          password: ${{ secrets.ALWAYSDATA_SSH_PASSWORD }}
+          script: |
+            cd $HOME/www/
+            git fetch origin main
+            git reset --hard origin/main
+            export PGPASSWORD='${{ secrets.DB_PASSWORD }}'
+            psql -h postgresql-${{ secrets.ALWAYSDATA_SSH_USER }}.alwaysdata.net -U ${{ secrets.DB_USER }} -d ${{ secrets.DB_NAME }} -f $HOME/www/migration.sql
