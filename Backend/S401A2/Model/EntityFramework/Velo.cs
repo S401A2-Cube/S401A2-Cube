@@ -50,6 +50,9 @@ namespace APICube.Models.EntityFramework
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public virtual ICollection<Geometrie>? Geometries { get; set; } = new List<Geometrie>();
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual ICollection<Millesime>? Millesimes { get; set; } = new List<Millesime>();
+
         #endregion
     }
 }
