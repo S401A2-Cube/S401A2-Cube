@@ -37,6 +37,8 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<Geometrie>, GeometrieManager>();
             builder.Services.AddScoped<IDataRepository<Commande>, CommandeManager>();
             builder.Services.AddScoped<IDataRepository<Client>, ClientManager>();
+            builder.Services.AddScoped<IDataRepository<Couleur>, CouleurManager>();
+            builder.Services.AddScoped<IDataRepository<Millesime>, MillesimeManager>();
 
             var app = builder.Build();
 
