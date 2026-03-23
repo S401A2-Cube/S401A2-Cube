@@ -12,20 +12,19 @@ namespace S401A2
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
-            //builder.Services.AddControllers();
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
                 options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
             });
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddDbContext<CubeDBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("LocalConnectionString")));
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<CubeDBContext>(options =>
+                options.UseNpgsql(connectionString));
 
             builder.Services.AddScoped<IDataRepository<Article>, ArticleManager>();
             builder.Services.AddScoped<IDataRepository<Categorie>, CategorieManager>();
@@ -42,18 +41,15 @@ namespace S401A2
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Cube V1");
+                c.RoutePrefix = "swagger"; 
+            });
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();
