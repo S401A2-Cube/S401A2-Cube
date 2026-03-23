@@ -1,6 +1,13 @@
 <script setup>
+import router from '@/router';
+
+
 
 defineProps({
+  id: {
+    type:Number,
+    required:true
+  },
   articleName: {
     type: String,
     required: true
@@ -19,10 +26,12 @@ defineProps({
   },
 });
 
+
+
 </script>
 
 <template>
-    <div class="item-container">
+    <div class="item-container" @click="router.push({path: 'detail/article/'+id});">
         <img class="item-image" :src=imageURL>
         <div class="item-content">
           <p class="item-name">{{articleName}}</p>
@@ -51,7 +60,6 @@ defineProps({
 <style scoped>
 .item-container
 {
-    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +68,12 @@ defineProps({
     gap: 1rem;
     border: 1px solid lightgray;
     cursor: pointer;
+	  transition: box-shadow .3s,-webkit-box-shadow .3s;
+}
+
+.item-container:hover {
+	-webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.141);
+	box-shadow: 0 4px 17px 0 rgba(0,0,0,.141);
 }
 
 .item-container p 

@@ -85,3 +85,10 @@ main {
     font-weight: bold;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
