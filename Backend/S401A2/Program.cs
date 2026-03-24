@@ -21,7 +21,7 @@ namespace S401A2
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            var connectionString = builder.Configuration.GetConnectionString("LocalConnectionString");
 
             builder.Services.AddDbContext<CubeDBContext>(options =>
                 options.UseNpgsql(connectionString));

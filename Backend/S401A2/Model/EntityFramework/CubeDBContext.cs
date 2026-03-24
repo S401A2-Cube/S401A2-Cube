@@ -20,7 +20,6 @@ namespace S401A2.Model.EntityFramework
         public virtual DbSet<Civilite> Civilites { get; set; } = null!;
         public virtual DbSet<Client> Clients { get; set; } = null!;
         public virtual DbSet<Adresse> Adresses { get; set; } = null!;
-
         public virtual DbSet<Commande> Commandes { get; set; } = null!;
         public virtual DbSet<Couleur> Couleurs { get; set; } = null!;
         public virtual DbSet<Geometrie> Geometries { get; set; } = null!;
@@ -49,24 +48,42 @@ namespace S401A2.Model.EntityFramework
         {
             modelBuilder.HasDefaultSchema("public");
 
-            // Example of configuring the Utilisateur entity with default values and unique index
-            //modelBuilder.Entity<Utilisateur>(entity =>
-            //{
-            //    entity.Property(e => e.Pays)
-            //    .HasDefaultValue("France");
-
-            //    entity.Property(e => e.DateCreation)
-            //    .HasDefaultValueSql("now()");
-
-            //    entity.HasIndex(e => e.Email)
-            //    .IsUnique();
-            //});
-
+            // Article <-> MotCle
             modelBuilder.Entity<Article>()
                 .HasMany(a => a.MotsCles)
                 .WithMany(m => m.Articles)
                 .UsingEntity(j => j.ToTable("t_j_article_motcle_amc"));
-            
+
+            // Velo <-> Taille
+            modelBuilder.Entity<Velo>()
+                .HasMany(v => v.Tailles)
+                .WithMany(t => t.Velos)
+                .UsingEntity(j => j.ToTable("t_j_velo_taille_vta"));
+
+            // Velo <-> Millesime
+            modelBuilder.Entity<Velo>()
+                .HasMany(v => v.Millesimes)
+                .WithMany(m => m.Velos)
+                .UsingEntity(j => j.ToTable("t_j_velo_millesime_vmi"));
+
+            // Velo <-> Geometrie
+            modelBuilder.Entity<Velo>()
+                .HasMany(v => v.Geometries)
+                .WithMany(g => g.Velos)
+                .UsingEntity(j => j.ToTable("t_j_velo_geometrie_vge"));
+
+            // Velo <-> Couleur
+            modelBuilder.Entity<Velo>()
+                .HasMany(v => v.Couleurs)
+                .WithMany(c => c.Velos)
+                .UsingEntity(j => j.ToTable("t_j_velo_couleur_vco"));
+
+            // Velo <-> Cadre
+            modelBuilder.Entity<Velo>()
+                .HasMany(v => v.Cadres)
+                .WithMany(c => c.Velos)
+                .UsingEntity(j => j.ToTable("t_j_velo_cadre_vca"));
+
             OnModelCreatingPartial(modelBuilder);
         }
 
