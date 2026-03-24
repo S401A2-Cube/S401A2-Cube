@@ -37,11 +37,11 @@ namespace S401A2.Model.EntityFramework
         public string Description { get; set; } = null!;
 
         [Column("art_prix")]
-        [Precision(5, 2)]
+        [Precision(10, 2)]
         public decimal Prix { get; set; }
 
         [Column("art_poids")]
-        [Precision(5, 2)]
+        [Precision(10, 2)]
         public decimal Poids { get; set; }
 
         [Column("art_qte_stock")]
