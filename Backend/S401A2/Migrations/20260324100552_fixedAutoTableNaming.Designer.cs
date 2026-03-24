@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using S401A2.Model.EntityFramework;
@@ -11,9 +12,11 @@ using S401A2.Model.EntityFramework;
 namespace S401A2.Migrations
 {
     [DbContext(typeof(CubeDBContext))]
-    partial class CubeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260324100552_fixedAutoTableNaming")]
+    partial class fixedAutoTableNaming
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -363,13 +366,13 @@ namespace S401A2.Migrations
                         .HasColumnName("art_nom");
 
                     b.Property<decimal>("Poids")
-                        .HasPrecision(10, 2)
-                        .HasColumnType("numeric(10,2)")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("numeric(5,2)")
                         .HasColumnName("art_poids");
 
                     b.Property<decimal>("Prix")
-                        .HasPrecision(10, 2)
-                        .HasColumnType("numeric(10,2)")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("numeric(5,2)")
                         .HasColumnName("art_prix");
 
                     b.Property<int>("QteStock")
