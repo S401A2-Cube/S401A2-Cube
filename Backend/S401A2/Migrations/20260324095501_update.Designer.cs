@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using S401A2.Model.EntityFramework;
@@ -11,9 +12,11 @@ using S401A2.Model.EntityFramework;
 namespace S401A2.Migrations
 {
     [DbContext(typeof(CubeDBContext))]
-    partial class CubeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260324095501_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -234,7 +237,7 @@ namespace S401A2.Migrations
 
                     b.HasIndex("VelosIdVelo");
 
-                    b.ToTable("t_j_velo_cadre_vca", "public");
+                    b.ToTable("CadreVelo", "public");
                 });
 
             modelBuilder.Entity("CouleurVelo", b =>
@@ -249,7 +252,7 @@ namespace S401A2.Migrations
 
                     b.HasIndex("VelosIdVelo");
 
-                    b.ToTable("t_j_velo_couleur_vco", "public");
+                    b.ToTable("CouleurVelo", "public");
                 });
 
             modelBuilder.Entity("GeometrieVelo", b =>
@@ -264,7 +267,7 @@ namespace S401A2.Migrations
 
                     b.HasIndex("VelosIdVelo");
 
-                    b.ToTable("t_j_velo_geometrie_vge", "public");
+                    b.ToTable("GeometrieVelo", "public");
                 });
 
             modelBuilder.Entity("MillesimeVelo", b =>
@@ -279,7 +282,7 @@ namespace S401A2.Migrations
 
                     b.HasIndex("VelosIdVelo");
 
-                    b.ToTable("t_j_velo_millesime_vmi", "public");
+                    b.ToTable("MillesimeVelo", "public");
                 });
 
             modelBuilder.Entity("S401A2.Model.EntityFramework.Adresse", b =>
@@ -601,7 +604,7 @@ namespace S401A2.Migrations
 
                     b.HasIndex("VelosIdVelo");
 
-                    b.ToTable("t_j_velo_taille_vta", "public");
+                    b.ToTable("TailleVelo", "public");
                 });
 
             modelBuilder.Entity("APICube.Models.EntityFramework.Client", b =>
