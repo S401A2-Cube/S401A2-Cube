@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using S401A2.Model;
 using S401A2.Model.EntityFramework;
 using S401A2.Models.Repository;
 
@@ -42,8 +44,10 @@ namespace S401A2.Controllers
             return cadre;
         }
 
+
         // PUT: api/Cadres/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Policy = Policies.Admin)]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -73,6 +77,7 @@ namespace S401A2.Controllers
 
         // POST: api/Cadres
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize(Policy = Policies.Admin)]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -89,6 +94,7 @@ namespace S401A2.Controllers
         }
 
         // DELETE: api/Cadres/5
+        [Authorize(Policy = Policies.Admin)]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

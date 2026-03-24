@@ -2,6 +2,7 @@ using APICube.Models.EntityFramework;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using S401A2.Model;
 using S401A2.Model.DataManager;
 using S401A2.Model.EntityFramework;
@@ -23,7 +24,35 @@ namespace S401A2
             });
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                // 1. Définir le bouton "Authorize" (le cadenas)
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Copie-colle ton token JWT ici (sans écrire 'Bearer' devant)."
+                });
+
+                // 2. Appliquer le cadenas à toutes les routes de l'API
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+            });
 
             builder.Services.AddDbContext<CubeDBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("LocalConnectionString")));
 

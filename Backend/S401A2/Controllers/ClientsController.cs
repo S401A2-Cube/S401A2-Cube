@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using APICube.Models.EntityFramework;
 using S401A2.Model.EntityFramework;
 using S401A2.Models.Repository;
+using Microsoft.AspNetCore.Authorization;
+using S401A2.Model;
 
 namespace S401A2.Controllers
 {
@@ -23,6 +25,7 @@ namespace S401A2.Controllers
         }
 
         // GET: api/Clients
+        [Authorize(Policy = Policies.Admin)]
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -33,6 +36,7 @@ namespace S401A2.Controllers
         }
 
         // GET: api/Clients/5
+        [Authorize]
         [HttpGet]
         [Route("[action]/{id}")]
         [ActionName("GetById")]
@@ -52,6 +56,7 @@ namespace S401A2.Controllers
 
         // PUT: api/Clients/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -96,8 +101,9 @@ namespace S401A2.Controllers
             return CreatedAtAction("GetClient", new { id = client.Id}, client);
         }
 
-            // DELETE: api/Clients/5
-            [HttpDelete("{id}")]
+        // DELETE: api/Clients/5
+        [Authorize]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClient(int id)
         {
             var client = await _repository.GetByIdAsync(id);
