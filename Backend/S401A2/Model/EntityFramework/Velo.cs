@@ -21,7 +21,7 @@ namespace APICube.Models.EntityFramework
 
         [Column("lienvue360")]
         [StringLength(150)]
-        public string? LienVue360 { get; set; }
+        public string LienVue360 { get; set; }
 
         #region Has One
 
