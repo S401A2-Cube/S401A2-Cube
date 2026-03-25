@@ -202,6 +202,8 @@ namespace S401A2.Migrations
 
                     b.HasKey("IdVelo");
 
+                    b.HasIndex("IdArticle");
+
                     b.HasIndex("IdModele");
 
                     b.ToTable("t_e_velo_vel", "public");
@@ -648,11 +650,19 @@ namespace S401A2.Migrations
 
             modelBuilder.Entity("APICube.Models.EntityFramework.Velo", b =>
                 {
+                    b.HasOne("S401A2.Model.EntityFramework.Article", "Article")
+                        .WithMany("Velos")
+                        .HasForeignKey("IdArticle")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("S401A2.Model.EntityFramework.Modele", "ModeleVelo")
                         .WithMany("Velos")
                         .HasForeignKey("IdModele")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Article");
 
                     b.Navigation("ModeleVelo");
                 });
@@ -812,6 +822,8 @@ namespace S401A2.Migrations
             modelBuilder.Entity("S401A2.Model.EntityFramework.Article", b =>
                 {
                     b.Navigation("ArticleLignePanier");
+
+                    b.Navigation("Velos");
                 });
 
             modelBuilder.Entity("S401A2.Model.EntityFramework.Categorie", b =>
