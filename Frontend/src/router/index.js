@@ -6,6 +6,7 @@ import ArticleView from '@/views/ArticleView.vue'
 import SearchView from '@/views/SearchView.vue'
 import InscriptionView from '@/views/InscriptionView.vue'
 import ConnexionView from '@/views/ConnexionView.vue'
+import ComparaisonView from '@/views/ComparaisonView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path:'/inscription',
       name:'inscription',
       component: InscriptionView
+    },
+    {
+      path:'/comparaison',
+      name:'comparaison',
+      component: ComparaisonView
     },
     {
       path:'/connexion',

@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import NavBar from './components/NavBar.vue';
 import Footer from './components/Footer.vue';
+import ComparaisonBar from './components/ComparaisonBar.vue'
 import './assets/css/global.css';
 
 const route = useRoute()
@@ -17,7 +18,7 @@ const route = useRoute()
   <section>
     <RouterView />
   </section>
-
+<ComparaisonBar />
   <Footer />
 </template>
 
