@@ -1,5 +1,7 @@
 <script setup>
 import Model from './Model.vue';
+import { useComparaisonStore } from '@/stores/comparaison'
+const store = useComparaisonStore()
 
 defineProps({
   article: { type: Object, required: true },
@@ -31,7 +33,7 @@ defineProps({
         </div>
         <div class="action-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
-          <p class="link">Comparaison</p>
+          <p class="link" @click="store.toggle(article,velo)">Comparaison</p>
         </div>
       </div>  
     </div>
