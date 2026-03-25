@@ -12,6 +12,15 @@ namespace S401A2
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowVueApp",
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
+
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
@@ -49,6 +58,7 @@ namespace S401A2
             });
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowVueApp");
             app.UseAuthorization();
             app.MapControllers();
 
