@@ -84,15 +84,24 @@ namespace S401A2.Model.DataManager
 
             var Velo = await _context.Velos
                 .AsNoTracking()
-                .Where(v => v.IdVelo == id) 
-                .Select(v => new Velo 
+                .Where(v => v.IdVelo == id)
+                .Select(v => new Velo
                 {
                     IdVelo = v.IdVelo,
                     IdArticle = v.IdArticle,
                     LienVue360 = v.LienVue360,
                     IdModele = v.IdModele,
 
-                    ModeleVelo = v.ModeleVelo == null ? null : new Modele
+                    Article = new Article
+                    {
+                        ArticleId = v.Article.ArticleId,
+                        Reference = v.Article.Reference,
+                        Nom = v.Article.Nom,
+                        Prix = v.Article.Prix,
+                        Velos = null
+                    },
+
+                    ModeleVelo = new Modele
                     {
                         IdModele = v.ModeleVelo.IdModele,
                         NomModele = v.ModeleVelo.NomModele,
