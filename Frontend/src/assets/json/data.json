@@ -1,0 +1,1417 @@
+{
+  "categories": [
+    {
+      "name": "bikes",
+      "content": [
+        {
+          "title": "MOUNTAINBIKE",
+          "introduction": "Before bicycles, roads were often rough and rutted. Then bicycles came along, and roads were made smoother to cope with their narrow tyres. But that, of course, was before mountain bikes. A mountain bike is capable of going almost anywhere – forest tracks, Alpine paths, bike park trails and everything in-between. Wherever you like to ride, we've got a bike that's built for the job.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/39/f1/05/1702541135/Header_Mountainbike_1920px.jpg?ts=1702541135",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/07/bf/b1/1756121394/MY26_Showroom_Mountainbike_EN.mp4?ts=1756121394",
+          "overview": [
+            {
+              "title": "FULLSUSPENSION",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/88/e7/14/1724426972/MY25_Category_Grid_Fullsuspension_800px_1920x1920.jpg?ts=1756123039",
+              "description": "A full-suspension mountain bike takes the rough with the smooth, so that you don't have to. It's the perfect balance of comfort, performance and speed in one package."
+            },
+            {
+              "title": "HARDTAIL",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/g0/23/58/1724675742/MY25_Category_Grid_Hardtail_800px_1920x1920.jpg?ts=1756123038",
+              "description": "The ideal blend of low weight, comfort and minimal maintenance, a hardtail is a great choice for a wide range of riders from beginner to elite racer."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/14/92/11/1724426953/MY25_Category_Fullsuspension_1200px_1920x1920.jpg?ts=1756123035",
+              "title": "FULLSUSPENSION",
+              "subtitle": "AIN’T NO MOUNTAIN STEEP ENOUGH",
+              "description": "Nothing beats the speed, comfort and control of a CUBE full-suspension bike. From downhill or cross-country racers chasing their next podiums to enduro riders and multi-day Alpine explorers, we have a bike for every adventure and any trail. Combining modern frame technology with cutting-edge geometry and suspension design, a CUBE full-suspension bike is the ultimate way to discover new trail-riding highs.",
+              "applications": [
+                {
+                  "name": "ams",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/29/1a/0d/1724353644/MY25_Series_AMSZERO99_600px.jpg",
+                  "description": "Speed matters, when every second counts. The AMS series combines low weight with ground-hugging suspension and exceptional efficiency, to bring the podium a little closer."
+                },
+                {
+                  "name": "stereo one22",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/af/54/9d/1754642808/MY25-26_Series_StereoONE22_600px.jpg",
+                  "description": "Blending comfort with performance, the Stereo ONE22's lightweight build and ground-hugging suspension is ideal for trail explorers and adventurers alike."
+                },
+                {
+                  "name": "stereo one44",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/cd/d5/6c/1754642808/MY25-26_Series_StereoONE44_600px.jpg",
+                  "description": "Trail-taming performance has a new name: Stereo ONE44. With a choice of C:68X® or C:62® carbon frames, adjustable geometry and unmatched rock-swallowing ability, it's the ideal all-mountain companion."
+                },
+                {
+                  "name": "stereo one55",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/80/a9/7b/1754642808/MY25-26_Series_StereoONE55_600px.jpg",
+                  "description": "The Stereo ONE55 takes the art of enduro to a new level, combining low weight with agility for the climbs, and prodigious rock swallowing ability for the descents. Alps, flattened."
+                },
+                {
+                  "name": "stereo one77",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/61/7f/45/1724353503/MY25_Series_StereoONE77_600px.jpg",
+                  "description": "A bike built for for big days out in big mountains, the Stereo ONE77 combines agile handling with user-adjustable suspension so you can tackle steep, rough trails with confidence."
+                },
+                {
+                  "name": "two15",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/47/7b/c1/1724353562/MY25_Series_TWO15_600px.jpg",
+                  "description": "When gravity gets hold of you, you'd better be on a bike that can handle it. Luckily, the Two15's trail-crushing agility and hard as nails build has got your back."
+                }
+              ],
+              "series": [
+                {
+                  "name": "CROSS COUNTRY",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e2/e3/c3/1754641916/MY26_Application_Fullsuspension_CrossCountry_600px.jpg",
+                  "description": "Ultimate cross country performance for training and racing – a bike that's on the same page!"
+                },
+                {
+                  "name": "DOWN COUNTRY",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/74/88/45/1658846547/Application_Fullsuspension_DownCountry_600px.jpg",
+                  "description": "The freedom to choose. Tackle legendary climbs and surf down fast, looping descents to your heart's content. Epic tours in Alpine country are yours for the taking!"
+                },
+                {
+                  "name": "TRAIL",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/86/69/c9/1724354054/MY25_Application_Fullsuspension_Trail_600px.jpg",
+                  "description": "Speed and agility meet control: Surf the trails for days!"
+                },
+                {
+                  "name": "ALL MOUNTAIN",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/3a/86/74/1724354110/MY25_Application_Fullsuspension_AllMountain_600px.jpg",
+                  "description": "The future of all mountain starts here: razor-sharp handling meets super-efficient power transfer!"
+                },
+                {
+                  "name": "ENDURO",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/91/98/fe/1724354117/MY25_Application_Fullsuspension_Enduro_600px.jpg",
+                  "description": "For true enduro fans who want an extra helping of grip, performance and control. Will you accept the challenge?"
+                },
+                {
+                  "name": "GRAVITY",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/1c/8d/66/1754642279/MY26_Application_Fullsuspension_Gravity_600px.jpg",
+                  "description": "Ignore the rules of gravity and conquer everything the bike park or downhill track throws at you and your bike."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/f5/d7/4d/1724675737/MY25_Category_Hardtail_1200px_1920x1920.jpg?ts=1756123036",
+              "title": "HARDTAIL",
+              "subtitle": "FOR EVERYDAY TO TRAIL USE",
+              "description": "The essence of mountain biking, distilled into its purest form ­– that's the beauty of the hardtail. Whether you're a new rider dipping a toe into off-road exploration, a seasoned racer on the hunt for a lightweight speed machine or a weekend trail explorer looking to expand your horizons, we've a CUBE hardtail to suit you. Low weight, lively performance and minimal maintenance are all part of the package.",
+              "applications": [
+                {
+                  "name": "phenix",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/34/e4/f4/1754642808/MY26_Series_Phenix_600px.jpg",
+                  "description": "Marathon racing demands a light, agile, efficient and comfortable bike. The Phenix C:68X ticks all those boxes and more – so you can ride further and faster than ever."
+                },
+                {
+                  "name": "reaction",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/a0/34/af/1754642808/MY26_Series_Reaction_600px.jpg",
+                  "description": "The ideal hardtail should be light enough to ride fast, comfortable enough to ride all day and versatile enough to tackle any trail. And here it is: the Reaction series does all of that, and more."
+                },
+                {
+                  "name": "attention",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/c5/g0/1e/1754642808/MY26_Series_Attention_600px.jpg",
+                  "description": "All killer, no filler. With the Attention's carefully crafted frame and trail-ready handling, you've everything you need for off-road adventures."
+                },
+                {
+                  "name": "aim",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/db/c0/64/1754642808/MY26_Series_Aim_600px.jpg",
+                  "description": "Versatile, simple, adaptable. Whether you're commuting, touring or adventuring off-road, there's an Aim that's perfectly suited to your needs."
+                },
+                {
+                  "name": "flying circus",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/8f/68/bb/1724353695/MY25_Series_FlyingCircus_600px.jpg",
+                  "description": "Dirt is overrated – air is where it's at. For all your aerial antics, the Flying Circus has the build and the features you need to perform at your peak."
+                }
+              ],
+              "series": [
+                {
+                  "name": "ACTIVE",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/e8/6a/98/1725100042/MY25_Application_Hardtail_Active_600px.jpg",
+                  "description": "Every tour is a new experience – your next adventure awaits!"
+                },
+                {
+                  "name": "ENDURANCE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/1d/8a/cb/1754643752/MY26_Application_Hardtail_Endurance_600px.jpg",
+                  "description": "Our sporty hardtails are built to be supremely versatile, making them fun to ride both on and offroad."
+                },
+                {
+                  "name": "CROSS COUNTRY",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/9b/g0/9b/1724354132/MY25_Application_Hardtail_CrossCountry_600px.jpg",
+                  "description": "In the heat of the battle for the podium, you need a bike that delivers two things: maximum performance and low weight!"
+                },
+                {
+                  "name": "DIRT JUMP",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/89/cd/95/1725099917/MY25_Application_Hardtail_DirtJump_600px.jpg",
+                  "description": "Playful geometry meets perfect balance: ready for take off!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "ROAD",
+          "introduction": "For as long as bicycles have been around, people have wanted to go further, faster. That's why we've used a range of technologies to reduce weight and aerodynamic drag whilst increasing comfort, so that you can get the best out of your riding and racing. Whatever you're into, from road racing to triathlon and cyclocross, there's a CUBE bike with your name on it.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/7b/4c/de/1755688863/MY26_Header_Road_1920x500.jpg",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/25/f6/c2/1756122058/MY26_Showroom_Road_EN.mp4",
+          "overview": [
+            {
+              "title": "ROAD RACE",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/fd/g0/bc/1755689310/MY26_Series_Grid_RoadRace_800px_1920x1920.jpg",
+              "description": "This is cycling in its purest form: cyclist and machine in perfect harmony. Whether for fun, for training or for racing, a CUBE road race bike combines the ideal blend of comfort and pace."
+            },
+            {
+              "title": "CYCLOCROSS",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/10/0b/99/1764144970/MY26_Series_Grid_Cyclocross_800px_1920x1920.jpg",
+              "description": "Thrills, spills and amazing off-season training: cyclocross is the complete package. A CUBE 'cross bike is designed for the rigours of off-road racing, so you can enjoy the mud, sweat and gears."
+            },
+            {
+              "title": "TRIATHLON & TT",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/06/f5/3f/1697521319/Category_Grid_Triathlon_800px_1920x1920.png",
+              "description": "Pitting cyclist and machine against the clock is a tough business. We know that the main obstacle is air, which is why our triathlon and time trial bikes are designed to be as aerodynamic as possible."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/media/cf/56/e0/1755689287/MY26_Series_Sticky_RoadRace_1200px.jpg.jpg",
+              "title": "ROAD RACE",
+              "subtitle": "The road ahead",
+              "description": "When the lure of the open road is impossible to ignore, that's when you know you're ready for a CUBE road race bike. Whatever your road-going aspirations: whether it's simply to explore further afield, train with your riding buddies or lead out the peloton in the chase for a podium finish: we've a bike to suit you. Because speed isn't just about performance, it's about fun too. And that's when the ride really starts...",
+              "applications": [
+                {
+                  "name": "race",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e4/d9/dc/1755085950/MY26_Application_RR_Race_600px.jpg",
+                  "description": "Everything you need to head straight to the front of the peloton!"
+                },
+                {
+                  "name": "aero",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/2e/e7/f7/1761903443/MY26_Application_RR_Aero_600px.jpg",
+                  "description": "Advanced aerodynamic profiles to help you slice through the wind."
+                },
+                {
+                  "name": "climbing",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/0d/2b/87/1761903443/MY26_Application_RR_Climbing_600px.jpg",
+                  "description": "Ultra-lightweight frames designed to conquer the steepest mountain passes."
+                },
+                {
+                  "name": "uci-compliant",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/d7/60/ab/1754645103/MY26_Application_RR_UCI_600px.jpg",
+                  "description": "Certified for competition at the highest level of professional racing."
+                },
+                {
+                  "name": "endurance",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/c8/58/2b/1724429628/MY25_Application_Road_Endurance_600px.jpg",
+                  "description": "Geometry optimized for long days in the saddle and maximum comfort."
+                },
+                {
+                  "name": "comfort",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/08/da/0f/1724429628/MY25_Application_Road_Comfort_600px.jpg",
+                  "description": "Damping technologies to smooth out the roughest road surfaces."
+                }
+              ],
+              "series": [
+                {
+                  "name": "LITENING® C:68X",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/6d/0e/c9/1754645608/MY26_Series_Litening_600px.jpg",
+                  "description": "The main barrier to more speed isn't you, or your training. It's the air. And that's why we developed the Litening® range: fully UCI-compliant and as aerodynamic as possible."
+                },
+                {
+                  "name": "AGREE C:62",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/6d/cf/02/1754645607/MY26_Series_Agree_600px.jpg",
+                  "description": "The ultimate endurance race bike. It's fast, light, and remarkably comfortable for those all-day epic rides."
+                },
+                {
+                  "name": "ATTAIN",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e4/a7/b1/1754645608/MY26_Series_Attain_600px.jpg",
+                  "description": "Blending pace and comfort, the Attain is the ideal introduction to the world of road cycling and long-distance touring."
+                }
+              ]
+            },
+            {
+              "title": "CYCLOCROSS",
+              "image": "https://file.cube.eu/azwesc1xfg346/media/a6/7e/c1/1724427100/MY25_Category_Cyclocross_1200px.jpg",
+              "subtitle": "Mud, sweat and gears",
+              "description": "Our cyclocross bikes are built to handle the most demanding courses. With race-bred geometry and mud-shedding designs, they are ready for the off-road challenge.",
+              "applications": [
+                {
+                  "name": "race",
+                  "image": "https://azwest1xfg344.blob.core.windows.net/azwesc1xfg346/media/39/dc/b9/1764144927/MY26_Application_Road_CX_Race_600px.jpg",
+                  "description": "Lightweight and agile for the tight turns of the CX track."
+                },
+                {
+                  "name": "endurance",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/3c/39/47/1754646642/MY26_Application_CX_Endurance_600px.jpg",
+                  "description": "Made for maximum mileage, built for you: Performance has never been so effective!"
+                }
+              ],
+              "series": [
+                {
+                  "name": "CROSS RACE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/40/c5/2f/1754646593/MY26_Series_CrossRaceC68X_600px.jpg",
+                  "description": "The professional choice for mud-filled winter Sundays and explosive off-road performance."
+                }
+              ]
+            },
+            {
+              "title": "TRIATHLON & TT",
+              "image": "https://file.cube.eu/azwesc1xfg346/media/65/13/0f/1697521319/Category_Triathlon_TimeTrial_1200px.png",
+              "subtitle": "Against the clock",
+              "description": "Maximum aerodynamics and total integration are the focus here. Our Aerium series is developed to ensure every watt of energy is converted into forward motion.",
+              "applications": [
+                {
+                  "name": "triathlon",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/9d/3b/da/1686916091/Application_Triathlon_600px.jpg",
+                  "description": "Turn up the heat on your rivals: everything you need for a devastatingly fast bike leg!"
+                },
+                {
+                  "name": "aero",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/18/85/aa/1658846549/Application_Triathlon_Aero_600px.jpg",
+                  "description": "Developed in the wind tunnel, tested in race miles: aerodynamic perfection on two wheels."
+                },
+                {
+                  "name": "uci-compliant",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/34/35/44/1724403786/MY25_Application_Triathlon_UCI-Konform_600px.jpg",
+                  "description": "Rewriting the rulebook for fully UCI-compliant bikes."
+                }
+              ],
+              "series": [
+                {
+                  "name": "AERIUM C:68XC",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/ef/6c/db/1754647096/MY26_Series_AeriumTT_600px.jpg",
+                  "description": "Fast, faster, fastest. We developed the Aerium C:68X from the ground up to be the quickest triathlon bike around, making use of input from top athletes as well as extensive computer modelling and wind tunnel testing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "GRAVEL",
+          "introduction": "When a conventional bike isn't up to the job, your gravel bike offers next-level freedom, taking dirt roads and cobbles, forest roads, fields and trails in its stride. Combining the rugged go-anywhere ability of a mountain bike with the pace and purity of a road bike, it's the bike you never knew you needed. Leave behind what you know and jump head first into your next adventure!",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/23/ab/b1/1724427219/MY25_Header_Gravel_1920px.jpg?ts=1724677263",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/22/1f/a6/1756129590/MY26_Showroom_Gravel_EN.mp4?ts=1756129590",
+          "overview": [
+            {
+              "title": "NUROAD",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/cf/fc/97/1724751483/MY25_Category_Grid_Nuroad_800px_1920x1920.jpg?ts=1756123040",
+              "description": "Take the road less travelled. Combining road and mountain bike DNA, our Nuroad is the light, go-anywhere bike you've been looking for."
+            },
+            {
+              "title": "CROSS RACE",
+              "image": "",
+              "description": ""
+            },
+            {
+              "title": "NULANE",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/59/f2/6e/1724427047/MY25_Category_Grid_Nulane_800px_1920x1920.jpg?ts=1756123039",
+              "description": "What if you could zip through the city streets on a bike that's light, responsive and easy to ride? Allow us to introduce the Nulane: your key to cutting through the urban jungle."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/23/01/b8/1756218998/MY26_Sticky_Gravel_Nuroad_1200px_1920x1920.jpg?ts=1756218998",
+              "title": "NUROAD",
+              "subtitle": "NO ROAD NEEDED",
+              "description": "Not all roads are created equal. Some of them are pretty rough, which is where the Nuroad comes in. Blending cyclocross ruggedness with road bike precision, it's the perfect tool for nudging the boundaries and exploring a bit further off the beaten track – without compromising on speed. And, with aluminium, C:62® carbon and Fully Equipped options, we've got the ideal Nuroad for you.",
+              "applications": [
+                {
+                  "name": "nuroad c:62",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/05/16/be/1754651581/MY26_Series_NuroadC62_600px.jpg",
+                  "description": "The Nuroad C:62's frame will grab your attention with its elegantly organic lines, but it's the superb performance and practical touches that'll win you over."
+                },
+                {
+                  "name": "nuroad hpa",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/09/c5/0e/1754651582/MY26_Series_NuroadHPA_600px.jpg",
+                  "description": "With a full carbon fork and lightweight frame for comfort and pace, our Nuroad HPA is your ideal companion for unpaved adventures of the gravelly kind."
+                },
+                {
+                  "name": "nuroad fe",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/7e/33/4e/1754651582/MY26_Series_NuroadC62FE_600px.jpg",
+                  "description": "Your bike shouldn't hold you back. The Nuroad FE's rugged design and fully equipped flexibility give you the freedom to ride wherever you want: any weather, any surface, anytime."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/56/2e/64/1658846548/Application_Gravel_Commuting_600px.jpg",
+                  "description": "Want to enjoy a faster and less stressful daily commute? Relaxed weekend forays into the countryside? We have the bike for you"
+                },
+                {
+                  "name": "ADVENTURE",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/da/1c/4c/1724751482/MY25_Application_Gravel_Adventure_600px.jpg",
+                  "description": "Gravel roads? Forest tracks? Asphalt? Bikepacking? With a gravel bike, the possibilities are endless. No limits, just adventure!"
+                },
+                {
+                  "name": "ENDURANCE",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/ed/06/9f/1724426852/MY25_Application_Gravel_Endurance_600px.jpg",
+                  "description": "Ditch the highway and unlock gravel freedom! Ride where your curiosity takes you or join your mates on new adventures. You and your gravel bike can take on anything together."
+                },
+                {
+                  "name": "RACE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/cc/c2/51/1754999740/MY26_Application_Gravel_Race_600px.jpg",
+                  "description": "For getting out into the back country, testing your bike handling skills and enjoying the camaraderie of like-minded riders, nothing comes close to pitting you and your gravel bike against the clock."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/a6/7e/c1/1724427100/MY25_Category_Cyclocross_1200px_1920x1920.jpg?ts=1756123034",
+              "title": "CROSS RACE",
+              "subtitle": "CROSS IS BOSS",
+              "description": "A sport for masochists, or a great way to stay ride fit in the off season? Whatever your view of cyclocross, if you're planning on giving it a try you'll want one of our Cross series underneath you (or on your shoulder). Light, responsive, easy to carry and with clearances designed for muddy courses, our cyclocross series is built to go the distance.",
+              "applications": [
+                {
+                  "name": "cross race c:68x",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/40/c5/2f/1754646593/MY26_Series_CrossRaceC68X_600px.jpg",
+                  "description": "Mud, blood and guts for perfectionists – the Cross Race C:68X's ultralight carbon frame and pro-inspired design is built for winning."
+                },
+                {
+                  "name": "cross race c:62",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/f2/b1/53/1754652504/MY26_Series_CrossRaceC62_600px.jpg",
+                  "description": "If weekend racing's in your blood, the Cross Race C:62's the boost you need. Light, precise and quick as hell, it's got podium written all over it."
+                }
+              ],
+              "series": [
+                {
+                  "name": "RACE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/39/dc/b9/1764144927/MY26_Application_Road_CX_Race_600px.jpg?ts=1764144927",
+                  "description": "Everything you need to head straight to the front of the peloton!"
+                },
+                {
+                  "name": "ENDURANCE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/3c/39/47/1754646642/MY26_Application_CX_Endurance_600px.jpg",
+                  "description": "Made for maximum mileage, built for you: Performance has never been so effective!"
+                },
+                {
+                  "name": "UCI-COMPLIANT",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/94/34/eb/1754652467/MY26_Application_CX_UCI_600px.jpg",
+                  "description": "Rewriting the rulebook for fully UCI-compliant bikes."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/29/de/58/1755174086/MY26_Series_Sticky_NulaneC62_1200px1_1920x1920.jpg?ts=1755174087",
+              "title": "NULANE",
+              "subtitle": "SEE THE ROAD DIFFERENTLY",
+              "description": "Fast comes in different guises. The Nulane takes the road bike rule book and lobs it into the nearest gutter, because sometimes you just need to make your own rules. Equipped with flat bars, powerful disc brakes and a responsive frame in aluminium or C:62® carbon, it combines road race pace with city bike smarts. Simply put, it's the urban assault speed machine you've been looking for.",
+              "applications": [
+                {
+                  "name": "nulane c:62",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/09/50/29/1754653780/MY26_Series_NulaneC62_600px.jpg",
+                  "description": "Rapid urban transport just got a carbon-framed upgrade. The Nulane C:62's light, comfortable and versatile build makes it the discerning urban cyclist's weapon of choice."
+                },
+                {
+                  "name": "nulane hpa",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/8f/31/d4/1754653780/MY26_Series_NulaneHPA_600px.jpg",
+                  "description": "Have it your way – the Nulane combines the speed of a race machine with the versatility of a commuting tourer. City streets or gravel tracks, it's got your back."
+                },
+                {
+                  "name": "nulane fe",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/d6/55/a6/1754653780/MY26_Series_NulaneFE_600px.jpg",
+                  "description": "Road bike DNA with a dose of touring practicality: the Nulane FE combines the best of two worlds, and that makes it a force to be reckoned with in the urban jungle."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/52/c4/30/1667493022/Application_Nulane_Commuting_600px.jpg",
+                  "description": "A bike to take you seamlessly from your daily commute to the local shops and a quick lap of the park before home."
+                },
+                {
+                  "name": "ADVENTURE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/8b/ce/18/1667493022/Application_Nulane_Adventure_600px.jpg",
+                  "description": "Pack your bags, hit the road and feel the daily grind disappear with the first turn of the pedals. Discover the world from the seat of your bike!"
+                },
+                {
+                  "name": "FITNESS",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/36/d4/a6/1755172899/MY26_Application_Trekking_Fitness_600px.jpg",
+                  "description": "Get more bang for your buck and work out in the saddle: more flexibility, more fun, more fresh air!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "TREKKING",
+          "introduction": "Is the bicycle the perfect machine? We think it probably is. But you don't need to be a dedicated cyclist to agree with that statement, and our Tour and City bikes are proof. Whether you want to nip across town, leave the car at home for your commute, pop to the shops or take on a longer adventure, we've the ideal bike to make your journey easier and more fun.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/73/fd/7b/1703148556/Header_Trekking_1920px.jpg?ts=1703148556",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/2c/2e/c1/1756129707/MY26_Showroom_Trekking_EN.mp4?ts=1756129707",
+          "overview": [
+            {
+              "title": "TOUR",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/9e/83/00/1658847304/Category_Grid_Tour_800px_1920x1920.jpg?ts=1664315217",
+              "description": "Every adventure begins with the first turn of the pedals, so each bike in our Tour range is designed to get you to your destination – wherever that is – in style and comfort. Where will you ride next?"
+            },
+            {
+              "title": "CITY",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/75/g0/b9/1658847304/Category_Grid_City_800px_1920x1920.JPG?ts=1664315229",
+              "description": "You want a bike that‘s comfortable, nippy around town, versatile enough to carry shopping or anything else that you might need to take with you... and, above all, doesn‘t get in the way of your busy life."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/e1/de/bd/1658847633/Category_Tour_1200px_1920x1920.jpg?ts=1664315194",
+              "title": "TOUR",
+              "subtitle": "YOUR ADVENTURE STARTS HERE",
+              "description": "One of the best ways to see the world is from the saddle of a bicycle. It's this thought that forms the inspiration for our Tour range, every one of which offers a comfortable seat and a safe, lively ride for adventurers of all persuasions. From weekend explorers to world tourers – and everything in between – we've got a bike that'll help you get out and see the world, your way.",
+              "applications": [
+                {
+                  "name": "kathmandu",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/57/42/d4/1754655218/MY26_Series_Kathmandu_600px.jpg",
+                  "description": "Feed your curiosity. Tough, rugged and ready to go anywhere. The Kathmandu from CUBE is fully equipped for everything from nomadic life on the road to the daily commute on city streets."
+                },
+                {
+                  "name": "touring",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e4/66/66/1754655218/MY26_Series_Touring_600px.jpg",
+                  "description": "If freewheeling fresh air is your thing, the Touring is the bike for you. Fully equipped, light and comfortable to ride, weekend freedom beckons."
+                },
+                {
+                  "name": "nature",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/cf/0c/c0/1754655218/MY25-26_Series_Nature_600px.jpg",
+                  "description": "Get out more. The Nature's easy handling and ride-all-day comfort make it easier than ever to start cycling adventures from your doorstep."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMFORT",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/77/90/c1/1700123517/Application_Trekking_Tour_Comfort_600.jpg",
+                  "description": "From silky smooth cycle paths to the cobbles of the old town: Comfort is the name of the game!"
+                },
+                {
+                  "name": "DAY TRIP",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/a4/c1/7a/1700123484/Application_Trekking_DayTrip_600.jpg",
+                  "description": "Get more out of your daily rides and indulge your adventurous side – with the supremely versatile touring bike!"
+                },
+                {
+                  "name": "BIKEPACKING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/da/16/24/1658846548/Application_Tour_Bikepacking_600px.jpg",
+                  "description": "Pack your bags, hit the road and feel the daily grind disappear with the first turn of the pedals. Discover the world from the seat of your bike!"
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/78/55/4f/1703162866/Category_City_1200px_1920x1920.jpg?ts=1664315194",
+              "title": "CITY",
+              "subtitle": "EXPLORE YOUR CITY",
+              "description": "There are few better ways to get around town than on your own two wheels. Our City range covers all the bases, from the comfort and style of the Aruba to the efficient, traffic-beating pace of the Editor and everything in-between. For work or for play, for commuting or shopping, we've got the urban bike to slot right into your busy lifestyle. You'll wonder how you managed without...",
+              "applications": [
+                {
+                  "name": "editor",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/55/f8/d4/1754655913/MY26_Series_Editor_600px.jpg",
+                  "description": "No-compromise urban style and function. The Editor is built to devour city streets in style whilst also being easy to live with – because you shouldn't have to compromise on aesthetics or practicality in order to get around."
+                },
+                {
+                  "name": "nulane",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/09/50/29/1754653780/MY26_Series_NulaneC62_600px.jpg",
+                  "description": "What if you could zip through the city streets on a bike that's light, responsive and easy to ride? Allow us to introduce the Nulane: your key to cutting through the urban jungle."
+                },
+                {
+                  "name": "aruba",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/de/ea/cc/1754655913/MY26_Series_Aruba_600px.jpg",
+                  "description": "Fashion and function – you really can have it all. The Aruba blends a unique combo of retro style with cutting-edge comfort for a two-wheeled fashion statement you'll love."
+                },
+                {
+                  "name": "town",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/58/59/ee/1724353555/MY25_Series_Town_600px.jpg",
+                  "description": "Comfortable, versatile and so easy to live with, the Town gives you the independence to live your life to the full. It's your new indispensable companion."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMFORT",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/45/bd/83/1700038900/Application_Trekking_Comfort_600.jpg",
+                  "description": "From smooth cycle paths to the cobbles of the old town: this is cycling made enjoyable, comfortable and safe!"
+                },
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/a8/fd/21/1661512050/Application_City_Commuting_600px_neu.jpg",
+                  "description": "A bike to take you seamlessly from your daily commute to the local shops and a quick lap of the park before home."
+                },
+                {
+                  "name": "FITNESS",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/36/d4/a6/1755172899/MY26_Application_Trekking_Fitness_600px.jpg",
+                  "description": "Get more bang for your buck and work out in the saddle: more flexibility, more fun, more fresh air!"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "e-bikes",
+      "content": [
+        {
+          "title": "E-MOUNTAINBIKE",
+          "introduction": "We've taken the rugged adaptability of a mountain bike and, with a little help from Bosch, made it even better. Our E-Mountainbike series make go-anywhere versatility accessible to just about anyone. From forest trails to city streets and everywhere in between, smooth and quiet power assistance simply helps you on your way. You won't believe how much fun it is...",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/ea/0c/61/1756815963/MY26_Header_E-Mountainbike_1920x500.jpg?ts=1756815963",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/f7/1f/e8/1756130376/MY26_Showroom_E-Mountainbike_EN.mp4?ts=1756130376",
+          "overview": [
+            {
+              "title": "FULLSUSPENSION",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/b7/4b/81/1756815908/MY26_Series_Grid_E-Mountainbike_Fully_800x_1920x1920.jpg?ts=1756816006",
+              "description": "Nothing out-rides a CUBE E-Fullsuspension bike off-road. From lightweight all-mountain to trail exploration and enduro, the hybrid full suspension range helps you flatten mountains, one trail at a time."
+            },
+            {
+              "title": "HARDTAIL",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/68/5d/8b/1756815908/MY26_Series_Grid_E-Mountainbike_Hardtail_800_1920x1920.jpg?ts=1756816006",
+              "description": "Adaptable, dependable and rugged: that's the beauty of a hardtail. And, with power assistance from Bosch, our Reaction Hybrid series is even more versatile. Simply put, ride anywhere."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/93/b6/d0/1756815908/MY26_Series_Sticky_E-Mountainbike_Fully_1200px_1920x1920.jpg?ts=1756816006",
+              "title": "FULLSUSPENSION",
+              "subtitle": "UNLOCK YOUR POTENTIAL",
+              "description": "Go anywhere, ride anything – that's the simple promise of a CUBE hybrid full-suspension bike. Bosch power and CUBE suspension design work together to improve comfort, boost your pedalling and expand your riding possibilities. From trail exploration to lightweight all-mountain and even Alpine enduro, there's a full-suspension e-bike that's perfect for you and your riding ambitions.",
+              "applications": [
+                {
+                  "name": "stereo hybrid one22",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/8a/3b/1c/1754894738/MY26_Series_StereoHybridONE22_600px.jpg",
+                  "description": "There's no feeling like broadening your horizons, and no better bike on which to do that than the Stereo Hybrid ONE22. Go-anywhere comfort with Bosch power, it's your ticket to adventure."
+                },
+                {
+                  "name": "stereo hybrid one44",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/14/62/38/1754894738/MY26_Series_StereoHybridONE44_600px.jpg",
+                  "description": "Big days out on mountain trails: nothing beats the feeling. The Stereo Hybrid ONE44 was built for the job, with dialled suspension and added Bosch power."
+                },
+                {
+                  "name": "ams hybrid one44",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/57/74/cc/1754894738/MY26_Series_AMSHybridONE44_600px.jpg",
+                  "description": "The holy grail: a genuinely lightweight all mountain bike with added Bosch power. It's like taking your existing skills and fitness and just taking it all to the next level..."
+                },
+                {
+                  "name": "stereo hybrid one77",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/ce/8e/b9/1754894738/MY26_Series_StereoHybridONE77_600px.jpg",
+                  "description": "When your riding ambitions are on the large side but you'd quite like a helping hand getting back to the top, the Stereo Hybrid ONE77 has the mullet setup, Bosch power and CUBE design to deliver."
+                },
+                {
+                  "name": "ams hybrid 177",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/1a/09/c8/1754894738/MY26_Series_AMSHybrid177_600px.jpg",
+                  "description": "A lighter, more capable Alpine trail devourer? Sign us up! The AMS Hybrid 177 delivers mullet-flavoured, mountain-flattening performance with less weight and on-point handling."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMFORT",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/b6/26/f9/1707748503/Application_FullsuspensionHybrid_Comfort_600px.jpg",
+                  "description": "New adventures await off the beaten track. Exploring the countryside has never been so much fun. Discover your passion for mountain biking!"
+                },
+                {
+                  "name": "TOUR",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/d0/c8/2c/1707748504/Application_FullsuspensionHybrid_Tour_600px.jpg",
+                  "description": "When your imagination meets the extra power of our e-MTBs, no ride is too long, too far or too difficult. There's nothing stopping you now!"
+                },
+                {
+                  "name": "SPORT",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/d8/5d/4b/1707749022/Application_FullsuspensionHybrid_Sport_600px_neu.jpg",
+                  "description": "Our sporty e-MTBs are built to be as versatile as you need. Robust reliability meets agile handling, making them fun to ride both on and off road."
+                },
+                {
+                  "name": "TRAIL",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/2d/6a/12/1707749022/Application_FullsuspensionHybrid_Trail_600px_neu.jpg",
+                  "description": "Cycle paths and forest roads deliver you to your long-awaited destination – rugged, rooty natural singletrack."
+                },
+                {
+                  "name": "ALL MOUNTAIN",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/46/d1/40/1707748495/Application_FullsuspensionHybrid_AllMountain_600px.jpg",
+                  "description": "The freedom to choose. Ride up hills, surf the trails and roll down looping descents to your heart's content. Epic tours in Alpine country are yours for the taking!"
+                },
+                {
+                  "name": "ENDURO",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/e0/6c/35/1729521168/MY25_Application_FullsuspensionHybrid_Enduro_600px.jpg",
+                  "description": "When things get sketchy on the gnarly downhill sections, you know you're exactly where you belong: on the world's toughest enduro tracks."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/99/fa/d0/1756815908/MY26_Series_Sticky_E-Mountainbike_Hardtail_1200px_1920x1920.jpg?ts=1756816006",
+              "title": "HARDTAIL",
+              "subtitle": "FOR EVERYDAY TO TRAIL USE",
+              "description": "Whether you're looking for a bike to double up on the daily commute and weekend exploring, or an off-road companion to broaden your horizons, we've a CUBE hybrid hardtail to suit you. Rugged and adaptable with easy handling and blending Bosch power with CUBE design, whichever one you choose is bound to put a smile on your face. Riding has never been this much fun...",
+              "applications": [
+                {
+                  "name": "reaction hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e2/0a/e1/1754896323/MY26_Series_ReactionHybrid_600px.jpg",
+                  "description": "Blending the versatility, agility and easy handling of our Reaction series with Bosch power, the Reaction Hybrid is the capable do-anything, go-anywhere all-rounder of the CUBE range."
+                },
+                {
+                  "name": "reaction hybrid fe",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/cf/43/6f/1754896323/MY26_Series_ReactionHybridFE_600px.jpg",
+                  "description": "Take on any road, anytime. With the Reaction Hybrid FE's Bosch power, versatile accessories and rugged design, there's practically no limit as to where it could take you next."
+                },
+                {
+                  "name": "reaction hybrid performance",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e7/99/ff/1754896323/MY26_Series_ReactionHybridPerformance_600px.jpg",
+                  "description": "Bosch power with ride-anywhere versatility and CUBE practicality: it's a potent combination. Make light work of hills, ride further will less effort, and expand your horizons..."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/68/fe/3e/1661503137/Application_Reaction%20Hybrid_Commuting_600px_neu.jpg",
+                  "description": "Whether you want to make navigating the commute to work a faster and more enjoyable experience or escape the city on the weekends, we've got the perfect bike for you!"
+                },
+                {
+                  "name": "TOUR",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/d5/e6/af/1658846549/Application_Reaction%20Hybrid_Tour_600px.jpg",
+                  "description": "When your imagination meets the extra power of our e-MTBs, no ride is too long, too far or too difficult. There's nothing stopping you now!"
+                },
+                {
+                  "name": "SPORT",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/cb/ce/5e/1658846548/Application_Reaction%20Hybrid_Sport_600px.jpg",
+                  "description": "Our sporty e-MTBs are built to be as versatile as you need. Robust reliability meets agile handling, making them fun to ride both on and off road."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "TREKKING",
+          "introduction": "A great bike should slot right into your life. That's the thinking behind our e-tour and e-city bikes, which combine the versatility and ease of use of a traditional bike with the added power of Bosch pedal assist systems. Ride further, discover new routes, or simply make your life a little easier. Whatever you'd like to do, we have a CUBE Hybrid tour or city bike that's perfect for you and your busy lifestyle.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/74/29/7e/1699965944/Header_E-Trekking_1920.jpg?ts=1699967940",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/bb/1e/94/1756130919/MY26_Showroom_E-Trekking_EN.mp4?ts=1756130919",
+          "overview": [
+            {
+              "title": "TOUR",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/46/9d/c3/1699965944/Category_Grid_ETrekking_Tour_800px_1920x1920.jpg?ts=1699986700",
+              "description": "A simple turn of the pedals is all it takes to begin a new adventure. With the addition of Bosch pedal assist, you'll have a little extra help with every pedal revolution – and that opens up all sorts of possibilities."
+            },
+            {
+              "title": "CITY",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/13/be/75/1700037464/Category_Grid_ETrekking_City_800px_1920x1920.jpg?ts=1700052034",
+              "description": "Easy come, easy go. Literally. With our e-city bikes we've created a comfortable, accessible way to get around the urban jungle – and with Bosch pedal assist it's easier than ever."
+            },
+            {
+              "title": "COMPACT & FOLDING",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/eb/e8/0d/1700037464/Category_Grid_ETrekking_CompactFold_800px_1920x1920.jpg?ts=1700052034",
+              "description": "Take your bike with you, wherever you go. With compact designs that are easy to carry and store – and the boost of Bosch pedal assist – there's a compact or fold hybrid for everyone."
+            },
+            {
+              "title": "S-PEDELEC",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/d2/c7/73/1729592723/MY25_Category_Grid_S-Pedelec_800px_1920x1920.jpg?ts=1756123035",
+              "description": "Nothing sucks the life out of a city like traffic. But with a CUBE s-pedelec you can cut through the congestion and arrive on time, thanks to Bosch power and simple, elegant design."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/cb/85/48/1700037469/Category_ETrekking_Tour_1200px_1920x1920.jpg?ts=1700052035",
+              "title": "TOUR",
+              "subtitle": "POWER UP YOUR ADVENTURE",
+              "description": "The humble bicycle is one of the most efficient ways of getting between A and B. You'd think it'd be hard to improve on that, but our Bosch-powered tour hybrids are the perfect way to make travelling by bike even more pleasurable. Whether you need a bike for the daily commute, to run errands around town or for exploring further afield at the weekend, we've a comfortable and adaptable CUBE hybrid to suit you.",
+              "applications": [
+                {
+                  "name": "kathmandu hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/22/8a/12/1754928101/MY26_Series_KathmanduHybridONE11_600px.jpg",
+                  "description": "The Kathmandu Hybrid by CUBE features smooth Bosch power and a sleek, versatile design - including our sturdy, neat IC 3.0 carrier. It's ready to take on the world. Are you?"
+                },
+                {
+                  "name": "touring hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/19/23/bc/1754897353/MY26_Series_TouringHybrid_600px.jpg",
+                  "description": "Ride adventurously, travel often. The Touring Hybrid's smooth Bosch power, comfortable ride and practical equipment mean you're all set to tackle life's adventures head on."
+                },
+                {
+                  "name": "nuride hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/a6/d3/d0/1754897353/MY26_Series_NurideHybrid_600px.jpg",
+                  "description": "Accessible, comfortable, versatile, go-anywhere fun. The Nuride Hybrid represents the freedom of adventure for everyone."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMFORT",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/35/bd/8d/1717418549/Application_ETrekking_Comfort_600px_NEU.jpg",
+                  "description": "From silky smooth cycle paths to the cobbles of the old town: Comfort is the name of the game!"
+                },
+                {
+                  "name": "DAY TRIP",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/96/7c/1e/1717418550/Application_ETrekking_DayTrip_600px_NEU.jpg",
+                  "description": "Get more out of your tours and indulge your adventurous side – with the supremely versatile touring e-bike!"
+                },
+                {
+                  "name": "BIKEPACKING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/06/99/a1/1699965944/Application_ETrekking_Bikepacking_600.jpg",
+                  "description": "Pack your bags, hit the road and feel the daily grind disappear with the first turn of the pedals. Discover the world from the seat of your e-bike!"
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/32/2e/2c/1700061596/Category_ETrekking_City_1200px_1920x1920.jpg?ts=1700061603",
+              "title": "CITY",
+              "subtitle": "SMOOTH THE WAY",
+              "description": "There are a million and one reasons you need to get across town – for work, for play, for shopping, for family, for friends – and we've got the perfect bike for the job. With elegant designs, easy handling, practical solutions for carrying your possessions and the benefit of Bosch pedal assist, we've got the perfect two-wheeled companion for everybody. Make city travel a pleasure again...",
+              "applications": [
+                {
+                  "name": "editor hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/a7/8c/6a/1754898195/MY26_Series_EditorHybrid_600px.jpg",
+                  "description": "With its sleek looks and the addition of Bosch's lightweight SX drive for seamless pedal assistance, the Editor Hybrid is the simplest – and most stylish – way to arrive at the office on time."
+                },
+                {
+                  "name": "nulane hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/31/bf/f4/1754898195/MY26_Series_NulaneHybrid_600px.jpg",
+                  "description": "A bike that's quick, nimble, adaptable and rugged enough to take on city streets as well as gravel tracks? Welcome to the Nulane Hybrid – a blend of CUBE design excellence and lightweight Bosch power."
+                },
+                {
+                  "name": "supreme hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/e9/64/5b/1754898195/MY26_Series_SupremeHybrid_600px.jpg",
+                  "description": "With its Easy Entry Powertube frame, Bosch power, comfortable ride position and coaster brake option, the Supreme Hybrid will get you where you're going in style."
+                },
+                {
+                  "name": "aruba hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/7f/12/5f/1754898195/MY26_Series_ArubaHybrid_600px.jpg",
+                  "description": "Classic retro styling, colour-coordinated detailing and almost invisible Bosch power unit integration make the Aruba Hybrid a bike to fall in love with, every time you ride it."
+                }
+              ],
+              "series": [
+                {
+                  "name": "EVERYDAY",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/aa/55/62/1700037463/Application_ETrekking_Everday_600.jpg",
+                  "description": "From urban jungle to rural idyll, our versatile city bikes are here to make your life easier. Zip to the office, cruise the streets in effortless style and stay safe after sundown with practical, everyday mobility."
+                },
+                {
+                  "name": "COMFORT",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/56/70/9f/1709191940/Application_CityHybrid_Comfort_600px.jpg",
+                  "description": "From smooth cycle paths to the cobbles of the old town: this is cycling made enjoyable, comfortable and safe!"
+                },
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/33/47/bc/1709203653/Application_ETrekking_Commuting_600px.jpg",
+                  "description": "Want to enjoy a faster and less stressful daily commute? Relaxed weekend forays into the countryside? We have the bike for you!"
+                },
+                {
+                  "name": "FITNESS",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/d4/d4/46/1755587360/MY26_Application_E-Trekking_Fitness_600px.jpg",
+                  "description": "Get more bang for your buck and work out in the saddle: more flexibility, more fun, more fresh air!"
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/fe/0d/93/1660914502/Category_CompactundFolding_1200px_1920x1920.jpg?ts=1664315174",
+              "title": "COMPACT & FOLDING",
+              "subtitle": "FLEXIBILITY, MOBILITY, FUNCTIONALITY",
+              "description": "There are as many reasons to use a CUBE compact or fold hybrid as there are days in the year. Small but perfectly formed, it's the companion you'll wish you'd discovered sooner. Combining the flexibility of Bosch pedal assist with clever design that makes it easy to carry and store, this is the bike that's ideal for camping, for commuting, for shopping, for visiting friends, for taking on holiday...",
+              "applications": [
+                {
+                  "name": "fold hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/b3/68/b5/1754899240/MY26_Series_FoldHybrid_600px.jpg",
+                  "description": "This is the Bosch hybrid you can take with you anywhere. Ride to work, pop it in the car, take it on the train... wherever you go, your Fold Hybrid can go too."
+                },
+                {
+                  "name": "compact hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/09/25/47/1754899240/MY26_Series_CompactHybrid_600px.jpg",
+                  "description": "The Compact Hybrid fills that two-wheeled gap in your life. For riding to work. For taking on holiday. For popping to the shops. For whatever you want..."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/61/e9/44/1699863911/Application_Commuting.jpg",
+                  "description": "A bike to take you seamlessly from your daily commute to the local shops and a quick lap of the park before home."
+                },
+                {
+                  "name": "CAMPING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/2c/1f/84/1699863915/Application_Camping.jpg",
+                  "description": "Whether you need to nip to the local bakery in the morning, ride to the lake for swim in the afternoon, or just take in the sights, a CUBE Bosch hybrid is your ideal two-wheeled camping companion – wherever you are."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/1f/10/29/1729592723/MY25_Category_S-Pedelec_1200px_1920x1920.jpg?ts=1756123033",
+              "title": "S-PEDELEC",
+              "subtitle": "DITCH THE CAR",
+              "description": "What if you had a helping hand to nudge you along the road at a speed that will easily keep up with – or even beat – the traffic? Well... now you do. A CUBE s-pedelec fuses elegant, practical design with Bosch power to create a traffic-busting bicycle with an edge. With a little extra speed on tap, it's the simple way to beat the jams and arrive with a smile on your face. Pure pedalling pleasure...",
+              "applications": [
+                {
+                  "name": "s-pedelec",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/72/51/d2/1762168962/MY24-26_Series_KathmanduHybrid_45_600px.jpg?ts=1762168962",
+                  "description": "Beat the traffic and arrive in style with the S-Pedelec's sophisticated Bosch power and versatile, comfortable frame design."
+                }
+              ],
+              "series": []
+            }
+          ]
+        },
+        {
+          "title": "GRAVEL",
+          "introduction": "Take your bike to new places. A gravel hybrid bike combines nimble handling, rugged all-road capability and CUBE design with lightweight Bosch pedal assistance. It's the perfect bike for pushing the boundaries of your world and finding out what lies beyond. Or take to the streets and make your commute part of the adventure – or both. It's your choice.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/3f/a4/3e/1724427181/MY25_Header_GravelHybrid_1920px.jpg?ts=1724677263",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/f9/1b/14/1756123801/MY26_Showroom_E-Gravel_EN.mp4?ts=1756123801",
+          "overview": [
+            {
+              "title": "NUROAD HYBRID",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/ee/eb/28/1770192511/MY26_Series_Grid_NuroadHybrid_800px_%281%29_1920x1920.jpg?ts=1770192512",
+              "description": "Keep riding when the road ends. CUBE carbon frame technology combined with Bosch power extends adventure playtime..."
+            },
+            {
+              "title": "NULANE HYBRID",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/5d/d8/ab/1755588037/MY26_Series_Grid_NulaneHybrid_800px_1920x1920.jpg?ts=1755588980",
+              "description": "A bike that's quick, nimble, adaptable and rugged enough to take on city streets as well as gravel tracks? Welcome to the Nulane Hybrid – a blend of CUBE design excellence and lightweight Bosch power."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/39/21/90/1724427206/MY25_Category_Nuroad-Hybrid_1200px_1920x1920.jpg?ts=1756123025",
+              "title": "NUROAD HYBRID",
+              "subtitle": "GO ANYWHERE ADVENTURE",
+              "description": "We all need a little extra help from time to time. Bosch's smooth, light and powerful SX pedal assist system, combined with CUBE carbon frame technology, puts a different angle on gravel exploration. Get out, explore more, ride the road less travelled. We've got your back.",
+              "applications": [
+                {
+                  "name": "nuroad hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/6c/0c/79/1754899855/MY26_Series_NuroadHybrid_600px.jpg",
+                  "description": "Road or no road, this is the bike to get you there and back. Blending CUBE's carbon frame-building knowhow with lightweight Bosch SX motor tech, it's the ideal way to explore further off the beaten track."
+                },
+                {
+                  "name": "nuroad hybrid fe",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/b0/ca/d0/1754899855/MY26_Series_NuroadHybridFE_600px.jpg",
+                  "description": "Adventure doesn't get better than this. Fully equipped for extended gravel explorations, bikepacking or commuting, you'll love the combination of carbon frame tech and lightweight Bosch pedal assistance."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/c4/c3/3b/1724426897/MY25_Application_Gravel_Commuting_600px.jpg",
+                  "description": "Want your daily commute to be faster, safer and more fun than ever? Enjoy relaxed weekend forays into the countryside? A gravel e-bike combines power and the freedom to explore into one mile-munching package!"
+                },
+                {
+                  "name": "BIKEPACKING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/b2/ce/97/1724426795/MY25_Application_Gravel_Bikepacking_600px.jpg",
+                  "description": "Genuine gravel feeling meets a seamless power boost for exploring further afield. Take on extended tours and steep climbs with ease, or simply keep on riding when the road runs out. Feed your spirit of adventure!"
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/b1/cb/cf/1755588675/MY26_Series_Sticky_NulaneHybrid_1200px_1920x1920.jpg?ts=1755589825",
+              "title": "NULANE HYBRID",
+              "subtitle": "FROM CITY STREET TO GRAVEL TRACK, AND BACK.",
+              "description": "Fast can be fun, and versatile, and accessible... all at once. With its light and smooth Bosch SX drive, 400Wh battery and premium C:62® carbon frame, the Nulane Hybrid makes two-wheeled journeys a breeze, wherever you're headed. Across town in the week or into the countryside at the weekend, it's the ideal two-wheeled companion.",
+              "applications": [
+                {
+                  "name": "nulane hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/31/bf/f4/1754898195/MY26_Series_NulaneHybrid_600px.jpg",
+                  "description": "We know a bit about building nimble city bikes. We also know a thing or two about making fast gravel bikes. The Nulane Hybrid combines the best of each, to open up your world."
+                },
+                {
+                  "name": "nulane hybrid fe",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/6d/1a/f0/1754900347/MY26_Series_NulaneHybridFE_600px.jpg",
+                  "description": "Jack of all trades but master of them all, too. The Nulane Hybrid FE's comprehensive equipment package, lightweight build and Bosch SX power makes it a force to contend with, town or country."
+                }
+              ],
+              "series": [
+                {
+                  "name": "COMMUTING",
+                  "image": "https://file.cube.eu/azwesc1xfg246/media/33/47/bc/1709203653/Application_ETrekking_Commuting_600px.jpg",
+                  "description": "Want your daily commute to be faster, safer and more fun than ever? Enjoy relaxed weekend forays into the countryside? A gravel e-bike combines power and the freedom to explore into one mile-munching package!"
+                },
+                {
+                  "name": "FITNESS",
+                  "image": "https://azwest1xfg344.blob.core.windows.net/azwesc1xfg346/media/7c/58/86/1755588724/MY26_Application_GravelHybrid_Fitness_600px.jpg?ts=1755588724",
+                  "description": "Get more bang for your buck and work out in the saddle: more flexibility, more fun, more fresh air!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "TRANSPORT",
+          "introduction": "Cars were never built for cities – but the Trike Hybrid, Cargo Hybrid and Longtail Hybrid were. All our urban transport hybrids combine easy maneouvrability and efficient use of road space with innovative cargo- and people-carrying solutions. With Bosch pedal assistance to make light work of any load, it's everything you need to leave the car at home and enjoy the freedom of the city.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/f2/22/a3/1755094474/MY26_Header_Transport_1920x500.jpg?ts=1755094474",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/05/b2/aa/1756123936/MY26_Showroom_Transport_EN.mp4?ts=1756123936",
+          "overview": [
+            {
+              "title": "TRIKE HYBRID",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/g0/g0/6b/1704786365/Category_Grid_Transport_Trike_800_1920x1920.jpg?ts=1756123036",
+              "description": "The Trike Hybrid is the cargo bike for everyone. Easy to ride, safe and versatile, it'll carry cargo – or your children – with equal aplomb."
+            },
+            {
+              "title": "CARGO HYBRID",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/03/18/d5/1756116775/MY26_CargoHybridComfort_800px.jpg_1920x1920.jpg?ts=1756116776",
+              "description": "Ditch the car, and take the bike instead. Our Cargo Hybrid has the load-lugging capacity you need, with Bosch power and a stable, easy-to-ride design that you'll love."
+            },
+            {
+              "title": "LONGTAIL HYBRID",
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/4e/d4/13/1755605173/MY26_Series_Grid_LongtailHybrid_800px_1920x1920.jpg?ts=1755605174",
+              "description": "Classic cargo carrying with a Bosch-powered twist, for simple, environmentally-friendly load-carrying. Versatility for every day."
+            }
+          ],
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/a1/82/00/1704786882/Category_Transport_Trike_1200_1920x1920.jpg?ts=1756123036",
+              "title": "TRIKE HYBRID",
+              "subtitle": "FEELS LIKE RIDING. BUT MORE.",
+              "description": "Developed by CUBE to make light work of carrying cargo or kids, the Trike Hybrid's sophisticated tilt mechanism is the key to keeping your cargo secure whilst maintaining the natural feel of a conventional bike. Bosch electric assist helps make light work of any route, whilst the short wheelbase and easy handling means this is a cargo bike that can be easily used by almost anyone.",
+              "applications": [
+                {
+                  "name": "trike family hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/61/5b/d3/1683551098/Series_Trike_Family_600px.jpg",
+                  "description": "You're looking at the future of people carriers: compact, safe and emission-free. With its custom-designed seat and seatbelts, the Trike Family Hybrid means you can leave the car behind."
+                },
+                {
+                  "name": "trike cargo hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/8d/7c/a9/1683551098/Series_Trike_Cargo_600px.jpg",
+                  "description": "There's no better way to shift loads around town than with the Trike Cargo Hybrid. Bosch power, easy handling and parking and clever carrying solutions make it the complete package."
+                },
+                {
+                  "name": "trike flatbed hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/85/d9/80/1754986551/MY26_Series_TrikeHybridFlatbed_600x.jpg",
+                  "description": "Three-wheeled stability, Bosch power and ultimate platform configurability give the Trike Flatbed unrivalled urban pedal-powered cargo-moving flexibility."
+                }
+              ],
+              "series": [
+                {
+                  "name": "KIDS TRANSPORT",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/b0/ab/a3/1683618258/Application_Kids_Transport_600.jpg",
+                  "description": "Kids love bikes, and they love it even more when they can come along for the ride and just enjoy the view."
+                },
+                {
+                  "name": "DOG TRANSPORT",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/1a/63/f2/1683618258/Application_Dog_Transport_600.jpg",
+                  "description": "Take walkies to the next level with new routes further afield or trips to the park for a fun play session."
+                },
+                {
+                  "name": "LOAD TRANSPORT",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/3e/7d/a9/1683796219/Application_Load_Transport_600.jpg",
+                  "description": "Whatever you need to get from A to B, we've got you covered. With the ability to carry luggage, shopping and whatever else needs shifting, who needs a car?"
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/2f/f4/4a/1756217784/MY26_Sticky_Transport_Cargo_1200px_1920x1920.jpg?ts=1756217785",
+              "title": "CARGO HYBRID",
+              "subtitle": "RECLAIM THE CITY STREETS",
+              "description": "Need to shift a bulky load, or trying to figure out how to bring your kids along for the ride? The Cargo Hybrid is the environmentally friendly solution you've been looking for: simple, easy to ride and endlessly versatile. Powered by Bosch's drive system and featuring an EPP foam carrier with optional, comfortable seat and seat belts, it's the best excuse yet to ditch the car.",
+              "applications": [
+                {
+                  "name": "cargo hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/1b/ec/3d/1754901097/MY26_Series_CargoHybrid_600px.jpg",
+                  "description": "Ditch the car – take the bike instead. The Cargo Hybrid has the capacity and power to shift whatever you need across town."
+                }
+              ],
+              "series": [
+                {
+                  "name": "FAMILY",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/38/4f/32/1756116372/MY26_Application_Transport_Family_600px.jpg",
+                  "description": "A bike to take you seamlessly from your daily commute to the local shops and a quick lap of the park before home."
+                },
+                {
+                  "name": "BIKEPACKING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/79/df/de/1658846548/Application_Transport_Bikepacking_600px.jpg",
+                  "description": "Two wheels represent unparalleled freedom: simply pack your bags and go. Discover the world from your e-cargo bike!"
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/c1/18/b6/1755605202/MY26_Series_Sticky_LongtailHybrid_800px_1920x1920.jpg?ts=1755605202",
+              "title": "LONGTAIL HYBRID",
+              "subtitle": "VERSATILITY FOR EVERY DAY",
+              "description": "Is there a better, traffic-beating way of transporting loads around town than the Longtail Hybrid? We don't think so. Its extended carrier accepts two standard bags per side, up to 60kg in weight and has its own suspension system. Bosch power makes light work of any route, and there are optional Eurobox and front carrier adaptors for extra capacity. Practicality for every day.",
+              "applications": [
+                {
+                  "name": "longtail hybrid",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/f4/c0/46/1754901630/MY26_Series_LongtailHybrid_600px.jpg",
+                  "description": "Classic cargo carrying with a Bosch-powered twist, for simple, environmentally-friendly load-carrying from A to B in the urban jungle."
+                }
+              ],
+              "series": [
+                {
+                  "name": "FAMILY",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/ae/e0/aa/1690957560/Application_Transport_Longtail_Everyday_600x320.jpg",
+                  "description": "A bike to take you and your kids seamlessly from your daily commute to the local shops and a quick lap of the park before home."
+                },
+                {
+                  "name": "BIKEPACKING",
+                  "image": "https://file.cube.eu/azwesc1xfg346/media/aa/b6/c9/1690536096/Application_Transport_Longtail_Bikepacking_600x320.jpg",
+                  "description": "Two wheels represent unparalleled freedom: simply pack your bags and go. Discover the world from your e-cargo bike!"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gear",
+      "content": [
+        {
+          "title": "HELMETS",
+          "introduction": "Designed by passionate riders, our helmets deliver top-tier protection with the perfect mix of comfort and style. We know what matters when you’re out on the bike. Smart features and a precision fit make sure you’re ready for whatever the trail throws at you.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/df/cc/de/1764592893/NEU_Header_Helmets.jpg?ts=1764592893",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/36/98/6f/1770982925/HelmetsMY26_WEB.mp4?ts=1770982925",
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/28/81/fc/1764586707/NEU_helme_sticky_MTB_1920x1920.jpg?ts=1764586708",
+              "title": "MTB",
+              "subtitle": "",
+              "products": [
+                {
+                  "name": "Helmet STROVER TM",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/b3/41/d9/1770917290/synqup_16327_F1_00_400x400.png?ts=1773206873",
+                  "description": "STROVER – your enduro helmet for technical trails and long rides. MIPS, an adjustable visor, and two Flip Adapters with X-Lock mounting provide maximum protection, comfort, and full control on every trail."
+                },
+                {
+                  "name": "Helmet DESCENDER X Actionteam",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/db/8f/9c/1770917316/synqup_16399_F1_00_400x400.png?ts=1770917946",
+                  "description": "The DESCENDER is your enduro full-face helmet for uncompromising riding fun. Robust, safe, and well-ventilated – perfect for bike park sessions."
+                },
+                {
+                  "name": "Helmet TROOPER",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/3a/67/28/1764152002/synqup_16124_F1_00_400x400.png?ts=1768283837",
+                  "description": "An enduro helmet that is second to none looking for. In addition to its excellent design, it is unsurpassed in its category in terms of safety features."
+                },
+                {
+                  "name": "Helmet OFFPATH Artline",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/55/99/12/1764152008/synqup_16155_F1_00_400x400.png?ts=1768283837",
+                  "description": "A race helmet with excellent ventilation. The visor can be removed and a rear light can be attached. Prepared for all eventualities."
+                },
+                {
+                  "name": "Helmet FRISK",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/6a/d4/44/1725346180/synqup_16265_F1_00_400x400.png?ts=1773206843",
+                  "description": "Now a classic in the CUBE portfolio, this helmet lets you plan your next MTB tour with peace of mind. You can adjust the visor to suit the sunlight."
+                },
+                {
+                  "name": "Helmet STRAY",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/e5/f5/3c/1725084860/synqup_16439_F1_00_400x400.png?ts=1768283821",
+                  "description": "A helmet at a low price and yet with outstanding features. Breakaway visor, X-Lock mount for a rear light and MIPS."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/3d/8c/34/1764586707/NEU_helme_sticky_ALL_TERRAIN_1920x1920.jpg?ts=1764586708",
+              "title": "ALL TERRAIN",
+              "subtitle": "Commute. Ride. Explore.",
+              "description": "From forest tracks to urban streets, CUBE All Terrain helmets are the go-to choice for riders who value flexibility and all-day comfort. These helmets offer balanced protection and ventilation for a wide range of riding conditions. With a design that blends in naturally and finely adjustable fit, they provide a secure, comfortable feel, no matter where your route takes you.",
+              "products": [
+                {
+                  "name": "Helmet EVOY HYBRID",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/2f/bc/34/1764151983/synqup_16157_F1_00_400x400.png?ts=1768283837",
+                  "description": "EVOY HYBRID comes with an excellent ventilation, safety features such as rear light and reflectors as well as additional protection thanks to the integrated MIPS system."
+                },
+                {
+                  "name": "Helmet FLEET",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/b1/92/c7/1725084764/synqup_16422_F1_00_400x400.png?ts=1768283819",
+                  "description": "FLEET offers a high stability, optimum comfort and ventilation as well as features such as MIPS, a removable visor and a retrofittable rear light for the CUBE X-Lock mount."
+                },
+                {
+                  "name": "Helmet DIRT 2.0",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/09/85/37/1768282790/synqup_16406_F1_00_400x400.png?ts=1773206843",
+                  "description": "Versatile, a robust ABS construction and a grid lock - DIRT 2.0 is ideal for the dirtline and the urban street jungle."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/8a/40/83/1764586707/NEU_helme_sticky_ROAD_1920x1920.jpg?ts=1764586708",
+              "title": "ROAD",
+              "subtitle": "Pace. Focus. Distance.",
+              "description": "Our CUBE Road helmets are made for performance-driven riders who demand aerodynamics, low weight, and outstanding ventilation. High-efficiency air channels keep you cool on fast-paced rides, while providing an ultra-precise fit that disappears as you ride. Designed to meet the highest safety standards, our helmets combine advanced protection with highest comfort.",
+              "products": [
+                {
+                  "name": "Helmet HERON Teamline",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/e3/51/64/1764151987/synqup_16026_F1_00_400x400.png?ts=1768283837",
+                  "description": "An icon of pace. Minimal air resistance with maximum cooling performance and MIPS Air Node. A helmet for cyclists who are always one step ahead."
+                },
+                {
+                  "name": "Helmet ROAD RACE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/45/e5/21/1768282784/synqup_16121_F1_00_400x400.png?ts=1768283813",
+                  "description": "lightweight ample ventilated and compact. 246 g are all it needs, to give you a headstart."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/9f/dd/b0/1771249595/NEU_helme_sticky_GRAVEL_1920x1920.jpg?ts=1771249595",
+              "title": "GRAVEL",
+              "subtitle": "Freedom. Distance. Adventure.",
+              "products": [
+                {
+                  "name": "Helmet HOVER",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/35/38/51/1770917342/synqup_16036_F1_00_400x400.png?ts=1770917958",
+                  "description": "The CUBE HOVER is your gravel helmet for every ride, no matter the terrain. Smart safety features, a practical visor, and well-designed ventilation."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/5e/dd/ec/1764586707/NEU_helme_sticky_KIDS_1920x1920.jpg?ts=1764586708",
+              "title": "ROOKIE",
+              "subtitle": "Safety. Adventure. Style.",
+              "products": [
+                {
+                  "name": "Helmet LINOK",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/fc/37/14/1764151993/synqup_16409_F1_00_400x400.png?ts=1768283838",
+                  "description": "The perfect MTB helmet for the rookies of tomorrow! With MIPS, rear light holder and insect net, it is ideal for sniffing out trails and getting home safely."
+                },
+                {
+                  "name": "Helmet FINK",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/ab/f2/1c/1725084533/synqup_16151_F1_00_400x400.png?ts=1773206832",
+                  "description": "A helmet for the next generation. With the great choice of colors, there is something for everyone! The helmet has a holder for a rear light and an insect net."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "SHOES",
+          "introduction": "Developed with professional team riders, our cycling shoes combine functionality, comfort, and lightness. The design-oriented concept ensures maximum efficiency and noticeable weight reduction, while the ergonomic fit provides exceptional comfort even on long rides. Perfectly tailored to meet the needs of demanding cyclists.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/6c/a3/5f/1745824726/Schuhe_Thumbnail.jpg",
+          "video": "https://file.cube.eu/azwesc1xfg346/media/68/df/24/1745479706/ShoesMY25_WEB_quer.mp4?ts=1745479706",
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/f8/12/07/1741698582/Schuhe_Sticky%20Element_RD_1920x1920.jpg?ts=1741698583",
+              "title": "ROAD",
+              "subtitle": "",
+              "products": [
+                {
+                  "name": "Shoes RD C:68X",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/ac/77/9b/1745903076/synqup_17043_F1_00_400x400.png?ts=1745903275",
+                  "description": "The full carbon outsole makes this road cycling shoe extremely lightweight and stiff. Durability and resilience are ensured by the high-tech Dyneema® fiber in the upper material. Two dials provide an optimal fit and allow for quick on and off."
+                },
+                {
+                  "name": "Shoes SYDRIX PRO",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/d8/e8/g0/1745903059/synqup_16978_F1_00_400x400.png?ts=1745903264",
+                  "description": "The SYDRIX PRO combines lightweight construction, superior ventilation, and maximum efficiency. Its innovative materials and smart design deliver outstanding comfort, secure support, and a durable, high-performance build."
+                },
+                {
+                  "name": "Shoes SYDRIX",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/39/06/de/1745903100/synqup_17096_F1_00_400x400.png?ts=1745903288",
+                  "description": "The SYDRIX shoe combines excellent ventilation, efficient power transfer, and high comfort. A fibreglass sole, dial closure, and reinforced heel cup ensure stability, support, and direct power transmission while providing an optimal fit and long-lasting durability."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/78/5e/af/1741698582/Schuhe_Sticky%20Element_MTB_1920x1920.jpg?ts=1741698583",
+              "title": "MTB & GRAVEL",
+              "subtitle": "Our CUBE MTB and Gravel shoes are specifically designed for off-road use, offering the perfect combination of power transfer, walking comfort, and durability. Unlike pure Road bike shoes, they not only enable efficient pedalling, but also make walking on rough terrain easier. Whether on technical mountain bike trails or long gravel routes – improve your riding comfort and performance.",
+              "description": "Our CUBE MTB and Gravel shoes are specifically designed for off-road use, offering the perfect combination of power transfer, walking comfort, and durability. Unlike pure Road bike shoes, they not only enable efficient pedalling, but also make walking on rough terrain easier. Whether on technical mountain bike trails or long gravel routes – improve your riding comfort and performance.",
+              "products": [
+                {
+                  "name": "Shoes MTB C:68X",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/b1/da/e8/1745903056/synqup_17044_F1_00_400x400.png?ts=1745903262",
+                  "description": "The Carbon-Spine outsole with a layer of Peebax® TPU makes this off-road racing shoe extremely lightweight and stiff. Durability and resilience are ensured by the high-tech Dyneema® fibre in the upper material. Two dials provide an optimal fit and allow for quick and easy on and off."
+                },
+                {
+                  "name": "Shoes PEAK PRO",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/33/aa/8c/1745903083/synqup_16977_F1_00_400x400.png?ts=1745903280",
+                  "description": "The PEAK PRO offers efficient power transfer, durability, and comfort. A fibreglass sole, dial closure, and A-TRACTION rubber compound provide grip, protection, and flexibility—perfect for gravel, cyclocross, and marathon riders."
+                },
+                {
+                  "name": "Shoes PEAK",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/d1/8a/bf/1745903059/synqup_17079_F1_00_400x400.png?ts=1745903264",
+                  "description": "The PEAK shoe combines efficient power transfer, grip, and comfort. A fibreglass sole, dial closure, and A-TRACTION rubber compound provide stability, protection, and flexibility—perfect for gravel, cyclocross, and marathon rides."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/d1/72/f6/1741698583/Schuhe_Sticky%20Element_ATX_1920x1920.jpg?ts=1741698583",
+              "title": "TOUR",
+              "subtitle": "Our CUBE Tour shoes are the ideal choice for cyclists who value comfort and versatility on long rides. They offer the perfect balance between efficient pedalling and a comfortable fit. High-quality materials and thoughtful construction ensure a pleasant riding experience. Whether for long tours, daily commutes, or leisure rides – they support you on every journey.",
+              "description": "Our CUBE Tour shoes are the ideal choice for cyclists who value comfort and versatility on long rides. They offer the perfect balance between efficient pedalling and a comfortable fit. High-quality materials and thoughtful construction ensure a pleasant riding experience. Whether for long tours, daily commutes, or leisure rides – they support you on every journey.",
+              "products": [
+                {
+                  "name": "Shoes OX PRO",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/fb/b5/49/1745903066/synqup_16976_F1_00_400x400.png?ts=1745903269",
+                  "description": "The OX PRO combines casual style with functionality. Its nylon reinforcement, EVA midsole, and A-TRACTION outsole provide efficient pedalling, flexibility, and grip - perfect for outdoor adventures on and off the bike."
+                },
+                {
+                  "name": "Shoes LOXIA PRO",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/a2/99/64/1745903068/synqup_17021_F1_00_400x400.png?ts=1745903270",
+                  "description": "The LOXIA PRO offers grip, comfort, and efficiency. Its nylon reinforcement, EVA midsole, and A-TRACTION rubber sole ensure stability, traction, excellent walking performance, and flexibility—ideal for touring, gravel, enduro, and e-biking."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/0c/e8/da/1741698581/Schuhe_Sticky%20Element_GTY_1920x1920.jpg?ts=1741698583",
+              "title": "GRAVITY",
+              "subtitle": "Our CUBE Gravity shoes offer stability and control on the bike and impress with their versatility on different surfaces. Their robust construction ensures comfort and safety. A snug fit and high durability make them a reliable companion. Ideal for anyone who want to combine action and flexibility in one shoe.",
+              "description": "Our CUBE Gravity shoes offer stability and control on the bike and impress with their versatility on different surfaces. Their robust construction ensures comfort and safety. A snug fit and high durability make them a reliable companion. Ideal for anyone who want to combine action and flexibility in one shoe.",
+              "products": [
+                {
+                  "name": "Shoes STRIX PRO X MH",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/33/22/31/1745903051/synqup_16975_F1_00_400x400.png?ts=1745903259",
+                  "description": "This clip-in shoe was developed in collaboration with team rider Max Hartenstern and offers maximum grip, efficiency, and protection. The A-TRACTION sole, nylon reinforcement, and rugged design make it ideal for demanding downhill and enduro riders."
+                },
+                {
+                  "name": "Shoes STRIX",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/42/d7/bb/1745903092/synqup_17087_F1_00_400x400.png?ts=1745903286",
+                  "description": "The STRIX flat pedal model was developed in collaboration with Max Hartenstern and offers outstanding grip, stiffness, and comfort. The A-TRACTION sole, nylon reinforcement, and rugged design make it ideal for downhill and enduro riders."
+                },
+                {
+                  "name": "Shoes MAZE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/33/29/28/1745903092/synqup_17088_F1_00_400x400.png?ts=1771394267",
+                  "description": "The MAZE shoe offers versatile comfort and grip for short tours and everyday use. The A-TRACTION sole, PU upper, and ergonomic insole combine protection, durability, and a casual design."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/84/96/64/1771396677/Schuhe_Sticky%20Element_ROOKIE_1920x1920.jpg?ts=1771396678",
+              "title": "ROOKIE",
+              "subtitle": "Our CUBE Rookie shoes are every bit as capable as the adult models – same performance, same technology, same design. Perfect for those who don’t want to compromise from the very beginning. Available in sizes 35–37.",
+              "description": "Our CUBE Rookie shoes are every bit as capable as the adult models – same performance, same technology, same design. Perfect for those who don’t want to compromise from the very beginning. Available in sizes 35–37.",
+              "products": [
+                {
+                  "name": "Shoes PEAK ROOKIE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/6e/dc/54/1770917211/synqup_17157_F1_00_400x400.png?ts=1771394247",
+                  "description": "The PEAK ROOKIE for young bike enthusiasts combines efficient power transfer, grip and comfort. The fiberglass sole, disc closure and A-TRACTION rubber compound provide stability, protection and flexibility – ideal for gravel, cyclocross and marathon rides."
+                },
+                {
+                  "name": "Shoes MAZE ROOKIE TM",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/dd/c5/60/1770917213/synqup_17155_F1_00_400x400.png?ts=1771394249",
+                  "description": "The MAZE ROOKIE TM shoe offers versatile comfort and grip for short rides and everyday use. The A-TRACTION outsole, PU upper and ergonomic insole combine protection, durability and a casual design."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "BACKPACKS",
+          "introduction": "Our backpacks and bags combine modern design with clever functionality. Every detail has been carefully thought out to offer you maximum comfort and versatility—from the perfect fit and smart storage options to lightweight and durable materials. Whether for your daily commute, your next trip, or your next mountain biking adventure, with our backpacks you'll be perfectly equipped.",
+          "background": "https://file.cube.eu/azwesc1xfg346/media/fc/eb/92/1758281883/RUCKSCKE_Header_Landingpage.jpg?ts=1758281883",
+          "information": [
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/83/f0/06/1758282234/Ruckscke_Sticky_MTB_1920x1920.jpg?ts=1758282234",
+              "title": "MTB",
+              "subtitle": "Our backpacks focus on flexibility and practical features. From efficient ventilation to integrated protectors and special compartments for tools and provisions, our backpacks support you so that you can concentrate fully on your ride.",
+              "description": "Our backpacks focus on flexibility and practical features. From efficient ventilation to integrated protectors and special compartments for tools and provisions, our backpacks support you so that you can concentrate fully on your ride.",
+              "products": [
+                {
+                  "name": "Backpack VERTEX 16",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/0c/4a/b7/1725082964/synqup_12132_F1_00_400x400.png?ts=1764249134",
+                  "description": "Ergonomically shaped shoulder straps, a hip belt, and the NF Ergonomics back system developed by CUBE ensure that it sits perfectly on your back during all riding maneuvers."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/af/96/f0/1758282008/Ruckscke_Sticky-ATX_1920x1920.jpg?ts=1758282010",
+              "title": "ALL TERRAIN",
+              "subtitle": "Whether you're riding on asphalt, gravel, or rough trails, our bike backpacks for all types of terrain are your reliable partner. The focus is on stability, comfort, and well-designed storage options.",
+              "description": "Whether you're riding on asphalt, gravel, or rough trails, our bike backpacks for all types of terrain are your reliable partner. The focus is on stability, comfort, and well-designed storage options.",
+              "products": [
+                {
+                  "name": "Backpack ATX HYBRID 24",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/04/f6/5b/1725083347/synqup_12154_F1_00_400x400.png?ts=1764249175",
+                  "description": "The ATX HYBRID 24 backpack designed especially for e-bikers is the last word in practicality and smart design, with its padded battery compartment, retention system for your charger and a fleece hip pocket to keep your display safe and scratch-free."
+                },
+                {
+                  "name": "Backpack ATX 30",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/84/fd/c8/1725083012/synqup_12135_F1_00_400x400.png?ts=1764249139",
+                  "description": "The CUBE ATX 30, our largest backpack in the portfolio, offers plenty of storage space. Thanks to its practical compartment layout and two tool compartments, you'll have everything you need at your fingertips."
+                },
+                {
+                  "name": "Backpack ATX 22 TM",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/97/fa/29/1754373421/synqup_11228_F1_00_400x400.png?ts=1764253818",
+                  "description": "The CUBE ATX 22 offers plenty of space for everything you need on extended tours."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/c7/f6/9b/1758282349/Ruckscke_Sticky_PURE_1920x1920.jpg?ts=1758282350",
+              "title": "PURE",
+              "subtitle": "The cycling backpacks of the PURE series combine a clean design with functional features for everyday use. Lightweight, durable, and versatile, they are ideal for any field of application.",
+              "description": "The cycling backpacks of the PURE series combine a clean design with functional features for everyday use. Lightweight, durable, and versatile, they are ideal for any field of application.",
+              "products": [
+                {
+                  "name": "Backpack PURE 4",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/8c/fa/d0/1725082983/synqup_12133_F1_00_400x400.png?ts=1764249128",
+                  "description": "It has all the essentials you need for short trips. It is compatible with hydration bladders and has outlets on both sides for the drinking tube."
+                },
+                {
+                  "name": "Backpack PURE 12",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/d0/6c/e5/1725082998/synqup_12134_F1_00_400x400.png?ts=1764249134",
+                  "description": "Ergonomic shoulder straps, soft hip straps and CUBE's own NF Ergonomics back system developed in-house keep it sitting pretty for a backpack you can wear all day."
+                },
+                {
+                  "name": "Backpack PURE 12 CMPT",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/6a/g0/84/1725083372/synqup_12144_F1_00_400x400.png?ts=1764249150",
+                  "description": "The PURE 12 CMPT is the perfect, uncomplicated everyday backpack."
+                },
+                {
+                  "name": "Backpack PURE 16 Ultralight",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/8d/44/cd/1725083367/synqup_12155_F1_00_400x400.png?ts=1764249140",
+                  "description": "The CUBE PURE 16 Ultralight backpack impresses with its minimal pack size and extremely low weight."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/d2/c4/51/1758282397/Ruckscke_Sticky_HIP_BAGS_1920x1920.jpg?ts=1758282398",
+              "title": "HIP BAGS",
+              "subtitle": "Our hip bags are the ideal companion for demanding MTB and gravel tours. They combine a minimalist, timeless design with thoughtful features that make all the difference on the go.",
+              "description": "Our hip bags are the ideal companion for demanding MTB and gravel tours. They combine a minimalist, timeless design with thoughtful features that make all the difference on the go.",
+              "products": [
+                {
+                  "name": "Hip Bag VERTEX 3 X Actionteam",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/eb/30/15/1764151959/synqup_10094_F1_00_400x400.png?ts=1764254160"
+                },
+                {
+                  "name": "Hip Bag PURE 2",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/90/24/34/1725082951/synqup_12115_F1_00_400x400.png?ts=1764249098",
+                  "description": "The PURE 2 hip bag with a volume of 2 litres fits everything you need for a day on the trail."
+                },
+                {
+                  "name": "Hip Bag ATX 1",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/78/6a/67/1725083040/synqup_12131_F1_00_400x400.png?ts=1761286325",
+                  "description": "The compact, lightweight CUBE ATX 1 hip bag weighs 250 g and has a total capacity of 1 liter, making it a practical storage solution for your essentials."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/ee/7e/97/1758282445/Ruckscke_Sticky_Element_TRAVEL_1920x1920.jpg?ts=1758282446",
+              "title": "TRAVEL BAGS",
+              "subtitle": "Lightweight, durable, and functional – they’re easy to carry whether you’re setting off by bike to explore new places, planning a multi-day tour, or simply heading out to discover the world on a whim. With plenty of space for clothing, gear, and everything else that matters to you on the road, you’ll always be well-prepared without compromising on comfort or style.",
+              "description": "Lightweight, durable, and functional – they’re easy to carry whether you’re setting off by bike to explore new places, planning a multi-day tour, or simply heading out to discover the world on a whim. With plenty of space for clothing, gear, and everything else that matters to you on the road, you’ll always be well-prepared without compromising on comfort or style.",
+              "products": [
+                {
+                  "name": "Duffle Bag 60",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/ab/59/6a/1764307514/synqup_12167_F1_00_400x400.png?ts=1764308623",
+                  "description": "The CUBE Duffle Bag 60 is the perfect companion for travel, bike parks or race weekends. Removable shoulder straps allow for flexible carrying options."
+                },
+                {
+                  "name": "Wash Bag Backpack 4",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/e4/41/20/1770917253/synqup_10087_F1_00_400x400.png?ts=1770917879",
+                  "description": "The fastening straps on the back allow the bag to be easily and securely attached to the MOLLE system on our CUBE backpacks and the Duffle Bag 60."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/b3/a8/9e/1758530103/Ruckscke_Sticky_ROCKY_1920x1920.jpg?ts=1758530104",
+              "title": "ROOKIE",
+              "subtitle": "Our kids’ bike backpacks are the perfect companions for little adventurers. They are lightweight, comfortable to wear, and easy to adjust for a secure fit. The durable construction ensures long-lasting use, while thoughtful details add extra comfort and safety. This way, children can easily carry their belongings, explore the world, play, and enjoy every ride to the fullest.",
+              "description": "Our kids’ bike backpacks are the perfect companions for little adventurers. They are lightweight, comfortable to wear, and easy to adjust for a secure fit. The durable construction ensures long-lasting use, while thoughtful details add extra comfort and safety. This way, children can easily carry their belongings, explore the world, play, and enjoy every ride to the fullest.",
+              "products": [
+                {
+                  "name": "Backpack VERTEX 9 ROOKIE TM",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/7a/9d/79/1725083366/synqup_12150_F1_00_400x400.png?ts=1764249151",
+                  "description": "Our high-class backpack for young riders. Thanks to the Natural Fit back system developed by CUBE, it sits perfectly on the back during all riding maneuvers."
+                },
+                {
+                  "name": "Backpack PURE 6 ROOKIE",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/c1/b6/12/1725082933/synqup_12114_F1_00_400x400.png?ts=1764249137",
+                  "description": "The front compartment has sections for all the paraphernalia a kid needs."
+                }
+              ]
+            },
+            {
+              "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/3f/64/ef/1758283285/Ruckscke_Sticky_Element_GEAR_1920x1920.jpg?ts=1758283285",
+              "title": "GEAR",
+              "subtitle": "Our backpack accessories make every bike ride more comfortable and practical. Extra pockets provide additional space for all the essentials, while hydration systems keep you refreshed along the way. This makes your backpack even more versatile, adapting perfectly to every ride and adventure.",
+              "description": "Our backpack accessories make every bike ride more comfortable and practical. Extra pockets provide additional space for all the essentials, while hydration systems keep you refreshed along the way. This makes your backpack even more versatile, adapting perfectly to every ride and adventure.",
+              "products": [
+                {
+                  "name": "Hydration Bladder Backpack 2",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/f2/b5/76/1725082975/synqup_12124_F1_00_400x400.png?ts=1764249121",
+                  "description": "The CUBE hydration bladder with a capacity of 2 liters is lightweight, durable, and flexible. Its wide opening makes it quick and easy to fill, clean, and dry."
+                },
+                {
+                  "name": "Hydration Bladder Hip Bag 1.5",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/cd/c5/e9/1725082977/synqup_12125_F1_00_400x400.png?ts=1764249121",
+                  "description": "The CUBE hydration bladder with a volume of 1.5 liters was specially developed for hip bags. Its wide opening makes it quick and easy to fill, clean, and dry."
+                },
+                {
+                  "name": "Accessory Bag Backpack 2",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/78/77/6a/1725083380/synqup_12156_F1_00_400x400.png?ts=1764249145",
+                  "description": "Simple, practical: the 2-litre CUBE GEAR BAG 2 straps to the MOLLE-System on our CUBE backpacks using retention straps."
+                },
+                {
+                  "name": "Accessory Bag Backpack 1",
+                  "image": "https://file.cube.eu/azwesc1xfg346/thumbnail/37/81/ea/1725082961/synqup_12119_F1_00_400x400.png?ts=1764249113",
+                  "description": "The small CUBE GEAR BAG 1 with a capacity of 1 liter can be attached to the MOLLE system of our CUBE backpacks and bags using Velcro fasteners."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
