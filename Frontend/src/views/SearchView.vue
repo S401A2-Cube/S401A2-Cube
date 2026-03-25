@@ -38,7 +38,7 @@ const fakeCadres = [
 
 const fakeVelos = [
   {
-    idVelo: 1, idArticle: 101, lienVue360: null, idModele: 1,
+    idVelo: 10, idArticle: 101, lienVue360: null, idModele: 1,
     modeleVelo: {
       idModele: 1, nomModele: "Aim Race", categorieVelo: "Mountainbike", prix: 799,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Aim-Race_grey_n_red.png"
@@ -52,7 +52,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
   },
   {
-    idVelo: 2, idArticle: 102, lienVue360: null, idModele: 2,
+    idVelo: 11, idArticle: 102, lienVue360: null, idModele: 2,
     modeleVelo: {
       idModele: 2, nomModele: "Aim SL", categorieVelo: "Mountainbike", prix: 999,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Aim-SL_red_n_red.png"
@@ -66,7 +66,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
   },
   {
-    idVelo: 3, idArticle: 103, lienVue360: null, idModele: 3,
+    idVelo: 12, idArticle: 103, lienVue360: null, idModele: 3,
     modeleVelo: {
       idModele: 3, nomModele: "Attain GTC Pro", categorieVelo: "Road", prix: 1299,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Attain-GTC-Pro_carbon_n_white.png"
@@ -80,7 +80,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 2, libelleGeometrie: "Compétition" }]
   },
   {
-    idVelo: 4, idArticle: 104, lienVue360: null, idModele: 4,
+    idVelo: 14, idArticle: 104, lienVue360: null, idModele: 4,
     modeleVelo: {
       idModele: 4, nomModele: "Agree C:62", categorieVelo: "Road", prix: 2499,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Agree-C62-Race_carbon_n_white.png"
@@ -94,7 +94,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 2, libelleGeometrie: "Compétition" }]
   },
   {
-    idVelo: 5, idArticle: 105, lienVue360: null, idModele: 5,
+    idVelo: 15, idArticle: 105, lienVue360: null, idModele: 5,
     modeleVelo: {
       idModele: 5, nomModele: "Nuroad Race", categorieVelo: "Gravel", prix: 1099,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Nuroad-Race_grey_n_metal.png"
@@ -108,7 +108,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
   },
   {
-    idVelo: 6, idArticle: 106, lienVue360: null, idModele: 6,
+    idVelo: 16, idArticle: 106, lienVue360: null, idModele: 6,
     modeleVelo: {
       idModele: 6, nomModele: "Cross Race", categorieVelo: "Gravel", prix: 899,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Cross-Race_grey_n_red.png"
@@ -122,7 +122,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 1, libelleGeometrie: "Standard" }]
   },
   {
-    idVelo: 7, idArticle: 107, lienVue360: null, idModele: 7,
+    idVelo: 17, idArticle: 107, lienVue360: null, idModele: 7,
     modeleVelo: {
       idModele: 7, nomModele: "Tour EXC", categorieVelo: "Trekking", prix: 649,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Tour-EXC_flashgrey_n_black.png"
@@ -136,7 +136,7 @@ const fakeVelos = [
     geometries: [{ idGeometrie: 3, libelleGeometrie: "Confort" }]
   },
   {
-    idVelo: 8, idArticle: 108, lienVue360: null, idModele: 8,
+    idVelo: 18, idArticle: 108, lienVue360: null, idModele: 8,
     modeleVelo: {
       idModele: 8, nomModele: "Travel SLX", categorieVelo: "Trekking", prix: 1199,
       lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Travel-SLX_grey_n_black.png"
