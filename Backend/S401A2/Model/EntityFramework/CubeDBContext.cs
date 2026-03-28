@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using S401A2.Model.EntityFramework;
 
 namespace S401A2.Model.EntityFramework
 {
@@ -84,9 +85,17 @@ namespace S401A2.Model.EntityFramework
                 .WithMany(c => c.Velos)
                 .UsingEntity(j => j.ToTable("t_j_velo_cadre_vca"));
 
+            // Accessoire <-> Taille
+            modelBuilder.Entity<Accessoire>()
+                .HasMany(a => a.Tailles)
+                .WithMany(t => t.Accessoires)
+                .UsingEntity(j => j.ToTable("t_j_accessoire_taille_ata"));
+
             OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        public DbSet<S401A2.Model.EntityFramework.Image> Image { get; set; } = default!;
+        public DbSet<S401A2.Model.EntityFramework.Accessoire> Accessoire { get; set; } = default!;
     }
 }

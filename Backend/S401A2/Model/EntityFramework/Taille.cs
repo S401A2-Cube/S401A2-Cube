@@ -22,5 +22,8 @@ namespace S401A2.Model.EntityFramework
 
         [InverseProperty(nameof(Velo.Tailles))]
         public virtual ICollection<Velo> Velos { get; set; } = new List<Velo>();
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual ICollection<Accessoire>? Accessoires { get; set; } = new List<Accessoire>();
     }
 }
