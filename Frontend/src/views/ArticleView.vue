@@ -1,55 +1,61 @@
 <script setup>
 import { ref } from 'vue';
+import { useRoute } from 'vue-router';
 import Landing from '../components/article/Landing.vue';
 import Specifications from '../components/article/Specifications.vue';
 
-// TODO: fetch article with id $route.params.id
-const resVelo = ref({
-  "idVelo": 1,
-  "idArticle": 1,
-  "lienVue360": "TODO",
-  "idModele": 1,
-  "modeleVelo": { "idModele": 1, "nomModele": "NUROAD C:62 SLT" },
-  "couleurs": [
-    { "idCouleur": 1, "nomCouleur": "greensmoothie´n´green", "effetPeinture": "Mat" }
-  ],
-  "tailles": [
-    { "idTaille": 1, "libelleTaille": "50cm" },
-    { "idTaille": 2, "libelleTaille": "53cm" },
-    { "idTaille": 3, "libelleTaille": "56cm" },
-    { "idTaille": 4, "libelleTaille": "59cm" },
-    { "idTaille": 5, "libelleTaille": "61cm" }
-  ],
-  "cadres": [
-    { "idMateriau": 1, "nomMat": "Carbone C:62", "formeCadre": "Classic / Advanced Twin Mold" }
-  ],
-  "geometries": [
-    { "idGeometrie": 1, "nomPiece": "Espace libre pour les pneus", "taillePiece": 50 }
-  ]
+import axios from 'axios';
+import { useUtilsStore } from '@/stores/utils';
+
+const route = useRoute();
+
+const utils = useUtilsStore();
+
+const resVelo = ref(null);
+const resArticle = ref(null);
+
+axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
+  const data = r.data;
+
+  console.log(data);
+
+  const articleData = data.article || {};
+
+  resArticle.value = {
+    articleId: articleData.articleId,
+    reference: articleData.reference,
+    nom: articleData.nom,
+    description: articleData.description || "Description non disponible", 
+    prix: articleData.prix,
+    poids: articleData.poids,
+    qteStock: articleData.qteStock,
+    annee: articleData.annee,
+    dispoEnLigne: articleData.dispoEnLigne,
+    categorieId: articleData.categorieId,
+    categorieArticle: articleData.categorieArticle || { 
+      categorieId: articleData.categorieId, 
+      nom: "Catégorie inconnue" 
+    },
+    motsCles: articleData.motsCles || []
+  };
+
+  resVelo.value = {
+    idVelo: data.idVelo,
+    idArticle: data.idArticle,
+    lienVue360: data.lienVue360 || "TODO", 
+    idModele: data.idModele,
+    modeleVelo: data.modeleVelo,
+    couleurs: data.couleurs || [],
+    tailles: data.tailles || [],
+    cadres: data.cadres || [],
+    geometries: data.geometries || []
+  };
 });
 
-const resArticle = ref({
-  "articleId": 1,
-  "reference": "156500",
-  "nom": "NUROAD C:62 SLT",
-  "description": "Le Nuroad C:62 SLT combine la légèreté et le confort d’un cadre et d’une fourche tout en carbone C:62® à des composants élégants. Équipé de vitesses Apex Rival AXS 1x13, de freins à disques Magura MT4, et de roues Newmen Performance Gravel 25 avec pneus Schwalbe de 45 mm.",
-  "prix": 2449,
-  "poids": 8.8,
-  "qteStock": 100,
-  "annee": 2026,
-  "dispoEnLigne": true,
-  "categorieId": 2,
-  "categorieArticle": { "categorieId": 2, "nom": "Gravel / Route" },
-  "motsCles": [
-    { "motCleId": 1, "nom": "Gravel" },
-    { "motCleId": 2, "nom": "Carbone" },
-    { "motCleId": 3, "nom": "Léger" }
-  ]
-});
 </script>
 
 <template>
-  <div class="page-container">
+  <div class="page-container" v-if="resArticle && resVelo">
     <Landing :article="resArticle" :velo="resVelo" />
     
     <main id="about">
@@ -89,9 +95,19 @@ const resArticle = ref({
     
     <Specifications :article="resArticle" :velo="resVelo" />
   </div>
+  <div v-else class="loading-state">
+    <p>Chargement des données du vélo...</p>
+  </div>
 </template>
 
 <style scoped>
+.loading-state {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
@@ -99,7 +115,6 @@ const resArticle = ref({
   width: 100%;
 }
 
-/* About Section Global Styles */
 #about {
   padding: 100px 0;
   display: flex;

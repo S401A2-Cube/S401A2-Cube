@@ -11,7 +11,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <header>
+  <header class="sticky-header">
     <NavBar />
   </header>
 
@@ -23,6 +23,12 @@ const route = useRoute()
 </template>
 
 <style scoped>
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white; 
+}
 
 nav {
   display: flex;
