@@ -66,7 +66,6 @@ public partial class Client
     [InverseProperty(nameof(LignePanier.ClientLignePanier))]
     public virtual ICollection<LignePanier> ClientLignePanier { get; set; } = new List<LignePanier>();
 
-
     [InverseProperty(nameof(Commande.ClientCommande))]
     public virtual ICollection<Commande> ClientCommande { get; set; } = new List<Commande>();
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
@@ -29,6 +30,12 @@ namespace S401A2.Model.EntityFramework
         [Column("com_id")]
         public int CommandeId { get; set; }
 
+        [Column("clr_id")]
+        public int? CouleurId { get; set; } 
+
+        [Column("tli_id")]
+        public int? TailleId { get; set; } 
+
         [Required]
         [Range(1, 100)]
         [Column("lig_qtepanier")]
@@ -41,6 +48,14 @@ namespace S401A2.Model.EntityFramework
         [ForeignKey(nameof(ClientId))]
         [InverseProperty(nameof(Client.ClientLignePanier))]
         public virtual Client ClientLignePanier { get; set; } = null!;
+
+        [ForeignKey(nameof(CouleurId))]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual Couleur? CouleurChoisie { get; set; }
+
+        [ForeignKey(nameof(TailleId))]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual Taille? TailleChoisie { get; set; }
     }
 
     /*     (pk) idpanier
