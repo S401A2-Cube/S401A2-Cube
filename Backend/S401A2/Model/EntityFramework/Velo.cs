@@ -13,19 +13,19 @@ namespace APICube.Models.EntityFramework
     public partial class Velo
     {
         [Key]
-        [Column("idVelo")]
+        [Column("vel_idVelo")]
         public int IdVelo { get; set; }
 
-        [Column("idarticle")]
+        [Column("art_idarticle")]
         public int IdArticle { get; set; }
 
-        [Column("lienvue360")]
+        [Column("vel_lienvue360")]
         [StringLength(150)]
         public string LienVue360 { get; set; }
 
         #region Has One
 
-        [Column("idmodele")]
+        [Column("mod_idmodele")]
         public int IdModele { get; set; }
 
         [ForeignKey(nameof(IdModele))]
