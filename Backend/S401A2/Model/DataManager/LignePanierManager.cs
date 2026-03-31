@@ -142,8 +142,6 @@ namespace S401A2.Model.DataManager
             if (_context != null)
             {
                 entityToUpdate.QtePanier = entity.QtePanier;
-                entityToUpdate.CouleurChoisie = entity.CouleurChoisie;
-                entityToUpdate.TailleChoisie = entity.TailleChoisie;
 
                 _context.LignePaniers.Update(entityToUpdate);
                 return _context.SaveChangesAsync();
