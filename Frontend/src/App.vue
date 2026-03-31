@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
 import NavBar from './components/NavBar.vue';
 import Footer from './components/Footer.vue';
+import ComparaisonBar from './components/ComparaisonBar.vue'
 import './assets/css/global.css';
 
 const route = useRoute()
@@ -10,18 +11,24 @@ const route = useRoute()
 </script>
 
 <template>
-  <header>
+  <header class="sticky-header">
     <NavBar />
   </header>
 
   <section>
     <RouterView />
   </section>
-
+<ComparaisonBar />
   <Footer />
 </template>
 
 <style scoped>
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white; 
+}
 
 nav {
   display: flex;

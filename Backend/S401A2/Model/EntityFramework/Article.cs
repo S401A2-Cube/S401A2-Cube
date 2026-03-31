@@ -72,7 +72,13 @@ namespace S401A2.Model.EntityFramework
         [InverseProperty(nameof(Commande.ArticleCommande))]
         public virtual Commande? ArticleCommande { get; set; } = null;
 
+        [InverseProperty(nameof(Velo.Article))]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual ICollection<Velo>? Velos { get; set; } = new List<Velo>();
 
+        [InverseProperty(nameof(Image.Article))]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual ICollection<Image>? Images { get; set; } = new List<Image>();
 
         // TODO: Navigation towards other entities when they will be 
 

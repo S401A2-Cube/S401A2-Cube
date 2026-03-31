@@ -12,8 +12,8 @@
             <p class="title">EXPLORE THE UNKNOWN</p>
             <p class="subtitle">GRAVEL OR E-GRAVEL. GO FARTHER.</p>
             <div class="hsplit center">
-                <a class="link fitcontent">DISCOVER THE NUROAD SERIES</a>
-                <a class="link fitcontent">DISCOVER THE NUROAD HYBRID SERIES</a>
+                <a class="link fitcontent" href="bikes/gravel/vue-d-ensemble#nuroad">DISCOVER THE NUROAD SERIES</a>
+                <a class="link fitcontent" href="e-bikes/gravel/vue-d-ensemble#nuroad-hybrid">DISCOVER THE NUROAD HYBRID SERIES</a>
             </div>
         </div>
     </main>
@@ -91,6 +91,8 @@
 
     #home_center .link {
         border-bottom: 1px solid white;
+        text-decoration: none;
+        color: inherit;
     }
 
     #discover_section {
@@ -98,5 +100,12 @@
         display: flex;
         flex-direction: column;
         gap: 4rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 </style>

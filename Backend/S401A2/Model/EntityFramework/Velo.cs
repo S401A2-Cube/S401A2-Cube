@@ -25,8 +25,6 @@ namespace APICube.Models.EntityFramework
 
         #region Has One
 
-
-
         [Column("idmodele")]
         public int IdModele { get; set; }
 
@@ -34,6 +32,12 @@ namespace APICube.Models.EntityFramework
         [InverseProperty("Velos")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public virtual Modele ModeleVelo { get; set; } = null!;
+
+        [ForeignKey(nameof(IdArticle))]
+        [InverseProperty("Velos")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public virtual Article Article { get; set; } = null!;
+
         #endregion
 
         #region Has Many

@@ -6,9 +6,21 @@ import ArticleView from '@/views/ArticleView.vue'
 import SearchView from '@/views/SearchView.vue'
 import InscriptionView from '@/views/InscriptionView.vue'
 import ConnexionView from '@/views/ConnexionView.vue'
+import ComparaisonView from '@/views/ComparaisonView.vue'
+import CategoryView from '@/views/CategoryView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+        top: 85,
+      }
+    }
+    return { top: 0 }
+  },
   routes: 
   [
     {
@@ -32,9 +44,19 @@ const router = createRouter({
       component: ArticleView
     },
     {
+      path: '/:mainCategory/:type/:category',
+      name: 'category',
+      component: CategoryView
+    },
+    {
       path:'/inscription',
       name:'inscription',
       component: InscriptionView
+    },
+    {
+      path:'/comparaison',
+      name:'comparaison',
+      component: ComparaisonView
     },
     {
       path:'/connexion',
