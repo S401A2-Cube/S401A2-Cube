@@ -48,19 +48,19 @@ namespace S401A2
 
                 // 2. Appliquer le cadenas � toutes les routes de l'API
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
                 {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new string[] {}
-        }
-    });
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
             });
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -81,8 +81,6 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<Client>, ClientManager>();
             builder.Services.AddScoped<IDataRepository<Couleur>, CouleurManager>();
             builder.Services.AddScoped<IDataRepository<Millesime>, MillesimeManager>();
-
-
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
              .AddJwtBearer(options =>
@@ -113,9 +111,9 @@ namespace S401A2
 
             if (app.Environment.IsDevelopment())
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Cube V1");
-                c.RoutePrefix = "swagger"; 
-            });
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Cube V1"));
+            };
 
             app.UseHttpsRedirection();
 
