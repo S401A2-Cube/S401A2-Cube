@@ -1034,7 +1034,7 @@
       "content": [
         {
           "title": "HELMETS",
-          "introduction": "Designed by passionate riders, our helmets deliver top-tier protection with the perfect mix of comfort and style. We know what matters when you’re out on the bike. Smart features and a precision fit make sure you’re ready for whatever the trail throws at you.",
+          "introduction": "Conçus par des cyclistes passionnés, nos casques offrent une protection de premier ordre avec un mélange parfait de confort et de style. Nous savons ce qui compte lorsque vous êtes sur votre vélo. Des caractéristiques intelligentes et un ajustement précis vous assurent d'être prêt pour tout ce que le sentier vous réserve.",
           "background": "@/assets/image/gear_casque_bg_r1rt.webp",
           "video": "@/assets/video/gear_casque_main_fwbi.mp4",
           "information": [
@@ -1044,104 +1044,104 @@
               "subtitle": "",
               "products": [
                 {
-                  "name": "Helmet STROVER TM",
+                  "name": "Casque STROVER TM",
                   "image": "@/assets/image/gear_casque_prod_90in.webp",
-                  "description": "STROVER – your enduro helmet for technical trails and long rides. MIPS, an adjustable visor, and two Flip Adapters with X-Lock mounting provide maximum protection, comfort, and full control on every trail."
+                  "description": "STROVER : votre casque d'enduro pour les sentiers techniques et les longues randonnées. Le système MIPS, une visière réglable et deux adaptateurs Flip avec fixation X-Lock offrent une protection maximale, un grand confort et un contrôle total sur chaque sentier."
                 },
                 {
-                  "name": "Helmet DESCENDER X Actionteam",
+                  "name": "Casque DESCENDER X Actionteam",
                   "image": "@/assets/image/gear_casque_prod_s9ko.webp",
-                  "description": "The DESCENDER is your enduro full-face helmet for uncompromising riding fun. Robust, safe, and well-ventilated – perfect for bike park sessions."
+                  "description": "Le DESCENDER est votre casque intégral d'enduro pour un plaisir de conduite sans compromis. Robuste, sûr et bien ventilé, il est parfait pour les sessions en bike park."
                 },
                 {
-                  "name": "Helmet TROOPER",
+                  "name": "Casque TROOPER",
                   "image": "@/assets/image/gear_casque_prod_wnzh.webp",
-                  "description": "An enduro helmet that is second to none looking for. In addition to its excellent design, it is unsurpassed in its category in terms of safety features."
+                  "description": "Un casque d'enduro qui n'a pas son pareil. En plus de son excellent design, il est inégalé dans sa catégorie en termes de caractéristiques de sécurité."
                 },
                 {
-                  "name": "Helmet OFFPATH Artline",
+                  "name": "Casque OFFPATH Artline",
                   "image": "@/assets/image/gear_casque_prod_pcl2.webp",
-                  "description": "A race helmet with excellent ventilation. The visor can be removed and a rear light can be attached. Prepared for all eventualities."
+                  "description": "Un casque de course avec une excellente ventilation. La visière peut être retirée et un feu arrière peut être fixé. Prêt pour toutes les éventualités."
                 },
                 {
-                  "name": "Helmet FRISK",
+                  "name": "Casque FRISK",
                   "image": "@/assets/image/gear_casque_prod_01tq.webp",
-                  "description": "Now a classic in the CUBE portfolio, this helmet lets you plan your next MTB tour with peace of mind. You can adjust the visor to suit the sunlight."
+                  "description": "Désormais un classique de la gamme CUBE, ce casque vous permet de planifier votre prochaine sortie VTT en toute tranquillité. Vous pouvez ajuster la visière en fonction de la lumière du soleil."
                 },
                 {
-                  "name": "Helmet STRAY",
+                  "name": "Casque STRAY",
                   "image": "@/assets/image/gear_casque_prod_apmx.webp",
-                  "description": "A helmet at a low price and yet with outstanding features. Breakaway visor, X-Lock mount for a rear light and MIPS."
+                  "description": "Un casque à petit prix mais doté de caractéristiques exceptionnelles. Visière détachable, fixation X-Lock pour un feu arrière et système MIPS."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_casque_info_eurv.webp",
               "title": "ALL TERRAIN",
-              "subtitle": "Commute. Ride. Explore.",
-              "description": "From forest tracks to urban streets, CUBE All Terrain helmets are the go-to choice for riders who value flexibility and all-day comfort. These helmets offer balanced protection and ventilation for a wide range of riding conditions. With a design that blends in naturally and finely adjustable fit, they provide a secure, comfortable feel, no matter where your route takes you.",
+              "subtitle": "Trajets quotidiens. Balades. Explorations.",
+              "description": "Des chemins forestiers aux rues urbaines, les casques CUBE All Terrain sont le choix idéal pour les cyclistes qui apprécient la flexibilité et le confort tout au long de la journée. Ces casques offrent une protection et une ventilation équilibrées pour une grande variété de conditions de conduite. Avec un design qui s'intègre naturellement et un ajustement précis, ils procurent une sensation de sécurité et de confort, peu importe où votre itinéraire vous mène.",
               "products": [
                 {
-                  "name": "Helmet EVOY HYBRID",
+                  "name": "Casque EVOY HYBRID",
                   "image": "@/assets/image/gear_casque_prod_wmci.webp",
-                  "description": "EVOY HYBRID comes with an excellent ventilation, safety features such as rear light and reflectors as well as additional protection thanks to the integrated MIPS system."
+                  "description": "L'EVOY HYBRID est doté d'une excellente ventilation, de caractéristiques de sécurité telles qu'un feu arrière et des réflecteurs, ainsi que d'une protection supplémentaire grâce au système MIPS intégré."
                 },
                 {
-                  "name": "Helmet FLEET",
+                  "name": "Casque FLEET",
                   "image": "@/assets/image/gear_casque_prod_l1ce.webp",
-                  "description": "FLEET offers a high stability, optimum comfort and ventilation as well as features such as MIPS, a removable visor and a retrofittable rear light for the CUBE X-Lock mount."
+                  "description": "Le FLEET offre une grande stabilité, un confort et une ventilation optimaux, ainsi que des caractéristiques telles que le système MIPS, une visière amovible et un feu arrière adaptable pour la fixation CUBE X-Lock."
                 },
                 {
-                  "name": "Helmet DIRT 2.0",
+                  "name": "Casque DIRT 2.0",
                   "image": "@/assets/image/gear_casque_prod_5i80.webp",
-                  "description": "Versatile, a robust ABS construction and a grid lock - DIRT 2.0 is ideal for the dirtline and the urban street jungle."
+                  "description": "Polyvalent, doté d'une construction robuste en ABS et d'une fermeture à crans, le DIRT 2.0 est idéal pour les pistes de dirt et la jungle urbaine."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_casque_info_ayta.webp",
               "title": "ROAD",
-              "subtitle": "Pace. Focus. Distance.",
-              "description": "Our CUBE Road helmets are made for performance-driven riders who demand aerodynamics, low weight, and outstanding ventilation. High-efficiency air channels keep you cool on fast-paced rides, while providing an ultra-precise fit that disappears as you ride. Designed to meet the highest safety standards, our helmets combine advanced protection with highest comfort.",
+              "subtitle": "Rythme. Concentration. Distance.",
+              "description": "Nos casques de route CUBE sont conçus pour les cyclistes axés sur la performance qui exigent de l'aérodynamisme, un faible poids et une ventilation exceptionnelle. Des canaux d'air très efficaces vous gardent au frais lors des sorties rapides, tout en offrant un ajustement ultra-précis qui se fait oublier pendant que vous roulez. Conçus pour répondre aux normes de sécurité les plus élevées, nos casques allient une protection avancée au plus grand confort.",
               "products": [
                 {
-                  "name": "Helmet HERON Teamline",
+                  "name": "Casque HERON Teamline",
                   "image": "@/assets/image/gear_casque_prod_y5q1.webp",
-                  "description": "An icon of pace. Minimal air resistance with maximum cooling performance and MIPS Air Node. A helmet for cyclists who are always one step ahead."
+                  "description": "Une icône de la vitesse. Une résistance à l'air minimale avec des performances de refroidissement maximales et le système MIPS Air Node. Un casque pour les cyclistes qui ont toujours une longueur d'avance."
                 },
                 {
-                  "name": "Helmet ROAD RACE",
+                  "name": "Casque ROAD RACE",
                   "image": "@/assets/image/gear_casque_prod_y3a6.webp",
-                  "description": "lightweight ample ventilated and compact. 246 g are all it needs, to give you a headstart."
+                  "description": "Léger, amplement ventilé et compact. 246 g suffisent pour vous donner une longueur d'avance."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_casque_info_koj6.webp",
               "title": "GRAVEL",
-              "subtitle": "Freedom. Distance. Adventure.",
+              "subtitle": "Liberté. Distance. Aventure.",
               "products": [
                 {
-                  "name": "Helmet HOVER",
+                  "name": "Casque HOVER",
                   "image": "@/assets/image/gear_casque_prod_15aj.webp",
-                  "description": "The CUBE HOVER is your gravel helmet for every ride, no matter the terrain. Smart safety features, a practical visor, and well-designed ventilation."
+                  "description": "Le CUBE HOVER est votre casque de gravel pour chaque sortie, quel que soit le terrain. Des caractéristiques de sécurité intelligentes, une visière pratique et une ventilation bien conçue."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_casque_info_kgqc.webp",
               "title": "ROOKIE",
-              "subtitle": "Safety. Adventure. Style.",
+              "subtitle": "Sécurité. Aventure. Style.",
               "products": [
                 {
-                  "name": "Helmet LINOK",
+                  "name": "Casque LINOK",
                   "image": "@/assets/image/gear_casque_prod_hpa7.webp",
-                  "description": "The perfect MTB helmet for the rookies of tomorrow! With MIPS, rear light holder and insect net, it is ideal for sniffing out trails and getting home safely."
+                  "description": "Le casque VTT parfait pour les débutants de demain ! Avec le système MIPS, un support de feu arrière et un filet anti-insectes, il est idéal pour découvrir les sentiers et rentrer chez soi en toute sécurité."
                 },
                 {
-                  "name": "Helmet FINK",
+                  "name": "Casque FINK",
                   "image": "@/assets/image/gear_casque_prod_930b.webp",
-                  "description": "A helmet for the next generation. With the great choice of colors, there is something for everyone! The helmet has a holder for a rear light and an insect net."
+                  "description": "Un casque pour la prochaine génération. Avec un grand choix de couleurs, il y en a pour tous les goûts ! Le casque dispose d'un support pour un feu arrière et d'un filet anti-insectes."
                 }
               ]
             }
@@ -1149,164 +1149,164 @@
         },
         {
           "title": "BACKPACKS",
-          "introduction": "Our backpacks and bags combine modern design with clever functionality. Every detail has been carefully thought out to offer you maximum comfort and versatility—from the perfect fit and smart storage options to lightweight and durable materials. Whether for your daily commute, your next trip, or your next mountain biking adventure, with our backpacks you'll be perfectly equipped.",
+          "introduction": "Nos sacs à dos et nos sacs associent un design moderne à une fonctionnalité ingénieuse. Chaque détail a été soigneusement pensé pour vous offrir un maximum de confort et de polyvalence, de l'ajustement parfait aux options de rangement intelligentes, en passant par des matériaux légers et durables. Que ce soit pour vos trajets quotidiens, votre prochain voyage ou votre prochaine aventure en VTT, vous serez parfaitement équipé avec nos sacs à dos.",
           "background": "@/assets/image/gear_sacs-a-dos-sacs-banane_bg_nazr.webp",
           "information": [
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_asof.webp",
               "title": "MTB",
-              "subtitle": "Our backpacks focus on flexibility and practical features. From efficient ventilation to integrated protectors and special compartments for tools and provisions, our backpacks support you so that you can concentrate fully on your ride.",
-              "description": "Our backpacks focus on flexibility and practical features. From efficient ventilation to integrated protectors and special compartments for tools and provisions, our backpacks support you so that you can concentrate fully on your ride.",
+              "subtitle": "Nos sacs à dos mettent l'accent sur la flexibilité et les caractéristiques pratiques. Qu'il s'agisse d'une ventilation efficace, de protections intégrées ou de compartiments spéciaux pour les outils et les provisions, nos sacs à dos vous accompagnent pour que vous puissiez vous concentrer pleinement sur votre trajet.",
+              "description": "Nos sacs à dos mettent l'accent sur la flexibilité et les caractéristiques pratiques. Qu'il s'agisse d'une ventilation efficace, de protections intégrées ou de compartiments spéciaux pour les outils et les provisions, nos sacs à dos vous accompagnent pour que vous puissiez vous concentrer pleinement sur votre trajet.",
               "products": [
                 {
-                  "name": "Backpack VERTEX 16",
+                  "name": "Sac à dos VERTEX 16",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_k8kf.webp",
-                  "description": "Ergonomically shaped shoulder straps, a hip belt, and the NF Ergonomics back system developed by CUBE ensure that it sits perfectly on your back during all riding maneuvers."
+                  "description": "Des bretelles de forme ergonomique, une ceinture ventrale et le système dorsal NF Ergonomics développé par CUBE garantissent un maintien parfait sur votre dos lors de toutes vos manœuvres à vélo."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_d4es.webp",
               "title": "ALL TERRAIN",
-              "subtitle": "Whether you're riding on asphalt, gravel, or rough trails, our bike backpacks for all types of terrain are your reliable partner. The focus is on stability, comfort, and well-designed storage options.",
-              "description": "Whether you're riding on asphalt, gravel, or rough trails, our bike backpacks for all types of terrain are your reliable partner. The focus is on stability, comfort, and well-designed storage options.",
+              "subtitle": "Que vous rouliez sur de l'asphalte, du gravier ou des sentiers accidentés, nos sacs à dos de vélo pour tous les types de terrains sont vos partenaires fiables. L'accent est mis sur la stabilité, le confort et des options de rangement bien pensées.",
+              "description": "Que vous rouliez sur de l'asphalte, du gravier ou des sentiers accidentés, nos sacs à dos de vélo pour tous les types de terrains sont vos partenaires fiables. L'accent est mis sur la stabilité, le confort et des options de rangement bien pensées.",
               "products": [
                 {
-                  "name": "Backpack ATX HYBRID 24",
+                  "name": "Sac à dos ATX HYBRID 24",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_99kl.webp",
-                  "description": "The ATX HYBRID 24 backpack designed especially for e-bikers is the last word in practicality and smart design, with its padded battery compartment, retention system for your charger and a fleece hip pocket to keep your display safe and scratch-free."
+                  "description": "Le sac à dos ATX HYBRID 24, conçu spécialement pour les utilisateurs de vélos électriques, est le nec plus ultra en matière de praticité et de conception intelligente. Il est doté d'un compartiment rembourré pour la batterie, d'un système de maintien pour votre chargeur et d'une poche de hanche en polaire pour garder votre écran en sécurité et à l'abri des rayures."
                 },
                 {
-                  "name": "Backpack ATX 30",
+                  "name": "Sac à dos ATX 30",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_jh37.webp",
-                  "description": "The CUBE ATX 30, our largest backpack in the portfolio, offers plenty of storage space. Thanks to its practical compartment layout and two tool compartments, you'll have everything you need at your fingertips."
+                  "description": "Le CUBE ATX 30, notre plus grand sac à dos de la gamme, offre un grand espace de rangement. Grâce à la disposition pratique de ses compartiments et à ses deux poches à outils, vous aurez tout ce dont vous avez besoin à portée de main."
                 },
                 {
-                  "name": "Backpack ATX 22 TM",
+                  "name": "Sac à dos ATX 22 TM",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_5hac.webp",
-                  "description": "The CUBE ATX 22 offers plenty of space for everything you need on extended tours."
+                  "description": "Le CUBE ATX 22 offre beaucoup d'espace pour tout ce dont vous avez besoin lors de longues excursions."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_4vge.webp",
               "title": "PURE",
-              "subtitle": "The cycling backpacks of the PURE series combine a clean design with functional features for everyday use. Lightweight, durable, and versatile, they are ideal for any field of application.",
-              "description": "The cycling backpacks of the PURE series combine a clean design with functional features for everyday use. Lightweight, durable, and versatile, they are ideal for any field of application.",
+              "subtitle": "Les sacs à dos de vélo de la série PURE combinent un design épuré et des caractéristiques fonctionnelles pour un usage quotidien. Légers, durables et polyvalents, ils sont idéaux pour tous les domaines d'application.",
+              "description": "Les sacs à dos de vélo de la série PURE combinent un design épuré et des caractéristiques fonctionnelles pour un usage quotidien. Légers, durables et polyvalents, ils sont idéaux pour tous les domaines d'application.",
               "products": [
                 {
-                  "name": "Backpack PURE 4",
+                  "name": "Sac à dos PURE 4",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_lsvd.webp",
-                  "description": "It has all the essentials you need for short trips. It is compatible with hydration bladders and has outlets on both sides for the drinking tube."
+                  "description": "Il contient tout l'essentiel dont vous avez besoin pour de courts trajets. Il est compatible avec les poches à eau et dispose de sorties des deux côtés pour le tube d'hydratation."
                 },
                 {
-                  "name": "Backpack PURE 12",
+                  "name": "Sac à dos PURE 12",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_scrx.webp",
-                  "description": "Ergonomic shoulder straps, soft hip straps and CUBE's own NF Ergonomics back system developed in-house keep it sitting pretty for a backpack you can wear all day."
+                  "description": "Des bretelles ergonomiques, des sangles de hanche souples et le système dorsal NF Ergonomics développé en interne par CUBE lui assurent un maintien idéal, pour un sac à dos que vous pouvez porter toute la journée."
                 },
                 {
-                  "name": "Backpack PURE 12 CMPT",
+                  "name": "Sac à dos PURE 12 CMPT",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_ig01.webp",
-                  "description": "The PURE 12 CMPT is the perfect, uncomplicated everyday backpack."
+                  "description": "Le PURE 12 CMPT est le sac à dos parfait et simple pour un usage quotidien."
                 },
                 {
-                  "name": "Backpack PURE 16 Ultralight",
+                  "name": "Sac à dos PURE 16 Ultralight",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_cg53.webp",
-                  "description": "The CUBE PURE 16 Ultralight backpack impresses with its minimal pack size and extremely low weight."
+                  "description": "Le sac à dos CUBE PURE 16 Ultralight impressionne par son encombrement minimal et son poids extrêmement faible."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_vdo9.webp",
               "title": "HIP BAGS",
-              "subtitle": "Our hip bags are the ideal companion for demanding MTB and gravel tours. They combine a minimalist, timeless design with thoughtful features that make all the difference on the go.",
-              "description": "Our hip bags are the ideal companion for demanding MTB and gravel tours. They combine a minimalist, timeless design with thoughtful features that make all the difference on the go.",
+              "subtitle": "Nos sacs bananes sont les compagnons idéaux pour les sorties exigeantes en VTT et en gravel. Ils associent un design minimaliste et intemporel à des caractéristiques bien pensées qui font toute la différence lors de vos déplacements.",
+              "description": "Nos sacs bananes sont les compagnons idéaux pour les sorties exigeantes en VTT et en gravel. Ils associent un design minimaliste et intemporel à des caractéristiques bien pensées qui font toute la différence lors de vos déplacements.",
               "products": [
                 {
-                  "name": "Hip Bag VERTEX 3 X Actionteam",
+                  "name": "Sac banane VERTEX 3 X Actionteam",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_srm1.webp"
                 },
                 {
-                  "name": "Hip Bag PURE 2",
+                  "name": "Sac banane PURE 2",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_viw6.webp",
-                  "description": "The PURE 2 hip bag with a volume of 2 litres fits everything you need for a day on the trail."
+                  "description": "Le sac banane PURE 2 d'un volume de 2 litres peut contenir tout ce dont vous avez besoin pour une journée sur les sentiers."
                 },
                 {
-                  "name": "Hip Bag ATX 1",
+                  "name": "Sac banane ATX 1",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_1n49.webp",
-                  "description": "The compact, lightweight CUBE ATX 1 hip bag weighs 250 g and has a total capacity of 1 liter, making it a practical storage solution for your essentials."
+                  "description": "Le sac banane compact et léger CUBE ATX 1 pèse 250 g et possède une capacité totale de 1 litre, ce qui en fait une solution de rangement pratique pour vos objets essentiels."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_4thu.webp",
               "title": "TRAVEL BAGS",
-              "subtitle": "Lightweight, durable, and functional – they’re easy to carry whether you’re setting off by bike to explore new places, planning a multi-day tour, or simply heading out to discover the world on a whim. With plenty of space for clothing, gear, and everything else that matters to you on the road, you’ll always be well-prepared without compromising on comfort or style.",
-              "description": "Lightweight, durable, and functional – they’re easy to carry whether you’re setting off by bike to explore new places, planning a multi-day tour, or simply heading out to discover the world on a whim. With plenty of space for clothing, gear, and everything else that matters to you on the road, you’ll always be well-prepared without compromising on comfort or style.",
+              "subtitle": "Légers, durables et fonctionnels, ils sont faciles à transporter, que vous partiez à vélo pour explorer de nouveaux endroits, que vous planifiez un circuit de plusieurs jours ou que vous partiez simplement à la découverte du monde sur un coup de tête. Avec beaucoup d'espace pour vos vêtements, votre équipement et tout ce qui compte pour vous sur la route, vous serez toujours bien préparé sans faire de compromis sur le confort ou le style.",
+              "description": "Légers, durables et fonctionnels, ils sont faciles à transporter, que vous partiez à vélo pour explorer de nouveaux endroits, que vous planifiez un circuit de plusieurs jours ou que vous partiez simplement à la découverte du monde sur un coup de tête. Avec beaucoup d'espace pour vos vêtements, votre équipement et tout ce qui compte pour vous sur la route, vous serez toujours bien préparé sans faire de compromis sur le confort ou le style.",
               "products": [
                 {
-                  "name": "Duffle Bag 60",
+                  "name": "Sac de voyage Duffle Bag 60",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_8h5y.webp",
-                  "description": "The CUBE Duffle Bag 60 is the perfect companion for travel, bike parks or race weekends. Removable shoulder straps allow for flexible carrying options."
+                  "description": "Le CUBE Duffle Bag 60 est le compagnon idéal pour les voyages, les bike parks ou les week-ends de course. Les bretelles amovibles offrent des options de transport flexibles."
                 },
                 {
-                  "name": "Wash Bag Backpack 4",
+                  "name": "Trousse de toilette Wash Bag Backpack 4",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_pbwx.webp",
-                  "description": "The fastening straps on the back allow the bag to be easily and securely attached to the MOLLE system on our CUBE backpacks and the Duffle Bag 60."
+                  "description": "Les sangles de fixation au dos permettent d'attacher le sac facilement et en toute sécurité au système MOLLE de nos sacs à dos CUBE et du Duffle Bag 60."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_q37w.webp",
               "title": "ROOKIE",
-              "subtitle": "Our kids’ bike backpacks are the perfect companions for little adventurers. They are lightweight, comfortable to wear, and easy to adjust for a secure fit. The durable construction ensures long-lasting use, while thoughtful details add extra comfort and safety. This way, children can easily carry their belongings, explore the world, play, and enjoy every ride to the fullest.",
-              "description": "Our kids’ bike backpacks are the perfect companions for little adventurers. They are lightweight, comfortable to wear, and easy to adjust for a secure fit. The durable construction ensures long-lasting use, while thoughtful details add extra comfort and safety. This way, children can easily carry their belongings, explore the world, play, and enjoy every ride to the fullest.",
+              "subtitle": "Nos sacs à dos de vélo pour enfants sont les compagnons parfaits des petits aventuriers. Ils sont légers, confortables à porter et faciles à ajuster pour un maintien sûr. Leur construction robuste garantit une utilisation durable, tandis que des détails bien pensés ajoutent un confort et une sécurité supplémentaires. De cette façon, les enfants peuvent facilement transporter leurs affaires, explorer le monde, jouer et profiter pleinement de chaque trajet.",
+              "description": "Nos sacs à dos de vélo pour enfants sont les compagnons parfaits des petits aventuriers. Ils sont légers, confortables à porter et faciles à ajuster pour un maintien sûr. Leur construction robuste garantit une utilisation durable, tandis que des détails bien pensés ajoutent un confort et une sécurité supplémentaires. De cette façon, les enfants peuvent facilement transporter leurs affaires, explorer le monde, jouer et profiter pleinement de chaque trajet.",
               "products": [
                 {
-                  "name": "Backpack VERTEX 9 ROOKIE TM",
+                  "name": "Sac à dos VERTEX 9 ROOKIE TM",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_7jtm.webp",
-                  "description": "Our high-class backpack for young riders. Thanks to the Natural Fit back system developed by CUBE, it sits perfectly on the back during all riding maneuvers."
+                  "description": "Notre sac à dos haut de gamme pour les jeunes cyclistes. Grâce au système dorsal Natural Fit développé par CUBE, il tient parfaitement sur le dos lors de toutes les manœuvres à vélo."
                 },
                 {
-                  "name": "Backpack PURE 6 ROOKIE",
+                  "name": "Sac à dos PURE 6 ROOKIE",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_8a07.webp",
-                  "description": "The front compartment has sections for all the paraphernalia a kid needs."
+                  "description": "Le compartiment avant dispose de sections pour tout le matériel dont un enfant a besoin."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_u70t.webp",
               "title": "GEAR",
-              "subtitle": "Our backpack accessories make every bike ride more comfortable and practical. Extra pockets provide additional space for all the essentials, while hydration systems keep you refreshed along the way. This makes your backpack even more versatile, adapting perfectly to every ride and adventure.",
-              "description": "Our backpack accessories make every bike ride more comfortable and practical. Extra pockets provide additional space for all the essentials, while hydration systems keep you refreshed along the way. This makes your backpack even more versatile, adapting perfectly to every ride and adventure.",
+              "subtitle": "Nos accessoires de sac à dos rendent chaque trajet à vélo plus confortable et plus pratique. Des poches supplémentaires offrent de l'espace pour tous les éléments essentiels, tandis que les systèmes d'hydratation vous gardent au frais tout au long du parcours. Cela rend votre sac à dos encore plus polyvalent et s'adapte parfaitement à chaque trajet et à chaque aventure.",
+              "description": "Nos accessoires de sac à dos rendent chaque trajet à vélo plus confortable et plus pratique. Des poches supplémentaires offrent de l'espace pour tous les éléments essentiels, tandis que les systèmes d'hydratation vous gardent au frais tout au long du parcours. Cela rend votre sac à dos encore plus polyvalent et s'adapte parfaitement à chaque trajet et à chaque aventure.",
               "products": [
                 {
-                  "name": "Hydration Bladder Backpack 2",
+                  "name": "Poche à eau Backpack 2",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_v9kc.webp",
-                  "description": "The CUBE hydration bladder with a capacity of 2 liters is lightweight, durable, and flexible. Its wide opening makes it quick and easy to fill, clean, and dry."
+                  "description": "La poche à eau CUBE d'une capacité de 2 litres est légère, durable et flexible. Sa large ouverture permet de la remplir, de la nettoyer et de la sécher rapidement et facilement."
                 },
                 {
-                  "name": "Hydration Bladder Hip Bag 1.5",
+                  "name": "Poche à eau Hip Bag 1.5",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_29n3.webp",
-                  "description": "The CUBE hydration bladder with a volume of 1.5 liters was specially developed for hip bags. Its wide opening makes it quick and easy to fill, clean, and dry."
+                  "description": "La poche à eau CUBE d'un volume de 1,5 litre a été spécialement conçue pour les sacs bananes. Sa large ouverture permet de la remplir, de la nettoyer et de la sécher rapidement et facilement."
                 },
                 {
-                  "name": "Accessory Bag Backpack 2",
+                  "name": "Sacoche d'accessoires Backpack 2",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_gda1.webp",
-                  "description": "Simple, practical: the 2-litre CUBE GEAR BAG 2 straps to the MOLLE-System on our CUBE backpacks using retention straps."
+                  "description": "Simple et pratique : le sac CUBE GEAR BAG 2 d'une capacité de 2 litres s'attache au système MOLLE de nos sacs à dos CUBE à l'aide de sangles de maintien."
                 },
                 {
-                  "name": "Accessory Bag Backpack 1",
+                  "name": "Sacoche d'accessoires Backpack 1",
                   "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_prod_g56c.webp",
-                  "description": "The small CUBE GEAR BAG 1 with a capacity of 1 liter can be attached to the MOLLE system of our CUBE backpacks and bags using Velcro fasteners."
+                  "description": "Le petit sac CUBE GEAR BAG 1 d'une capacité de 1 litre peut être fixé au système MOLLE de nos sacs à dos et sacs CUBE à l'aide de fermetures velcro."
                 }
               ]
             }
           ]
         },
         {
-          "title": "SHOES",
-          "introduction": "Developed with professional team riders, our cycling shoes combine functionality, comfort, and lightness. The design-oriented concept ensures maximum efficiency and noticeable weight reduction, while the ergonomic fit provides exceptional comfort even on long rides. Perfectly tailored to meet the needs of demanding cyclists.",
+          "title": "CHAUSSURES",
+          "introduction": "Développées avec des cyclistes d'équipes professionnelles, nos chaussures de vélo allient fonctionnalité, confort et légèreté. Le concept axé sur le design garantit une efficacité maximale et une réduction de poids notable, tandis que l'ajustement ergonomique offre un confort exceptionnel même lors de longs trajets. Elles sont parfaitement adaptées pour répondre aux besoins des cyclistes exigeants.",
           "background": "@/assets/image/gear_chaussure_info_nb1g.webp",
           "video": "@/assets/video/gear_chaussure_main_agm9.mp4",
           "information": [
@@ -1316,101 +1316,101 @@
               "subtitle": "",
               "products": [
                 {
-                  "name": "Shoes RD C:68X",
+                  "name": "Chaussures RD C:68X",
                   "image": "@/assets/image/gear_chaussure_prod_ja8d.webp",
-                  "description": "The full carbon outsole makes this road cycling shoe extremely lightweight and stiff. Durability and resilience are ensured by the high-tech Dyneema® fiber in the upper material. Two dials provide an optimal fit and allow for quick on and off."
+                  "description": "La semelle extérieure entièrement en carbone rend cette chaussure de vélo de route extrêmement légère et rigide. La durabilité et la résistance sont assurées par la fibre haute technologie Dyneema® présente dans le matériau supérieur. Deux molettes de serrage offrent un ajustement optimal et permettent un enfilage et un retrait rapides."
                 },
                 {
-                  "name": "Shoes SYDRIX PRO",
+                  "name": "Chaussures SYDRIX PRO",
                   "image": "@/assets/image/gear_chaussure_prod_bd6q.webp",
-                  "description": "The SYDRIX PRO combines lightweight construction, superior ventilation, and maximum efficiency. Its innovative materials and smart design deliver outstanding comfort, secure support, and a durable, high-performance build."
+                  "description": "La SYDRIX PRO allie une construction légère, une ventilation supérieure et une efficacité maximale. Ses matériaux innovants et son design intelligent offrent un confort exceptionnel, un maintien sûr et une conception durable et hautement performante."
                 },
                 {
-                  "name": "Shoes SYDRIX",
+                  "name": "Chaussures SYDRIX",
                   "image": "@/assets/image/gear_chaussure_prod_j69l.webp",
-                  "description": "The SYDRIX shoe combines excellent ventilation, efficient power transfer, and high comfort. A fibreglass sole, dial closure, and reinforced heel cup ensure stability, support, and direct power transmission while providing an optimal fit and long-lasting durability."
+                  "description": "La chaussure SYDRIX combine une excellente ventilation, un transfert de puissance efficace et un grand confort. Une semelle en fibre de verre, une fermeture à molette et une coque de talon renforcée assurent stabilité, soutien et transmission directe de la puissance tout en offrant un ajustement optimal et une longue durabilité."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_chaussure_info_nb1g.webp",
               "title": "MTB & GRAVEL",
-              "subtitle": "Our CUBE MTB and Gravel shoes are specifically designed for off-road use, offering the perfect combination of power transfer, walking comfort, and durability. Unlike pure Road bike shoes, they not only enable efficient pedalling, but also make walking on rough terrain easier. Whether on technical mountain bike trails or long gravel routes – improve your riding comfort and performance.",
-              "description": "Our CUBE MTB and Gravel shoes are specifically designed for off-road use, offering the perfect combination of power transfer, walking comfort, and durability. Unlike pure Road bike shoes, they not only enable efficient pedalling, but also make walking on rough terrain easier. Whether on technical mountain bike trails or long gravel routes – improve your riding comfort and performance.",
+              "subtitle": "Nos chaussures CUBE VTT et Gravel sont spécialement conçues pour une utilisation tout-terrain. Elles offrent la combinaison parfaite entre transfert de puissance, confort de marche et durabilité. Elles permettent un pédalage très efficace tout en facilitant la marche sur des terrains accidentés. Que ce soit sur des sentiers de VTT techniques ou de longs itinéraires de gravel, elles améliorent votre confort de conduite et vos performances.",
+              "description": "Nos chaussures CUBE VTT et Gravel sont spécialement conçues pour une utilisation tout-terrain. Elles offrent la combinaison parfaite entre transfert de puissance, confort de marche et durabilité. Elles permettent un pédalage très efficace tout en facilitant la marche sur des terrains accidentés. Que ce soit sur des sentiers de VTT techniques ou de longs itinéraires de gravel, elles améliorent votre confort de conduite et vos performances.",
               "products": [
                 {
-                  "name": "Shoes MTB C:68X",
+                  "name": "Chaussures MTB C:68X",
                   "image": "@/assets/image/gear_chaussure_prod_cyzy.webp",
-                  "description": "The Carbon-Spine outsole with a layer of Peebax® TPU makes this off-road racing shoe extremely lightweight and stiff. Durability and resilience are ensured by the high-tech Dyneema® fibre in the upper material. Two dials provide an optimal fit and allow for quick and easy on and off."
+                  "description": "La semelle extérieure Carbon-Spine dotée d'une couche de TPU Peebax® rend cette chaussure de course tout-terrain extrêmement légère et rigide. La durabilité et la résistance sont assurées par la fibre haute technologie Dyneema® présente dans le matériau supérieur. Deux molettes de serrage offrent un ajustement optimal et permettent un enfilage et un retrait rapides et faciles."
                 },
                 {
-                  "name": "Shoes PEAK PRO",
+                  "name": "Chaussures PEAK PRO",
                   "image": "@/assets/image/gear_chaussure_prod_7if5.webp",
-                  "description": "The PEAK PRO offers efficient power transfer, durability, and comfort. A fibreglass sole, dial closure, and A-TRACTION rubber compound provide grip, protection, and flexibility—perfect for gravel, cyclocross, and marathon riders."
+                  "description": "La PEAK PRO offre un transfert de puissance efficace, de la durabilité et du confort. Une semelle en fibre de verre, une fermeture à molette et un composé en caoutchouc A-TRACTION offrent adhérence, protection et flexibilité, ce qui est parfait pour les amateurs de gravel, de cyclo-cross et de marathon."
                 },
                 {
-                  "name": "Shoes PEAK",
+                  "name": "Chaussures PEAK",
                   "image": "@/assets/image/gear_chaussure_prod_uhe8.webp",
-                  "description": "The PEAK shoe combines efficient power transfer, grip, and comfort. A fibreglass sole, dial closure, and A-TRACTION rubber compound provide stability, protection, and flexibility—perfect for gravel, cyclocross, and marathon rides."
+                  "description": "La chaussure PEAK combine un transfert de puissance efficace, de l'adhérence et du confort. Une semelle en fibre de verre, une fermeture à molette et un composé en caoutchouc A-TRACTION offrent stabilité, protection et flexibilité, l'idéal pour les sorties en gravel, cyclo-cross et marathon."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_chaussure_info_41vj.webp",
               "title": "TOUR",
-              "subtitle": "Our CUBE Tour shoes are the ideal choice for cyclists who value comfort and versatility on long rides. They offer the perfect balance between efficient pedalling and a comfortable fit. High-quality materials and thoughtful construction ensure a pleasant riding experience. Whether for long tours, daily commutes, or leisure rides – they support you on every journey.",
-              "description": "Our CUBE Tour shoes are the ideal choice for cyclists who value comfort and versatility on long rides. They offer the perfect balance between efficient pedalling and a comfortable fit. High-quality materials and thoughtful construction ensure a pleasant riding experience. Whether for long tours, daily commutes, or leisure rides – they support you on every journey.",
+              "subtitle": "Nos chaussures CUBE Tour sont le choix idéal pour les cyclistes qui apprécient le confort et la polyvalence lors de longs trajets. Elles offrent un équilibre parfait entre un pédalage efficace et un ajustement confortable. Des matériaux de haute qualité et une construction soignée garantissent une expérience de conduite agréable. Que ce soit pour de longues randonnées, des trajets quotidiens ou des balades de loisirs, elles vous accompagnent dans chaque voyage.",
+              "description": "Nos chaussures CUBE Tour sont le choix idéal pour les cyclistes qui apprécient le confort et la polyvalence lors de longs trajets. Elles offrent un équilibre parfait entre un pédalage efficace et un ajustement confortable. Des matériaux de haute qualité et une construction soignée garantissent une expérience de conduite agréable. Que ce soit pour de longues randonnées, des trajets quotidiens ou des balades de loisirs, elles vous accompagnent dans chaque voyage.",
               "products": [
                 {
-                  "name": "Shoes OX PRO",
+                  "name": "Chaussures OX PRO",
                   "image": "@/assets/image/gear_chaussure_prod_e175.webp",
-                  "description": "The OX PRO combines casual style with functionality. Its nylon reinforcement, EVA midsole, and A-TRACTION outsole provide efficient pedalling, flexibility, and grip - perfect for outdoor adventures on and off the bike."
+                  "description": "La chaussure OX PRO associe un style décontracté à la fonctionnalité. Son renfort en nylon, sa semelle intermédiaire en EVA et sa semelle extérieure A-TRACTION offrent un pédalage efficace, de la flexibilité et de l'adhérence, parfaits pour les aventures en plein air, sur et en dehors du vélo."
                 },
                 {
-                  "name": "Shoes LOXIA PRO",
+                  "name": "Chaussures LOXIA PRO",
                   "image": "@/assets/image/gear_chaussure_prod_uzpe.webp",
-                  "description": "The LOXIA PRO offers grip, comfort, and efficiency. Its nylon reinforcement, EVA midsole, and A-TRACTION rubber sole ensure stability, traction, excellent walking performance, and flexibility—ideal for touring, gravel, enduro, and e-biking."
+                  "description": "La chaussure LOXIA PRO offre adhérence, confort et efficacité. Son renfort en nylon, sa semelle intermédiaire en EVA et sa semelle en caoutchouc A-TRACTION assurent stabilité, traction, excellentes performances de marche et flexibilité, ce qui est idéal pour le tourisme, le gravel, l'enduro et le vélo électrique."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_chaussure_info_xdwu.webp",
               "title": "GRAVITY",
-              "subtitle": "Our CUBE Gravity shoes offer stability and control on the bike and impress with their versatility on different surfaces. Their robust construction ensures comfort and safety. A snug fit and high durability make them a reliable companion. Ideal for anyone who want to combine action and flexibility in one shoe.",
-              "description": "Our CUBE Gravity shoes offer stability and control on the bike and impress with their versatility on different surfaces. Their robust construction ensures comfort and safety. A snug fit and high durability make them a reliable companion. Ideal for anyone who want to combine action and flexibility in one shoe.",
+              "subtitle": "Nos chaussures CUBE Gravity offrent stabilité et contrôle sur le vélo et impressionnent par leur polyvalence sur différentes surfaces. Leur construction robuste garantit confort et sécurité. Un ajustement parfait et une grande durabilité en font un compagnon fiable. L'idéal pour tous ceux qui souhaitent combiner action et flexibilité dans une seule chaussure.",
+              "description": "Nos chaussures CUBE Gravity offrent stabilité et contrôle sur le vélo et impressionnent par leur polyvalence sur différentes surfaces. Leur construction robuste garantit confort et sécurité. Un ajustement parfait et une grande durabilité en font un compagnon fiable. L'idéal pour tous ceux qui souhaitent combiner action et flexibilité dans une seule chaussure.",
               "products": [
                 {
-                  "name": "Shoes STRIX PRO X MH",
+                  "name": "Chaussures STRIX PRO X MH",
                   "image": "@/assets/image/gear_chaussure_prod_llbs.webp",
-                  "description": "This clip-in shoe was developed in collaboration with team rider Max Hartenstern and offers maximum grip, efficiency, and protection. The A-TRACTION sole, nylon reinforcement, and rugged design make it ideal for demanding downhill and enduro riders."
+                  "description": "Cette chaussure automatique a été développée en collaboration avec le coureur de l'équipe Max Hartenstern et offre une adhérence, une efficacité et une protection maximales. La semelle A-TRACTION, le renfort en nylon et la conception robuste la rendent idéale pour les amateurs de descente et d'enduro exigeants."
                 },
                 {
-                  "name": "Shoes STRIX",
+                  "name": "Chaussures STRIX",
                   "image": "@/assets/image/gear_chaussure_prod_72bf.webp",
-                  "description": "The STRIX flat pedal model was developed in collaboration with Max Hartenstern and offers outstanding grip, stiffness, and comfort. The A-TRACTION sole, nylon reinforcement, and rugged design make it ideal for downhill and enduro riders."
+                  "description": "Le modèle pour pédales plates STRIX a été développé en collaboration avec Max Hartenstern et offre une adhérence, une rigidité et un confort exceptionnels. La semelle A-TRACTION, le renfort en nylon et la conception robuste le rendent idéal pour les amateurs de descente et d'enduro."
                 },
                 {
-                  "name": "Shoes MAZE",
+                  "name": "Chaussures MAZE",
                   "image": "@/assets/image/gear_chaussure_prod_fsca.webp",
-                  "description": "The MAZE shoe offers versatile comfort and grip for short tours and everyday use. The A-TRACTION sole, PU upper, and ergonomic insole combine protection, durability, and a casual design."
+                  "description": "La chaussure MAZE offre un confort polyvalent et une bonne adhérence pour les courtes excursions et un usage quotidien. La semelle A-TRACTION, la tige en PU et la semelle intérieure ergonomique combinent protection, durabilité et design décontracté."
                 }
               ]
             },
             {
               "image": "@/assets/image/gear_chaussure_info_xjto.webp",
               "title": "ROOKIE",
-              "subtitle": "Our CUBE Rookie shoes are every bit as capable as the adult models – same performance, same technology, same design. Perfect for those who don’t want to compromise from the very beginning. Available in sizes 35–37.",
-              "description": "Our CUBE Rookie shoes are every bit as capable as the adult models – same performance, same technology, same design. Perfect for those who don’t want to compromise from the very beginning. Available in sizes 35–37.",
+              "subtitle": "Nos chaussures CUBE Rookie sont tout aussi performantes que les modèles pour adultes : même performance, même technologie, même design. Elles sont parfaites pour ceux qui refusent de faire des compromis dès le début. Disponibles dans les pointures 35 à 37.",
+              "description": "Nos chaussures CUBE Rookie sont tout aussi performantes que les modèles pour adultes : même performance, même technologie, même design. Elles sont parfaites pour ceux qui refusent de faire des compromis dès le début. Disponibles dans les pointures 35 à 37.",
               "products": [
                 {
-                  "name": "Shoes PEAK ROOKIE",
+                  "name": "Chaussures PEAK ROOKIE",
                   "image": "@/assets/image/gear_chaussure_prod_4ztv.webp",
-                  "description": "The PEAK ROOKIE for young bike enthusiasts combines efficient power transfer, grip and comfort. The fiberglass sole, disc closure and A-TRACTION rubber compound provide stability, protection and flexibility – ideal for gravel, cyclocross and marathon rides."
+                  "description": "La chaussure PEAK ROOKIE pour les jeunes passionnés de vélo combine un transfert de puissance efficace, de l'adhérence et du confort. La semelle en fibre de verre, la fermeture à disque et le composé en caoutchouc A-TRACTION offrent stabilité, protection et flexibilité, parfaits pour le gravel, le cyclo-cross et les marathons."
                 },
                 {
-                  "name": "Shoes MAZE ROOKIE TM",
+                  "name": "Chaussures MAZE ROOKIE TM",
                   "image": "@/assets/image/gear_chaussure_prod_y6hb.webp",
-                  "description": "The MAZE ROOKIE TM shoe offers versatile comfort and grip for short rides and everyday use. The A-TRACTION outsole, PU upper and ergonomic insole combine protection, durability and a casual design."
+                  "description": "La chaussure MAZE ROOKIE TM offre un confort polyvalent et une bonne adhérence pour les courts trajets et l'utilisation quotidienne. La semelle extérieure A-TRACTION, la tige en PU et la semelle intérieure ergonomique combinent protection, durabilité et design décontracté."
                 }
               ]
             }
