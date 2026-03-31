@@ -1,6 +1,5 @@
 <script setup>
 import FormConnexion from '@/components/FormConnexion.vue';
-
 </script>
 
 <template>

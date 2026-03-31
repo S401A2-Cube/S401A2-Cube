@@ -48,12 +48,12 @@ form {
 .router-link {
     text-decoration: underline;
     transition: all 0.4s;
-    color: #2fb5d2;
+    color: var(--blue-cube);
     margin-top: 1.5rem;
 }
 
 .router-link:hover {
-    color: #298499;
+    color: var(--blue-muted);
     text-decoration: none;
 }
 
