@@ -56,7 +56,6 @@ h2 {
 }
 
 #inscription {
-    margin-top: 5rem;
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -95,11 +94,11 @@ form {
 .router-link {
     text-decoration: underline;
     transition: all 0.4s;
-    color: #2fb5d2;
+    color: var(--blue-cube);
 }
 
 .router-link:hover {
-    color: #298499;
+    color: var(--blue-muted);
     text-decoration: none;
 }
 </style>
