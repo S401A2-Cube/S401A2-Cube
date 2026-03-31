@@ -21,10 +21,10 @@
         <div id="discover_section">
             <div class="hsplit">
                 <section class="vsplit">
-                    <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_Gravel_1_800x800.jpg">
+                    <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_Gravel_1_800x800.webp">
                     <div class="hsplit">
-                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_Gravel_2_800x800.jpg">
-                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_Gravel_3_800x800.jpg">
+                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_Gravel_2_800x800.webp">
+                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_Gravel_3_800x800.webp">
                     </div>
                 </section>
                 <section class="center">
@@ -44,10 +44,10 @@
                 </section>
                 <section class="vsplit">
                     <div class="hsplit">
-                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_MTB_2_800x800.jpg">
-                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_MTB_3_800x800.jpg">
+                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_MTB_2_800x800.webp">
+                        <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_MTB_3_800x800.webp">
                     </div>
-                    <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_MTB_mobil_800x800.jpg">
+                    <img src="@/assets/image/260218_Startseite_ACSLaunch_Feb2026_MTB_mobil_800x800.webp">
                 </section>
             </div>
         </div>

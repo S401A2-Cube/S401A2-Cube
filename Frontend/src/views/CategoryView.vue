@@ -5,6 +5,11 @@ import data from '../assets/json/data.json';
 
 const route = useRoute();
 
+const getAssetUrl = (path) => {
+  const cleanPath = path.replace('@/', '../'); 
+  return new URL(cleanPath, import.meta.url).href;
+};
+
 const pageData = computed(() => {
   const mainParam = route.params.mainCategory?.toLowerCase();
   const typeParam = route.params.type?.toLowerCase();
@@ -35,7 +40,7 @@ const pageData = computed(() => {
 <template>
   <main v-if="pageData" class="category-page">
     
-    <header class="hero" :style="{ backgroundImage: `url(${pageData.parent.background})` }">
+    <header class="hero" :style="{ backgroundImage: `url(${getAssetUrl(pageData.parent.background)})` }">
       <div class="hero-overlay">
         <h1 class="hero-title">{{ pageData.parent.title }}</h1>
       </div>
@@ -55,9 +60,10 @@ const pageData = computed(() => {
       <section>
         <p class="page-intro">{{ pageData.parent.introduction }}</p>
         <video 
+            v-if="pageData.parent.video && !pageData.parent.video.includes('.none')"
             id="video" 
             :key="pageData.parent.video" 
-            :src="pageData.parent.video" 
+            :src="getAssetUrl(pageData.parent.video)"
             controls 
             class="category-video"
           >
@@ -67,7 +73,7 @@ const pageData = computed(() => {
       <section id="overview" class="preview-section">
         <div class="preview-grid">
           <div v-for="info in pageData.parent.overview" :key="info.title" class="preview-card">
-            <img :src="info.image" :alt="info.title" />
+            <img :src="getAssetUrl(info.image)" :alt="info.title" />
             <h3>{{ info.title }}</h3>
             <p>{{ info.description }}</p>
             <button class="btn-primary">Show all bikes</button>
@@ -82,7 +88,7 @@ const pageData = computed(() => {
       class="detail-block"
       >
       <div class="detail-sticky-image">
-          <img :src="info.image" :alt="info.title" />
+          <img :src="getAssetUrl(info.image)" :alt="info.title" />
       </div>
       
       <div class="detail-content">
@@ -95,7 +101,7 @@ const pageData = computed(() => {
                 <h3 class="section-label">APPLICATIONS</h3>
                 <div v-for="app in info.applications" :key="app.name" class="list-row">
                 <div class="row-img">
-                    <img :src="app.image" :alt="app.name" />
+                    <img :src="getAssetUrl(app.image)" :alt="app.name" />
                 </div>
                 <div class="row-text">
                     <h4>{{ app.name }}</h4>
@@ -108,7 +114,7 @@ const pageData = computed(() => {
                 <h3 class="section-label">SERIES</h3>
                 <div v-for="s in info.series" :key="s.name" class="list-row">
                 <div class="row-img">
-                    <img :src="s.image" :alt="s.name" />
+                    <img :src="getAssetUrl(s.image)" :alt="s.name" />
                 </div>
                 <div class="row-text">
                     <h4>{{ s.name }}</h4>
@@ -120,7 +126,7 @@ const pageData = computed(() => {
                 <h3 class="section-label">PRODUCTS</h3>
                 <div v-for="prod in info.products" :key="prod.name" class="list-row">
                     <div class="row-img">
-                        <img :src="prod.image" :alt="prod.name" />
+                        <img :src="getAssetUrl(prod.image)" :alt="prod.name" />
                     </div>
                     <div class="row-text">
                         <h4>{{ prod.name }}</h4>
