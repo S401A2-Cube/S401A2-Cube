@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { defineModel } from 'vue';
 
-const quantite = ref(1);
+const quantite = defineModel('quantite', { type: Number, default: 1 });
+
 const incrementer = () => {
   quantite.value++;
 };
@@ -12,7 +13,7 @@ const decrementer = () => {
   }
 };
 
-defineProps({
+const props = defineProps({
   id: {
     type:Number,
     required:true
@@ -37,6 +38,10 @@ defineProps({
     type: String,
     required: false
   },
+  imageURL: {
+    type: String,
+    required: false
+  }
 });
 
 </script>
@@ -44,26 +49,33 @@ defineProps({
 <template>
     <div id="ligne-panier">
       <div class="image-container">
-        <img src="https://cube-bikes.ca/wp-content/uploads/2024/05/Cube-Stereo-Hybrid-140-HPC-Actionteam-750-actionteam-695325_side-view_00.png" />
+        <img :src=" imageURL ? imageURL : 'https://cube-bikes.ca/wp-content/uploads/2024/05/Cube-Stereo-Hybrid-140-HPC-Actionteam-750-actionteam-695325_side-view_00.png'" />
       </div>
-        <h2>{{ articleName }}</h2>
-        <p>{{ price }}€</p>
-        <p>REFERENCE: {{ articleRef }}</p>
-        <p>SIZE: {{ taille }}</p>
-        <p>COLOR: {{ couleur }}</p>
 
-        <p>{{ price }} TTC</p>
-        <div class="input-container">
-          <button type="button" class="btn-qty" @click="decrementer">-</button>
-          <input 
-            type="number" 
-            v-model.number="quantite" 
-            min="1" 
-            class="input-panier"
-          >
-          <button type="button" class="btn-qty" @click="incrementer">+</button>
+      <div class="container-div">
+        <div class="info-ligne">
+          <h2>{{ articleName }}</h2>
+          <p class="article-price">{{ price }}€</p>
+          <p class="article-ref">REFERENCE: {{ articleRef }}</p>
+          <p>SIZE: {{ taille }}</p>
+          <p>COLOR: {{ couleur }}</p>
         </div>
-        <p>supprimer</p>
+
+        <div class="action-ligne">
+          <h3>{{ price }}€ TTC</h3>
+          <div class="input-container">
+            <button type="button" class="btn-qty" @click="decrementer">-</button>
+            <input 
+              type="number" 
+              v-model.number="quantite" 
+              min="1" 
+              class="input-panier"
+            >
+            <button type="button" class="btn-qty" @click="incrementer">+</button>
+          </div>
+          <p class="supprimer-link">Supprimer</p>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -74,7 +86,10 @@ defineProps({
   align-items: center;
   gap: 20px;
   padding: 1rem;
-  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  box-shadow: var(--card-shadow);
+  width: 800px;
+  height: 200px;
 }
 
 .input-container {
@@ -121,8 +136,8 @@ defineProps({
 }
 
 .image-container {
-  width: 420px;  
-  height: 420px; 
+  width: 250px;  
+  height: 200px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,4 +151,47 @@ defineProps({
   object-fit: contain;
 }
 
+.info-ligne {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 4px;
+  line-height: 1.5;
+}
+
+.action-ligne {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.container-div {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.supprimer-link {
+    transition: all 0.4s;
+    color: var(--light-grey);
+}
+
+.supprimer-link:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.article-ref {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.article-price {
+  font-weight: bold;
+  font-style: italic;
+}
 </style>
