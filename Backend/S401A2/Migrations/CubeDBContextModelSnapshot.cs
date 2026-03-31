@@ -196,6 +196,7 @@ namespace S401A2.Migrations
                         .HasColumnName("idmodele");
 
                     b.Property<string>("LienVue360")
+                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)")
                         .HasColumnName("lienvue360");
@@ -207,6 +208,21 @@ namespace S401A2.Migrations
                     b.HasIndex("IdModele");
 
                     b.ToTable("t_e_velo_vel", "public");
+                });
+
+            modelBuilder.Entity("AccessoireTaille", b =>
+                {
+                    b.Property<int>("AccessoiresArticleId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TaillesIdTaille")
+                        .HasColumnType("integer");
+
+                    b.HasKey("AccessoiresArticleId", "TaillesIdTaille");
+
+                    b.HasIndex("TaillesIdTaille");
+
+                    b.ToTable("t_j_accessoire_taille_ata", "public");
                 });
 
             modelBuilder.Entity("ArticleMotCle", b =>
@@ -388,7 +404,8 @@ namespace S401A2.Migrations
 
                     b.HasIndex("ArticleCommandeId");
 
-                    b.HasIndex("ArticleId");
+                    b.HasIndex("ArticleId")
+                        .IsUnique();
 
                     b.HasIndex("CategorieId");
 
@@ -399,6 +416,8 @@ namespace S401A2.Migrations
                     b.HasIndex("Reference");
 
                     b.ToTable("t_e_article_art", "public");
+
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("S401A2.Model.EntityFramework.Cadre", b =>
@@ -494,6 +513,32 @@ namespace S401A2.Migrations
                     b.ToTable("t_s_geometrie_geo", "public");
                 });
 
+            modelBuilder.Entity("S401A2.Model.EntityFramework.Image", b =>
+                {
+                    b.Property<int>("ImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("img_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ImageId"));
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("art_id");
+
+                    b.Property<string>("Chemin")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("img_chemin");
+
+                    b.HasKey("ImageId");
+
+                    b.HasIndex("ArticleId");
+
+                    b.ToTable("t_e_image_img", "public");
+                });
+
             modelBuilder.Entity("S401A2.Model.EntityFramework.LignePanier", b =>
                 {
                     b.Property<int>("Id")
@@ -515,9 +560,17 @@ namespace S401A2.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("com_id");
 
+                    b.Property<int?>("CouleurId")
+                        .HasColumnType("integer")
+                        .HasColumnName("clr_id");
+
                     b.Property<int>("QtePanier")
                         .HasColumnType("integer")
                         .HasColumnName("lig_qtepanier");
+
+                    b.Property<int?>("TailleId")
+                        .HasColumnType("integer")
+                        .HasColumnName("tli_id");
 
                     b.HasKey("Id");
 
@@ -525,9 +578,13 @@ namespace S401A2.Migrations
 
                     b.HasIndex("ClientId");
 
+                    b.HasIndex("CouleurId");
+
                     b.HasIndex("Id");
 
                     b.HasIndex("QtePanier");
+
+                    b.HasIndex("TailleId");
 
                     b.ToTable("t_e_lignepanier_lig", "public");
                 });
@@ -606,6 +663,39 @@ namespace S401A2.Migrations
                     b.ToTable("t_j_velo_taille_vta", "public");
                 });
 
+            modelBuilder.Entity("S401A2.Model.EntityFramework.Accessoire", b =>
+                {
+                    b.HasBaseType("S401A2.Model.EntityFramework.Article");
+
+                    b.Property<string>("Caracteristiques")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("acc_caracteristiques");
+
+                    b.Property<string>("Dimensions")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("acc_dimensions");
+
+                    b.Property<string>("Materiaux")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("acc_materiaux");
+
+                    b.Property<bool>("TailleUnique")
+                        .HasColumnType("boolean")
+                        .HasColumnName("acc_taille_unique");
+
+                    b.Property<string>("TypeAccessoire")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("acc_type");
+
+                    b.ToTable("t_e_accessoire_acc", "public");
+                });
+
             modelBuilder.Entity("APICube.Models.EntityFramework.Client", b =>
                 {
                     b.HasOne("S401A2.Model.EntityFramework.Adresse", "AdresseClient")
@@ -665,6 +755,21 @@ namespace S401A2.Migrations
                     b.Navigation("Article");
 
                     b.Navigation("ModeleVelo");
+                });
+
+            modelBuilder.Entity("AccessoireTaille", b =>
+                {
+                    b.HasOne("S401A2.Model.EntityFramework.Accessoire", null)
+                        .WithMany()
+                        .HasForeignKey("AccessoiresArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("S401A2.Model.EntityFramework.Taille", null)
+                        .WithMany()
+                        .HasForeignKey("TaillesIdTaille")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ArticleMotCle", b =>
@@ -759,6 +864,17 @@ namespace S401A2.Migrations
                     b.Navigation("CategorieArticle");
                 });
 
+            modelBuilder.Entity("S401A2.Model.EntityFramework.Image", b =>
+                {
+                    b.HasOne("S401A2.Model.EntityFramework.Article", "Article")
+                        .WithMany("Images")
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+                });
+
             modelBuilder.Entity("S401A2.Model.EntityFramework.LignePanier", b =>
                 {
                     b.HasOne("S401A2.Model.EntityFramework.Article", "ArticleLignePanier")
@@ -773,9 +889,21 @@ namespace S401A2.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("S401A2.Model.EntityFramework.Couleur", "CouleurChoisie")
+                        .WithMany()
+                        .HasForeignKey("CouleurId");
+
+                    b.HasOne("S401A2.Model.EntityFramework.Taille", "TailleChoisie")
+                        .WithMany()
+                        .HasForeignKey("TailleId");
+
                     b.Navigation("ArticleLignePanier");
 
                     b.Navigation("ClientLignePanier");
+
+                    b.Navigation("CouleurChoisie");
+
+                    b.Navigation("TailleChoisie");
                 });
 
             modelBuilder.Entity("TailleVelo", b =>
@@ -789,6 +917,15 @@ namespace S401A2.Migrations
                     b.HasOne("APICube.Models.EntityFramework.Velo", null)
                         .WithMany()
                         .HasForeignKey("VelosIdVelo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("S401A2.Model.EntityFramework.Accessoire", b =>
+                {
+                    b.HasOne("S401A2.Model.EntityFramework.Article", null)
+                        .WithOne()
+                        .HasForeignKey("S401A2.Model.EntityFramework.Accessoire", "ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -822,6 +959,8 @@ namespace S401A2.Migrations
             modelBuilder.Entity("S401A2.Model.EntityFramework.Article", b =>
                 {
                     b.Navigation("ArticleLignePanier");
+
+                    b.Navigation("Images");
 
                     b.Navigation("Velos");
                 });

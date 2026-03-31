@@ -35,7 +35,6 @@ namespace S401A2
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
-                // 1. D�finir le bouton "Authorize" (le cadenas)
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -43,10 +42,9 @@ namespace S401A2
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "Copie-colle ton token JWT ici (sans �crire 'Bearer' devant)."
+                    Description = "Copie-colle ton token JWT ici (sans écrire 'Bearer' devant)."
                 });
 
-                // 2. Appliquer le cadenas � toutes les routes de l'API
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
@@ -67,7 +65,6 @@ namespace S401A2
 
             builder.Services.AddDbContext<CubeDBContext>(options =>
                 options.UseNpgsql(connectionString));
-
 
             builder.Services.AddScoped<IDataRepository<Article>, ArticleManager>();
             builder.Services.AddScoped<IDataRepository<Categorie>, CategorieManager>();
@@ -100,7 +97,6 @@ namespace S401A2
                  };
              });
 
-
             builder.Services.AddAuthorization(config =>
             {
                 config.AddPolicy(Policies.Admin, Policies.AdminPolicy());
@@ -109,11 +105,8 @@ namespace S401A2
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Cube V1"));
-            };
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Cube V1"));
 
             app.UseHttpsRedirection();
 

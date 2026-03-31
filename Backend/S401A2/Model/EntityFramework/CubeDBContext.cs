@@ -30,6 +30,8 @@ namespace S401A2.Model.EntityFramework
         public virtual DbSet<Taille> Tailles { get; set; } = null!;
         public virtual DbSet<Velo> Velos { get; set; } = null!;
         public virtual DbSet<Millesime> Millesimes { get; set; } = null!;
+        public DbSet<Image> Image { get; set; } = null!;
+        public DbSet<Accessoire> Accessoire { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -95,7 +97,6 @@ namespace S401A2.Model.EntityFramework
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-        public DbSet<S401A2.Model.EntityFramework.Image> Image { get; set; } = default!;
-        public DbSet<S401A2.Model.EntityFramework.Accessoire> Accessoire { get; set; } = default!;
+        
     }
 }

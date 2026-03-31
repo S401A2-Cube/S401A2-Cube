@@ -74,7 +74,7 @@ namespace S401A2.Controllers
             }
 
             var clientToUpdate = await _repository.GetByIdAsync(id);
-            if (clientToUpdate == null || clientToUpdate == null)
+            if (clientToUpdate == null || clientToUpdate == null) // Note : tu as un double "clientToUpdate == null" ici
             {
                 return NotFound();
             }
@@ -98,7 +98,7 @@ namespace S401A2.Controllers
 
             await _repository.AddAsync(client);
 
-            return CreatedAtAction("GetClient", new { id = client.Id}, client);
+            return CreatedAtAction("GetById", new { id = client.Id }, client);
         }
 
         // DELETE: api/Clients/5
