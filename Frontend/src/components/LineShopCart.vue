@@ -1,4 +1,16 @@
 <script setup>
+import { ref } from 'vue';
+
+const quantite = ref(1);
+const incrementer = () => {
+  quantite.value++;
+};
+
+const decrementer = () => {
+  if (quantite.value > 1) {
+    quantite.value--;
+  }
+};
 
 defineProps({
   id: {
@@ -10,16 +22,16 @@ defineProps({
     required: true
   },
   articleRef: {
-    type: string,
+    type: String,
     required: true
   },
   price: {
     type: Number,
     required: true
   },
-  imageURL: {
+  couleur: {
     type: String,
-    required: true
+    required: false
   },
   taille: {
     type: String,
@@ -27,53 +39,101 @@ defineProps({
   },
 });
 
-
-// TODO : méthode connexion compte
 </script>
 
 <template>
-    <div id="connexion">
-        <form>
-            <h2>{}</h2>
-            <Input type="password" label="Mot de passe" v-model="client.password" required/>
-            <RedButton type="submit">Se connecter</RedButton>
-            <RouterLink class="router-link" to="/inscription">Pas de compte ? Créez-en un</RouterLink>
-        </form>
+    <div id="ligne-panier">
+      <div class="image-container">
+        <img src="https://cube-bikes.ca/wp-content/uploads/2024/05/Cube-Stereo-Hybrid-140-HPC-Actionteam-750-actionteam-695325_side-view_00.png" />
+      </div>
+        <h2>{{ articleName }}</h2>
+        <p>{{ price }}€</p>
+        <p>REFERENCE: {{ articleRef }}</p>
+        <p>SIZE: {{ taille }}</p>
+        <p>COLOR: {{ couleur }}</p>
+
+        <p>{{ price }} TTC</p>
+        <div class="input-container">
+          <button type="button" class="btn-qty" @click="decrementer">-</button>
+          <input 
+            type="number" 
+            v-model.number="quantite" 
+            min="1" 
+            class="input-panier"
+          >
+          <button type="button" class="btn-qty" @click="incrementer">+</button>
+        </div>
+        <p>supprimer</p>
     </div>
 </template>
 
 
 <style scoped>
-h2 {
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+#ligne-panier {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
 }
 
-#connexion {
-    width: 800px;
-    display: flex;
-    flex-direction: column;
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--very-light-grey); 
+  border-radius: 4px;
+  width: fit-content;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 1.5rem;
-    align-items: center;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.input-container:focus-within {
+  border: 1px solid var(--blue-cube); 
+  box-shadow: 0 0 5px var(--blue-muted);
 }
 
-.router-link {
-    text-decoration: underline;
-    transition: all 0.4s;
-    color: #2fb5d2;
-    margin-top: 1.5rem;
+.btn-qty {
+  background: none;
+  border: none;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
-.router-link:hover {
-    color: #298499;
-    text-decoration: none;
+.input-panier {
+  height: 30px;
+  width: 40px;
+  border: none; 
+  text-align: center;
+  outline: none; 
+  -moz-appearance: textfield;
+}
+
+.input-panier::-webkit-outer-spin-button,
+.input-panier::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.img-panier {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.image-container {
+  width: 420px;  
+  height: 420px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  border-radius: 8px;
+}
+
+.image-container img {
+  max-width: 100%;  
+  max-height: 100%; 
+  object-fit: contain;
 }
 
 </style>

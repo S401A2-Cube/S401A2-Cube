@@ -5,7 +5,12 @@ import LineShopCart from '@/components/LineShopCart.vue';
 
 <template>
     <main>
-        <LineShopCart/>
+        <LineShopCart
+        articleName="Vélo"
+        articleRef="BCDHBH159"
+        price="850"
+        taille="XS"
+        couleur="pink"/>
     </main>
 </template>
 
