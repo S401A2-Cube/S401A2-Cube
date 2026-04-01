@@ -14,14 +14,14 @@ namespace S401A2.Controllers.Tests
     [TestClass]
     public class VelosControllerTests
     {
-        private Mock<IDataRepository<Velo>> _mockRepository;
+        private Mock<IVeloRepository> _mockRepository;
         private VelosController _controller;
 
         // Initialize runs before every single test, ensuring a fresh setup
         [TestInitialize]
         public void Setup()
         {
-            _mockRepository = new Mock<IDataRepository<Velo>>();
+            _mockRepository = new Mock<IVeloRepository>();
             _controller = new VelosController(_mockRepository.Object);
         }
 
