@@ -68,26 +68,78 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   }
 }).catch(_=>notFound.value=true);
 
-// TODO : si article déjà dans panier alors +1
 const addInShopCart = async () => {
-  try {
-    const payload = {
+  const token = localStorage.getItem('user_token');
+  const payload = {
       articleId: resArticle.value.articleId,
       clientId: 1, // currentId
       qtePanier: 1,
       commandeId: null, 
-      couleurId: selectedColor.value, 
-      tailleId: selectedSize.value    
+      couleurId: selectedColor.value.couleurId, 
+      tailleId: selectedSize.value.tailleId    
     };
 
-    console.log(payload);
-    await axios.post(utils.url + "LignePaniers/", payload);
-    alert("Ajouté au panier avec succès !");
-    
-  } catch (error) {
-    console.error("Erreur lors de l'envoi :", error);
+  if (token) {
+    try {
+      await axios.post(utils.url + "LignePaniers/", payload, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      alert("Ajouté à votre panier en ligne !");
+    } catch (error) {
+      console.error("Erreur API :", error);
+      alert("Erreur lors de l'ajout au panier distant.");
+    }
   }
+  else {
+    saveToLocalStorage(payload);
+    alert("Ajouté au panier !");
+  }  
 };
+
+const saveToLocalStorage = (payload) => {
+  const STORAGE_KEY = 'cube_shop_cart';
+  const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+  const existingProduct = cart.find(item => 
+    item.articleId === payload.articleId && 
+    item.couleurId === payload.couleurId && 
+    item.tailleId === payload.tailleId
+  );
+
+  if (existingProduct) {
+    existingProduct.qtePanier += 1;
+  } else {
+    cart.push({
+      ...payload,
+      nom: resArticle.value.nom,
+      prix: resArticle.value.prix,
+      ref: resArticle.value.reference,
+      taille: selectedSize.value,
+      couleur: selectedColor.value
+    });
+
+    const nouvelleLigne = {
+      articleId: resArticle.value.articleId,
+      nom: resArticle.value.nom,
+      prix: resArticle.value.prix,
+      reference: resArticle.value.reference,
+      qtePanier: payload.qtePanier,
+      idCouleur: payload.couleurId,
+      nomCouleur: couleurObj?.nomCouleur || null, 
+      idTaille: payload.tailleId,
+      libelleTaille: tailleObj?.libelleTaille || null 
+  };
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+};
+
+// const selectedColorObj = computed(() => {
+//   return resVelo.value?.couleurs.find(c => c.idCouleur === selectedColor.value);
+// });
+
+// const selectedSizeObj = computed(() => {
+//   return resVelo.value?.tailles.find(t => t.idTaille === selectedSize.value);
+// });
 </script>
 
 <template>
