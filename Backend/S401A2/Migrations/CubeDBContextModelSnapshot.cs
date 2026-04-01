@@ -183,23 +183,23 @@ namespace S401A2.Migrations
                     b.Property<int>("IdVelo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasColumnName("idVelo");
+                        .HasColumnName("vel_idVelo");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdVelo"));
 
                     b.Property<int>("IdArticle")
                         .HasColumnType("integer")
-                        .HasColumnName("idarticle");
+                        .HasColumnName("art_idarticle");
 
                     b.Property<int>("IdModele")
                         .HasColumnType("integer")
-                        .HasColumnName("idmodele");
+                        .HasColumnName("mod_idmodele");
 
                     b.Property<string>("LienVue360")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)")
-                        .HasColumnName("lienvue360");
+                        .HasColumnName("vel_lienvue360");
 
                     b.HasKey("IdVelo");
 
