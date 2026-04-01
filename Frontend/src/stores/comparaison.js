@@ -21,9 +21,9 @@ export const useComparaisonStore = defineStore('comparaison', () => {
             items.value = items.value.filter(item => item.article.id !== article.id)
         }
         else {
-            if (!isFull.value) {items.value.push({article,velo})
-            
-            } else {console.log("limite")}
+            if (!isFull.value) {
+                items.value.push({article,velo})
+            }
         }
     }
     return { items, isFull, count, isSelected, toggle }
