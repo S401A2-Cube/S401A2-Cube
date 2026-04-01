@@ -17,7 +17,7 @@ const props = defineProps({
 
 <style scoped>
 button {
-    background-color: var(--pink-cube);
+    background-color: var(--red-cube);
     color: #fff;
     padding: 0.85rem 1.5rem;
     border: none;

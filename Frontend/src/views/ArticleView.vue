@@ -6,12 +6,15 @@ import Specifications from '../components/article/Specifications.vue';
 
 import axios from 'axios';
 import { useUtilsStore } from '@/stores/utils';
+import RedButton from '@/components/RedButton.vue';
 
 const route = useRoute();
 
 const utils = useUtilsStore();
 
 const resVelo = ref(null);
+const selectedColor = ref(null);
+const selectedSize = ref(null);
 const resArticle = ref(null);
 const notFound = ref(false);
 
@@ -65,27 +68,6 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   }
 }).catch(_=>notFound.value=true);
 
-// TODO : si article déjà dans panier alors +1
-const addInShopCart = async () => {
-  try {
-    const payload = {
-      articleId: resArticle.value.articleId,
-      clientId: 1, // currentId
-      qtePanier: 1,
-      commandeId: null, 
-      couleurId: selectedColor.value, 
-      tailleId: selectedSize.value    
-    };
-
-    console.log(payload);
-    await axios.post(utils.url + "LignePaniers/", payload);
-    alert("Ajouté au panier avec succès !");
-    
-  } catch (error) {
-    console.error("Erreur lors de l'envoi :", error);
-  }
-};
-  
 // TODO : si article déjà dans panier alors +1
 const addInShopCart = async () => {
   try {
