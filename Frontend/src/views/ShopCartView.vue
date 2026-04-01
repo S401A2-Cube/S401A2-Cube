@@ -2,89 +2,79 @@
 import LineShopCart from '@/components/LineShopCart.vue';
 import RedButton from '@/components/RedButton.vue';
 import { ref, computed, watch, onMounted } from 'vue';
+import { useUtilsStore } from '@/stores/utils';
 
-// const fakeLignes = ref([
-//     {
-//         id: 10, 
-//         name: "Aim Race", 
-//         prix: 799,
-//         lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Aim-Race_grey_n_red.png",
-//         couleur: "bleu",
-//         taille: "XS",
-//         ref: "GCEHDG159",
-//         qte: 2
-//     },
-//     {
-//         id: 11, 
-//         name: "Tour EXC", 
-//         prix: 649,
-//         lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Tour-EXC_flashgrey_n_black.png",
-//         couleur: "bleu",
-//         taille: "XS",
-//         ref: "HZHH7892144",
-//         qte: 3
-//     },
-//     {
-//         id: 12, 
-//         name: "Nuroad Race", 
-//         prix: 1099,
-//         lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Nuroad-Race_grey_n_metal.png",
-//         couleur: "bleu",
-//         taille: "XS",
-//         ref: "GCEDYHSZ8726",
-//         qte: 1
-//     },
-//     {
-//         id: 13, 
-//         name: "Travel SLX", 
-//         prix: 1199,
-//         lienImage: "https://images.cube.eu/2024/bikes/2024_CUBE_Travel-SLX_grey_n_black.png",
-//         couleur: "bleu",
-//         taille: "XS",
-//         ref: "AONFV973641",
-//         qte: 1
-//     },
-// ]);
-
+const utils = useUtilsStore();
 const STORAGE_KEY = 'cube_shop_cart';
-const fakeLignes = ref(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
-const nbArticles = computed(() => {
-  return fakeLignes.value.reduce((total, ligne) => total + (ligne.qtePanier), 0); 
+
+const lignes = ref([]);
+onMounted(async () => {
+  const token = localStorage.getItem('user_token');
+  const localCart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  
+  if (token) {
+    try {
+      if (localCart.length > 0) {
+        for (const item of localCart) {
+          await axios.post(utils.url + "LignePaniers/", {
+            articleId: item.articleId,
+            qtePanier: item.qtePanier,
+            couleurId: item.idCouleur || item.couleurId,
+            tailleId: item.idTaille || item.tailleId,
+            clientId: 1 
+          }, {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+        }
+        localStorage.removeItem(STORAGE_KEY);
+      }
+
+      const response = await axios.get(utils.url + "LignePaniers/GetById/1", {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      lignes.value = response.data;
+
+    } 
+    catch (error) {
+      console.error("Erreur récuparation du panier :", error);
+      lignes.value = localCart;
+    }
+  } 
+  else {
+    lignes.value = localCart;
+  }
 });
 
-watch(fakeLignes, (newCart) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(newCart));
+const nbArticles = computed(() => {
+  return lignes.value.reduce((total, ligne) => total + (ligne.qtePanier || 0), 0); 
+});
+
+watch(lignes, (newCart) => {
+  const token = localStorage.getItem('user_token');
+  if (!token) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newCart));
+  }
 }, { deep: true });
 
 const validerPanier = () => {
     const token = localStorage.getItem('user_token');
     if (!token) {
         alert("Veuillez vous connecter pour valider votre commande.");
-        // router.push('/login');
-    } else {
-        console.log("Envoi du panier à l'API...", fakeLignes.value);
     }
 };
-
-// const nbArticles = computed(() => {
-//   return fakeLignes.value.reduce((total, ligne) => {
-//     return total + ligne.qte;
-//   }, 0); 
-// });
-
 </script>
 
 <template>
     <main>
         <div class="container-panier">
-            <div v-if="fakeLignes.length > 0">
+            <div v-if="lignes.length > 0">
                 <h2>PANIER ({{ nbArticles }})</h2>
-                <LineShopCart v-for="ligne in fakeLignes"
-                    :key="ligne.id"
+                <LineShopCart v-for="ligne in lignes"
+                    :key="ligne.articleId + '-' + ligne.idCouleur + '-' + ligne.idTaille"
                     v-model:quantite="ligne.qtePanier"
                     :id="ligne.articleId"
                     :articleName="ligne.nom"
-                    :articleRef="ligne.ref"
+                    :articleRef="ligne.reference"
                     :price="ligne.prix"
                     :taille="ligne.libelleTaille"
                     :couleur="ligne.nomCouleur"
@@ -95,7 +85,7 @@ const validerPanier = () => {
                 <router-link to="/">Retourner à la boutique</router-link>
             </div>
 
-            <RedButton v-if="fakeLignes.length > 0" @click="validerPanier">
+            <RedButton v-if="lignes.length > 0" @click="validerPanier">
                 Valider le panier
             </RedButton>
         </div> 

@@ -55,37 +55,54 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
     geometries: data.geometries || []
   };
 
-  if (resVelo.value.couleurs && resVelo.value.couleurs.length > 0) {
-    selectedColor.value = resVelo.value.couleurs[0].idCouleur;
-  } else {
+  if (data.couleurs && data.couleurs.length > 0) {
+    selectedColor.value = data.couleurs[0];
+  } 
+  else {
     selectedColor.value = null; 
   }
 
-  if (resVelo.value.tailles && resVelo.value.tailles.length > 0) {
-    selectedSize.value = resVelo.value.tailles[0].idTaille;
-  } else {
+  if (data.tailles && data.tailles.length > 0) {
+    selectedSize.value = data.tailles[0];
+  } 
+  else {
     selectedSize.value = null; 
   }
+
 }).catch(_=>notFound.value=true);
 
 const addInShopCart = async () => {
   const token = localStorage.getItem('user_token');
+ 
   const payload = {
       articleId: resArticle.value.articleId,
       clientId: 1, // currentId
       qtePanier: 1,
-      commandeId: null, 
-      couleurId: selectedColor.value.couleurId, 
-      tailleId: selectedSize.value.tailleId    
+      commandeId: null,   
+      nom: resArticle.value.nom,  
+      reference: resArticle.value.reference,
+      prix: resArticle.value.prix,
+      idCouleur: selectedColor.value.idCouleur, 
+      Idtaille: selectedSize.value.idTaille,
+      nomCouleur: selectedColor.value.nomCouleur,
+      libelleTaille: selectedSize.value.libelleTaille
     };
 
   if (token) {
     try {
-      await axios.post(utils.url + "LignePaniers/", payload, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
+      await axios.post(utils.url + "LignePaniers/", {
+        articleId: payload.articleId,
+        clientId: payload.clientId,
+        qtePanier: payload.qtePanier,
+        commandeId: payload.commandeId,
+        tailleId: payload.tailleId,
+        couleurId: payload.couleurId
+      }, { 
+        headers: { 'Authorization': `Bearer ${token}`}
+    });
       alert("Ajouté à votre panier en ligne !");
-    } catch (error) {
+    } 
+    catch (error) {
       console.error("Erreur API :", error);
       alert("Erreur lors de l'ajout au panier distant.");
     }
@@ -102,44 +119,18 @@ const saveToLocalStorage = (payload) => {
 
   const existingProduct = cart.find(item => 
     item.articleId === payload.articleId && 
-    item.couleurId === payload.couleurId && 
-    item.tailleId === payload.tailleId
+    item.idCouleur === payload.idCouleur && 
+    item.idTaille === payload.idTaille
   );
 
   if (existingProduct) {
     existingProduct.qtePanier += 1;
-  } else {
-    cart.push({
-      ...payload,
-      nom: resArticle.value.nom,
-      prix: resArticle.value.prix,
-      ref: resArticle.value.reference,
-      taille: selectedSize.value,
-      couleur: selectedColor.value
-    });
-
-    const nouvelleLigne = {
-      articleId: resArticle.value.articleId,
-      nom: resArticle.value.nom,
-      prix: resArticle.value.prix,
-      reference: resArticle.value.reference,
-      qtePanier: payload.qtePanier,
-      idCouleur: payload.couleurId,
-      nomCouleur: couleurObj?.nomCouleur || null, 
-      idTaille: payload.tailleId,
-      libelleTaille: tailleObj?.libelleTaille || null 
-  };
+  } 
+  else {
+    cart.push(payload);
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 };
-
-// const selectedColorObj = computed(() => {
-//   return resVelo.value?.couleurs.find(c => c.idCouleur === selectedColor.value);
-// });
-
-// const selectedSizeObj = computed(() => {
-//   return resVelo.value?.tailles.find(t => t.idTaille === selectedSize.value);
-// });
 </script>
 
 <template>
@@ -157,8 +148,8 @@ const saveToLocalStorage = (payload) => {
           <button 
             v-for="c in resVelo.couleurs" 
             :key="c.idCouleur"
-            :class="{ active: selectedColor === c.idCouleur }"
-            @click="selectedColor = c.idCouleur"
+            :class="{ active: selectedColor?.idCouleur === c.idCouleur }"
+            @click="selectedColor = c"
           >
             {{ c.nomCouleur }}
           </button>
@@ -171,8 +162,8 @@ const saveToLocalStorage = (payload) => {
           <button 
             v-for="t in resVelo.tailles" 
             :key="t.idTaille"
-            :class="{ active: selectedSize === t.idTaille }"
-            @click="selectedSize = t.idTaille"
+            :class="{ active: selectedSize?.idTaille === t.idTaille }"
+            @click="selectedSize = t"
           >
             {{ t.libelleTaille }}
           </button>
