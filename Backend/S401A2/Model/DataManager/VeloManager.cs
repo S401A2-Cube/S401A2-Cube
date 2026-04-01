@@ -25,6 +25,7 @@ namespace S401A2.Model.DataManager
 
             var Velos = await _context.Velos
                 .AsNoTracking()
+                .AsSplitQuery()
                 .Select(v => new Velo
                 {
                     IdVelo = v.IdVelo,
