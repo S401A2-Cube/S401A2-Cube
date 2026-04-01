@@ -78,6 +78,8 @@ namespace S401A2
             builder.Services.AddScoped<IDataRepository<Client>, ClientManager>();
             builder.Services.AddScoped<IDataRepository<Couleur>, CouleurManager>();
             builder.Services.AddScoped<IDataRepository<Millesime>, MillesimeManager>();
+            builder.Services.AddScoped<IDataRepository<Image>, ImageManager>();
+            builder.Services.AddScoped<IDataRepository<Accessoire>, AccessoireManager>();
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
              .AddJwtBearer(options =>
