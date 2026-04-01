@@ -13,6 +13,7 @@ const utils = useUtilsStore();
 
 const resVelo = ref(null);
 const resArticle = ref(null);
+const notFound = ref(false);
 
 axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   const data = r.data;
@@ -50,12 +51,16 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
     cadres: data.cadres || [],
     geometries: data.geometries || []
   };
-});
+}).catch(_=>notFound.value=true);
 
 </script>
 
 <template>
-  <div class="page-container" v-if="resArticle && resVelo">
+  <div v-if="notFound" class="not-found-state">
+    <h1>404</h1>
+    <p>Oups, ce vélo est introuvable.</p>
+  </div>
+  <div class="page-container" v-else-if="resArticle && resVelo">
     <Landing :article="resArticle" :velo="resVelo" />
     
     <main id="about">
@@ -101,6 +106,18 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
 </template>
 
 <style scoped>
+.not-found-state {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found-state h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
 .loading-state {
   height: 100vh;
   display: flex;
