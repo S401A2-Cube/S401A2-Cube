@@ -55,6 +55,27 @@ This project is part of our second-year university curriculum. To ensure clean a
 * **Secure Authentication:** User accounts protected by JWT-based security.
 * **Quality Focused:** High code coverage through automated testing.
 
+## Testing
+
+### Backend
+
+Tests are written for every DataManager and every Controller, using the Moq and MSTest frameworks. see `Backend/S401A2Tests`.
+
+### Frontend
+
+#### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+
+#### Run Unit Tests with [Cypress](https://www.cypress.io/)
+
+```sh
+npm run test:e2e:run
+```
+
+
 ## Team Members
 
 - <a href="https://auria-dev.com/" target="_blank">Auria</a>  

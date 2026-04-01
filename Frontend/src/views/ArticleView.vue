@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import Landing from '../components/article/Landing.vue';
 import Specifications from '../components/article/Specifications.vue';
-import RedButton from '@/components/RedButton.vue';
 
 import axios from 'axios';
 import { useUtilsStore } from '@/stores/utils';
@@ -14,8 +13,7 @@ const utils = useUtilsStore();
 
 const resVelo = ref(null);
 const resArticle = ref(null);
-const selectedColor = ref(null);
-const selectedSize = ref(null);
+const notFound = ref(false);
 
 axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   const data = r.data;
@@ -53,74 +51,18 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
     cadres: data.cadres || [],
     geometries: data.geometries || []
   };
+}).catch(_=>notFound.value=true);
 
-  if (resVelo.value.couleurs && resVelo.value.couleurs.length > 0) {
-    selectedColor.value = resVelo.value.couleurs[0].idCouleur;
-  } else {
-    selectedColor.value = null; 
-  }
-
-  if (resVelo.value.tailles && resVelo.value.tailles.length > 0) {
-    selectedSize.value = resVelo.value.tailles[0].idTaille;
-  } else {
-    selectedSize.value = null; 
-  }
-});
-
-const addInShopCart = async () => {
-  try {
-    const payload = {
-      articleId: resArticle.value.articleId,
-      clientId: 1, 
-      qtePanier: 1,
-      commandeId: null, 
-      couleurId: selectedColor.value, 
-      tailleId: selectedSize.value    
-    };
-
-    await axios.post(utils.url + "LignePaniers/", payload);
-    alert("Ajouté au panier avec succès !");
-    
-  } catch (error) {
-    console.error("Erreur lors de l'envoi :", error);
-  }
-};
 </script>
 
 <template>
-  <div class="page-container" v-if="resArticle && resVelo">
-    <Landing :article="resArticle" :velo="resVelo" />    
-    <div class="selection-group" v-if="resVelo">
-      <div class="option">
-        <span>Couleur :</span>
-        <div class="chips">
-          <button 
-            v-for="c in resVelo.couleurs" 
-            :key="c.idCouleur"
-            :class="{ active: selectedColor === c.idCouleur }"
-            @click="selectedColor = c.idCouleur"
-          >
-            {{ c.nomCouleur }}
-          </button>
-        </div>
-      </div>
-
-      <div class="option">
-        <span>Taille :</span>
-        <div class="chips">
-          <button 
-            v-for="t in resVelo.tailles" 
-            :key="t.idTaille"
-            :class="{ active: selectedSize === t.idTaille }"
-            @click="selectedSize = t.idTaille"
-          >
-            {{ t.libelleTaille }}
-          </button>
-        </div>
-      </div>
-    </div>
-    <RedButton @click="addInShopCart">Ajouter au panier</RedButton>
-
+  <div v-if="notFound" class="not-found-state">
+    <h1>404</h1>
+    <p>Oups, ce vélo est introuvable.</p>
+  </div>
+  <div class="page-container" v-else-if="resArticle && resVelo">
+    <Landing :article="resArticle" :velo="resVelo" />
+    
     <main id="about">
       <section class="description_container">
         <div class="description_grid">
@@ -164,6 +106,18 @@ const addInShopCart = async () => {
 </template>
 
 <style scoped>
+.not-found-state {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found-state h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
 .loading-state {
   height: 100vh;
   display: flex;

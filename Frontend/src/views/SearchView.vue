@@ -5,6 +5,13 @@ import Article from '@/components/Article.vue';
 
 import axios from 'axios';
 
+const isLoading = ref(true);
+
+const getAssetUrl = (path) => {
+  const cleanPath = path.replace('@/', '../'); 
+  return new URL(cleanPath, import.meta.url).href;
+};
+
 import { useUtilsStore } from '@/stores/utils';
 const utils = useUtilsStore();
 
@@ -47,8 +54,8 @@ axios.get(utils.url + "Velos").then(r => {
       categorieVelo: velo.article.categorieArticle.nom,
       prix: velo.article.prix,
       lienImage: velo.article.images && velo.article.images.length > 0 
-        ? velo.article.images[0] 
-        : "https://via.placeholder.com/300x200?text=No+Image" 
+        ? getAssetUrl(velo.article.images[0])
+        : getAssetUrl("@/assets/image/fallback_bike.png")
     },
     
     couleurs: velo.couleurs.map(c => ({
@@ -78,7 +85,7 @@ axios.get(utils.url + "Velos").then(r => {
       libelleGeometrie: g.nomPiece 
     }))
   }));
-});
+}).finally(()=>isLoading.value=false);
 
 const getUnique = (arr, key) => {
   const map = new Map();
@@ -149,6 +156,9 @@ const bikesFiltres = computed(() => {
 <template>
   <div class="center">
     <h1 class="title">Découvrez notre sélection</h1>
+    <div v-if="isLoading" class="loading-state">
+      <p>Chargement des vélos en cours...</p>
+    </div>
     <main>
         <div id="side-filter">
             <FiltrePane
