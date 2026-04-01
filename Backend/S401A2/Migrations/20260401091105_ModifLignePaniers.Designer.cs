@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using S401A2.Model.EntityFramework;
@@ -11,9 +12,11 @@ using S401A2.Model.EntityFramework;
 namespace S401A2.Migrations
 {
     [DbContext(typeof(CubeDBContext))]
-    partial class CubeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260401091105_ModifLignePaniers")]
+    partial class ModifLignePaniers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

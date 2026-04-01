@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import Landing from '../components/article/Landing.vue';
 import Specifications from '../components/article/Specifications.vue';
+import RedButton from '@/components/RedButton.vue';
 
 import axios from 'axios';
 import { useUtilsStore } from '@/stores/utils';
@@ -52,12 +53,28 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   };
 });
 
+const addInShopCart = async () => {
+  try {
+    const response = await axios.post('https://votre-api.com/cart', {
+      productId: props.product.id,
+      quantity: 1
+    });
+
+    console.log('Produit ajouté !', response.data);
+    alert('Produit ajouté au panier');
+
+  } catch (error) {
+    console.error("Erreur lors de l'ajout au panier :", error);
+    alert("Impossible d'ajouter le produit.");
+  }
+};
 </script>
 
 <template>
   <div class="page-container" v-if="resArticle && resVelo">
     <Landing :article="resArticle" :velo="resVelo" />
-    
+    <RedButton @click="addInShopCart">Ajouter au panier</RedButton>
+
     <main id="about">
       <section class="description_container">
         <div class="description_grid">
