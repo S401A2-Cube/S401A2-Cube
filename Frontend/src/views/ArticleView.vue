@@ -67,17 +67,19 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   }
 });
 
+// TODO : si article déjà dans panier alors +1
 const addInShopCart = async () => {
   try {
     const payload = {
       articleId: resArticle.value.articleId,
-      clientId: 1, 
+      clientId: 1, // currentId
       qtePanier: 1,
       commandeId: null, 
       couleurId: selectedColor.value, 
       tailleId: selectedSize.value    
     };
 
+    console.log(payload);
     await axios.post(utils.url + "LignePaniers/", payload);
     alert("Ajouté au panier avec succès !");
     
@@ -90,10 +92,11 @@ const addInShopCart = async () => {
 <template>
   <div class="page-container" v-if="resArticle && resVelo">
     <Landing :article="resArticle" :velo="resVelo" />    
+    
     <div class="selection-group" v-if="resVelo">
       <div class="option">
-        <span>Couleur :</span>
-        <div class="chips">
+        <span>Couleur</span>
+        <div class="btn-option">
           <button 
             v-for="c in resVelo.couleurs" 
             :key="c.idCouleur"
@@ -106,8 +109,8 @@ const addInShopCart = async () => {
       </div>
 
       <div class="option">
-        <span>Taille :</span>
-        <div class="chips">
+        <span>Taille</span>
+        <div class="btn-option">
           <button 
             v-for="t in resVelo.tailles" 
             :key="t.idTaille"
@@ -119,7 +122,7 @@ const addInShopCart = async () => {
         </div>
       </div>
     </div>
-    <RedButton @click="addInShopCart">Ajouter au panier</RedButton>
+    <RedButton style="margin-bottom: 1rem;" @click="addInShopCart">Ajouter au panier</RedButton>
 
     <main id="about">
       <section class="description_container">
@@ -257,4 +260,46 @@ const addInShopCart = async () => {
   color: #666;
   text-transform: uppercase;
 }
+
+.btn-option {
+  display: flex;
+  gap: 1rem;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+  padding: 1rem;
+}
+
+.option span {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.selection-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-option button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.4s ease; 
+  cursor: pointer;
+}
+
+.btn-option button:hover,
+.btn-option button.active
+ {
+  border: 1px solid black;
+}
+
 </style>
