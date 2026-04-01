@@ -28,7 +28,7 @@ namespace S401A2.Model.EntityFramework
         public int ClientId { get; set; }
 
         [Column("com_id")]
-        public int CommandeId { get; set; }
+        public int? CommandeId { get; set; }
 
         [Column("clr_id")]
         public int? CouleurId { get; set; } 

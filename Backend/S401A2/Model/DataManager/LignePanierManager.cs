@@ -142,6 +142,7 @@ namespace S401A2.Model.DataManager
             if (_context != null)
             {
                 entityToUpdate.QtePanier = entity.QtePanier;
+                entityToUpdate.CommandeId = entity.CommandeId;
 
                 _context.LignePaniers.Update(entityToUpdate);
                 return _context.SaveChangesAsync();
