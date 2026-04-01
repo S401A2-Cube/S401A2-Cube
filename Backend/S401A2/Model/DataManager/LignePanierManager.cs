@@ -98,7 +98,7 @@ namespace S401A2.Model.DataManager
 
             var ligne = await _context.LignePaniers
                     .AsNoTracking()
-                    .Where(l => l.Id == id)
+                    .Where(l => l.ClientId == id)
                     .Select(l => new LignePanier
                     {
                         Id = l.Id,
