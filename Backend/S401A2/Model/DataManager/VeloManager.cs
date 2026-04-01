@@ -57,6 +57,13 @@ namespace S401A2.Model.DataManager
                             Nom = m.Nom
                         }).ToList(),
 
+                        Images = v.Article.Images.Take(1).Select(img => new Image
+                        {
+                            ImageId = img.ImageId,
+                            Chemin = img.Chemin,
+                            ArticleId = img.ArticleId
+                        }).ToList(),
+
                         Velos = null
                     },
 
@@ -151,6 +158,13 @@ namespace S401A2.Model.DataManager
                         {
                             MotCleId = m.MotCleId,
                             Nom = m.Nom
+                        }).ToList(),
+
+                        Images = v.Article.Images.Take(1).Select(img => new Image
+                        {
+                            ImageId = img.ImageId,
+                            Chemin = img.Chemin,
+                            ArticleId = img.ArticleId
                         }).ToList(),
 
                         Velos = null,
