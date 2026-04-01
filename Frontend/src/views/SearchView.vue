@@ -2,82 +2,81 @@
 import { ref, reactive, computed, onMounted } from "vue";
 import FiltrePane from "@/components/FiltrePane.vue";
 import Article from '@/components/Article.vue';
-
 import axios from 'axios';
-
 import { useUtilsStore } from '@/stores/utils';
+
+const getAssetUrl = (path) => {
+  const cleanPath = path.replace('@/', '../'); 
+  return new URL(cleanPath, import.meta.url).href;
+};
+
+const isLoading = ref(true);
 const utils = useUtilsStore();
 
 const couleurs = ref([]);
-axios.get(utils.url + "Couleurs").then(r => {
-  const data = r.data;
-  couleurs.value = data;
-});
-
 const millesimes = ref([]);
-axios.get(utils.url + "Millesimes").then(r => {
-  const data = r.data;
-  millesimes.value = data;
-});
-
 const tailles = ref([]);
-axios.get(utils.url + "Tailles").then(r => {
-  const data = r.data;
-  tailles.value = data;
-});
-
 const cadres = ref([]);
-axios.get(utils.url + "Cadres").then(r => {
-  const data = r.data;
-  cadres.value = data;
-});
-
 const velos = ref([]);
-axios.get(utils.url + "Velos").then(r => {
-  const data = r.data;
-  velos.value = data.map(velo => ({
-    idVelo: velo.idVelo,
-    idArticle: velo.idArticle,
-    lienVue360: velo.lienVue360 || null,
-    idModele: velo.idModele,
+
+onMounted(() => {
+  Promise.all([
+    axios.get(utils.url + "Couleurs"),
+    axios.get(utils.url + "Millesimes"),
+    axios.get(utils.url + "Tailles"),
+    axios.get(utils.url + "Cadres"),
+    axios.get(utils.url + "Velos")
+  ]).then(([resCouleurs, resMillesimes, resTailles, resCadres, resVelos]) => {
     
-    modeleVelo: {
-      idModele: velo.modeleVelo.idModele,
-      nomModele: velo.article.nom, 
-      categorieVelo: velo.article.categorieArticle.nom,
-      prix: velo.article.prix,
-      lienImage: velo.article.images && velo.article.images.length > 0 
-        ? velo.article.images[0] 
-        : "https://via.placeholder.com/300x200?text=No+Image" 
-    },
+    couleurs.value = resCouleurs.data;
+    millesimes.value = resMillesimes.data;
+    tailles.value = resTailles.data;
+    cadres.value = resCadres.data;
     
-    couleurs: velo.couleurs.map(c => ({
-      idCouleur: c.idCouleur,
-      nomCouleur: c.nomCouleur,
-      effetPeinture: c.effetPeinture
-    })),
-    
-    tailles: velo.tailles.map(t => ({
-      idTaille: t.idTaille,
-      libelleTaille: t.libelleTaille
-    })),
-    
-    cadres: velo.cadres.map(c => ({
-      idMateriau: c.idMateriau,
-      nomMat: c.nomMat,
-      formeCadre: c.formeCadre
-    })),
-    
-    millesimes: velo.millesimes.map(m => ({
-      idMillesime: m.idMillesime,
-      annee: m.annee
-    })),
-    
-    geometries: velo.geometries.map(g => ({
-      idGeometrie: g.idGeometrie,
-      libelleGeometrie: g.nomPiece 
-    }))
-  }));
+    velos.value = resVelos.data.map(velo => ({
+      idVelo: velo.idVelo,
+      idArticle: velo.idArticle,
+      lienVue360: velo.lienVue360 || null,
+      idModele: velo.idModele,
+      
+      modeleVelo: {
+        idModele: velo.modeleVelo.idModele,
+        nomModele: velo.article.nom, 
+        categorieVelo: velo.article.categorieArticle.nom,
+        prix: velo.article.prix,
+        lienImage: velo.article.images && velo.article.images.length > 0 
+          ? getAssetUrl(velo.article.images[0].chemin)
+          : getAssetUrl("@/assets/image/fallback_bike.png")
+      },
+      couleurs: velo.couleurs.map(c => ({
+        idCouleur: c.idCouleur,
+        nomCouleur: c.nomCouleur,
+        effetPeinture: c.effetPeinture
+      })),
+      tailles: velo.tailles.map(t => ({
+        idTaille: t.idTaille,
+        libelleTaille: t.libelleTaille
+      })),
+      cadres: velo.cadres.map(c => ({
+        idMateriau: c.idMateriau,
+        nomMat: c.nomMat,
+        formeCadre: c.formeCadre
+      })),
+      millesimes: velo.millesimes.map(m => ({
+        idMillesime: m.idMillesime,
+        annee: m.annee
+      })),
+      geometries: velo.geometries.map(g => ({
+        idGeometrie: g.idGeometrie,
+        libelleGeometrie: g.nomPiece 
+      }))
+    }));
+
+  }).catch(error => {
+    console.error("Erreur lors du chargement des données:", error);
+  }).finally(() => {
+    isLoading.value = false;
+  });
 });
 
 const getUnique = (arr, key) => {
@@ -149,6 +148,9 @@ const bikesFiltres = computed(() => {
 <template>
   <div class="center">
     <h1 class="title">Découvrez notre sélection</h1>
+    <div v-if="isLoading" class="loading-state">
+      <p>Chargement des vélos en cours...</p>
+    </div>
     <main>
         <div id="side-filter">
             <FiltrePane

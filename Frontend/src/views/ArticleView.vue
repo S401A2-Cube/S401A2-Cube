@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import Landing from '../components/article/Landing.vue';
 import Specifications from '../components/article/Specifications.vue';
-import RedButton from '@/components/RedButton.vue';
 
 import axios from 'axios';
 import { useUtilsStore } from '@/stores/utils';
@@ -14,8 +13,7 @@ const utils = useUtilsStore();
 
 const resVelo = ref(null);
 const resArticle = ref(null);
-const selectedColor = ref(null);
-const selectedSize = ref(null);
+const notFound = ref(false);
 
 axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   const data = r.data;
@@ -65,8 +63,29 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   } else {
     selectedSize.value = null; 
   }
-});
+}).catch(_=>notFound.value=true);
 
+// TODO : si article déjà dans panier alors +1
+const addInShopCart = async () => {
+  try {
+    const payload = {
+      articleId: resArticle.value.articleId,
+      clientId: 1, // currentId
+      qtePanier: 1,
+      commandeId: null, 
+      couleurId: selectedColor.value, 
+      tailleId: selectedSize.value    
+    };
+
+    console.log(payload);
+    await axios.post(utils.url + "LignePaniers/", payload);
+    alert("Ajouté au panier avec succès !");
+    
+  } catch (error) {
+    console.error("Erreur lors de l'envoi :", error);
+  }
+};
+  
 // TODO : si article déjà dans panier alors +1
 const addInShopCart = async () => {
   try {
@@ -90,8 +109,12 @@ const addInShopCart = async () => {
 </script>
 
 <template>
-  <div class="page-container" v-if="resArticle && resVelo">
-    <Landing :article="resArticle" :velo="resVelo" />    
+  <div v-if="notFound" class="not-found-state">
+    <h1>404</h1>
+    <p>Oups, ce vélo est introuvable.</p>
+  </div>
+  <div class="page-container" v-else-if="resArticle && resVelo">
+    <Landing :article="resArticle" :velo="resVelo" />
     
     <div class="selection-group" v-if="resVelo">
       <div class="option">
@@ -123,7 +146,7 @@ const addInShopCart = async () => {
       </div>
     </div>
     <RedButton style="margin-bottom: 1rem;" @click="addInShopCart">Ajouter au panier</RedButton>
-
+    
     <main id="about">
       <section class="description_container">
         <div class="description_grid">
@@ -167,6 +190,18 @@ const addInShopCart = async () => {
 </template>
 
 <style scoped>
+.not-found-state {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found-state h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
 .loading-state {
   height: 100vh;
   display: flex;

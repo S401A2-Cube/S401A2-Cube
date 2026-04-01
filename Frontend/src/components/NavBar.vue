@@ -1,6 +1,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import logoSvg from '../assets/logo.svg?raw'
 
 import NavSubMenu from './NavSubMenu.vue';
 import '../assets/css/global.css';
@@ -27,9 +28,9 @@ var selected = ref(null);
         <div>
             <div class="navbar_left">
 
-                <a href="/">
-                    <img src="/logo.svg" width="100" height="80" alt="Logo" />
-                </a>
+                <router-link to="/">
+                    <img src="@/assets/logo.svg" width="100" height="80" alt="Logo" />
+                </router-link>
                 <NavSubMenu
                     v-for="item in menuItems" 
                     :key="item.name"
