@@ -76,7 +76,9 @@ const pageData = computed(() => {
             <img :src="getAssetUrl(info.image)" :alt="info.title" />
             <h3>{{ info.title }}</h3>
             <p>{{ info.description }}</p>
-            <button class="btn-primary">Show all bikes</button>
+            <a href="/Article">
+              <button class="btn-primary">Show all bikes</button>
+            </a>
           </div>
         </div>
       </section>
