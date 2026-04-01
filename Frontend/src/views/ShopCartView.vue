@@ -29,10 +29,10 @@ onMounted(async () => {
         localStorage.removeItem(STORAGE_KEY);
       }
 
-      const response = await axios.get(utils.url + "LignePaniers/GetById/1", {
+      const response = await axios.get(utils.url + "LignePaniers/", {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      lignes.value = response.data;
+      lignes.value = response.data.filter(ligne => ligne.clientId === 1);
 
     } 
     catch (error) {
