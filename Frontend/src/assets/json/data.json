@@ -4,18 +4,18 @@
       "name": "bikes",
       "content": [
         {
-          "title": "MOUNTAINBIKE",
+          "title": "mountainbike",
           "introduction": "Avant les vélos, les routes étaient souvent jonchées de racines et de trous. Puis, les vélos ont fait leur apparition, et les routes ont été rendues plus praticables afin d’être adaptées à leurs pneus fins. Mais ça, c’était avant les VTT. Un VTT est capable de rouler presque partout: sentiers forestiers, chemins alpins, pistes de bike parks et tout ce qu’on peut trouver entre deux. Nous avons un vélo adapté pour tous les endroits où vous aimez rouler.",
           "background": "@/assets/image/bikes_mountainbike_bg_qcuv.webp",
           "video": "@/assets/video/bikes_mountainbike_main_vzuc.mp4",
           "overview": [
             {
-              "title": "FULLSUSPENSION",
+              "title": "fullsuspension",
               "image": "@/assets/image/bikes_mountainbike_ov_7490.webp",
               "description": "Un vélo tout-terrain à suspension complète prend les difficultés à bras-le-corps, pour que vous n'ayez pas à le faire. C'est l'équilibre parfait entre confort, performance et rapidité."
             },
             {
-              "title": "HARDTAIL",
+              "title": "hardtail",
               "image": "@/assets/image/bikes_mountainbike_ov_8szq.webp",
               "description": "Mélange idéal de légèreté, de confort et d’entretien minimal, un hardtail est le choix numéro un pour une large variété de cyclistes, du débutant au coureur élite."
             }
@@ -23,7 +23,7 @@
           "information": [
             {
               "image": "@/assets/image/bikes_mountainbike_info_0yx4.webp",
-              "title": "FULLSUSPENSION",
+              "title": "fullsuspension",
               "subtitle": "AIN’T NO MOUNTAIN STEEP ENOUGH",
               "description": "Rien ne vaut la vitesse, le confort et le contrôle offerts par un vélo tout suspendu CUBE. Des coureurs de descente ou de cross-country en quête de leur prochain podium aux coureurs d'enduro et aux explorateurs alpins de plusieurs jours, nous avons un vélo pour chaque aventure et chaque sentier. Combinaison de la toute dernière technologie en matière de cadre, une géométrie et un concept de suspension avant-gardistes, le vélo tout suspendu de CUBE devrait vous permettre d'atteindre de nouveaux sommets.",
               "applications": [
@@ -93,7 +93,7 @@
             },
             {
               "image": "@/assets/image/bikes_mountainbike_info_idrm.webp",
-              "title": "HARDTAIL",
+              "title": "hardtail",
               "subtitle": "FOR EVERYDAY TO TRAIL USE",
               "description": "L'essence du VTT distillée sous sa forme la plus pure : c'est là toute la beauté du hardtail. Que vous soyez un néophyte sur le point de se lancer dans sa toute première aventure tout-terrain, un coureur expérimenté à la recherche d'un bolide ultra léger ou encore un cycliste adepte des sorties du week-end et désireux de découvrir de nouveaux horizons, nous avons le hardtail CUBE qu'il vous faut. Légèreté, dynamisme et contraintes d'entretien réduites font partie du lot.",
               "applications": [
@@ -149,23 +149,23 @@
           ]
         },
         {
-          "title": "ROAD",
+          "title": "road",
           "introduction": "Car, depuis que les vélos existent, les gens ont toujours voulu aller plus loin, plus vite. C’est pourquoi, nous avons eu recours à toute une gamme de technologies pour réduire le poids et la traînée aérodynamique tout en augmentant le confort, afin que vous puissiez profiter pleinement de votre sortie ou exploiter tout votre potentiel en compétition. Quelle que soit votre pratique, de la course sur route au triathlon, en passant par le cyclo-cross, il existe un modèle CUBE avec votre nom inscrit sur son cadre.",
           "background": "@/assets/image/bikes_road_bg_2jua.webp",
           "video": "@/assets/video/bikes_road_main_bo4s.mp4",
           "overview": [
             {
-              "title": "ROAD RACE",
+              "title": "road race",
               "image": "@/assets/image/bikes_road_ov_qecf.webp",
               "description": "Le cyclisme dans sa forme la plus pure: le cycliste et sa machine en parfaite harmonie. Que ce soit pour le loisir, l’entraînement ou la compétition, un vélo de route CUBE offre une combinaison idéale de confort et de vitesse."
             },
             {
-              "title": "CYCLOCROSS",
+              "title": "cyclocross",
               "image": "@/assets/image/bikes_road_ov_4usi.webp",
               "description": "Sensations fortes, chutes et entraînement d’inter-saison exceptionnel: le cyclo-cross offre un package complet. Un vélo de cyclo-cross CUBE est conçu pour les rigueurs de la compétition tout-terrain, afin que vous puissiez apprécier la boue, la sueur et les changements de braquets."
             },
             {
-              "title": "TRIATHLON ET TT",
+              "title": "triathlon et tt",
               "image": "@/assets/image/bikes_road_ov_jgkw.webp",
               "description": "Affronter l’horloge lorsque l’on est cycliste est une entreprise particulièrement difficile. Nous savons que le principal obstacle est l’air, c’est pourquoi nos vélos de triathlon et de contre-la-montre ont été conçus pour être aussi aérodynamiques que possible."
             }
@@ -173,7 +173,7 @@
           "information": [
             {
               "image": "@/assets/image/bikes_road_info_ae5h.webp",
-              "title": "ROAD RACE",
+              "title": "road race",
               "subtitle": "THE ROAD AHEAD",
               "description": "Si l’appel de la route devient irrésistible, alors, c’est que vous êtes prêt pour un vélo de course CUBE. Quelles que soient vos attentes sur route, qu'il s'agisse simplement d'explorer de nouveaux horizons, de vous entraîner avec vos amis cyclistes ou de mener le peloton et viser le podium, nous avons le vélo qu'il vous faut. Parce que la vitesse n’est pas juste une question d’endurance, mais de plaisir également. Et là, le cyclisme prend tout son sens...",
               "applications": [
@@ -228,7 +228,7 @@
             },
             {
               "image": "@/assets/image/bikes_road_info_xkv3.webp",
-              "title": "CYCLOCROSS",
+              "title": "cyclocross",
               "subtitle": "CROSS IS BOSS",
               "description": "Un sport pour les masochistes ou un excellent moyen de rester en forme pendant l'intersaison ? Quoi qu'il en soit, notre Cross Race est le vélo que vous voudrez avoir entre les jambes (ou sur votre épaule). Il est léger, réactif, facile à transporter et dispose de dégagements conçus pour les parcours boueux. Et, avec un choix de carbone C:62® ou de carbone haut de gamme C:68X®, il y en a un qui porte votre nom.",
               "applications": [
@@ -253,7 +253,7 @@
             },
             {
               "image": "@/assets/image/bikes_road_info_i60b.webp",
-              "title": "TRIATHLON ET TT",
+              "title": "triathlon et tt",
               "subtitle": "IN WATTS WE TRUST",
               "description": "Nagez, roulez, courez Chaque seconde compte, et c'est la partie intermédiaire qui nécessite la plus grande attention lors du choix de votre équipement. Plus vous allez vite, plus les performances aérodynamiques font la différence. C'est pourquoi nous avons investi notre temps, notre expérience et nos ressources en termes de conception pour créer une gamme exceptionnelle de vélos de contre-la-montre aérodynamiques pour les cyclistes et les triathlètes. Vous pédalez. Nous éliminons l’air de votre trajectoire.",
               "applications": [
@@ -289,23 +289,23 @@
           ]
         },
         {
-          "title": "GRAVEL",
+          "title": "gravel",
           "introduction": "Lorsqu’un vélo conventionnel n’est pas à la hauteur, votre vélo gravel offre une liberté d’une toute nouvelle dimension, une liberté que les routes boueuses, les pavés, les sentiers forestiers, les champs et autres chemins ne sauraient enfreindre. Combinant la robustesse et le potentiel tout-terrain d’un VTT avec la vitesse et la pureté d’un vélo de route, c’est le vélo dont vous ignoriez avoir besoin. Laissez derrière vous ce que vous savez et lancez-vous sans attendre dans votre prochaine aventure!",
           "background": "@/assets/image/bikes_gravel_bg_peqr.webp",
           "video": "@/assets/video/bikes_gravel_main_fb38.mp4",
           "overview": [
             {
-              "title": "NUROAD",
+              "title": "nuroad",
               "image": "@/assets/image/bikes_gravel_ov_sv1y.webp",
               "description": "Prenez les routes les moins empruntées. A l'ADN taillé aussi bien pour la route que la montagne, notre Nuroad est le vélo léger et passe-partout que vous cherchiez."
             },
             {
-              "title": "CROSS RACE",
+              "title": "cross race",
               "image": "",
               "description": "Sensations fortes, chutes et entraînement d’inter-saison exceptionnel: le cyclo-cross offre un package complet. Un vélo de cyclo-cross CUBE est conçu pour les rigueurs de la compétition tout-terrain, afin que vous puissiez apprécier la boue, la sueur et les changements de braquets."
             },
             {
-              "title": "NULANE",
+              "title": "nulane",
               "image": "@/assets/image/bikes_gravel_ov_y9na.webp",
               "description": "Et si vous pouviez vous faufiler dans les rues de la ville sur un vélo léger, réactif et facile à piloter? Laissez-nous vous présenter le Nulane: votre clé pour vous frayer un chemin dans la jungle urbaine."
             }
@@ -313,7 +313,7 @@
           "information": [
             {
               "image": "@/assets/image/bikes_gravel_info_gbdk.webp",
-              "title": "NUROAD",
+              "title": "nuroad",
               "subtitle": "NO ROAD NEEDED",
               "description": "Aucune route n'est identique. Certaines sont assez rudes, et c'est là que le Nuroad intervient. Alliant la robustesse du cyclocross à la précision du vélo de route, c'est l'outil idéal pour repousser les limites et explorer un peu plus loin que les sentiers battus ; sans compromettre la vitesse. Et, avec des options en aluminium, en carbone C:62® et entièrement équipées, nous avons le Nuroad idéal pour vous.",
               "applications": [
@@ -358,7 +358,7 @@
             },
             {
               "image": "@/assets/image/bikes_gravel_info_ucr8.webp",
-              "title": "CROSS RACE",
+              "title": "cross race",
               "subtitle": "CROSS IS BOSS",
               "description": "Un sport pour les masochistes, ou un excellent moyen de garder la forme lors de l’inter-saison? Quelle que soit la vision que vous avez du cyclo-cross, si vous avez l’intention d’essayer, vous devez enfourcher (ou porter sur l’épaule) l’un de nos modèles Cross. Léger, réactif, facile à porter et avec suffisamment de débattement pour les courses en conditions boueuses, nos vélos de cyclo-cross ont été conçus pour tenir la distance.",
               "applications": [
@@ -393,7 +393,7 @@
             },
             {
               "image": "@/assets/image/bikes_gravel_info_5ekj.webp",
-              "title": "NULANE",
+              "title": "nulane",
               "subtitle": "SEE THE ROAD DIFFERENTLY",
               "description": "La rapidité sous différentes formes. Le Nulane s'affranchit des règles de base du vélo de route, parce qu'il est parfois utile de créer ses propres règles. Équipé d'un cintre plat, de puissants freins à disque et d'un cadre réactif en aluminium ou en carbone C:62®, il allie l'intensité des courses sur route à l'esprit des vélos de ville. En d'autres termes, c'est le vélo urbain que vous recherchiez.",
               "applications": [
@@ -434,18 +434,18 @@
           ]
         },
         {
-          "title": "TREKKING",
+          "title": "trekking",
           "introduction": "Le vélo est-il la machine parfaite? Nous le pensons. Mais, vous n’avez pas besoin d’être un cycliste confirmé pour être d’accord avec cette affirmation, et nos modèles Tour et City en sont la preuve. Que ce soit pour faire un tour en ville, laisser votre voiture à la maison pour les trajets du quotidien, aller faire des emplettes ou entreprendre des aventures un peu plus longues, nous avons le vélo idéal pour faciliter chacun de vos trajets et les rendre plus amusants.",
           "background": "@/assets/image/bikes_trekking_bg_akqj.webp",
           "video": "@/assets/video/bikes_trekking_main_846v.mp4",
           "overview": [
             {
-              "title": "TOUR",
+              "title": "tour",
               "image": "@/assets/image/bikes_trekking_ov_4jq2.webp",
               "description": "Toute aventure commence par un premier coup de pédale. Chaque modèle de notre gamme Tour est ainsi conçu pour vous permettre d’atteindre votre destination, quelle qu’elle soit, avec style et confort. Quelle sera votre prochaine destination?"
             },
             {
-              "title": "CITY",
+              "title": "city",
               "image": "@/assets/image/bikes_trekking_ov_lsrg.webp",
               "description": "Vous voulez un vélo confortable, maniable en ville, suffisamment polyvalent pour transporter vos courses (ou toute autre chose que vous souhaiteriez emmener avec vous)...et qui, surtout, ne soit pas une source de contraintes supplémentaires."
             }
@@ -453,7 +453,7 @@
           "information": [
             {
               "image": "@/assets/image/bikes_trekking_info_dlhp.webp",
-              "title": "TOUR",
+              "title": "tour",
               "subtitle": "YOUR ADVENTURE STARTS HERE",
               "description": "L'une des meilleures façons de découvrir le monde est en selle sur le vélo. C'est ce sentiment qui a inspiré notre gamme Tour qui présente une assise très confortable et un pilotage sécurisé et dynamique pour les explorateurs de tous bords. Que ce soit pour vos sorties du weekend ou vous emmener faire le tour du monde (et pour tout le reste), nous avons le vélo qui vous permettra de découvrir le monde à votre façon.",
               "applications": [
@@ -493,7 +493,7 @@
             },
             {
               "image": "@/assets/image/bikes_trekking_info_h345.webp",
-              "title": "CITY",
+              "title": "city",
               "subtitle": "EXPLORE YOUR CITY",
               "description": "Il n'y a pas de meilleur moyen de se déplacer en ville que sur ses deux roues. Notre gamme City couvre toutes les bases, du confort et du style de l'Aruba à l'efficacité et au rythme efficace et fluide de l'Editor, et tout ce qu'il y a entre les deux. Pour le travail ou les loisirs, pour les trajets quotidiens ou le shopping, nous avons le vélo urbain qui s'intégrera parfaitement à votre mode de vie actif. Vous finirez par vous demander comment vous avez pu vous en sortir avant...",
               "applications": [
@@ -544,18 +544,18 @@
       "name": "e-bikes",
       "content": [
         {
-          "title": "E-MOUNTAINBIKE",
+          "title": "e-mountainbike",
           "introduction": "Nous sommes partis de la solide adaptabilité d’un VTT et, avec l’aide de Bosch, l’avons améliorée. Grâce à nos différentes gammes de VTTAE, le tout-terrain est désormais accessible à tous. Des sentiers forestiers aux voies urbaines et tout ce qui se trouve entre deux, son assistance au pédalage, aussi fluide que silencieuse, vous accompagne en toute simplicité. Vous aurez du mal à croire qu’on puisse prendre autant de plaisir...",
           "background": "@/assets/image/e-bikes_mountainbike_bg_1ht1.webp",
           "video": "@/assets/video/e-bikes_mountainbike_main_shnf.mp4",
           "overview": [
             {
-              "title": "FULLSUSPENSION",
+              "title": "fullsuspension",
               "image": "@/assets/image/e-bikes_mountainbike_ov_5sfc.webp",
               "description": "Rien ne vaut du tout-terrain avec un VTTAE tout suspendu. Du all-mountain léger aux explorations tout-terrain et à l’enduro, la gamme d’hybrides tout suspendus vous permet d’avaler les montagnes, chemin après chemin."
             },
             {
-              "title": "HARDTAIL",
+              "title": "hardtail",
               "image": "@/assets/image/e-bikes_mountainbike_ov_aoig.webp",
               "description": "Adaptable, fiable et robuste : c'est la beauté d'un hardtail. Et grâce à l'assistance électrique de Bosch, notre série Reaction Hybrid est encore plus polyvalente. En clair, vous pouvez rouler n'importe où."
             }
@@ -563,7 +563,7 @@
           "information": [
             {
               "image": "@/assets/image/e-bikes_mountainbike_info_8v2q.webp",
-              "title": "FULLSUSPENSION",
+              "title": "fullsuspension",
               "subtitle": "UNLOCK YOUR POTENTIAL",
               "description": "Rouler partout, quel que soit le type de terrain, c'est la promesse faite par un vélo tout suspendu CUBE. La puissance Bosch et la conception de la suspension CUBE s'associent pour améliorer le confort, stimuler votre pédalage et élargir vos possibilités de conduite. Des explorations tout-terrain au all-mountain léger, et même à l’enduro alpin, il existe un VTTAE tout suspendu parfaitement adapté à vous et vos ambitions cyclistes.",
               "applications": [
@@ -628,7 +628,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_mountainbike_info_zal5.webp",
-              "title": "HARDTAIL",
+              "title": "hardtail",
               "subtitle": "FOR EVERYDAY TO TRAIL USE",
               "description": "Que vous soyez à la recherche d'un vélo adapté à la fois aux aventures du week-end et aux trajets du quotidien, ou encore un compagnon tout-terrain vous permettant de découvrir de nouveaux horizons, nous avons le hardtail CUBE qu'il vous faut. Robuste et adaptable, facile à manipuler et alliant la puissance Bosch au design CUBE, celui que vous choisirez ne manquera pas de vous donner le sourire. Rouler n'a jamais été aussi amusant...",
               "applications": [
@@ -669,28 +669,28 @@
           ]
         },
         {
-          "title": "TREKKING",
+          "title": "trekking",
           "introduction": "Un excellent vélo devrait s'intégrer parfaitement dans votre vie. C'est l'idée de départ de nos vélos e-tour et e-city, qui combinent la polyvalence et la facilité d'utilisation d'un vélo traditionnel avec la puissance additionnelle des systèmes d'assistance au pédalage Bosch. Roulez plus loin, découvrez de nouveaux itinéraires ou simplifiez-vous aisément la vie. Quoi que vous souhaitiez faire, nous avons un vélo hybride CUBE (modèle Tour ou City) parfait pour vous et votre mode de vie actif.",
           "background": "@/assets/image/e-bikes_trekking_bg_w08j.webp",
           "video": "@/assets/video/e-bikes_trekking_main_dsko.mp4",
           "overview": [
             {
-              "title": "TOUR",
+              "title": "tour",
               "image": "@/assets/image/e-bikes_trekking_ov_3pkz.webp",
               "description": "Un simple tour de pédale suffit pour démarrer une nouvelle aventure. Grâce à l'assistance au pédalage Bosch, vous bénéficiez d'un petit boost à chaque coup de pédale pour des possibilités infinies."
             },
             {
-              "title": "CITY",
+              "title": "city",
               "image": "@/assets/image/e-bikes_trekking_ov_3868.webp",
               "description": "Ça va, ça vient. Littéralement. Avec nos vélos e-city, nous avons créé un moyen confortable et accessible de se déplacer dans la jungle urbaine - et avec l'assistance au pédalage Bosch, cela n'a jamais été aussi facile."
             },
             {
-              "title": "COMPACTS & PLIANTES",
+              "title": "compacts et pliantes",
               "image": "@/assets/image/e-bikes_trekking_ov_vdxx.webp",
               "description": "Emportez votre vélo avec vous, où que vous alliez. Avec des modèles compacts faciles à transporter et à ranger, et l'assistance au pédalage Bosch, il y a un hybride compact ou pliable pour tout le monde."
             },
             {
-              "title": "S-PEDELEC",
+              "title": "s-pedelec",
               "image": "@/assets/image/e-bikes_trekking_ov_x7zc.webp",
               "description": "Il n’y a rien de pire que la circulation dans une vie urbaine. Mais avec un S-Pedelec CUBE, vous pouvez vous sortir des bouchons et arriver à l’heure, grâce à la puissance Bosch et à un design simple et élégant."
             }
@@ -698,7 +698,7 @@
           "information": [
             {
               "image": "@/assets/image/e-bikes_trekking_info_17kg.webp",
-              "title": "TOUR",
+              "title": "tour",
               "subtitle": "POWER UP YOUR ADVENTURE",
               "description": "Un simple vélo reste le moyen le plus efficace de vous rendre d’un point A à un point B. Et vous pensez qu’il est difficile d’améliorer cela ? Eh bien, nos vélos de randonnée hybrides avec unité d’entraînement Bosch sont la solution parfaite pour rendre vos trajets encore plus agréables. Que ce soit pour vos trajets du quotidien, pour aller faire quelques courses en ville ou pour vos sorties du week-end, nous avons un vélo hybride CUBE confortable et adaptable pour vous.",
               "applications": [
@@ -738,7 +738,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_trekking_info_h7ku.webp",
-              "title": "CITY",
+              "title": "city",
               "subtitle": "SMOOTH THE WAY",
               "description": "Il y a un mille et une raisons de se rendre en ville - pour le travail, les loisirs, le shopping, la famille, les amis - et nous avons le vélo parfait pour cette mission. Avec des designs élégants, une prise en main facilitée, des solutions pratiques pour transporter vos affaires et l'avantage de l'assistance au pédalage Bosch, nous avons là le parfait compagnon sur deux-roues pour tous. Retrouvez le plaisir de se déplacer en ville...",
               "applications": [
@@ -788,7 +788,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_trekking_info_5d98.webp",
-              "title": "COMPACT & FOLDING",
+              "title": "compacts & pliantes",
               "subtitle": "FLEXIBILITY, MOBILITY, FUNCTIONALITY",
               "description": "Il y a autant de raisons d'enfourcher un CUBE hybride compacte ou pliable que de jours dans l'année. Petit mais parfaitement conçu, c'est le compagnon que vous auriez voulu découvrir plus tôt. Associant la flexibilité de l'assistance au pédalage Bosch à un design intelligent qui le rend facile à transporter et à ranger, c'est le vélo idéal pour le camping, les trajets domicile-travail, le shopping, se rendre chez ses amis, partir en vacances...",
               "applications": [
@@ -818,7 +818,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_trekking_info_vbzp.webp",
-              "title": "S-PEDELEC",
+              "title": "s-pedelec",
               "subtitle": "DITCH THE CAR",
               "description": "Et si vous aviez quelqu'un qui vous donnait un petit coup de pouce sur la route, à une vitesse qui vous permet de ne pas être ralenti, voire même éviter les problèmes de circulation. Et bien... Vous l’avez maintenant. Un S-Pedelec CUBE offrant un design élégant et pratique avec la puissance Bosch pour un vélo capable de s’extirper de la circulation avec style. Avec son surplus de vitesse à la demande, il offre un moyen facile de s’extirper des embouteillages et d’arriver avec le sourire aux lèvres. Le simple plaisir de pédaler...",
               "applications": [
@@ -833,18 +833,18 @@
           ]
         },
         {
-          "title": "GRAVEL",
+          "title": "gravel",
           "introduction": "Emmenez votre vélo vers de nouveaux horizons. Un vélo de gravel hybride combine une maniabilité agile, une capacité tout-terrain robuste et un design CUBE avec une assistance au pédalage Bosch légère. Vous avez là le vélo parfait pour repousser les limites de votre monde et découvrir ce qui se trouve au-delà. Vous pouvez également prendre la direction des rues et faire en sorte que votre quotidien fasse partie de l’aventure, ou les deux. Le choix vous appartient.",
           "background": "@/assets/image/e-bikes_gravel_bg_u7jl.webp",
           "video": "@/assets/video/e-bikes_gravel_main_waf4.mp4",
           "overview": [
             {
-              "title": "NUROAD HYBRID",
+              "title": "nuroad hybrid",
               "image": "@/assets/image/e-bikes_gravel_ov_qslm.webp",
               "description": "Continuez de roulez là où les routes s’arrêtent. La technologie de cadre carbone CUBE combinée à la puissance Bosch pour des aventures placées sous le signe du plaisir prolongées..."
             },
             {
-              "title": "NULANE HYBRID",
+              "title": "nulane hybrid",
               "image": "@/assets/image/e-bikes_gravel_ov_geup.webp",
               "description": "Un vélo rapide, agile, adaptable et suffisamment robuste pour affronter les rues de la ville ainsi que les pistes de gravier ? Bienvenue dans le Nulane Hybrid, un mélange d'excellence en matière de conception CUBE et de puissance Bosch légère."
             }
@@ -852,7 +852,7 @@
           "information": [
             {
               "image": "@/assets/image/e-bikes_gravel_info_cj5y.webp",
-              "title": "NUROAD HYBRID",
+              "title": "nuroad hybrid",
               "subtitle": "GO ANYWHERE ADVENTURE",
               "description": "Nous avons tous besoin d’un peu d’aide de temps en temps. Le système d'assistance au pédalage SX de Bosch, souple, léger et puissant, associé à la technologie du cadre en carbone CUBE, donne une nouvelle dimension à l'exploration en gravel. Sortez, explorez plus, sortez des sentiers battus. Nous sommes là pour vous assister.",
               "applications": [
@@ -882,7 +882,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_gravel_info_0sr7.webp",
-              "title": "NULANE HYBRID",
+              "title": "nulane hybrid",
               "subtitle": "FROM CITY STREET TO GRAVEL TRACK, AND BACK.",
               "description": "Rapide peut rimer avec amusant, polyvalent et accessible... sans rien sacrifier. Avec son moteur Bosch SX léger et fluide, sa batterie de 400 Wh et son cadre en carbone C:62® haut de gamme, le Nulane Hybrid facilite les trajets sur deux roues, où que vous alliez. En ville la semaine ou à la campagne le week-end, c'est le compagnon à deux roues idéal.",
               "applications": [
@@ -913,23 +913,23 @@
           ]
         },
         {
-          "title": "TRANSPORT",
+          "title": "transport",
           "introduction": "Les voitures n'ont jamais été conçues pour la ville, mais nos modèles Trike Hybrid, Cargo Hybrid et Longtail Hybrid le sont. Tous nos vélo hybrides de transport urbain combinent une manœuvrabilité facilitée et une utilisation efficiente de l'espace urbain avec des solutions innovantes de transport de marchandises et de personnes. Grâce à l'assistance au pédalage Bosch, qui permet un allègement des charges, vous avez là tout ce qu'il vous faut pour laisser votre voiture à la maison et profiter de la liberté en ville.",
           "background": "@/assets/image/e-bikes_transport_bg_l2k4.webp",
           "video": "@/assets/video/e-bikes_transport_main_oe2h.mp4",
           "overview": [
             {
-              "title": "TRIKE HYBRID",
+              "title": "trike hybrid",
               "image": "@/assets/image/e-bikes_transport_ov_8zja.webp",
               "description": "Le Trike Hybrid est le vélo cargo pour tous. Facile à piloter, sécurisé et polyvalent, il transporte les marchandises - ou vos enfants - avec autant d'assurance."
             },
             {
-              "title": "CARGO HYBRID",
+              "title": "cargo hybrid",
               "image": "@/assets/image/e-bikes_transport_ov_edjt.webp",
               "description": "Laissez tomber la voiture, prenez plutôt votre vélo. Notre Cargo Hybrid offre la capacité de charge dont vous avez besoin avec une unité motrice Bosch et une conception stable et pratique que vous allez adorer."
             },
             {
-              "title": "LONGTAIL HYBRID",
+              "title": "longtail hybrid",
               "image": "@/assets/image/e-bikes_transport_ov_eeia.webp",
               "description": "Le transport classique de marchandises signé Bosch, pour un transport simple et écologique d'un point A à un point B à travers la jungle urbaine."
             }
@@ -937,7 +937,7 @@
           "information": [
             {
               "image": "@/assets/image/e-bikes_transport_info_es8f.webp",
-              "title": "TRIKE HYBRID",
+              "title": "trike hybrid",
               "subtitle": "FEELS LIKE RIDING. BUT MORE.",
               "description": "Développé par CUBE pour faciliter le transport de charge ou des enfants, le mécanisme de bascule très sophistiqué du Tike Hybrid est la clé pour sécuriser votre chargement tout en maintenant les sensations naturelles du deux-roues. L’assistance au pédalage Bosch facilite n’importe quel type de déplacement, tandis que son empattement plus court et son pilotage instinctif permet à ce vélo cargo d’être utilisé par presque tout le monde.",
               "applications": [
@@ -977,7 +977,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_transport_info_mkee.webp",
-              "title": "CARGO HYBRID",
+              "title": "cargo hybrid",
               "subtitle": "RECLAIM THE CITY STREETS",
               "description": "Vous avez besoin de déplacer un chargement encombrant ou vous essayez de trouver un moyen d'emmener vos enfants avec vous ? Le Cargo Hybrid est la solution écologique que vous recherchez : simple, facile à conduire et polyvalent à l'infini. Alimenté par le système d'entraînement Bosch et doté d'un support en mousse EPP, d'un siège confortable et de ceintures de sécurité en option, c'est la meilleure excuse pour abandonner la voiture.",
               "applications": [
@@ -1002,7 +1002,7 @@
             },
             {
               "image": "@/assets/image/e-bikes_transport_info_a2gc.webp",
-              "title": "LONGTAIL HYBRID",
+              "title": "longtail hybrid",
               "subtitle": "VERSATILITY FOR EVERY DAY",
               "description": "Existe-t-il un meilleur moyen de transporter des charges en ville que le Longtail Hybrid? Nous pensons que non. Son porte-bagages XXL accepte deux sacs standard par côté, d'un poids maximal de 60 kg, et dispose de son propre système de suspension. La puissance du moteur Bosch permet d'assurer tous les trajets sans difficulté, et des adaptateurs Eurobox et porte-bagages sont disponibles en option à l'avant pour une capacité supplémentaire. Chargez et partez...",
               "applications": [
@@ -1033,14 +1033,14 @@
       "name": "gear",
       "content": [
         {
-          "title": "HELMETS",
+          "title": "helmets",
           "introduction": "Conçus par des cyclistes passionnés, nos casques offrent une protection de premier ordre avec un mélange parfait de confort et de style. Nous savons ce qui compte lorsque vous êtes sur votre vélo. Des caractéristiques intelligentes et un ajustement précis vous assurent d'être prêt pour tout ce que le sentier vous réserve.",
           "background": "@/assets/image/gear_casque_bg_r1rt.webp",
           "video": "@/assets/video/gear_casque_main_fwbi.mp4",
           "information": [
             {
               "image": "@/assets/image/gear_casque_info_9oom.webp",
-              "title": "MTB",
+              "title": "mtb",
               "subtitle": "",
               "products": [
                 {
@@ -1077,7 +1077,7 @@
             },
             {
               "image": "@/assets/image/gear_casque_info_eurv.webp",
-              "title": "ALL TERRAIN",
+              "title": "all terrain",
               "subtitle": "Trajets quotidiens. Balades. Explorations.",
               "description": "Des chemins forestiers aux rues urbaines, les casques CUBE All Terrain sont le choix idéal pour les cyclistes qui apprécient la flexibilité et le confort tout au long de la journée. Ces casques offrent une protection et une ventilation équilibrées pour une grande variété de conditions de conduite. Avec un design qui s'intègre naturellement et un ajustement précis, ils procurent une sensation de sécurité et de confort, peu importe où votre itinéraire vous mène.",
               "products": [
@@ -1100,7 +1100,7 @@
             },
             {
               "image": "@/assets/image/gear_casque_info_ayta.webp",
-              "title": "ROAD",
+              "title": "road",
               "subtitle": "Rythme. Concentration. Distance.",
               "description": "Nos casques de route CUBE sont conçus pour les cyclistes axés sur la performance qui exigent de l'aérodynamisme, un faible poids et une ventilation exceptionnelle. Des canaux d'air très efficaces vous gardent au frais lors des sorties rapides, tout en offrant un ajustement ultra-précis qui se fait oublier pendant que vous roulez. Conçus pour répondre aux normes de sécurité les plus élevées, nos casques allient une protection avancée au plus grand confort.",
               "products": [
@@ -1118,7 +1118,7 @@
             },
             {
               "image": "@/assets/image/gear_casque_info_koj6.webp",
-              "title": "GRAVEL",
+              "title": "gravel",
               "subtitle": "Liberté. Distance. Aventure.",
               "products": [
                 {
@@ -1130,7 +1130,7 @@
             },
             {
               "image": "@/assets/image/gear_casque_info_kgqc.webp",
-              "title": "ROOKIE",
+              "title": "rookie",
               "subtitle": "Sécurité. Aventure. Style.",
               "products": [
                 {
@@ -1148,13 +1148,13 @@
           ]
         },
         {
-          "title": "BACKPACKS",
+          "title": "backpacks",
           "introduction": "Nos sacs à dos et nos sacs associent un design moderne à une fonctionnalité ingénieuse. Chaque détail a été soigneusement pensé pour vous offrir un maximum de confort et de polyvalence, de l'ajustement parfait aux options de rangement intelligentes, en passant par des matériaux légers et durables. Que ce soit pour vos trajets quotidiens, votre prochain voyage ou votre prochaine aventure en VTT, vous serez parfaitement équipé avec nos sacs à dos.",
           "background": "@/assets/image/gear_sacs-a-dos-sacs-banane_bg_nazr.webp",
           "information": [
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_asof.webp",
-              "title": "MTB",
+              "title": "mtb",
               "subtitle": "Nos sacs à dos mettent l'accent sur la flexibilité et les caractéristiques pratiques. Qu'il s'agisse d'une ventilation efficace, de protections intégrées ou de compartiments spéciaux pour les outils et les provisions, nos sacs à dos vous accompagnent pour que vous puissiez vous concentrer pleinement sur votre trajet.",
               "description": "Nos sacs à dos mettent l'accent sur la flexibilité et les caractéristiques pratiques. Qu'il s'agisse d'une ventilation efficace, de protections intégrées ou de compartiments spéciaux pour les outils et les provisions, nos sacs à dos vous accompagnent pour que vous puissiez vous concentrer pleinement sur votre trajet.",
               "products": [
@@ -1167,7 +1167,7 @@
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_d4es.webp",
-              "title": "ALL TERRAIN",
+              "title": "all terrain",
               "subtitle": "Que vous rouliez sur de l'asphalte, du gravier ou des sentiers accidentés, nos sacs à dos de vélo pour tous les types de terrains sont vos partenaires fiables. L'accent est mis sur la stabilité, le confort et des options de rangement bien pensées.",
               "description": "Que vous rouliez sur de l'asphalte, du gravier ou des sentiers accidentés, nos sacs à dos de vélo pour tous les types de terrains sont vos partenaires fiables. L'accent est mis sur la stabilité, le confort et des options de rangement bien pensées.",
               "products": [
@@ -1190,7 +1190,7 @@
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_4vge.webp",
-              "title": "PURE",
+              "title": "pure",
               "subtitle": "Les sacs à dos de vélo de la série PURE combinent un design épuré et des caractéristiques fonctionnelles pour un usage quotidien. Légers, durables et polyvalents, ils sont idéaux pour tous les domaines d'application.",
               "description": "Les sacs à dos de vélo de la série PURE combinent un design épuré et des caractéristiques fonctionnelles pour un usage quotidien. Légers, durables et polyvalents, ils sont idéaux pour tous les domaines d'application.",
               "products": [
@@ -1218,7 +1218,7 @@
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_vdo9.webp",
-              "title": "HIP BAGS",
+              "title": "hip bags",
               "subtitle": "Nos sacs bananes sont les compagnons idéaux pour les sorties exigeantes en VTT et en gravel. Ils associent un design minimaliste et intemporel à des caractéristiques bien pensées qui font toute la différence lors de vos déplacements.",
               "description": "Nos sacs bananes sont les compagnons idéaux pour les sorties exigeantes en VTT et en gravel. Ils associent un design minimaliste et intemporel à des caractéristiques bien pensées qui font toute la différence lors de vos déplacements.",
               "products": [
@@ -1240,7 +1240,7 @@
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_4thu.webp",
-              "title": "TRAVEL BAGS",
+              "title": "travel bags",
               "subtitle": "Légers, durables et fonctionnels, ils sont faciles à transporter, que vous partiez à vélo pour explorer de nouveaux endroits, que vous planifiez un circuit de plusieurs jours ou que vous partiez simplement à la découverte du monde sur un coup de tête. Avec beaucoup d'espace pour vos vêtements, votre équipement et tout ce qui compte pour vous sur la route, vous serez toujours bien préparé sans faire de compromis sur le confort ou le style.",
               "description": "Légers, durables et fonctionnels, ils sont faciles à transporter, que vous partiez à vélo pour explorer de nouveaux endroits, que vous planifiez un circuit de plusieurs jours ou que vous partiez simplement à la découverte du monde sur un coup de tête. Avec beaucoup d'espace pour vos vêtements, votre équipement et tout ce qui compte pour vous sur la route, vous serez toujours bien préparé sans faire de compromis sur le confort ou le style.",
               "products": [
@@ -1258,7 +1258,7 @@
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_q37w.webp",
-              "title": "ROOKIE",
+              "title": "rookie",
               "subtitle": "Nos sacs à dos de vélo pour enfants sont les compagnons parfaits des petits aventuriers. Ils sont légers, confortables à porter et faciles à ajuster pour un maintien sûr. Leur construction robuste garantit une utilisation durable, tandis que des détails bien pensés ajoutent un confort et une sécurité supplémentaires. De cette façon, les enfants peuvent facilement transporter leurs affaires, explorer le monde, jouer et profiter pleinement de chaque trajet.",
               "description": "Nos sacs à dos de vélo pour enfants sont les compagnons parfaits des petits aventuriers. Ils sont légers, confortables à porter et faciles à ajuster pour un maintien sûr. Leur construction robuste garantit une utilisation durable, tandis que des détails bien pensés ajoutent un confort et une sécurité supplémentaires. De cette façon, les enfants peuvent facilement transporter leurs affaires, explorer le monde, jouer et profiter pleinement de chaque trajet.",
               "products": [
@@ -1276,7 +1276,7 @@
             },
             {
               "image": "@/assets/image/gear_sacs-a-dos-sacs-banane_info_u70t.webp",
-              "title": "GEAR",
+              "title": "gear",
               "subtitle": "Nos accessoires de sac à dos rendent chaque trajet à vélo plus confortable et plus pratique. Des poches supplémentaires offrent de l'espace pour tous les éléments essentiels, tandis que les systèmes d'hydratation vous gardent au frais tout au long du parcours. Cela rend votre sac à dos encore plus polyvalent et s'adapte parfaitement à chaque trajet et à chaque aventure.",
               "description": "Nos accessoires de sac à dos rendent chaque trajet à vélo plus confortable et plus pratique. Des poches supplémentaires offrent de l'espace pour tous les éléments essentiels, tandis que les systèmes d'hydratation vous gardent au frais tout au long du parcours. Cela rend votre sac à dos encore plus polyvalent et s'adapte parfaitement à chaque trajet et à chaque aventure.",
               "products": [
@@ -1305,14 +1305,14 @@
           ]
         },
         {
-          "title": "CHAUSSURES",
+          "title": "chaussures",
           "introduction": "Développées avec des cyclistes d'équipes professionnelles, nos chaussures de vélo allient fonctionnalité, confort et légèreté. Le concept axé sur le design garantit une efficacité maximale et une réduction de poids notable, tandis que l'ajustement ergonomique offre un confort exceptionnel même lors de longs trajets. Elles sont parfaitement adaptées pour répondre aux besoins des cyclistes exigeants.",
           "background": "@/assets/image/gear_chaussure_info_nb1g.webp",
           "video": "@/assets/video/gear_chaussure_main_agm9.mp4",
           "information": [
             {
               "image": "@/assets/image/gear_chaussure_info_vgs9.webp",
-              "title": "ROAD",
+              "title": "road",
               "subtitle": "",
               "products": [
                 {
@@ -1334,7 +1334,7 @@
             },
             {
               "image": "@/assets/image/gear_chaussure_info_nb1g.webp",
-              "title": "MTB & GRAVEL",
+              "title": "mtb & gravel",
               "subtitle": "Nos chaussures CUBE VTT et Gravel sont spécialement conçues pour une utilisation tout-terrain. Elles offrent la combinaison parfaite entre transfert de puissance, confort de marche et durabilité. Elles permettent un pédalage très efficace tout en facilitant la marche sur des terrains accidentés. Que ce soit sur des sentiers de VTT techniques ou de longs itinéraires de gravel, elles améliorent votre confort de conduite et vos performances.",
               "description": "Nos chaussures CUBE VTT et Gravel sont spécialement conçues pour une utilisation tout-terrain. Elles offrent la combinaison parfaite entre transfert de puissance, confort de marche et durabilité. Elles permettent un pédalage très efficace tout en facilitant la marche sur des terrains accidentés. Que ce soit sur des sentiers de VTT techniques ou de longs itinéraires de gravel, elles améliorent votre confort de conduite et vos performances.",
               "products": [
@@ -1357,7 +1357,7 @@
             },
             {
               "image": "@/assets/image/gear_chaussure_info_41vj.webp",
-              "title": "TOUR",
+              "title": "tour",
               "subtitle": "Nos chaussures CUBE Tour sont le choix idéal pour les cyclistes qui apprécient le confort et la polyvalence lors de longs trajets. Elles offrent un équilibre parfait entre un pédalage efficace et un ajustement confortable. Des matériaux de haute qualité et une construction soignée garantissent une expérience de conduite agréable. Que ce soit pour de longues randonnées, des trajets quotidiens ou des balades de loisirs, elles vous accompagnent dans chaque voyage.",
               "description": "Nos chaussures CUBE Tour sont le choix idéal pour les cyclistes qui apprécient le confort et la polyvalence lors de longs trajets. Elles offrent un équilibre parfait entre un pédalage efficace et un ajustement confortable. Des matériaux de haute qualité et une construction soignée garantissent une expérience de conduite agréable. Que ce soit pour de longues randonnées, des trajets quotidiens ou des balades de loisirs, elles vous accompagnent dans chaque voyage.",
               "products": [
@@ -1375,7 +1375,7 @@
             },
             {
               "image": "@/assets/image/gear_chaussure_info_xdwu.webp",
-              "title": "GRAVITY",
+              "title": "gravity",
               "subtitle": "Nos chaussures CUBE Gravity offrent stabilité et contrôle sur le vélo et impressionnent par leur polyvalence sur différentes surfaces. Leur construction robuste garantit confort et sécurité. Un ajustement parfait et une grande durabilité en font un compagnon fiable. L'idéal pour tous ceux qui souhaitent combiner action et flexibilité dans une seule chaussure.",
               "description": "Nos chaussures CUBE Gravity offrent stabilité et contrôle sur le vélo et impressionnent par leur polyvalence sur différentes surfaces. Leur construction robuste garantit confort et sécurité. Un ajustement parfait et une grande durabilité en font un compagnon fiable. L'idéal pour tous ceux qui souhaitent combiner action et flexibilité dans une seule chaussure.",
               "products": [
@@ -1398,7 +1398,7 @@
             },
             {
               "image": "@/assets/image/gear_chaussure_info_xjto.webp",
-              "title": "ROOKIE",
+              "title": "rookie",
               "subtitle": "Nos chaussures CUBE Rookie sont tout aussi performantes que les modèles pour adultes : même performance, même technologie, même design. Elles sont parfaites pour ceux qui refusent de faire des compromis dès le début. Disponibles dans les pointures 35 à 37.",
               "description": "Nos chaussures CUBE Rookie sont tout aussi performantes que les modèles pour adultes : même performance, même technologie, même design. Elles sont parfaites pour ceux qui refusent de faire des compromis dès le début. Disponibles dans les pointures 35 à 37.",
               "products": [
