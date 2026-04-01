@@ -17,9 +17,9 @@ namespace S401A2.Controllers
     [ApiController]
     public class VelosController : ControllerBase
     {
-        private readonly IDataRepository<Velo> _repository;
+        private readonly IVeloRepository _repository;
 
-        public VelosController(IDataRepository<Velo> dataRepository)
+        public VelosController(IVeloRepository dataRepository)
         {
             _repository = dataRepository ?? throw new ArgumentNullException(nameof(dataRepository));
         }
@@ -31,6 +31,15 @@ namespace S401A2.Controllers
         public async Task<IEnumerable<Velo>> GetVelos()
         {
             return await _repository.GetAllAsync();
+        }
+
+        // GET: api/Velos/chunked?skip=${skip}&take=${take}
+        [HttpGet]
+        [Route("chunked")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IEnumerable<Velo>> GetVelosChunked([FromQuery] int skip = 0, [FromQuery] int take = 50)
+        {
+            return await _repository.GetChunkAsync(skip, take);
         }
 
         // GET: api/Velos/5
