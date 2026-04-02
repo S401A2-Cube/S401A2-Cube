@@ -139,7 +139,7 @@ const deleteArticle = async (infos) => {
                   :ligne="ligne"
                   @supprimer="deleteArticle"
               />
-              <RedButton @click="validShopCart">
+              <RedButton @click="validShopCart" class="btn-valid">
                 Valider le panier
               </RedButton>
             </div>
@@ -178,5 +178,9 @@ h2 {
 
 .container-panier {
     margin-top: 2rem;
+}
+
+.btn-valid {
+  align-self: flex-end;
 }
 </style>
