@@ -10,7 +10,7 @@ const client = ref({
     Nom: '',
     Email: '',
     DateNaissance: null,
-    Mdp: '',
+    Password: '',
     Role: 1,
     AdresseClient:null,
 })
@@ -46,7 +46,7 @@ const soumettreFormulaire = () => {
             <Input label="Nom" v-model="client.Nom" required/>
             <Input label="Email" v-model="client.Email" required/>
             <Input type="date" label="Date de naissance" v-model="client.DateNaissance"/>
-            <Input type="password" label="Mot de passe" v-model="client.Mdp" required/>
+            <Input type="password" label="Mot de passe" v-model="client.Password" required/>
 
             
             <RedButton type="submit">S'inscrire</RedButton>
