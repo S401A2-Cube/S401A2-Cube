@@ -105,7 +105,7 @@ namespace S401A2.Controllers.Tests
             // Assert
             Assert.IsInstanceOfType(actionResult.Result, typeof(CreatedAtActionResult));
             var createdResult = actionResult.Result as CreatedAtActionResult;
-            Assert.AreEqual("GetClient", createdResult.ActionName);
+            Assert.AreEqual("GetById", createdResult.ActionName);
             Assert.AreEqual(1, ((Client)createdResult.Value).Id);
         }
 
