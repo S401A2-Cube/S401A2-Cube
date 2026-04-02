@@ -98,7 +98,7 @@ namespace S401A2.Controllers
 
             await _repository.AddAsync(client);
 
-            return CreatedAtAction("GetById", new { id = client.Id }, client);
+            return CreatedAtAction("GetClient", new { id = client.Id }, client);
         }
 
         // DELETE: api/Clients/5

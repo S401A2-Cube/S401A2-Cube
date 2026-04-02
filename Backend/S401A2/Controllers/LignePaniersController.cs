@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using S401A2.Model.EntityFramework;
+using S401A2.Models.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +15,20 @@ namespace S401A2.Controllers
     [ApiController]
     public class LignePaniersController : ControllerBase
     {
-        private readonly CubeDBContext _context;
+        private readonly IDataRepository<LignePanier> _repository;
 
-        public LignePaniersController(CubeDBContext context)
+        public LignePaniersController(IDataRepository<LignePanier> dataRepository)
         {
-            _context = context;
+            _repository = dataRepository ?? throw new ArgumentNullException(nameof(dataRepository));
         }
 
         // GET: api/LignePaniers
         [HttpGet]
         [ActionName("GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<LignePanier>>> GetLignePaniers()
+        public async Task<IEnumerable<LignePanier>> GetLignePaniers()
         {
-            return await _context.LignePaniers.ToListAsync();
+            return await _repository.GetAllAsync();
         }
 
         // GET: api/LignePaniers/5
@@ -38,7 +39,7 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<LignePanier>> GetLignePanier(int id)
         {
-            var lignePanier = await _context.LignePaniers.FindAsync(id);
+            var lignePanier = await _repository.GetByIdAsync(id);
 
             if (lignePanier == null)
             {
@@ -62,23 +63,18 @@ namespace S401A2.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(lignePanier).State = EntityState.Modified;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            try
+            var lignePanierToUpdate = await _repository.GetByIdAsync(id);
+            if (lignePanierToUpdate == null || lignePanierToUpdate.Id == null)
             {
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LignePanierExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+
+            await _repository.UpdateAsync(lignePanierToUpdate, lignePanier);
 
             return NoContent();
         }
@@ -91,8 +87,12 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<LignePanier>> PostLignePanier(LignePanier lignePanier)
         {
-            _context.LignePaniers.Add(lignePanier);
-            await _context.SaveChangesAsync();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _repository.AddAsync(lignePanier);
 
             return CreatedAtAction("GetLignePanier", new { id = lignePanier.Id }, lignePanier);
         }
@@ -104,21 +104,20 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteLignePanier(int id)
         {
-            var lignePanier = await _context.LignePaniers.FindAsync(id);
+            var lignePanier = await _repository.GetByIdAsync(id);
             if (lignePanier == null)
             {
                 return NotFound();
             }
 
-            _context.LignePaniers.Remove(lignePanier);
-            await _context.SaveChangesAsync();
+            await _repository.DeleteAsync(lignePanier);
 
             return NoContent();
         }
 
-        private bool LignePanierExists(int id)
-        {
-            return _context.LignePaniers.Any(e => e.Id == id);
-        }
+        //private bool LignePanierExists(int id)
+        //{
+        //    return _repository.GetAllAsync().Any(e => e.Id == id);
+        //}
     }
 }
