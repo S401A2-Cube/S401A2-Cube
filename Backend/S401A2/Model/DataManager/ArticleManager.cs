@@ -133,6 +133,7 @@ namespace S401A2.Model.DataManager
         {
             if (_context != null)
             {
+                entityToUpdate.Reference = entity.Reference;
                 entityToUpdate.Nom = entity.Nom;
                 entityToUpdate.Description = entity.Description;
                 entityToUpdate.Prix = entity.Prix;
@@ -140,7 +141,7 @@ namespace S401A2.Model.DataManager
                 entityToUpdate.QteStock = entity.QteStock;
                 entityToUpdate.Annee = entity.Annee;
                 entityToUpdate.DispoEnLigne = entity.DispoEnLigne;
-                // TODO: dont forget to update upcoming classes (categorie, model3d, ...)
+                entityToUpdate.CategorieId = entity.CategorieId;
 
                 _context.Articles.Update(entityToUpdate);
                 return _context.SaveChangesAsync();

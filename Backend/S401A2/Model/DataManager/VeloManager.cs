@@ -360,6 +360,38 @@ namespace S401A2.Model.DataManager
                 entityToUpdate.IdArticle = entity.IdArticle;
                 entityToUpdate.IdModele = entity.IdModele;
 
+                if (entity.Couleurs != null)
+                {
+                    var couleurIds = entity.Couleurs.Select(c => c.IdCouleur).Distinct().ToList();
+                    entityToUpdate.Couleurs = _context.Couleurs
+                        .Where(c => couleurIds.Contains(c.IdCouleur))
+                        .ToList();
+                }
+
+                if (entity.Tailles != null)
+                {
+                    var tailleIds = entity.Tailles.Select(t => t.IdTaille).Distinct().ToList();
+                    entityToUpdate.Tailles = _context.Tailles
+                        .Where(t => tailleIds.Contains(t.IdTaille))
+                        .ToList();
+                }
+
+                if (entity.Cadres != null)
+                {
+                    var cadreIds = entity.Cadres.Select(c => c.IdMateriau).Distinct().ToList();
+                    entityToUpdate.Cadres = _context.Cadres
+                        .Where(c => cadreIds.Contains(c.IdMateriau))
+                        .ToList();
+                }
+
+                if (entity.Geometries != null)
+                {
+                    var geometrieIds = entity.Geometries.Select(g => g.IdGeometrie).Distinct().ToList();
+                    entityToUpdate.Geometries = _context.Geometries
+                        .Where(g => geometrieIds.Contains(g.IdGeometrie))
+                        .ToList();
+                }
+
                 _context.Velos.Update(entityToUpdate);
                 return _context.SaveChangesAsync();
             }
