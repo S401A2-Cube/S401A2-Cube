@@ -165,7 +165,8 @@ const normalizeArticlePayload = () => ({
   qteStock: Number(articleForm.value.qteStock),
   annee: Number(articleForm.value.annee),
   dispoEnLigne: Boolean(articleForm.value.dispoEnLigne),
-  categorieId: Number(articleForm.value.categorieId)
+  categorieId: Number(articleForm.value.categorieId),
+  categorieArticle: {}
 });
 
 const uploadImagesForArticle = async (articleId) => {

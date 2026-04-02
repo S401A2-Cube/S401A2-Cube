@@ -191,7 +191,8 @@ const saveBike = async () => {
       qteStock: Number(form.value.qteStock),
       annee: Number(form.value.annee),
       dispoEnLigne: Boolean(form.value.dispoEnLigne),
-      categorieId: Number(form.value.categorieId)
+      categorieId: Number(form.value.categorieId),
+      categorieArticle: {}
     }, {
       headers: props.authHeaders
     });

@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue';
 
 const AUTH_TOKEN_KEYS = ['token_', 'token', 'jwt', 'authToken', 'user_token'];
 const ROLE_ADMIN = 1;

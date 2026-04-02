@@ -18,11 +18,10 @@ const connecterCompte = async (donneesLogin) => {
         console.log("Données reçues :", response.data);
 
         if (response.data.token) {
+            storeAuthToken(response.data.token);
             utils.login(response.data.token, response.data);
             router.push('/');
-            //storeAuthToken(response.data.token);
         }
-        router.push('/');
     }
     catch (error) {
         messageErreur.value = "Email ou mot de passe incorrect.";

@@ -112,8 +112,9 @@ namespace S401A2
 
             app.UseHttpsRedirection();
 
-            app.UseAuthentication();
             app.UseCors("AllowVueApp");
+            
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
