@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { useUtilsStore } from '@/stores/utils';
+import { storeAuthToken } from '@/stores/utils';
 
 const router = useRouter();
 const utils = useUtilsStore();
@@ -16,7 +17,7 @@ const connecterCompte = async (donneesLogin) => {
         const response = await axios.post(utils.url + "/Login", donneesLogin);
 
         if (response.data.token) {
-            localStorage.setItem('token', response.data.token);
+            storeAuthToken(response.data.token);
         }
         router.push('/');
     }

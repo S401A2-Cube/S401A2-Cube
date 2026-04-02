@@ -116,6 +116,16 @@ const getApiErrorMessage = (error) => {
   }
 
   if (data?.title) {
+    if (data?.errors && typeof data.errors === 'object') {
+      const validationMessages = Object.values(data.errors)
+        .flat()
+        .filter(Boolean);
+
+      if (validationMessages.length) {
+        return `Erreur ${status}: ${validationMessages.join(' | ')}`;
+      }
+    }
+
     return `Erreur ${status}: ${data.title}`;
   }
 
@@ -306,10 +316,10 @@ onBeforeUnmount(() => {
           <TextAreaInput v-model="articleForm.description" label="Description" required :rows="4" />
         </div>
         <div class="field field-small">
-          <Input v-model="articleForm.prix" label="Prix" type="number" required />
+          <Input v-model="articleForm.prix" label="Prix" type="number" step="0.01" required />
         </div>
         <div class="field field-small">
-          <Input v-model="articleForm.poids" label="Poids" type="number" required />
+          <Input v-model="articleForm.poids" label="Poids" type="number" step="0.1" required />
         </div>
         <div class="field field-small">
           <Input v-model="articleForm.qteStock" label="Quantite en stock" type="number" required />

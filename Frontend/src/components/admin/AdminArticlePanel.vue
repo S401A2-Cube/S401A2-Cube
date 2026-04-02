@@ -246,8 +246,8 @@ onBeforeUnmount(() => {
           :options="categories.map((category) => ({ label: category.nom, value: category.categorieId }))"
         />
         <TextAreaInput v-model="articleForm.description" label="Description" required :rows="5" />
-        <Input v-model="articleForm.prix" label="Prix" type="number" required />
-        <Input v-model="articleForm.poids" label="Poids" type="number" required />
+        <Input v-model="articleForm.prix" label="Prix" type="number" step="0.01" required />
+        <Input v-model="articleForm.poids" label="Poids" type="number" step="0.1" required />
         <Input v-model="articleForm.qteStock" label="Quantite en stock" type="number" required />
         <Input v-model="articleForm.annee" label="Annee" type="number" required />
         <label class="toggle full">

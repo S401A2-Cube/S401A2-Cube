@@ -146,6 +146,16 @@ const getApiErrorMessage = (error) => {
   }
 
   if (data?.title) {
+    if (data?.errors && typeof data.errors === 'object') {
+      const validationMessages = Object.values(data.errors)
+        .flat()
+        .filter(Boolean);
+
+      if (validationMessages.length) {
+        return `Erreur ${status}: ${validationMessages.join(' | ')}`;
+      }
+    }
+
     return `Erreur ${status}: ${data.title}`;
   }
 
@@ -160,10 +170,10 @@ const saveBike = async () => {
     return;
   }
 
-  if (!form.value.nom.trim() || !form.value.description.trim() || !form.value.idModele || !form.value.lienVue360.trim()) {
+  if (!form.value.nom.trim() || !form.value.description.trim() || !form.value.idModele) {
     feedback.value = {
       type: 'error',
-      message: 'Renseignez au moins le nom, la description, le modele et le lien vue 360.'
+      message: 'Renseignez au moins le nom et la description.'
     };
     return;
   }
@@ -264,10 +274,10 @@ const saveBike = async () => {
             <TextAreaInput v-model="form.description" label="Description" required :rows="4" />
           </div>
           <div class="field field-small">
-            <Input v-model="form.prix" label="Prix" type="number" required />
+            <Input v-model="form.prix" label="Prix" type="number" step="0.01" required />
           </div>
           <div class="field field-small">
-            <Input v-model="form.poids" label="Poids" type="number" required />
+            <Input v-model="form.poids" label="Poids" type="number" step="0.1" required />
           </div>
           <div class="field field-small">
             <Input v-model="form.qteStock" label="Quantite en stock" type="number" required />
@@ -294,7 +304,7 @@ const saveBike = async () => {
             />
           </div>
           <div class="field field-large">
-            <Input v-model="form.lienVue360" label="Lien vue 360" type="url" required />
+            <Input v-model="form.lienVue360" label="Lien vue 360" type="url" />
           </div>
 
           <div class="field field-full">
