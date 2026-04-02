@@ -10,6 +10,7 @@ import ComparaisonView from '@/views/ComparaisonView.vue'
 import CategoryView from '@/views/CategoryView.vue'
 import ShopCartView from '@/views/ShopCartView.vue'
 import AdminDashboardView from '@/views/AdminDashboardView.vue'
+import { isAdminUser } from '@/stores/utils'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -73,9 +74,20 @@ const router = createRouter({
     {
       path:'/admin/dashboard',
       name:'admin-dashboard',
+      meta: {
+        requiresAdmin: true,
+      },
       component: AdminDashboardView
     }
   ],
+})
+
+router.beforeEach((to) => {
+  if (to.meta.requiresAdmin && !isAdminUser()) {
+    return { path: '/' }
+  }
+
+  return true
 })
 
 export default router

@@ -37,6 +37,16 @@ const getApiErrorMessage = (error) => {
   }
 
   if (data?.title) {
+    if (data?.errors && typeof data.errors === 'object') {
+      const validationMessages = Object.values(data.errors)
+        .flat()
+        .filter(Boolean);
+
+      if (validationMessages.length) {
+        return `Erreur ${status}: ${validationMessages.join(' | ')}`;
+      }
+    }
+
     return `Erreur ${status}: ${data.title}`;
   }
 

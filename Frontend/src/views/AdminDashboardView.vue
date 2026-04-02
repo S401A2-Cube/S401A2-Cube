@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import axios from 'axios';
-import { useUtilsStore } from '@/stores/utils';
+import { getAuthHeaders, useUtilsStore } from '@/stores/utils';
 import AdminProductPanel from '@/components/admin/AdminProductPanel.vue';
 import AdminCataloguePanel from '@/components/admin/AdminCataloguePanel.vue';
 import AdminEditBikePanel from '@/components/admin/AdminEditBikePanel.vue';
@@ -15,7 +15,7 @@ const sections = [
 ];
 
 const currentSection = ref('product');
-const jwtToken = ref(localStorage.getItem('token') || localStorage.getItem('jwt') || localStorage.getItem('authToken') || '');
+const authHeaders = getAuthHeaders();
 
 const categories = ref([]);
 const modeles = ref([]);
@@ -28,21 +28,16 @@ const createdArticle = ref(null);
 const velos = ref([]);
 const selectedBike = ref(null);
 
-const authHeaders = computed(() => {
-  const token = jwtToken.value.trim();
-  return token ? { Authorization: `Bearer ${token}` } : {};
-});
-
 const loadLookups = async () => {
   try {
     const [categoriesRes, modelesRes, couleursRes, taillesRes, cadresRes, geometriesRes, velosRes] = await Promise.all([
-      axios.get(utils.url + 'Categories'),
-      axios.get(utils.url + 'Modeles'),
-      axios.get(utils.url + 'Couleurs'),
-      axios.get(utils.url + 'Tailles'),
-      axios.get(utils.url + 'Cadres'),
-      axios.get(utils.url + 'Geometries'),
-      axios.get(utils.url + 'Velos')
+      axios.get(utils.url + 'Categories', { headers: authHeaders }),
+      axios.get(utils.url + 'Modeles', { headers: authHeaders }),
+      axios.get(utils.url + 'Couleurs', { headers: authHeaders }),
+      axios.get(utils.url + 'Tailles', { headers: authHeaders }),
+      axios.get(utils.url + 'Cadres', { headers: authHeaders }),
+      axios.get(utils.url + 'Geometries', { headers: authHeaders }),
+      axios.get(utils.url + 'Velos', { headers: authHeaders })
     ]);
 
     categories.value = categoriesRes.data || [];
