@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using S401A2.Model;
 using S401A2.Model.EntityFramework;
 using S401A2.Models.Repository;
@@ -59,25 +57,32 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutCategorie(int id, Categorie Categorie)
         {
-            if (id != Categorie.CategorieId)
+            try
             {
-                return BadRequest();
-            }
+                if (id != Categorie.CategorieId)
+                {
+                    return BadRequest();
+                }
 
-            if (!ModelState.IsValid)
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var categorieToUpdate = await _repository.GetByIdAsync(id);
+                if (categorieToUpdate == null)
+                {
+                    return NotFound();
+                }
+
+                await _repository.UpdateAsync(categorieToUpdate, Categorie);
+
+                return NoContent();
+            }
+            catch (Exception ex)
             {
-                return BadRequest(ModelState);
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
             }
-
-            var categorieToUpdate = await _repository.GetByIdAsync(id);
-            if (categorieToUpdate == null || categorieToUpdate == null)
-            {
-                return NotFound();
-            }
-
-            await _repository.UpdateAsync(categorieToUpdate, Categorie);
-
-            return NoContent();
         }
 
         // POST: api/Categories
@@ -88,14 +93,21 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Categorie>> PostCategorie(Categorie categorie)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                await _repository.AddAsync(categorie);
+
+                return CreatedAtAction("GetCategorie", new { id = categorie.CategorieId }, categorie);
             }
-
-            await _repository.AddAsync(categorie);
-
-            return CreatedAtAction("GetCategorie", new { id = categorie.CategorieId }, categorie);
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+            }
         }
 
         // DELETE: api/Categories/5
@@ -105,15 +117,22 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteCategorie(int id)
         {
-            var categorie = await _repository.GetByIdAsync(id);
-            if (categorie == null)
+            try
             {
-                return NotFound();
+                var categorie = await _repository.GetByIdAsync(id);
+                if (categorie == null)
+                {
+                    return NotFound();
+                }
+
+                await _repository.DeleteAsync(categorie);
+
+                return NoContent();
             }
-
-            await _repository.DeleteAsync(categorie);
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ using BCrypt.Net;
 using Microsoft.AspNetCore.Authorization;
 using S401A2.Model;
 using S401A2.Model.EntityFramework;
+using System;
+using System.Linq;
 
 namespace S401A2.Controllers
 {
@@ -29,29 +31,37 @@ namespace S401A2.Controllers
         [AllowAnonymous]
         public IActionResult Register([FromBody] RegisterRequest request)
         {
-            var existingClient = _context.Clients.SingleOrDefault(c => c.Email == request.Email);
-            if (existingClient != null)
+            try
             {
-                return BadRequest("Cet email est déjà utilisé.");
+                var existingClient = _context.Clients.SingleOrDefault(c => c.Email == request.Email);
+                if (existingClient != null)
+                {
+                    return BadRequest("Cet email est déjà utilisé.");
+                }
+
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
+
+                var newClient = new Client
+                {
+                    CiviliteId = request.CiviliteId,
+                    Nom = request.Nom,
+                    Prenom = request.Prenom,
+                    Email = request.Email,
+                    Mdp = hashedPassword,
+                    DateNaissance = request.DateNaissance,
+                    Role = 2,
+                    AdresseId = null
+                };
+
+                _context.Clients.Add(newClient);
+                _context.SaveChanges();
+
+                return Ok(new { message = "Client créé avec succès !" });
             }
-
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
-
-            var newClient = new Client
+            catch (Exception ex)
             {
-                CiviliteId = request.CiviliteId,
-                Nom = request.Nom,
-                Prenom = request.Prenom,
-                Email = request.Email,
-                Mdp = hashedPassword,
-                DateNaissance = request.DateNaissance,
-                Role = 2
-            };
-
-            _context.Clients.Add(newClient);
-            _context.SaveChanges();
-
-            return Ok(new { message = "Client créé avec succès !" });
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+            }
         }
 
         [HttpPost]
@@ -87,12 +97,12 @@ namespace S401A2.Controllers
 
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, client.Email),
-            new Claim("fullName", fullName),
-            new Claim(ClaimTypes.Role, role),
-            new Claim("IdClient", client.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+                new Claim(JwtRegisteredClaimNames.Sub, client.Email),
+                new Claim("fullName", fullName),
+                new Claim(ClaimTypes.Role, role),
+                new Claim("IdClient", client.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
 
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
@@ -117,7 +127,7 @@ namespace S401A2.Controllers
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; } // Le mot de passe en clair tapé par l'utilisateur
+        public string Password { get; set; }
         public DateTime? DateNaissance { get; set; }
     }
 }
