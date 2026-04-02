@@ -43,24 +43,19 @@ let barsSeatPedalsMaterial = null;
 let barsSeatPedalsGrayTexture = null;
 
 const NAMED_COLOR_MAP = {
-  noir: '#050505',
-  black: '#050505',
-  blanc: '#ffffff',
-  white: '#ffffff',
-  rouge: '#ff3b30',
-  red: '#ff3b30',
-  bleu: '#007aff',
-  blue: '#007aff',
-  vert: '#22c55e',
-  green: '#22c55e',
-  jaune: '#ffcc00',
-  yellow: '#ffcc00',
-  orange: '#ff8800',
-  gris: '#8a939e',
-  gray: '#8a939e',
-  grey: '#8a939e',
-  argent: '#e2e8f0',
-  silver: '#e2e8f0'
+  noir: "#050505",
+  blanc: "#FFFFFF",
+  bleu: "#0051FF",
+  rouge: "#FF2A2A",
+  vert: "#00FF41",
+  gris: "#A9B4C2",
+  violet: "#B026FF",
+  rose: "#FF1493",
+  jaune: "#FFF100",
+  orange: "#FF5E00",
+  marron: "#C85A17",
+  or: "#FFC400",
+  turquoise: "#15E6CD"
 };
 
 const getTintHexFromSelectedColor = (selectedColor) => {
@@ -221,6 +216,14 @@ const initThreeJS = async (container) => {
   const rimLight = new THREE.DirectionalLight(0xffffff, 3.0);
   rimLight.position.set(0, 5, -5);
   scene.add(rimLight);
+
+  const leftSideLight = new THREE.DirectionalLight(0xffffff, 0.5);
+  leftSideLight.position.set(-10, 0, 0); 
+  scene.add(leftSideLight);
+
+  const rightSideLight = new THREE.DirectionalLight(0xffffff, 0.5);
+  rightSideLight.position.set(10, 0, 0); 
+  scene.add(rightSideLight);
 
   const ktx2Loader = new KTX2Loader().setTranscoderPath('/jsm/libs/basis/').detectSupport(curRenderer);
   const dracoLoader = new DRACOLoader().setDecoderPath('/jsm/libs/draco/gltf/');
