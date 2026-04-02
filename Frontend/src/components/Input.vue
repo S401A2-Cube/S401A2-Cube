@@ -11,6 +11,14 @@ const props = defineProps({
     required: {
         type: Boolean,
         default: false
+    },
+    readonly: {
+        type: Boolean,
+        default: false
+    },
+    disabled: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -33,7 +41,9 @@ const labelIndication = computed(() => {
             v-model="model"
             :class="inputClasses"
             placeholder=" "
-            :required="required">
+            :required="required"
+            :readonly="readonly"
+            :disabled="disabled">
         <label>
             {{ labelIndication }}
         </label>
@@ -47,10 +57,11 @@ input:focus {
 }
 
 .input-container {
-    margin: 20px 0; 
+    margin: 12px 0;
     position: relative;
     text-align: left;
-    width: 400px;
+    width: 100%;
+    min-width: 0;
 }
 
 .input-effect {
