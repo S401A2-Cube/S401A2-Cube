@@ -108,6 +108,7 @@ const props = defineProps({
   border: none; 
   text-align: center;
   outline: none; 
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 
