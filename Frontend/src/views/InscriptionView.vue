@@ -13,7 +13,7 @@ const messageRetour = ref('');
 
 const creerCompte = async (donneesClient) => {
     try {
-        const response = await axios.post(utils.url + "Clients", donneesClient);
+        const response = await axios.post(utils.url + "Login/register", donneesClient);
         
         messageRetour.value = "Compte créé avec succès !";
         console.log("Réponse de l'API :", response.data);
@@ -37,5 +37,16 @@ const creerCompte = async (donneesClient) => {
 </template>
 
 <style scoped>
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
 
+.erreur {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
 </style>
