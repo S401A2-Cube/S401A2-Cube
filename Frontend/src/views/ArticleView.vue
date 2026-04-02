@@ -7,10 +7,13 @@ import Specifications from '../components/article/Specifications.vue';
 import axios from 'axios';
 import { useUtilsStore } from '@/stores/utils';
 import RedButton from '@/components/RedButton.vue';
+import { useCartStore } from '@/stores/counterArticles';
 
 const route = useRoute();
 
 const utils = useUtilsStore();
+
+const cartStore = useCartStore();
 
 const resVelo = ref(null);
 const selectedColor = ref(null);
@@ -85,34 +88,32 @@ const addInShopCart = async () => {
  
   const payload = {
       articleId: resArticle.value.articleId,
-      clientId: 1, // currentId
       qtePanier: 1,
-      commandeId: null,   
       nom: resArticle.value.nom,  
       reference: resArticle.value.reference,
       prix: resArticle.value.prix,
       idCouleur: selectedColor.value.idCouleur, 
-      Idtaille: selectedSize.value.idTaille,
+      idTaille: selectedSize.value.idTaille,
       nomCouleur: selectedColor.value.nomCouleur,
       libelleTaille: selectedSize.value.libelleTaille,
-      images: resArticle.images && resArticle.images.length > 0 
-          ? getAssetUrl(resArticle.images[0].chemin)
+      imageURL: resArticle.value.images && resArticle.value.images.length > 0 
+          ? getAssetUrl(resArticle.value.images[0].chemin)
           : getAssetUrl("@/assets/image/fallback_bike.png")
     };
 
   if (token) {
     try {
       await axios.post(utils.url + "LignePaniers/", {
+        clientId: 1, 
         articleId: payload.articleId,
-        clientId: payload.clientId,
         qtePanier: payload.qtePanier,
-        commandeId: payload.commandeId,
-        tailleId: payload.tailleId,
-        couleurId: payload.couleurId
+        tailleId: payload.idTaille,
+        couleurId: payload.idCouleur
       }, { 
         headers: { 'Authorization': `Bearer ${token}`}
     });
       alert("Ajouté à votre panier en ligne !");
+      cartStore.lignes.push(payload);
     } 
     catch (error) {
       console.error("Erreur API :", error);
@@ -137,9 +138,16 @@ const saveToLocalStorage = (payload) => {
 
   if (existingProduct) {
     existingProduct.qtePanier += 1;
+    const storeItem = cartStore.lignes.find(item =>
+      item.articleId === payload.articleId &&
+      item.idCouleur === payload.idCouleur &&
+      item.idTaille === payload.idTaille
+    );
+    if (storeItem) storeItem.qtePanier += 1;
   } 
   else {
     cart.push(payload);
+    cartStore.lignes.push(payload);
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 };
