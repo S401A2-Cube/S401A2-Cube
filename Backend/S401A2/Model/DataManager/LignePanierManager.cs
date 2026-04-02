@@ -115,7 +115,13 @@ namespace S401A2.Model.DataManager
                             Nom = l.ArticleLignePanier.Nom,
                             Reference = l.ArticleLignePanier.Reference,
                             Prix = l.ArticleLignePanier.Prix,
-                            ArticleLignePanier = null
+                            ArticleLignePanier = null,
+
+                            Images = l.ArticleLignePanier.Images == null ? null : l.ArticleLignePanier.Images.Select(img => new Image
+                            {
+                                ImageId = img.ImageId,
+                                Chemin = img.Chemin
+                            }).ToList()
                         },
 
                         CouleurChoisie = l.CouleurChoisie == null ? null : new Couleur

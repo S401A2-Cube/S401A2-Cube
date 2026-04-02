@@ -18,6 +18,11 @@ const selectedSize = ref(null);
 const resArticle = ref(null);
 const notFound = ref(false);
 
+const getAssetUrl = (path) => {
+  const cleanPath = path.replace('@/', '../'); 
+  return new URL(cleanPath, import.meta.url).href;
+};
+
 axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   const data = r.data;
 
@@ -85,7 +90,10 @@ const addInShopCart = async () => {
       idCouleur: selectedColor.value.idCouleur, 
       Idtaille: selectedSize.value.idTaille,
       nomCouleur: selectedColor.value.nomCouleur,
-      libelleTaille: selectedSize.value.libelleTaille
+      libelleTaille: selectedSize.value.libelleTaille,
+      images: resArticle.images && resArticle.images.length > 0 
+          ? getAssetUrl(resArticle.images[0].chemin)
+          : getAssetUrl("@/assets/image/fallback_bike.png")
     };
 
   if (token) {
