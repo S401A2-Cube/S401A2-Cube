@@ -132,20 +132,36 @@ const deleteArticle = async (infos) => {
     <main>
         <div class="container-panier">
             <div v-if="cartStore.lignes.length > 0">
-              <h2>PANIER ({{ cartStore.nbArticles }})</h2>
+              <div class="header-cart">
+                <h2>PANIER ({{ cartStore.nbArticles }})</h2>
+                <h2>TOTAL TTC: {{ cartStore.totalPrix.toLocaleString('fr-FR') }}€</h2>
+              </div>
               <LineShopCart v-for="ligne in cartStore.lignes"
                   :key="ligne.articleId + '-' + ligne.idCouleur + '-' + ligne.idTaille"
                   v-model:quantite="ligne.qtePanier"
                   :ligne="ligne"
                   @supprimer="deleteArticle"
               />
+              <div class="bottom-cart">
+              <div class="return-shop">
+                  <router-link to="/Article">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+                    Retourner à la boutique
+                  </router-link>
+              </div>
               <RedButton @click="validShopCart" class="btn-valid">
                 Valider le panier
               </RedButton>
+              </div>
             </div>
             <div v-else>
                 <h2>Votre panier est vide</h2>
-                <router-link to="/">Retourner à la boutique</router-link>
+                <div class="return-shop">
+                  <router-link to="/Article">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+                    Retourner à la boutique
+                  </router-link>
+                </div>
             </div>
 
         </div> 
@@ -172,7 +188,7 @@ main > div > div {
 h2 {
     font-weight: 400;
     text-align: left; 
-    width: 100%;      
+    width: auto;      
     margin-top: 0;
 }
 
@@ -182,5 +198,33 @@ h2 {
 
 .btn-valid {
   align-self: flex-end;
+}
+
+.header-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.return-shop a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: text-decoration-color 0.3s ease;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.return-shop a:hover {
+  text-decoration-color: #000;
+}
+
+.bottom-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 </style>

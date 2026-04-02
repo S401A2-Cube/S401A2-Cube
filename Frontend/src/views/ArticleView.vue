@@ -112,17 +112,14 @@ const addInShopCart = async () => {
       }, { 
         headers: { 'Authorization': `Bearer ${token}`}
     });
-      alert("Ajouté à votre panier en ligne !");
       cartStore.lignes.push(payload);
     } 
     catch (error) {
       console.error("Erreur API :", error);
-      alert("Erreur lors de l'ajout au panier distant.");
     }
   }
   else {
     saveToLocalStorage(payload);
-    alert("Ajouté au panier !");
   }  
 };
 
