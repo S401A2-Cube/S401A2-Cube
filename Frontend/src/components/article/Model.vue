@@ -11,6 +11,10 @@ const props = defineProps({
   modelUrl: {
     type: String,
     required: true
+  },
+  selectedColor: {
+    type: Object,
+    default: null
   }
 });
 
@@ -18,9 +22,162 @@ const isLoading = ref(true);
 const loadProgress = ref(0);
 const showHint = ref(false);
 
+const getMaterialTextureBindings = (material) => {
+  const textureEntries = [];
+
+  for (const [key, value] of Object.entries(material)) {
+    if (value && value.isTexture) {
+      textureEntries.push({ slot: key, texture: value });
+    }
+  }
+
+  return textureEntries;
+};
+
 const containerRef = ref(null);
 const renderer = shallowRef(null); 
 let scene, camera, controls, resizeObserver;
+let frameMaterial = null;
+let frameGrayTexture = null;
+let barsSeatPedalsMaterial = null;
+let barsSeatPedalsGrayTexture = null;
+
+const NAMED_COLOR_MAP = {
+  noir: '#050505',
+  black: '#050505',
+  blanc: '#ffffff',
+  white: '#ffffff',
+  rouge: '#ff3b30',
+  red: '#ff3b30',
+  bleu: '#007aff',
+  blue: '#007aff',
+  vert: '#22c55e',
+  green: '#22c55e',
+  jaune: '#ffcc00',
+  yellow: '#ffcc00',
+  orange: '#ff8800',
+  gris: '#8a939e',
+  gray: '#8a939e',
+  grey: '#8a939e',
+  argent: '#e2e8f0',
+  silver: '#e2e8f0'
+};
+
+const getTintHexFromSelectedColor = (selectedColor) => {
+  if (!selectedColor) return '#ffffff';
+
+  const candidateFields = [
+    selectedColor.hex,
+    selectedColor.hexa,
+    selectedColor.codeHex,
+    selectedColor.couleurHex,
+    selectedColor.colorHex,
+    selectedColor.hexColor,
+    selectedColor.rgb,
+    selectedColor.rgba
+  ];
+
+  const directColorValue = candidateFields.find((value) => typeof value === 'string' && value.trim().length > 0);
+  if (directColorValue) {
+    return directColorValue.trim();
+  }
+
+  const normalizedName = (selectedColor.nomCouleur || selectedColor.name || '')
+    .toString()
+    .trim()
+    .toLowerCase();
+
+  return NAMED_COLOR_MAP[normalizedName] || '#ffffff';
+};
+
+const buildGrayscaleTextureFromSource = (sourceTexture) => {
+  const sourceImage = sourceTexture?.source?.data;
+  if (!sourceImage || typeof document === 'undefined') return null;
+
+  const width = sourceImage.width;
+  const height = sourceImage.height;
+  if (!width || !height) return null;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  if (!ctx) return null;
+
+  ctx.drawImage(sourceImage, 0, 0, width, height);
+  const imageData = ctx.getImageData(0, 0, width, height);
+  const data = imageData.data;
+
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
+    const luminance = Math.round((0.2126 * r) + (0.7152 * g) + (0.0722 * b));
+    data[i] = luminance;
+    data[i + 1] = luminance;
+    data[i + 2] = luminance;
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+
+  const grayscaleTexture = new THREE.CanvasTexture(canvas);
+  grayscaleTexture.colorSpace = sourceTexture.colorSpace;
+  grayscaleTexture.flipY = sourceTexture.flipY;
+  grayscaleTexture.wrapS = sourceTexture.wrapS;
+  grayscaleTexture.wrapT = sourceTexture.wrapT;
+  grayscaleTexture.magFilter = sourceTexture.magFilter;
+  grayscaleTexture.minFilter = sourceTexture.minFilter;
+  grayscaleTexture.generateMipmaps = sourceTexture.generateMipmaps;
+  grayscaleTexture.needsUpdate = true;
+
+  return grayscaleTexture;
+};
+
+const updateFrameTint = (selectedColor) => {
+  if (!frameMaterial) return;
+
+  frameMaterial.color.set(getTintHexFromSelectedColor(selectedColor));
+  frameMaterial.needsUpdate = true;
+};
+
+const updateBarsSeatPedalsTint = (selectedColor) => {
+  if (!barsSeatPedalsMaterial) return;
+
+  barsSeatPedalsMaterial.color.set(getTintHexFromSelectedColor(selectedColor));
+  barsSeatPedalsMaterial.needsUpdate = true;
+};
+
+const configureFrameMaterial = (material) => {
+  if (!material || !material.map || (material.map.name !== 'Frame_Diffuse')) return;
+
+  frameMaterial = material;
+
+  if (!frameGrayTexture) {
+    frameGrayTexture = buildGrayscaleTextureFromSource(material.map);
+  }
+
+  if (frameGrayTexture) {
+    frameMaterial.map = frameGrayTexture;
+  }
+
+  updateFrameTint(props.selectedColor);
+};
+
+const configureBarsSeatPedalsMaterial = (material) => {
+  if (!material || !material.map || (material.map.name !== 'BarsSeatPedals_Diffuse')) return;
+
+  barsSeatPedalsMaterial = material;
+
+  if (!barsSeatPedalsGrayTexture) {
+    barsSeatPedalsGrayTexture = buildGrayscaleTextureFromSource(material.map);
+  }
+
+  if (barsSeatPedalsGrayTexture) {
+    barsSeatPedalsMaterial.map = barsSeatPedalsGrayTexture;
+  }
+
+  updateBarsSeatPedalsTint(props.selectedColor);
+};
 
 const initThreeJS = async (container) => {
   const curRenderer = new THREE.WebGPURenderer({ 
@@ -76,13 +233,44 @@ const initThreeJS = async (container) => {
     props.modelUrl,
     (gltf) => {
       scene.add(gltf.scene);
+
+      console.groupCollapsed('[Model] Mesh and texture bindings');
       
       gltf.scene.traverse((child) => {
         if (child.isMesh && child.material) {
           child.material.depthWrite = true;
           child.material.side = THREE.DoubleSide; 
+
+          const materials = Array.isArray(child.material) ? child.material : [child.material];
+          const meshName = child.name || '(unnamed mesh)';
+
+          console.group(`Mesh: ${meshName}`);
+
+          materials.forEach((material, index) => {
+            const materialName = material.name || `(material ${index})`;
+            const textureBindings = getMaterialTextureBindings(material);
+
+            configureFrameMaterial(material);
+            configureBarsSeatPedalsMaterial(material);
+
+            console.group(`Material: ${materialName}`);
+
+            if (textureBindings.length === 0) {
+              console.log('No textures bound');
+            } else {
+              textureBindings.forEach(({ slot, texture }) => {
+                const source = texture?.source?.data?.currentSrc || texture?.source?.data?.src || '(embedded or generated)';
+                console.log(`${slot}:`, source, texture);
+              });
+            }
+
+            console.groupEnd();
+          });
+
+          console.groupEnd();
         }
       });
+      console.groupEnd();
       
       const box = new THREE.Box3().setFromObject(gltf.scene);
       const center = box.getCenter(new THREE.Vector3());
@@ -141,6 +329,15 @@ watch(containerRef, (newContainer) => {
   }
 });
 
+watch(
+  () => props.selectedColor,
+  (newColor) => {
+    updateFrameTint(newColor);
+    updateBarsSeatPedalsTint(newColor);
+  },
+  { deep: true }
+);
+
 onBeforeUnmount(() => {
   if (resizeObserver && containerRef.value) {
     resizeObserver.unobserve(containerRef.value);
@@ -154,6 +351,19 @@ onBeforeUnmount(() => {
       containerRef.value.removeChild(renderer.value.domElement);
     }
   }
+
+  if (frameGrayTexture) {
+    frameGrayTexture.dispose();
+    frameGrayTexture = null;
+  }
+
+  if (barsSeatPedalsGrayTexture) {
+    barsSeatPedalsGrayTexture.dispose();
+    barsSeatPedalsGrayTexture = null;
+  }
+
+  frameMaterial = null;
+  barsSeatPedalsMaterial = null;
 });
 </script>
 

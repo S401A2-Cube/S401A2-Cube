@@ -5,7 +5,8 @@ const store = useComparaisonStore()
 
 defineProps({
   article: { type: Object, required: true },
-  velo: { type: Object, required: true }
+  velo: { type: Object, required: true },
+  selectedColor: { type: Object, default: null }
 });
 </script>
 
@@ -23,7 +24,7 @@ defineProps({
           <span class="stock">({{ article.qteStock }} en stock)</span>
         </div> -->
         
-        <p class="reference">Référence d'article {{ article.reference }} | {{ velo.couleurs[0].nomCouleur }}</p>
+        <p class="reference">Référence d'article {{ article.reference }} | {{ selectedColor?.nomCouleur || velo.couleurs[0]?.nomCouleur || 'N/A' }}</p>
       </div>
       
       <div class="titlebar_right">
@@ -39,7 +40,7 @@ defineProps({
     </div>
         
     <div class="canvas-container" :data-360-src="velo.lienVue360">
-      <Model modelUrl="/models/bike-1.glb"></Model>
+      <Model modelUrl="/models/bike-1.glb" :selected-color="selectedColor"></Model>
     </div>
   </section>
 </template>

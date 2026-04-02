@@ -25,9 +25,6 @@ const getAssetUrl = (path) => {
 
 axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
   const data = r.data;
-
-  console.log(data);
-
   const articleData = data.article || {};
 
   resArticle.value = {
@@ -45,8 +42,15 @@ axios.get(utils.url + "Velos/GetById/" + route.params.id).then(r => {
       categorieId: articleData.categorieId, 
       nom: "Catégorie inconnue" 
     },
-    motsCles: articleData.motsCles || []
+    motsCles: articleData.motsCles || [],
+    images: articleData.images || []
   };
+  
+  if (!resArticle.value.images) {
+    resArticle.value.images[0].imageId = 1;
+    resArticle.value.images[0].chemin = "@/assets/image/fallback_bike.png";
+    resArticle.value.images[0].articleId = resArticle.value.articleId;
+  }
 
   resVelo.value = {
     idVelo: data.idVelo,
@@ -147,7 +151,7 @@ const saveToLocalStorage = (payload) => {
     <p>Oups, ce vélo est introuvable.</p>
   </div>
   <div class="page-container" v-else-if="resArticle && resVelo">
-    <Landing :article="resArticle" :velo="resVelo" />
+    <Landing :article="resArticle" :velo="resVelo" :selected-color="selectedColor" />
     
     <div class="selection-group" v-if="resVelo">
       <div class="option">
@@ -186,6 +190,7 @@ const saveToLocalStorage = (payload) => {
           <div class="description_text">
             <h2 class="section_label">Description</h2>
             <h3 class="bike_name">{{ resArticle.nom }}</h3>
+            <img class="section_image" :src=getAssetUrl(resArticle.images[0].chemin) />
             <p class="main_description">
               {{ resArticle.description }}
             </p>
@@ -213,6 +218,7 @@ const saveToLocalStorage = (payload) => {
           </div>
         </div>
       </section>
+
     </main>
     
     <Specifications :article="resArticle" :velo="resVelo" />
@@ -368,6 +374,11 @@ const saveToLocalStorage = (payload) => {
 .btn-option button.active
  {
   border: 1px solid black;
+}
+
+.section_image {
+  width: 100%;
+  mix-blend-mode: multiply;
 }
 
 </style>
