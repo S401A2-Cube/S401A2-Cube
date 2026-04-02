@@ -9,6 +9,7 @@ import ConnexionView from '@/views/ConnexionView.vue'
 import ComparaisonView from '@/views/ComparaisonView.vue'
 import CategoryView from '@/views/CategoryView.vue'
 import ShopCartView from '@/views/ShopCartView.vue'
+import AdminDashboardView from '@/views/AdminDashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -68,6 +69,11 @@ const router = createRouter({
       path:'/panier',
       name:'panier',
       component: ShopCartView
+    },
+    {
+      path:'/admin/dashboard',
+      name:'admin-dashboard',
+      component: AdminDashboardView
     }
   ],
 })

@@ -40,9 +40,10 @@ var selected = ref(null);
                     :name="item.name" 
                     :categories="item.cats"
                 />
-                <router-link to="/Article">
+                <router-link to="/Article" class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
                 </router-link>
+                <router-link to="/admin/dashboard" class="admin-link">Admin</router-link>
             </div>
             <div class="navbar_right">
                 <RouterLink to="/connexion">
@@ -97,6 +98,21 @@ var selected = ref(null);
     align-items: center;
 }
 
+.admin-link {
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid #111;
+    color: inherit;
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.admin-link:hover {
+    background: #111;
+    color: #fff;
+}
+
 .navbar_close_btn {
     position: fixed;
     left: 0;
@@ -121,4 +137,9 @@ img {
 .navmenu_button:hover {
     color: #000;
 }
+
+.nav-icon {
+    padding: 0 0 0.2em;
+}
+
 </style>
