@@ -64,7 +64,6 @@ namespace S401A2.Migrations
                         .HasColumnName("civ_id");
 
                     b.Property<DateTime?>("DateNaissance")
-                        .IsRequired()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("client_datenaissance");
 
