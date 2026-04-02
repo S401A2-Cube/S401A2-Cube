@@ -43,7 +43,7 @@ public partial class Client
     [Column("cli_mdp")]
     public string? Mdp { get; set; }
 
-    [Required]
+
     [Column("client_datenaissance")]
     public DateTime? DateNaissance { get; set; }
 
@@ -57,11 +57,11 @@ public partial class Client
 
     [ForeignKey(nameof(CiviliteId))]
     [InverseProperty(nameof(Civilite.CiviliteClient))]
-    public virtual Civilite CiviliteClient { get; set; } = null!;
+    public virtual Civilite? CiviliteClient { get; set; }
 
     [ForeignKey(nameof(AdresseId))]
     [InverseProperty(nameof(Adresse.AdresseClient))]
-    public virtual Adresse AdresseClient { get; set; } = null!;
+    public virtual Adresse? AdresseClient { get; set; } = null!;
 
     [InverseProperty(nameof(LignePanier.ClientLignePanier))]
     public virtual ICollection<LignePanier> ClientLignePanier { get; set; } = new List<LignePanier>();

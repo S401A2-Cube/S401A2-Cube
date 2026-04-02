@@ -3,17 +3,22 @@ import { ref } from 'vue';
 import Input from './Input.vue';
 import RedButton from './RedButton.vue';
 
+const emit = defineEmits(['submit-client'])
 const client = ref({
-    civilite: 'Mr',
-    prenom: '',
-    nom: '',
-    email: '',
-    naissance: '',
-    password: ''
-
+    CiviliteId: 1,
+    Prenom: '',
+    Nom: '',
+    Email: '',
+    DateNaissance: null,
+    Mdp: '',
+    Role: 1,
+    AdresseClient:null,
 })
 
-// TODO : méthode création de compte
+const soumettreFormulaire = () => {
+    emit('submit-client', client.value);
+};
+
 </script>
 
 <template>
@@ -24,25 +29,26 @@ const client = ref({
             <RouterLink class="router-link" to="/connexion">Connectez-vous !</RouterLink>
         </div>
 
-        <form>
+        <form @submit.prevent="soumettreFormulaire">
             <h2>Mes informations personnelles</h2>
             <div id="civil">
                 <div>
-                    <input type="radio" id="mr" name="civilite" value="Mr" v-model="client.civilite">
+                    <input type="radio" id="mr" name="civilite" :value="1" v-model="client.CiviliteId">
                     <label for="mr">M</label>
                 </div>
                 <div>
-                    <input type="radio" id="mme" name="civilite" value="Mme" v-model="client.civilite">
+                    <input type="radio" id="mme" name="civilite" :value="2" v-model="client.CiviliteId">
                     <label for="mme">Mme</label>
                 </div>
             </div>
 
-            <Input label="Prénom" v-model="client.prenom" required/>
-            <Input label="Nom" v-model="client.nom" required/>
-            <Input label="Email" v-model="client.email" required/>
-            <Input type="date" label="Date de naissance" v-model="client.naissance"/>
-            <Input type="password" label="Mot de passe" v-model="client.password" required/>
+            <Input label="Prénom" v-model="client.Prenom" required/>
+            <Input label="Nom" v-model="client.Nom" required/>
+            <Input label="Email" v-model="client.Email" required/>
+            <Input type="date" label="Date de naissance" v-model="client.DateNaissance"/>
+            <Input type="password" label="Mot de passe" v-model="client.Mdp" required/>
 
+            
             <RedButton type="submit">S'inscrire</RedButton>
         </form>
     </div>
@@ -56,6 +62,7 @@ h2 {
 }
 
 #inscription {
+    margin-top: 5rem;
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -78,7 +85,7 @@ form {
     background-color: #fff;
     padding: 1.5rem;
     align-items: center;
-    box-shadow: var(--card-shadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 #civil {
@@ -94,11 +101,11 @@ form {
 .router-link {
     text-decoration: underline;
     transition: all 0.4s;
-    color: var(--blue-cube);
+    color: #2fb5d2;
 }
 
 .router-link:hover {
-    color: var(--blue-muted);
+    color: #298499;
     text-decoration: none;
 }
 </style>
