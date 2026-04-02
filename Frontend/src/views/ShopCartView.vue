@@ -3,11 +3,19 @@ import LineShopCart from '@/components/LineShopCart.vue';
 import RedButton from '@/components/RedButton.vue';
 import { ref, computed, watch, onMounted } from 'vue';
 import { useUtilsStore } from '@/stores/utils';
+import { useCartStore } from '@/stores/counterArticles';
+import { useRouter } from 'vue-router';
 
 const utils = useUtilsStore();
 const STORAGE_KEY = 'cube_shop_cart';
+const cartStore = useCartStore();
+const router = useRouter();
 
-const lignes = ref([]);
+const getAssetUrl = (path) => {
+  const cleanPath = path.replace('@/', '../'); 
+  return new URL(cleanPath, import.meta.url).href;
+};
+
 onMounted(async () => {
   const token = localStorage.getItem('user_token');
   const localCart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -32,63 +40,114 @@ onMounted(async () => {
       const response = await axios.get(utils.url + "LignePaniers/", {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      lignes.value = response.data.filter(ligne => ligne.clientId === 1);
-
+      cartStore.lignes = response.data
+        .filter(ligne => ligne.clientId === 1)
+        .map(ligne => {
+          const images = ligne.articleLignePanier?.images;
+          const chemin = (images && images.length > 0) ? images[0].chemin : "@/assets/image/fallback_bike.png";
+          
+          return {
+            ...ligne,
+            articleId: ligne.articleLignePanier.articleId,
+            clientId: 1,
+            qtePanier: ligne.articleLignePanier.qtePanier,
+            commandeId: ligne.articleLignePanier.commandeId,
+            nom: ligne.articleLignePanier.nom,
+            reference: ligne.articleLignePanier.reference,
+            prix: ligne.articleLignePanier.prix,
+            idCouleur: ligne.articleLignePanier.couleurId,
+            idTaille: ligne.articleLignePanier.tailleId,
+            nomCouleur: ligne.couleurChoisie?.nomCouleur,
+            libelleTaille: ligne.tailleChoisie?.libelleTaille,
+            imageURL: getAssetUrl(chemin) 
+          };
+        });
     } 
     catch (error) {
       console.error("Erreur récuparation du panier :", error);
-      lignes.value = localCart;
+      cartStore.lignes = localCart;
     }
   } 
   else {
-    lignes.value = localCart;
+    cartStore.lignes = localCart;
   }
 });
 
-const nbArticles = computed(() => {
-  return lignes.value.reduce((total, ligne) => total + (ligne.qtePanier || 0), 0); 
-});
-
-watch(lignes, (newCart) => {
+watch(() => cartStore.lignes, (newCart) => {
   const token = localStorage.getItem('user_token');
   if (!token) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newCart));
   }
 }, { deep: true });
 
-const validerPanier = () => {
-    const token = localStorage.getItem('user_token');
-    if (!token) {
-        alert("Veuillez vous connecter pour valider votre commande.");
+const validShopCart = async () => {
+  const token = localStorage.getItem('user_token');
+  
+  if (!token) {
+    localStorage.setItem('redirect_after_login', '/panier');
+    router.push('/connexion');
+    return;
+  }
+
+  try {
+    for (const ligne of cartStore.lignes) {
+      await axios.put(utils.url + "LignePaniers/" + ligne.id, {
+        qtePanier: ligne.qtePanier,
+      }, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
     }
+    router.push('/commande');
+  } catch (error) {
+    console.error("Erreur mise à jour quantités :", error);
+  }
+};
+
+const deleteArticle = async (infos) => {
+  const token = localStorage.getItem('user_token');
+
+  if (token && infos.ligneId) {
+    try {
+      await axios.delete(utils.url + "LignePaniers/" + infos.ligneId, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      cartStore.lignes = cartStore.lignes.filter(l => l.id !== infos.ligneId);
+    } catch (error) {
+      console.error("Erreur de suppression API", error);
+    }
+  } 
+  
+  else {
+    cartStore.lignes = cartStore.lignes.filter(l => 
+      !(l.articleId === infos.articleId && 
+        l.idCouleur === infos.idCouleur && 
+        l.idTaille === infos.idTaille)
+    );
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cartStore.lignes));
+  }
 };
 </script>
 
 <template>
     <main>
         <div class="container-panier">
-            <div v-if="lignes.length > 0">
-                <h2>PANIER ({{ nbArticles }})</h2>
-                <LineShopCart v-for="ligne in lignes"
-                    :key="ligne.articleId + '-' + ligne.idCouleur + '-' + ligne.idTaille"
-                    v-model:quantite="ligne.qtePanier"
-                    :id="ligne.articleId"
-                    :articleName="ligne.nom"
-                    :articleRef="ligne.reference"
-                    :price="ligne.prix"
-                    :taille="ligne.libelleTaille"
-                    :couleur="ligne.nomCouleur"
-                    :image="ligne.images"
-                />
+            <div v-if="cartStore.lignes.length > 0">
+              <h2>PANIER ({{ cartStore.nbArticles }})</h2>
+              <LineShopCart v-for="ligne in cartStore.lignes"
+                  :key="ligne.articleId + '-' + ligne.idCouleur + '-' + ligne.idTaille"
+                  v-model:quantite="ligne.qtePanier"
+                  :ligne="ligne"
+                  @supprimer="deleteArticle"
+              />
+              <RedButton @click="validShopCart">
+                Valider le panier
+              </RedButton>
             </div>
             <div v-else>
                 <h2>Votre panier est vide</h2>
                 <router-link to="/">Retourner à la boutique</router-link>
             </div>
 
-            <RedButton v-if="lignes.length > 0" @click="validerPanier">
-                Valider le panier
-            </RedButton>
         </div> 
     </main>
 </template>

@@ -2,45 +2,74 @@
 import { defineModel } from 'vue';
 
 const quantite = defineModel('quantite', { type: Number, default: 1 });
+const emit = defineEmits(['supprimer']);
 
-const incrementer = () => {
+const deleteLine = () => {
+  emit('supprimer', {
+    ligneId: props.ligne.id,
+    articleId: props.ligne.articleId,
+    idCouleur: props.ligne.idCouleur,
+    idTaille: props.ligne.idTaille
+  });
+};
+
+const increment = () => {
   quantite.value++;
 };
 
-const decrementer = () => {
+const decrement = () => {
   if (quantite.value > 1) {
     quantite.value--;
   }
 };
 
+// const props = defineProps({
+//   ligneId: {
+//     type: Number,
+//     required: false
+//   },
+//   id: {
+//     type:Number,
+//     required:true
+//   },
+//   articleName: {
+//     type: String,
+//     required: true
+//   },
+//   articleRef: {
+//     type: String,
+//     required: true
+//   },
+//   price: {
+//     type: Number,
+//     required: true
+//   },
+//   couleur: {
+//     type: String,
+//     required: false
+//   },
+//   taille: {
+//     type: String,
+//     required: false
+//   },
+//   idCouleur: {
+//     type: Number,
+//     required: false
+//   },
+//   idTaille: {
+//     type: Number,
+//     required: false
+//   },
+//   imageURL: {
+//     type: String,
+//     required: false
+//   }
+// });
+
 const props = defineProps({
-  id: {
-    type:Number,
-    required:true
-  },
-  articleName: {
-    type: String,
+  ligne: {
+    type: Object,
     required: true
-  },
-  articleRef: {
-    type: String,
-    required: true
-  },
-  price: {
-    type: Number,
-    required: true
-  },
-  couleur: {
-    type: String,
-    required: false
-  },
-  taille: {
-    type: String,
-    required: false
-  },
-  imageURL: {
-    type: String,
-    required: false
   }
 });
 
@@ -49,31 +78,31 @@ const props = defineProps({
 <template>
     <div id="ligne-panier">
       <div class="image-container">
-        <img :src=" imageURL ? imageURL : 'https://cube-bikes.ca/wp-content/uploads/2024/05/Cube-Stereo-Hybrid-140-HPC-Actionteam-750-actionteam-695325_side-view_00.png'" />
+        <img :src="ligne.imageURL" />
       </div>
 
       <div class="container-div">
         <div class="info-ligne">
-          <h2>{{ articleName }}</h2>
-          <p class="article-price">{{ price }}€</p>
-          <p class="article-ref">REFERENCE: {{ articleRef }}</p>
-          <p>SIZE: {{ taille }}</p>
-          <p>COLOR: {{ couleur }}</p>
+          <h2>{{ ligne.nom }}</h2>
+          <p class="article-price">{{ ligne.prix }}€</p>
+          <p class="article-ref">REFERENCE: {{ ligne.reference }}</p>
+          <p>SIZE: {{ ligne.libelleTaille }}</p>
+          <p>COLOR: {{ ligne.nomCouleur }}</p>
         </div>
 
         <div class="action-ligne">
-          <h3>{{ price }}€ TTC</h3>
+          <h3>{{ ligne.prix }}€ TTC</h3>
           <div class="input-container">
-            <button type="button" class="btn-qty" @click="decrementer">-</button>
+            <button type="button" class="btn-qty" @click="decrement">-</button>
             <input 
               type="number" 
               v-model.number="quantite" 
               min="1" 
               class="input-panier"
             >
-            <button type="button" class="btn-qty" @click="incrementer">+</button>
+            <button type="button" class="btn-qty" @click="increment">+</button>
           </div>
-          <p class="supprimer-link">Supprimer</p>
+          <p class="supprimer-link" @click="deleteLine">Supprimer</p>
         </div>
       </div>
     </div>
