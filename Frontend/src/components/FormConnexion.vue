@@ -47,7 +47,9 @@ form {
     background-color: #fff;
     padding: 1.5rem;
     align-items: center;
-    box-shadow: var(--card-shadow);
+    border: 1px solid #d7d7d7;
+    -webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.14);
+    box-shadow: 0 4px 17px 0 rgba(0,0,0,.14);
 }
 
 .router-link {

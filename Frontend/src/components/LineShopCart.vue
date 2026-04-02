@@ -23,49 +23,6 @@ const decrement = () => {
   }
 };
 
-// const props = defineProps({
-//   ligneId: {
-//     type: Number,
-//     required: false
-//   },
-//   id: {
-//     type:Number,
-//     required:true
-//   },
-//   articleName: {
-//     type: String,
-//     required: true
-//   },
-//   articleRef: {
-//     type: String,
-//     required: true
-//   },
-//   price: {
-//     type: Number,
-//     required: true
-//   },
-//   couleur: {
-//     type: String,
-//     required: false
-//   },
-//   taille: {
-//     type: String,
-//     required: false
-//   },
-//   idCouleur: {
-//     type: Number,
-//     required: false
-//   },
-//   idTaille: {
-//     type: Number,
-//     required: false
-//   },
-//   imageURL: {
-//     type: String,
-//     required: false
-//   }
-// });
-
 const props = defineProps({
   ligne: {
     type: Object,
@@ -78,7 +35,7 @@ const props = defineProps({
 <template>
     <div id="ligne-panier">
       <div class="image-container">
-        <img :src="ligne.imageURL" />
+        <img :src=ligne.imageURL />
       </div>
 
       <div class="container-div">
@@ -91,7 +48,7 @@ const props = defineProps({
         </div>
 
         <div class="action-ligne">
-          <h3>{{ ligne.prix }}€ TTC</h3>
+          <h3>{{ (ligne.prix * quantite).toLocaleString('fr-Fr')}}€ TTC</h3>
           <div class="input-container">
             <button type="button" class="btn-qty" @click="decrement">-</button>
             <input 
@@ -116,7 +73,9 @@ const props = defineProps({
   gap: 20px;
   padding: 1rem;
   background-color: #fff;
-  box-shadow: var(--card-shadow);
+  border: 1px solid #d7d7d7;
+  -webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.14);
+  box-shadow: 0 4px 17px 0 rgba(0,0,0,.14);
   width: 800px;
   height: 200px;
 }
