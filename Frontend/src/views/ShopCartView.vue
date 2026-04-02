@@ -78,6 +78,7 @@ const validerPanier = () => {
                     :price="ligne.prix"
                     :taille="ligne.libelleTaille"
                     :couleur="ligne.nomCouleur"
+                    :image="ligne.images"
                 />
             </div>
             <div v-else>
