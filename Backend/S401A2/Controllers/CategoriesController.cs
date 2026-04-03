@@ -91,18 +91,15 @@ namespace S401A2.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPost]
         public async Task<ActionResult<Categorie>> PostCategorie(Categorie categorie)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+                if (!ModelState.IsValid) return BadRequest(ModelState);
 
                 await _repository.AddAsync(categorie);
-
-                return CreatedAtAction("GetCategorie", new { id = categorie.CategorieId }, categorie);
+                return CreatedAtAction(null, new { id = categorie.CategorieId }, categorie);
             }
             catch (Exception ex)
             {
