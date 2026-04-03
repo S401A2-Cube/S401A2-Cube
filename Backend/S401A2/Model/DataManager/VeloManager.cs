@@ -352,48 +352,45 @@ namespace S401A2.Model.DataManager
             }
         }
 
-        public Task UpdateAsync(Velo entityToUpdate, Velo entity)
+        public async Task UpdateAsync(Velo entityToUpdate, Velo entity)
         {
             if (_context != null)
             {
                 entityToUpdate.LienVue360 = entity.LienVue360;
                 entityToUpdate.IdArticle = entity.IdArticle;
                 entityToUpdate.IdModele = entity.IdModele;
-
                 if (entity.Couleurs != null)
                 {
-                    var couleurIds = entity.Couleurs.Select(c => c.IdCouleur).Distinct().ToList();
-                    entityToUpdate.Couleurs = _context.Couleurs
-                        .Where(c => couleurIds.Contains(c.IdCouleur))
-                        .ToList();
+                    entityToUpdate.Couleurs?.Clear();
+                    var ids = entity.Couleurs.Select(c => c.IdCouleur).ToList();
+                    var items = await _context.Couleurs.Where(c => ids.Contains(c.IdCouleur)).ToListAsync();
+                    foreach (var item in items) entityToUpdate.Couleurs?.Add(item);
                 }
 
                 if (entity.Tailles != null)
                 {
-                    var tailleIds = entity.Tailles.Select(t => t.IdTaille).Distinct().ToList();
-                    entityToUpdate.Tailles = _context.Tailles
-                        .Where(t => tailleIds.Contains(t.IdTaille))
-                        .ToList();
+                    entityToUpdate.Tailles?.Clear();
+                    var ids = entity.Tailles.Select(t => t.IdTaille).ToList();
+                    var items = await _context.Tailles.Where(t => ids.Contains(t.IdTaille)).ToListAsync();
+                    foreach (var item in items) entityToUpdate.Tailles?.Add(item);
                 }
 
                 if (entity.Cadres != null)
                 {
-                    var cadreIds = entity.Cadres.Select(c => c.IdMateriau).Distinct().ToList();
-                    entityToUpdate.Cadres = _context.Cadres
-                        .Where(c => cadreIds.Contains(c.IdMateriau))
-                        .ToList();
+                    entityToUpdate.Cadres?.Clear();
+                    var ids = entity.Cadres.Select(c => c.IdMateriau).ToList();
+                    var items = await _context.Cadres.Where(c => ids.Contains(c.IdMateriau)).ToListAsync();
+                    foreach (var item in items) entityToUpdate.Cadres?.Add(item);
                 }
 
                 if (entity.Geometries != null)
                 {
-                    var geometrieIds = entity.Geometries.Select(g => g.IdGeometrie).Distinct().ToList();
-                    entityToUpdate.Geometries = _context.Geometries
-                        .Where(g => geometrieIds.Contains(g.IdGeometrie))
-                        .ToList();
+                    entityToUpdate.Geometries?.Clear();
+                    var ids = entity.Geometries.Select(g => g.IdGeometrie).ToList();
+                    var items = await _context.Geometries.Where(g => ids.Contains(g.IdGeometrie)).ToListAsync();
+                    foreach (var item in items) entityToUpdate.Geometries?.Add(item);
                 }
-
-                _context.Velos.Update(entityToUpdate);
-                return _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             else
             {

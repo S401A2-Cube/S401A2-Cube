@@ -142,8 +142,6 @@ namespace S401A2.Model.DataManager
                 entityToUpdate.Annee = entity.Annee;
                 entityToUpdate.DispoEnLigne = entity.DispoEnLigne;
                 entityToUpdate.CategorieId = entity.CategorieId;
-
-                _context.Articles.Update(entityToUpdate);
                 return _context.SaveChangesAsync();
             }
             else
