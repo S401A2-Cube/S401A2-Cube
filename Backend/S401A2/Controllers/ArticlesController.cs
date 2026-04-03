@@ -88,14 +88,22 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Article>> PostArticle(Article article)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                article.CategorieArticle = null;
+
+                await _repository.AddAsync(article);
+
+                return CreatedAtAction(null, new { id = article.ArticleId }, article);
             }
-
-            await _repository.AddAsync(article);
-
-            return CreatedAtAction(null, new { id = article.ArticleId }, article);
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+            }
         }
 
         // DELETE: api/Articles/5

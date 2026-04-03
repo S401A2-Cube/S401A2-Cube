@@ -168,13 +168,16 @@ const createArticle = async () => {
   }
 
   try {
+    const payloadToSend = normalizeArticlePayload();
+    delete payloadToSend.categorieArticle;
+
     const response = await fetch(props.utilsUrl + 'Articles', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...props.authHeaders
       },
-      body: JSON.stringify(normalizeArticlePayload())
+      body: JSON.stringify(payloadToSend)
     }).then((result) => {
       if (!result.ok) {
         throw result;
