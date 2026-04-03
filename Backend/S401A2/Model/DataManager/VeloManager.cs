@@ -354,48 +354,72 @@ namespace S401A2.Model.DataManager
 
         public async Task UpdateAsync(Velo entityToUpdate, Velo entity)
         {
-            if (_context != null)
-            {
-                entityToUpdate.LienVue360 = entity.LienVue360;
-                entityToUpdate.IdArticle = entity.IdArticle;
-                entityToUpdate.IdModele = entity.IdModele;
-                if (entity.Couleurs != null)
-                {
-                    entityToUpdate.Couleurs?.Clear();
-                    var ids = entity.Couleurs.Select(c => c.IdCouleur).ToList();
-                    var items = await _context.Couleurs.Where(c => ids.Contains(c.IdCouleur)).ToListAsync();
-                    foreach (var item in items) entityToUpdate.Couleurs?.Add(item);
-                }
-
-                if (entity.Tailles != null)
-                {
-                    entityToUpdate.Tailles?.Clear();
-                    var ids = entity.Tailles.Select(t => t.IdTaille).ToList();
-                    var items = await _context.Tailles.Where(t => ids.Contains(t.IdTaille)).ToListAsync();
-                    foreach (var item in items) entityToUpdate.Tailles?.Add(item);
-                }
-
-                if (entity.Cadres != null)
-                {
-                    entityToUpdate.Cadres?.Clear();
-                    var ids = entity.Cadres.Select(c => c.IdMateriau).ToList();
-                    var items = await _context.Cadres.Where(c => ids.Contains(c.IdMateriau)).ToListAsync();
-                    foreach (var item in items) entityToUpdate.Cadres?.Add(item);
-                }
-
-                if (entity.Geometries != null)
-                {
-                    entityToUpdate.Geometries?.Clear();
-                    var ids = entity.Geometries.Select(g => g.IdGeometrie).ToList();
-                    var items = await _context.Geometries.Where(g => ids.Contains(g.IdGeometrie)).ToListAsync();
-                    foreach (var item in items) entityToUpdate.Geometries?.Add(item);
-                }
-                await _context.SaveChangesAsync();
-            }
-            else
+            if (_context == null)
             {
                 throw new InvalidOperationException("Database context is not available.");
             }
+
+            var trackedVelo = await _context.Velos
+                .Include(v => v.Couleurs)
+                .Include(v => v.Tailles)
+                .Include(v => v.Cadres)
+                .Include(v => v.Geometries)
+                .FirstOrDefaultAsync(v => v.IdVelo == entity.IdVelo);
+
+            if (trackedVelo == null)
+            {
+                throw new InvalidOperationException("Velo introuvable.");
+            }
+
+            trackedVelo.LienVue360 = entity.LienVue360;
+            trackedVelo.IdArticle = entity.IdArticle;
+            trackedVelo.IdModele = entity.IdModele;
+
+            if (entity.Couleurs != null)
+            {
+                trackedVelo.Couleurs.Clear();
+                var ids = entity.Couleurs.Select(c => c.IdCouleur).ToList();
+                var items = await _context.Couleurs.Where(c => ids.Contains(c.IdCouleur)).ToListAsync();
+                foreach (var item in items)
+                {
+                    trackedVelo.Couleurs.Add(item);
+                }
+            }
+
+            if (entity.Tailles != null)
+            {
+                trackedVelo.Tailles.Clear();
+                var ids = entity.Tailles.Select(t => t.IdTaille).ToList();
+                var items = await _context.Tailles.Where(t => ids.Contains(t.IdTaille)).ToListAsync();
+                foreach (var item in items)
+                {
+                    trackedVelo.Tailles.Add(item);
+                }
+            }
+
+            if (entity.Cadres != null)
+            {
+                trackedVelo.Cadres.Clear();
+                var ids = entity.Cadres.Select(c => c.IdMateriau).ToList();
+                var items = await _context.Cadres.Where(c => ids.Contains(c.IdMateriau)).ToListAsync();
+                foreach (var item in items)
+                {
+                    trackedVelo.Cadres.Add(item);
+                }
+            }
+
+            if (entity.Geometries != null)
+            {
+                trackedVelo.Geometries.Clear();
+                var ids = entity.Geometries.Select(g => g.IdGeometrie).ToList();
+                var items = await _context.Geometries.Where(g => ids.Contains(g.IdGeometrie)).ToListAsync();
+                foreach (var item in items)
+                {
+                    trackedVelo.Geometries.Add(item);
+                }
+            }
+
+            await _context.SaveChangesAsync();
         }
     }
 }
