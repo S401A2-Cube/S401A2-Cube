@@ -65,13 +65,6 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        // PUT: api/Velos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize(Policy = Policies.Admin)]
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutVelo(int id, Velo velo)
         {
             try
@@ -91,6 +84,7 @@ namespace S401A2.Controllers
                 {
                     return NotFound();
                 }
+
                 velo.Article = null;
                 velo.ModeleVelo = null;
 
