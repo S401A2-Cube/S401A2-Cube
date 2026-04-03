@@ -76,7 +76,12 @@ namespace S401A2.Controllers
                 {
                     return NotFound();
                 }
+
                 article.CategorieArticle = null;
+                article.MotsCles = null;
+                article.Velos = null;
+                article.Images = null;
+                article.ArticleLignePanier = null;
 
                 await _repository.UpdateAsync(articleToUpdate, article);
 
