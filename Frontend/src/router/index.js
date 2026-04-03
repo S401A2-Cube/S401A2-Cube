@@ -11,6 +11,8 @@ import CategoryView from '@/views/CategoryView.vue'
 import ShopCartView from '@/views/ShopCartView.vue'
 import AdminDashboardView from '@/views/AdminDashboardView.vue'
 import { isAdminUser } from '@/stores/utils'
+import MonCompteView from '@/views/MonCompteView.vue'
+import MesCommandesView from '@/views/MesCommandesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -61,6 +63,16 @@ const router = createRouter({
       name:'comparaison',
       component: ComparaisonView
     },
+    {
+      path:'/Compte',
+      name:'compte',
+      component: MonCompteView
+    },
+     {
+       path:'/Compte/Commandes',
+       name:'commandes',
+       component: MesCommandesView
+     },
     {
       path:'/connexion',
       name:'connexion',
