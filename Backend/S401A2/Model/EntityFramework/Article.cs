@@ -61,7 +61,7 @@ namespace S401A2.Model.EntityFramework
         [ForeignKey(nameof(CategorieId))]
         [InverseProperty(nameof(Categorie.Articles))]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] // omit when null
-        public virtual Categorie CategorieArticle { get; set; } = null!;
+        public virtual Categorie? CategorieArticle { get; set; } = null!;
 
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public virtual ICollection<MotCle>? MotsCles { get; set; } = new List<MotCle>();
