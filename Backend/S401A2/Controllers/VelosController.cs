@@ -4,11 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using S401A2.Model;
-using S401A2.Model.EntityFramework;
 using S401A2.Models.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace S401A2.Controllers
@@ -69,25 +67,32 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutVelo(int id, Velo velo)
         {
-            if (id != velo.IdVelo)
+            try
             {
-                return BadRequest();
-            }
+                if (id != velo.IdVelo)
+                {
+                    return BadRequest();
+                }
 
-            if (!ModelState.IsValid)
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var veloToUpdate = await _repository.GetByIdAsync(id);
+                if (veloToUpdate == null)
+                {
+                    return NotFound();
+                }
+
+                await _repository.UpdateAsync(veloToUpdate, velo);
+
+                return NoContent();
+            }
+            catch (Exception ex)
             {
-                return BadRequest(ModelState);
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
             }
-
-            var veloToUpdate = await _repository.GetByIdAsync(id);
-            if (veloToUpdate == null || veloToUpdate == null)
-            {
-                return NotFound();
-            }
-
-            await _repository.UpdateAsync(veloToUpdate, velo);
-
-            return NoContent();
         }
 
         // POST: api/Velos
@@ -98,14 +103,23 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Velo>> PostVelo(Velo velo)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                velo.Article = null;
+                velo.ModeleVelo = null;
+
+                await _repository.AddAsync(velo);
+
+                return CreatedAtAction(null, new { id = velo.IdVelo }, velo);
             }
-
-            await _repository.AddAsync(velo);
-
-            return CreatedAtAction("GetVelo", new { id = velo.IdVelo }, velo);
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+            }
         }
 
         // DELETE: api/Velos/5
@@ -115,15 +129,22 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteVelo(int id)
         {
-            var velo = await _repository.GetByIdAsync(id);
-            if (velo == null)
+            try
             {
-                return NotFound();
+                var velo = await _repository.GetByIdAsync(id);
+                if (velo == null)
+                {
+                    return NotFound();
+                }
+
+                await _repository.DeleteAsync(velo);
+
+                return NoContent();
             }
-
-            await _repository.DeleteAsync(velo);
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+            }
         }
     }
 }
