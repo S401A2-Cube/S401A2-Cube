@@ -95,7 +95,7 @@ namespace S401A2.Controllers
 
             await _repository.AddAsync(modele);
 
-            return CreatedAtAction("GetModele", new { id = modele.IdModele }, modele);
+            return CreatedAtAction(null, new { id = modele.IdModele }, modele);
         }
 
         // DELETE: api/Modeles/5

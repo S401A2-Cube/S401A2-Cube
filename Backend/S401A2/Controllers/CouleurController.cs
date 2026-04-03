@@ -95,7 +95,7 @@ namespace S401A2.Controllers
 
             await _repository.AddAsync(couleur);
 
-            return CreatedAtAction("GetCouleur", new { id = couleur.IdCouleur }, couleur);
+            return CreatedAtAction(null, new { id = couleur.IdCouleur }, couleur);
         }
 
         // DELETE: api/Couleurs/5
