@@ -59,25 +59,33 @@ namespace S401A2.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutArticle(int id, Article article)
         {
-            if (id != article.ArticleId)
+            try
             {
-                return BadRequest();
-            }
+                if (id != article.ArticleId)
+                {
+                    return BadRequest();
+                }
 
-            if (!ModelState.IsValid)
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var articleToUpdate = await _repository.GetByIdAsync(id);
+                if (articleToUpdate == null)
+                {
+                    return NotFound();
+                }
+                article.CategorieArticle = null;
+
+                await _repository.UpdateAsync(articleToUpdate, article);
+
+                return NoContent();
+            }
+            catch (Exception ex)
             {
-                return BadRequest(ModelState);
+                return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
             }
-
-            var articleToUpdate = await _repository.GetByIdAsync(id);
-            if (articleToUpdate == null || articleToUpdate == null)
-            {
-                return NotFound();
-            }
-            
-            await _repository.UpdateAsync(articleToUpdate, article);
-
-            return NoContent();
         }
 
         // POST: api/Articles
