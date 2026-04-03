@@ -95,7 +95,7 @@ namespace S401A2.Controllers
 
             await _repository.AddAsync(article);
 
-            return CreatedAtAction("GetArticle", new { id = article.ArticleId }, article);
+            return CreatedAtAction(null, new { id = article.ArticleId }, article);
         }
 
         // DELETE: api/Articles/5
