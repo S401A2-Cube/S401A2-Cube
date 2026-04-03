@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 using APICube.Models.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace S401A2.Model.EntityFramework
 {
@@ -60,46 +60,30 @@ namespace S401A2.Model.EntityFramework
 
         [ForeignKey(nameof(CategorieId))]
         [InverseProperty(nameof(Categorie.Articles))]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] // omit when null
-        public virtual Categorie? CategorieArticle { get; set; } = null!;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [ValidateNever]
+        public virtual Categorie? CategorieArticle { get; set; }
 
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [ValidateNever]
         public virtual ICollection<MotCle>? MotsCles { get; set; } = new List<MotCle>();
 
         [InverseProperty(nameof(LignePanier.ArticleLignePanier))]
+        [ValidateNever]
         public virtual ICollection<LignePanier> ArticleLignePanier { get; set; } = new List<LignePanier>();
 
         [InverseProperty(nameof(Commande.ArticleCommande))]
-        public virtual Commande? ArticleCommande { get; set; } = null;
+        [ValidateNever]
+        public virtual Commande? ArticleCommande { get; set; }
 
         [InverseProperty(nameof(Velo.Article))]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [ValidateNever]
         public virtual ICollection<Velo>? Velos { get; set; } = new List<Velo>();
 
         [InverseProperty(nameof(Image.Article))]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [ValidateNever]
         public virtual ICollection<Image>? Images { get; set; } = new List<Image>();
-
-        // TODO: Navigation towards other entities when they will be 
-
-        /*
-         * 
-         * (int) id article
-         * (string) reference
-         * (string) nom article
-         * (string) description
-         * (double) prix
-         * (double) poids
-         * (int) qte stock
-         * (int) annee
-         * (bool) dispo en ligne
-         * 
-         * (fk HAS ONE)  une categorie
-         * (fk HAS ONE)  model 3d 
-         * (fk HAS MANY) liste de mots cles
-         * (fk HAS MANY) liste articles similaires
-         * (fk HAS MANY) liste de photos
-         * 
-         */
     }
 }
