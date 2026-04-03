@@ -369,21 +369,43 @@ namespace S401A2.Model.DataManager
             trackedVelo.IdArticle = entity.IdArticle;
             trackedVelo.IdModele = entity.IdModele;
 
-            UpdateCollection(trackedVelo.Couleurs, entity.Couleurs, c => c.IdCouleur, _context.Couleurs);
-            UpdateCollection(trackedVelo.Tailles, entity.Tailles, t => t.IdTaille, _context.Tailles);
-            UpdateCollection(trackedVelo.Cadres, entity.Cadres, c => c.IdMateriau, _context.Cadres);
-            UpdateCollection(trackedVelo.Geometries, entity.Geometries, g => g.IdGeometrie, _context.Geometries);
+            if (entity.Couleurs != null)
+            {
+                trackedVelo.Couleurs ??= new List<Couleur>();
+                trackedVelo.Couleurs.Clear();
+                var ids = entity.Couleurs.Select(c => c.IdCouleur).ToList();
+                var items = await _context.Couleurs.Where(c => ids.Contains(c.IdCouleur)).ToListAsync();
+                foreach (var item in items) trackedVelo.Couleurs.Add(item);
+            }
+
+            if (entity.Tailles != null)
+            {
+                trackedVelo.Tailles ??= new List<Taille>();
+                trackedVelo.Tailles.Clear();
+                var ids = entity.Tailles.Select(t => t.IdTaille).ToList();
+                var items = await _context.Tailles.Where(t => ids.Contains(t.IdTaille)).ToListAsync();
+                foreach (var item in items) trackedVelo.Tailles.Add(item);
+            }
+
+            if (entity.Cadres != null)
+            {
+                trackedVelo.Cadres ??= new List<Cadre>();
+                trackedVelo.Cadres.Clear();
+                var ids = entity.Cadres.Select(c => c.IdMateriau).ToList();
+                var items = await _context.Cadres.Where(c => ids.Contains(c.IdMateriau)).ToListAsync();
+                foreach (var item in items) trackedVelo.Cadres.Add(item);
+            }
+
+            if (entity.Geometries != null)
+            {
+                trackedVelo.Geometries ??= new List<Geometrie>();
+                trackedVelo.Geometries.Clear();
+                var ids = entity.Geometries.Select(g => g.IdGeometrie).ToList();
+                var items = await _context.Geometries.Where(g => ids.Contains(g.IdGeometrie)).ToListAsync();
+                foreach (var item in items) trackedVelo.Geometries.Add(item);
+            }
 
             await _context.SaveChangesAsync();
-        }
-
-        private void UpdateCollection<T, TKey>(ICollection<T> current, IEnumerable<T> source, Func<T, TKey> keySelector, DbSet<T> dbSet) where T : class
-        {
-            if (source == null) return;
-            current.Clear();
-            var ids = source.Select(keySelector).ToList();
-            var items = dbSet.Where(item => ids.Contains(keySelector(item))).ToList();
-            foreach (var item in items) current.Add(item);
         }
     }
 }
